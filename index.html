@@ -74,163 +74,98 @@
             z-index: 9998;
         }
 
-        /* PARALLAX BACKGROUND LAYERS */
-        .parallax-layer {
+        /* STICKY LIVE EVENTS BAR */
+        .live-events-sticky {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            height: 100%;
-            pointer-events: none;
+            background: linear-gradient(135deg, rgba(26, 20, 16, 0.98), rgba(13, 10, 8, 0.98));
+            border-bottom: 2px solid rgba(180, 94, 72, 0.5);
+            padding: 1rem 3%;
+            z-index: 10001;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.8);
         }
 
-        .parallax-dust {
-            background: 
-                radial-gradient(2px 2px at 20% 30%, rgba(212, 197, 169, 0.15), transparent),
-                radial-gradient(2px 2px at 60% 70%, rgba(212, 197, 169, 0.1), transparent),
-                radial-gradient(1px 1px at 50% 50%, rgba(212, 197, 169, 0.12), transparent),
-                radial-gradient(2px 2px at 80% 10%, rgba(212, 197, 169, 0.08), transparent),
-                radial-gradient(1px 1px at 90% 60%, rgba(212, 197, 169, 0.1), transparent),
-                radial-gradient(2px 2px at 15% 80%, rgba(212, 197, 169, 0.12), transparent),
-                radial-gradient(1px 1px at 35% 25%, rgba(212, 197, 169, 0.1), transparent);
-            background-size: 200% 200%;
-            background-position: 50% 50%;
-            animation: dustFloat 60s ease-in-out infinite;
-            opacity: 0.3;
-        }
-
-        @keyframes dustFloat {
-            0%, 100% { transform: translate(0, 0); opacity: 0.3; }
-            25% { transform: translate(-10px, -20px); opacity: 0.4; }
-            50% { transform: translate(10px, -40px); opacity: 0.25; }
-            75% { transform: translate(-5px, -30px); opacity: 0.35; }
-        }
-
-        /* HERO SECTION - CINEMATIC OPENING */
-        .hero {
-            position: relative;
-            min-height: 100vh;
+        .events-ticker {
+            max-width: 1400px;
+            margin: 0 auto;
             display: flex;
-            flex-direction: column;
-            justify-content: center;
             align-items: center;
-            padding: 0 5%;
-            overflow: hidden;
+            gap: 2rem;
+            overflow-x: auto;
+            scrollbar-width: none;
         }
 
-        .hero-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                linear-gradient(180deg, transparent 0%, rgba(13, 10, 8, 0.6) 50%, var(--night) 100%),
-                linear-gradient(45deg, rgba(180, 94, 72, 0.1) 0%, transparent 50%);
-            z-index: 0;
+        .events-ticker::-webkit-scrollbar {
+            display: none;
         }
 
-        .hero-content {
-            position: relative;
-            z-index: 10;
-            text-align: center;
-            max-width: 1000px;
-            opacity: 0;
-            animation: heroFadeIn 2s ease-out 0.5s forwards;
-        }
-
-        @keyframes heroFadeIn {
-            to { opacity: 1; }
-        }
-
-        .site-title {
-            font-family: 'Cinzel', serif;
-            font-size: clamp(2.5rem, 8vw, 6rem);
-            font-weight: 700;
-            color: var(--sand);
-            letter-spacing: 8px;
-            margin-bottom: 1rem;
-            text-transform: lowercase;
-            text-shadow: 
-                2px 2px 4px rgba(0, 0, 0, 0.8),
-                0 0 30px rgba(180, 94, 72, 0.3);
-            line-height: 1.2;
-            animation: titleGlow 4s ease-in-out infinite;
-        }
-
-        @keyframes titleGlow {
-            0%, 100% { text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8), 0 0 30px rgba(180, 94, 72, 0.3); }
-            50% { text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8), 0 0 50px rgba(180, 94, 72, 0.5); }
-        }
-
-        .site-subtitle {
+        .events-label {
             font-family: 'Space Mono', monospace;
-            font-size: clamp(0.7rem, 2vw, 0.9rem);
+            font-size: 0.75rem;
             color: var(--ember);
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            margin-bottom: 3rem;
-            opacity: 0.8;
-        }
-
-        .hero-tagline {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(1.3rem, 3vw, 2rem);
-            font-style: italic;
-            color: var(--sand);
-            line-height: 1.8;
-            margin-bottom: 3rem;
-            opacity: 0;
-            animation: fadeInUp 1.5s ease-out 1.5s forwards;
-        }
-
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .scroll-indicator {
-            position: absolute;
-            bottom: 40px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-family: 'Space Mono', monospace;
-            font-size: 0.7rem;
-            color: var(--steel);
             letter-spacing: 3px;
             text-transform: uppercase;
-            opacity: 0;
-            animation: fadeInUp 1.5s ease-out 2.5s forwards, bounce 2s ease-in-out 4s infinite;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
 
-        @keyframes bounce {
-            0%, 100% { transform: translateX(-50%) translateY(0); }
-            50% { transform: translateX(-50%) translateY(-10px); }
+        .live-indicator {
+            width: 8px;
+            height: 8px;
+            background: #ff4444;
+            border-radius: 50%;
+            animation: pulse 2s ease-in-out infinite;
         }
 
-        .scroll-indicator::after {
-            content: '↓';
-            display: block;
-            margin-top: 0.5rem;
-            font-size: 1.2rem;
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.6; transform: scale(1.2); }
         }
 
-        /* NAVIGATION - MINIMAL & ELEGANT */
+        .event-ticker-item {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 0.95rem;
+            color: var(--sand);
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .event-ticker-name {
+            font-weight: 600;
+        }
+
+        .event-ticker-map {
+            color: var(--steel);
+            font-size: 0.85rem;
+        }
+
+        .event-ticker-timer {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.7rem;
+            color: var(--ember);
+            padding: 0.3rem 0.8rem;
+            background: rgba(217, 134, 79, 0.15);
+            border: 1px solid rgba(217, 134, 79, 0.3);
+            border-radius: 2px;
+        }
+
+        /* NAVIGATION */
         nav {
             position: fixed;
-            top: 0;
+            top: 60px;
             left: 0;
             width: 100%;
-            padding: 2rem 5%;
+            padding: 1.5rem 5%;
             background: linear-gradient(180deg, rgba(13, 10, 8, 0.9) 0%, transparent 100%);
             backdrop-filter: blur(10px);
             z-index: 10000;
-            opacity: 0;
-            animation: navSlideIn 1s ease-out 3s forwards;
-        }
-
-        @keyframes navSlideIn {
-            to { opacity: 1; }
         }
 
         .nav-content {
@@ -252,12 +187,13 @@
 
         .nav-links {
             display: flex;
-            gap: 3rem;
+            gap: 2rem;
+            flex-wrap: wrap;
         }
 
         .nav-links a {
             font-family: 'Space Mono', monospace;
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             color: var(--steel);
             text-decoration: none;
             letter-spacing: 2px;
@@ -285,26 +221,68 @@
             width: 100%;
         }
 
+        /* HERO SECTION */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 0 5%;
+            margin-top: 60px;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            max-width: 1000px;
+        }
+
+        .site-title {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(2.5rem, 8vw, 6rem);
+            font-weight: 700;
+            color: var(--sand);
+            letter-spacing: 8px;
+            margin-bottom: 1rem;
+            text-transform: lowercase;
+            text-shadow: 
+                2px 2px 4px rgba(0, 0, 0, 0.8),
+                0 0 30px rgba(180, 94, 72, 0.3);
+            line-height: 1.2;
+        }
+
+        .site-subtitle {
+            font-family: 'Space Mono', monospace;
+            font-size: clamp(0.7rem, 2vw, 0.9rem);
+            color: var(--ember);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 3rem;
+        }
+
+        .hero-tagline {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.3rem, 3vw, 2rem);
+            font-style: italic;
+            color: var(--sand);
+            line-height: 1.8;
+            margin-bottom: 3rem;
+        }
+
         /* MAIN CONTAINER */
         main {
             position: relative;
             z-index: 5;
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             padding: 0 5%;
         }
 
-        /* SECTION DIVIDER */
-        .section-divider {
-            width: 60px;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, var(--rust), transparent);
-            margin: 8rem auto;
-            opacity: 0.5;
-        }
-
-        /* LOG ENTRIES - CINEMATIC CARDS */
-        .logs-section {
+        /* SECTION STYLES */
+        .section {
             padding: 6rem 0;
         }
 
@@ -315,7 +293,7 @@
             color: var(--sand);
             text-align: center;
             letter-spacing: 6px;
-            margin-bottom: 6rem;
+            margin-bottom: 4rem;
             text-transform: lowercase;
             position: relative;
         }
@@ -329,139 +307,116 @@
             margin: 2rem auto 0;
         }
 
-        .log-entry {
+        /* FEATURED VIDEO */
+        .featured-video {
             background: linear-gradient(135deg, rgba(26, 20, 16, 0.6), rgba(13, 10, 8, 0.8));
-            border: 1px solid rgba(180, 94, 72, 0.2);
-            border-left: 3px solid var(--rust);
-            margin-bottom: 8rem;
-            padding: 0;
-            position: relative;
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 0.8s ease-out;
+            border: 2px solid rgba(180, 94, 72, 0.4);
+            border-left: 4px solid var(--ember);
+            padding: 3rem;
+            margin-bottom: 6rem;
             box-shadow: 
-                0 20px 60px rgba(0, 0, 0, 0.5),
+                0 20px 60px rgba(0, 0, 0, 0.6),
                 inset 0 1px 0 rgba(212, 197, 169, 0.05);
         }
 
-        .log-entry.visible {
-            opacity: 1;
-            transform: translateY(0);
+        .featured-label {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--ember);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
 
-        .log-entry::before {
-            content: '';
+        .featured-label::before {
+            content: '⭐';
+            font-size: 1rem;
+        }
+
+        .video-embed {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            background: #000;
+            border: 1px solid rgba(180, 94, 72, 0.3);
+            margin-bottom: 2rem;
+        }
+
+        .video-embed iframe {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, rgba(180, 94, 72, 0.05) 0%, transparent 50%);
-            pointer-events: none;
         }
 
-        .log-header {
-            padding: 2rem 3rem;
-            border-bottom: 1px solid rgba(180, 94, 72, 0.2);
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            flex-wrap: wrap;
-            gap: 1rem;
+        .video-info {
+            text-align: center;
         }
 
-        .log-meta {
-            font-family: 'Space Mono', monospace;
-            font-size: 0.75rem;
-        }
-
-        .log-number {
-            color: var(--ember);
-            letter-spacing: 3px;
-            margin-bottom: 0.5rem;
-            font-weight: 700;
-        }
-
-        .log-location {
-            color: var(--steel);
-            letter-spacing: 2px;
-        }
-
-        .log-status {
-            font-family: 'Space Mono', monospace;
-            font-size: 0.7rem;
-            padding: 0.6rem 1.5rem;
-            background: rgba(174, 167, 95, 0.15);
-            border: 1px solid var(--steel);
-            color: var(--steel);
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
-        .log-status.extracted {
-            background: rgba(79, 179, 191, 0.15);
-            border-color: #4fb3bf;
-            color: #4fb3bf;
-        }
-
-        .log-content {
-            padding: 4rem 4rem 5rem;
-            font-size: clamp(1.1rem, 2.5vw, 1.3rem);
-            line-height: 2.4;
-        }
-
-        .log-content p {
-            margin-bottom: 2.5rem;
+        .video-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.8rem;
             color: var(--sand);
-            opacity: 0;
-            transform: translateY(20px);
-            animation: paragraphFadeIn 0.8s ease-out forwards;
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
         }
 
-        .log-content p:nth-child(1) { animation-delay: 0.1s; }
-        .log-content p:nth-child(2) { animation-delay: 0.2s; }
-        .log-content p:nth-child(3) { animation-delay: 0.3s; }
-        .log-content p:nth-child(4) { animation-delay: 0.4s; }
-        .log-content p:nth-child(5) { animation-delay: 0.5s; }
-        .log-content p:nth-child(6) { animation-delay: 0.6s; }
-        .log-content p:nth-child(7) { animation-delay: 0.7s; }
-        .log-content p:nth-child(8) { animation-delay: 0.8s; }
-        .log-content p:nth-child(9) { animation-delay: 0.9s; }
-        .log-content p:nth-child(10) { animation-delay: 1s; }
-        .log-content p:nth-child(11) { animation-delay: 1.1s; }
-        .log-content p:nth-child(12) { animation-delay: 1.2s; }
-        .log-content p:nth-child(13) { animation-delay: 1.3s; }
-        .log-content p:nth-child(14) { animation-delay: 1.4s; }
-
-        @keyframes paragraphFadeIn {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .whisper {
+        .video-description {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            color: var(--steel);
             font-style: italic;
-            color: #b8a68d;
+            line-height: 1.8;
         }
 
-        .sad {
-            color: #9a8875;
+        /* VIDEO GRID */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
         }
 
-        .thoughtful {
-            color: #a89580;
-            font-style: italic;
+        .video-card {
+            background: linear-gradient(135deg, rgba(26, 20, 16, 0.6), rgba(13, 10, 8, 0.8));
+            border: 1px solid rgba(180, 94, 72, 0.3);
+            padding: 1.5rem;
+            transition: all 0.4s;
         }
 
-        /* RAIDER CACHE - PREMIUM SHOWCASE */
-        .cache-showcase {
-            padding: 10rem 0;
+        .video-card:hover {
+            border-color: var(--ember);
+            box-shadow: 0 10px 40px rgba(180, 94, 72, 0.3);
+            transform: translateY(-5px);
+        }
+
+        .video-card .video-embed {
+            margin-bottom: 1.5rem;
+        }
+
+        .video-card .video-title {
+            font-size: 1.3rem;
+            text-align: left;
+            margin-bottom: 0.5rem;
+        }
+
+        .video-card .video-description {
+            font-size: 1rem;
+            text-align: left;
+        }
+
+        /* RAIDER CACHE STORE */
+        .cache-section {
+            padding: 8rem 0;
             text-align: center;
             position: relative;
         }
 
-        .cache-showcase::before {
+        .cache-section::before {
             content: '';
             position: absolute;
             top: 50%;
@@ -479,8 +434,8 @@
         }
 
         .cache-icon {
-            width: 160px;
-            height: 180px;
+            width: 140px;
+            height: 160px;
             margin: 0 auto 3rem;
             position: relative;
             filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.5)) drop-shadow(0 0 40px rgba(217, 134, 79, 0.2));
@@ -522,7 +477,6 @@
             color: var(--sand);
             max-width: 700px;
             margin: 0 auto 4rem;
-            opacity: 0.9;
         }
 
         .cache-button {
@@ -563,7 +517,7 @@
             left: 0;
         }
 
-        /* FOOTER - ELEGANT CLOSING */
+        /* FOOTER */
         footer {
             padding: 6rem 5% 4rem;
             text-align: center;
@@ -579,7 +533,24 @@
             color: var(--sand);
             max-width: 800px;
             margin: 0 auto 3rem;
-            opacity: 0.8;
+        }
+
+        .footer-links {
+            margin-bottom: 2rem;
+        }
+
+        .footer-links a {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--steel);
+            text-decoration: none;
+            letter-spacing: 2px;
+            margin: 0 1rem;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--ember);
         }
 
         .footer-text {
@@ -590,236 +561,169 @@
             opacity: 0.6;
         }
 
+        /* SECTION DIVIDER */
+        .section-divider {
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--rust), transparent);
+            margin: 6rem auto;
+            opacity: 0.5;
+        }
+
         /* RESPONSIVE */
         @media (max-width: 768px) {
+            .live-events-sticky {
+                padding: 0.8rem 3%;
+            }
+
+            .events-ticker {
+                gap: 1rem;
+            }
+
+            .events-label {
+                font-size: 0.65rem;
+            }
+
+            .event-ticker-item {
+                font-size: 0.85rem;
+            }
+
+            nav {
+                top: 50px;
+                padding: 1rem 3%;
+            }
+
             .nav-links {
-                gap: 1.5rem;
+                gap: 1rem;
             }
 
             .nav-links a {
                 font-size: 0.65rem;
             }
 
-            .log-header {
-                flex-direction: column;
-                padding: 1.5rem 2rem;
+            .video-grid {
+                grid-template-columns: 1fr;
             }
 
-            .log-content {
-                padding: 2.5rem 2rem 3rem;
+            .featured-video {
+                padding: 2rem;
             }
-
-            .cache-showcase {
-                padding: 6rem 0;
-            }
-        }
-
-        /* SCROLL REVEAL */
-        .scroll-reveal {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 1s ease-out;
-        }
-
-        .scroll-reveal.revealed {
-            opacity: 1;
-            transform: translateY(0);
         }
     </style>
 </head>
 <body>
-    <div class="parallax-layer parallax-dust"></div>
+    <!-- STICKY LIVE EVENTS BAR -->
+    <div class="live-events-sticky">
+        <div class="events-ticker">
+            <div class="events-label">
+                <span class="live-indicator"></span>
+                LIVE NOW
+            </div>
+            <div id="events-ticker-container">
+                <div class="event-ticker-item">
+                    <span class="event-ticker-name">Night Raid</span>
+                    <span class="event-ticker-map">📍 Dam Battlegrounds</span>
+                    <span class="event-ticker-timer">2h 45m</span>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- NAVIGATION -->
     <nav>
         <div class="nav-content">
             <div class="nav-logo">my raider log</div>
             <div class="nav-links">
-                <a href="#logs">logs</a>
-                <a href="#cache">cache</a>
+                <a href="#videos">videos</a>
+                <a href="#store">store</a>
             </div>
         </div>
     </nav>
 
     <!-- HERO SECTION -->
     <section class="hero">
-        <div class="hero-bg"></div>
         <div class="hero-content">
             <h1 class="site-title">my raider log</h1>
             <p class="site-subtitle">Speranza // Year 2180</p>
             <p class="hero-tagline">
-                "This wasn't written for you.<br>
-                You just happened to find it."
+                "Through the dust, through the loss,<br>
+                I document what remains."
             </p>
         </div>
-        <div class="scroll-indicator">Scroll to begin</div>
     </section>
 
     <main>
         <div class="section-divider"></div>
 
-        <!-- LOGS SECTION -->
-        <section id="logs" class="logs-section">
-            <h2 class="section-title scroll-reveal">archived entries</h2>
+        <!-- FEATURED VIDEO SECTION -->
+        <section id="videos" class="section">
+            <h2 class="section-title">raider footage</h2>
 
-            <!-- Log Entry 1 - Day 101 -->
-            <article class="log-entry scroll-reveal">
-                <div class="log-header">
-                    <div class="log-meta">
-                        <div class="log-number">DAY 101</div>
-                        <div class="log-location">BURIED CITY // NIGHT</div>
+            <!-- FEATURED VIDEO -->
+            <div class="featured-video">
+                <div class="featured-label">Latest Upload</div>
+                <div class="video-embed">
+                    <iframe 
+                        src="https://www.youtube.com/embed/8Wjkr9tlmxc" 
+                        title="Raider Log - Latest" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-info">
+                    <h3 class="video-title">Latest Raider Log</h3>
+                    <p class="video-description">
+                        My most recent run through the Rust Belt. Every second counts when the ARC machines are hunting.
+                    </p>
+                </div>
+            </div>
+
+            <!-- VIDEO GRID -->
+            <div class="video-grid">
+                <div class="video-card">
+                    <div class="video-embed">
+                        <iframe 
+                            src="https://www.youtube.com/embed/SZzDL9Mwx2o" 
+                            title="Raider Log Entry" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
                     </div>
-                    <div class="log-status">SURVIVED</div>
+                    <h4 class="video-title">Survival Run</h4>
+                    <p class="video-description">
+                        Another day topside. Another chance to not come back.
+                    </p>
                 </div>
-
-                <div class="log-content">
-                    <p class="whisper sad">There he goes.</p>
-
-                    <p class="whisper sad">It's his raider flare… still burning as it disappears between the buildings. A thin red line dragging through the dark like the city doesn't want to let him go.</p>
-
-                    <p class="thoughtful">I didn't mean for it to be the last thing I saw.</p>
-
-                    <p class="whisper sad">We were supposed to loop back. Quiet route. Easy extraction.</p>
-
-                    <p class="whisper sad">He was not too far ahead of me but, just far enough that I couldn't get to him in time.</p>
-
-                    <p class="whisper sad">Then the Rats came out of the side streets.</p>
-
-                    <p class="whisper sad">I heard when the shot cracked the night.</p>
-
-                    <p class="whisper sad">His flare was a signal for retreat. Signal for me to live.</p>
-
-                    <p class="whisper">I ran.</p>
-
-                    <p class="whisper sad">I hate that part.</p>
-
-                    <p class="whisper sad">I have his med kit in my pack and his ammo still warm in my hands.</p>
-
-                    <p class="whisper sad">People say Raiders get used to loss.</p>
-
-                    <p class="whisper sad">They're lying.</p>
-
-                    <p class="whisper sad">You just get better at carrying it.</p>
-                </div>
-            </article>
-
-            <div class="section-divider"></div>
-
-            <!-- Log Entry 2 - Day 47 -->
-            <article class="log-entry scroll-reveal">
-                <div class="log-header">
-                    <div class="log-meta">
-                        <div class="log-number">DAY 47</div>
-                        <div class="log-location">DAM BATTLEGROUNDS // DAWN</div>
-                    </div>
-                    <div class="log-status extracted">EXTRACTED</div>
-                </div>
-
-                <div class="log-content">
-                    <p class="whisper">First time topside.</p>
-
-                    <p class="whisper sad">They told me it would be different. That nothing prepares you for seeing what Toledo became.</p>
-
-                    <p class="thoughtful">They were right.</p>
-
-                    <p class="whisper sad">The sun came up over Alcantara Dam and I saw the Rust Belt spread out below. Used to be beautiful, they say. Ancient Italian architecture. Now it's just bones and machines.</p>
-
-                    <p class="whisper">The cargo elevator ride up takes thirty seconds. Long enough to wonder if you'll come back down.</p>
-
-                    <p class="whisper">I made it to the dam's maintenance tunnels. Found supplies. Medical gear. Ammunition. Things Speranza needs.</p>
-
-                    <p class="whisper sad">Then I saw one. A Harvester. Six legs. Thirty feet tall. ARC machine moving through the ruins like it owns them.</p>
-
-                    <p class="thoughtful">Maybe it does.</p>
-
-                    <p class="whisper">I stayed low. Stayed quiet. Found a raider hatch before my thirty minutes ran out.</p>
-
-                    <p class="whisper sad">Back underground now. Safe in Speranza. But I can still hear the sound of its legs on concrete.</p>
-
-                    <p class="whisper sad">You don't forget that sound.</p>
-                </div>
-            </article>
-
-            <div class="section-divider"></div>
-
-            <!-- Log Entry 3 - Day 78 -->
-            <article class="log-entry scroll-reveal">
-                <div class="log-header">
-                    <div class="log-meta">
-                        <div class="log-number">DAY 78</div>
-                        <div class="log-location">THE SPACEPORT // DUSK</div>
-                    </div>
-                    <div class="log-status">SURVIVED</div>
-                </div>
-
-                <div class="log-content">
-                    <p class="whisper">Saw another raider today at Acerra Spaceport.</p>
-
-                    <p class="whisper sad">We locked eyes across the tarmac. Both of us loaded with salvage. Both of us knew what came next.</p>
-
-                    <p class="thoughtful">Down in Speranza, maybe we'd grab a drink at Apollo's bar. Talk about our runs. Maybe even be friends.</p>
-
-                    <p class="whisper sad">But topside is different.</p>
-
-                    <p class="whisper">He fired first. Or maybe I did. When your heart's trying to climb out of your chest, it's hard to remember.</p>
-
-                    <p class="whisper sad">I won. If you can call it that.</p>
-
-                    <p class="whisper sad">Took his loot. Left his safe pocket items because even raiders have lines we don't cross.</p>
-
-                    <p class="whisper sad">Got back to Speranza and sold everything to Tian Wen. She didn't ask questions. She never does.</p>
-
-                    <p class="whisper sad">Later that night, I saw his name on the memorial wall in Apollo's bar. Had a family. Two kids.</p>
-
-                    <p class="whisper sad">I killed him for circuit boards and ARC components.</p>
-
-                    <p class="thoughtful">This is what we've become.</p>
-
-                    <p class="whisper sad">And every night, I wonder if the next name on that wall will be mine.</p>
-                </div>
-            </article>
+            </div>
         </section>
 
         <div class="section-divider"></div>
 
-        <!-- RAIDER CACHE -->
-        <section id="cache" class="cache-showcase scroll-reveal">
+        <!-- RAIDER CACHE STORE -->
+        <section id="store" class="cache-section">
             <div class="cache-content">
                 <div class="cache-icon">
                     <svg viewBox="0 0 140 120" xmlns="http://www.w3.org/2000/svg">
-                        <!-- Main Box Body -->
                         <rect x="20" y="30" width="100" height="70" fill="#6b6355" stroke="#8a5842" stroke-width="2"/>
                         <rect x="22" y="32" width="96" height="66" fill="#53372c"/>
-                        
-                        <!-- Box Lid -->
                         <rect x="15" y="20" width="110" height="15" fill="#7a6b5a" stroke="#8a5842" stroke-width="2"/>
                         <rect x="17" y="22" width="106" height="11" fill="#6b6355"/>
-                        
-                        <!-- Lid Highlight -->
                         <rect x="20" y="23" width="100" height="3" fill="#8a7a68" opacity="0.6"/>
-                        
-                        <!-- Metal Corners -->
                         <rect x="15" y="28" width="12" height="3" fill="#4a4238"/>
                         <rect x="113" y="28" width="12" height="3" fill="#4a4238"/>
                         <rect x="15" y="97" width="12" height="3" fill="#4a4238"/>
                         <rect x="113" y="97" width="12" height="3" fill="#4a4238"/>
-                        
-                        <!-- Weathering & Rust -->
                         <rect x="30" y="40" width="8" height="50" fill="#b65e48" opacity="0.3"/>
                         <rect x="65" y="35" width="12" height="60" fill="#b65e48" opacity="0.25"/>
                         <rect x="100" y="45" width="10" height="45" fill="#b65e48" opacity="0.3"/>
-                        
-                        <!-- Rivets -->
                         <circle cx="25" cy="40" r="2.5" fill="#4a4238" opacity="0.8"/>
                         <circle cx="25" cy="90" r="2.5" fill="#4a4238" opacity="0.8"/>
                         <circle cx="115" cy="40" r="2.5" fill="#4a4238" opacity="0.8"/>
                         <circle cx="115" cy="90" r="2.5" fill="#4a4238" opacity="0.8"/>
-                        
-                        <!-- Red Warning Stripe -->
                         <rect x="25" y="60" width="90" height="6" fill="#b65e48"/>
                         <rect x="25" y="61" width="90" height="2" fill="#d9864f" opacity="0.7"/>
-                        
-                        <!-- Handle -->
                         <rect x="62" y="10" width="16" height="4" rx="2" fill="#6b6355" stroke="#8a5842" stroke-width="1.5"/>
                         <path d="M 65 14 Q 70 8 75 14" fill="none" stroke="#6b6355" stroke-width="3" stroke-linecap="round"/>
                     </svg>
@@ -827,7 +731,7 @@
                 <h2 class="cache-title">raider cache</h2>
                 <p class="cache-subtitle">Arceology's Store</p>
                 <p class="cache-description">
-                    My personal collection. Raider-inspired designs and gear. 
+                    My personal collection. Raider-inspired designs and gear.<br>
                     Support my journey through the Rust Belt.
                 </p>
                 <a href="https://www.bonfire.com/store/arceologys-cache/" target="_blank" class="cache-button">
@@ -843,35 +747,20 @@
     <footer>
         <p class="footer-quote">
             "Hope is what keeps us underground.<br>
-            Courage is what sends us topside."
+            Courage is what sends us topside.<br>
+            Memory is what keeps us human."
         </p>
+        <div class="footer-links">
+            <a href="https://youtube.com/@arceology" target="_blank">YOUTUBE</a>
+        </div>
         <p class="footer-text">
             MY RAIDER LOG © 2180 // SPERANZA ARCHIVES
         </p>
     </footer>
 
-    <!-- SCROLL REVEAL JAVASCRIPT -->
+    <!-- JAVASCRIPT -->
     <script>
-        // Intersection Observer for scroll reveals
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('revealed', 'visible');
-                }
-            });
-        }, observerOptions);
-
-        // Observe all scroll reveal elements
-        document.querySelectorAll('.scroll-reveal, .log-entry').forEach(el => {
-            observer.observe(el);
-        });
-
-        // Smooth scroll for navigation
+        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
