@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-adsense-account" content="ca-pub-7264545503146086">
+    <title>ARC Raiders Inspired Gear – Arceology Store</title>
+    
+    <meta name="description" content="ARC Raiders–inspired raider gear designed by content creator Arceology. Tactical sling bags, apparel, and post-apocalyptic merchandise for ARC Raiders fans.">
+    <meta name="keywords" content="ARC Raiders merch, ARC Raiders gear, raider gear, gaming merch, ARC Raiders inspired, Arceology store, tactical gear">
+    <meta name="author" content="Arceology">
+    <meta name="robots" content="index, follow">
+    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7264545503146086" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --rust: #b65e48;
+            --ash: #4a4238;
+            --sand: #d4c5a9;
+            --night: #0d0a08;
+            --ember: #d9864f;
+            --steel: #6b6355;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        
+        body {
+            font-family: 'Cormorant Garamond', serif;
+            background: var(--night);
+            color: var(--sand);
+            overflow-x: hidden;
+            line-height: 1.8;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23n)" opacity="0.12"/></svg>');
+            pointer-events: none;
+            animation: grain 8s steps(10) infinite;
+            z-index: 9999;
+            mix-blend-mode: overlay;
+        }
+
+        @keyframes grain {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(-15%, 10%); }
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: radial-gradient(ellipse at center, transparent 0%, transparent 35%, rgba(13, 10, 8, 0.5) 70%, rgba(13, 10, 8, 0.9) 100%);
+            pointer-events: none;
+            z-index: 9998;
+        }
+
+        nav {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%;
+            padding: 1.5rem 5%;
+            background: linear-gradient(180deg, rgba(13, 10, 8, 0.98) 0%, rgba(13, 10, 8, 0.9) 100%);
+            backdrop-filter: blur(15px);
+            z-index: 10000;
+            border-bottom: 1px solid rgba(180, 94, 72, 0.3);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .nav-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-family: 'Cinzel', serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--sand);
+            letter-spacing: 3px;
+            text-transform: lowercase;
+            text-decoration: none;
+        }
+
+        .nav-terminal {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.65rem;
+            color: var(--steel);
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.7rem;
+            color: var(--steel);
+            text-decoration: none;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--ember);
+            text-shadow: 0 0 10px rgba(217, 134, 79, 0.5);
+        }
+
+        main {
+            position: relative;
+            z-index: 5;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 8rem 5% 4rem;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 6rem;
+            padding-top: 4rem;
+        }
+
+        .page-title {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 700;
+            color: var(--sand);
+            letter-spacing: 8px;
+            margin-bottom: 1rem;
+            text-transform: lowercase;
+            text-shadow: 0 0 30px rgba(217, 134, 79, 0.4);
+        }
+
+        .page-subtitle {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.8rem;
+            color: var(--ember);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .product-showcase {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            background: linear-gradient(135deg, rgba(26, 20, 16, 0.6), rgba(13, 10, 8, 0.8));
+            border: 2px solid rgba(180, 94, 72, 0.4);
+            border-left: 4px solid var(--ember);
+            padding: 3rem;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+            transition: all 0.5s ease;
+        }
+
+        .product-showcase:hover {
+            transform: scale(1.02);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.8), 0 0 50px rgba(180, 94, 72, 0.4);
+        }
+
+        .product-image-section {
+            position: relative;
+        }
+
+        .product-badge {
+            position: absolute;
+            top: -1rem; left: -1rem;
+            background: var(--ember);
+            color: var(--night);
+            font-family: 'Space Mono', monospace;
+            font-size: 0.65rem;
+            letter-spacing: 2px;
+            padding: 0.5rem 1rem;
+            font-weight: 700;
+            z-index: 10;
+        }
+
+        .product-image-container {
+            width: 100%;
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, rgba(13, 10, 8, 0.95), rgba(26, 20, 16, 0.9));
+            border: 1px solid rgba(180, 94, 72, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .product-image-container svg {
+            width: 100%;
+            height: auto;
+            filter: drop-shadow(0 0 30px rgba(217, 134, 79, 0.4));
+        }
+
+        .product-details {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .product-name {
+            font-family: 'Cinzel', serif;
+            font-size: 2.5rem;
+            color: var(--sand);
+            letter-spacing: 3px;
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+        }
+
+        .product-edition {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--ember);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .product-price {
+            font-family: 'Cinzel', serif;
+            font-size: 2rem;
+            color: var(--ember);
+            font-weight: 700;
+        }
+
+        .product-tagline {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            font-style: italic;
+            color: var(--steel);
+            padding: 1.5rem;
+            background: rgba(180, 94, 72, 0.1);
+            border-left: 2px solid var(--rust);
+        }
+
+        .product-description p {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            color: var(--sand);
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .product-description .whisper {
+            font-style: italic;
+            color: var(--steel);
+        }
+
+        .claim-button {
+            display: block;
+            padding: 1.5rem;
+            background: var(--ember);
+            color: var(--night);
+            font-family: 'Cinzel', serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            text-decoration: none;
+            text-align: center;
