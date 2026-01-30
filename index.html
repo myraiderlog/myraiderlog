@@ -1,63 +1,20 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-adsense-account" content="ca-pub-7264545503146086">
-    <title>Arceology - ARC Raiders Raider Log | Gameplay, Stories & Merch</title>
+    <title>ARC Raiders Field Logs – Arceology Raider Logs</title>
     
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Arceology's official ARC Raiders raider log. Watch emotional gameplay, read fragmented field logs from Speranza, and shop exclusive ARC Raiders merchandise. Experience the story of a raider who feels everything.">
-    <meta name="keywords" content="ARC Raiders, Arceology, raider log, ARC Raiders gameplay, ARC Raiders videos, Speranza, raider stories, ARC Raiders merch, gaming content, extraction shooter, ARC Raiders guide, ARC Raiders tips">
+    <meta name="description" content="Story-driven ARC Raiders raider logs from content creator Arceology. Fragmented field notes from Speranza—emotional, honest entries tied to in-game locations and the cost of surviving.">
+    <meta name="keywords" content="ARC Raiders logs, raider logs, ARC Raiders stories, Speranza, field notes, ARC Raiders content, gaming stories, Arceology">
     <meta name="author" content="Arceology">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://myraiderlog.github.io/myraiderlog/">
     
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://myraiderlog.github.io/myraiderlog/">
-    <meta property="og:title" content="Arceology - ARC Raiders Raider Log">
-    <meta property="og:description" content="Watch emotional ARC Raiders gameplay, read fragmented field logs from Speranza, and shop exclusive merch. A raider who wears emotions on their sleeve.">
-    <meta property="og:site_name" content="Arceology Raider Log">
-    
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://myraiderlog.github.io/myraiderlog/">
-    <meta property="twitter:title" content="Arceology - ARC Raiders Raider Log">
-    <meta property="twitter:description" content="Watch emotional ARC Raiders gameplay, read fragmented field logs from Speranza, and shop exclusive merch.">
-    
-    <!-- Structured Data - Person -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Arceology",
-      "url": "https://myraiderlog.github.io/myraiderlog/",
-      "sameAs": [
-        "https://youtube.com/@arceology"
-      ],
-      "description": "ARC Raiders content creator documenting raider logs from Speranza",
-      "jobTitle": "Gaming Content Creator",
-      "knowsAbout": ["ARC Raiders", "Gaming", "Content Creation", "Storytelling"]
-    }
-    </script>
-    
-    <!-- Structured Data - WebSite -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "@name": "Arceology Raider Log",
-      "url": "https://myraiderlog.github.io/myraiderlog/",
-      "description": "Official raider log documenting ARC Raiders gameplay, stories, and field logs from Speranza",
-      "keywords": "ARC Raiders, raider log, gameplay, Speranza, gaming content"
-    }
-    </script>
-    
-    <!-- Google AdSense -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7264545503146086"
-     crossorigin="anonymous"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7264545503146086" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
     <style>
         :root {
             --rust: #b65e48;
@@ -68,122 +25,47 @@
             --steel: #6b6355;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        
         body {
             font-family: 'Cormorant Garamond', serif;
             background: var(--night);
             color: var(--sand);
             overflow-x: hidden;
             line-height: 1.8;
-            position: relative;
         }
 
-        /* PREMIUM FILM GRAIN WITH ENHANCED ANIMATION */
         body::before {
             content: '';
             position: fixed;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
             background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23n)" opacity="0.12"/></svg>');
             pointer-events: none;
-            animation: grain 8s steps(10) infinite, grainPulse 4s ease-in-out infinite;
+            animation: grain 8s steps(10) infinite;
             z-index: 9999;
             mix-blend-mode: overlay;
         }
 
         @keyframes grain {
             0%, 100% { transform: translate(0, 0); }
-            10% { transform: translate(-5%, -10%); }
-            20% { transform: translate(-15%, 5%); }
-            30% { transform: translate(7%, -25%); }
-            40% { transform: translate(-5%, 25%); }
             50% { transform: translate(-15%, 10%); }
-            60% { transform: translate(15%, 0%); }
-            70% { transform: translate(0%, 15%); }
-            80% { transform: translate(3%, 10%); }
-            90% { transform: translate(-10%, 5%); }
         }
 
-        @keyframes grainPulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.8; }
-        }
-
-        /* ENHANCED ATMOSPHERIC VIGNETTE */
         body::after {
             content: '';
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
             background: radial-gradient(ellipse at center, transparent 0%, transparent 35%, rgba(13, 10, 8, 0.5) 70%, rgba(13, 10, 8, 0.9) 100%);
             pointer-events: none;
             z-index: 9998;
-            animation: vignettePulse 8s ease-in-out infinite;
         }
 
-        @keyframes vignettePulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.85; }
-        }
-
-        /* FLOATING PARTICLES/EMBERS */
-        .particles {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 9997;
-            overflow: hidden;
-        }
-
-        .particle {
-            position: absolute;
-            width: 2px;
-            height: 2px;
-            background: var(--ember);
-            border-radius: 50%;
-            opacity: 0;
-            animation: float 15s infinite ease-in-out;
-            box-shadow: 0 0 4px var(--ember);
-        }
-
-        @keyframes float {
-            0% {
-                transform: translateY(100vh) translateX(0) scale(0);
-                opacity: 0;
-            }
-            10% {
-                opacity: 0.6;
-            }
-            90% {
-                opacity: 0.4;
-            }
-            100% {
-                transform: translateY(-10vh) translateX(50px) scale(1);
-                opacity: 0;
-            }
-        }
-
-        /* NAVIGATION WITH GLITCH EFFECT */
         nav {
             position: fixed;
-            top: 0;
-            left: 0;
+            top: 0; left: 0;
             width: 100%;
             padding: 1.5rem 5%;
             background: linear-gradient(180deg, rgba(13, 10, 8, 0.98) 0%, rgba(13, 10, 8, 0.9) 100%);
@@ -191,18 +73,6 @@
             z-index: 10000;
             border-bottom: 1px solid rgba(180, 94, 72, 0.3);
             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
-            animation: navSlideDown 1s ease-out;
-        }
-
-        @keyframes navSlideDown {
-            from {
-                transform: translateY(-100%);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
         }
 
         .nav-content {
@@ -220,17 +90,7 @@
             color: var(--sand);
             letter-spacing: 3px;
             text-transform: lowercase;
-            position: relative;
-            animation: textGlow 3s ease-in-out infinite;
-        }
-
-        @keyframes textGlow {
-            0%, 100% {
-                text-shadow: 0 0 10px rgba(217, 134, 79, 0.3);
-            }
-            50% {
-                text-shadow: 0 0 20px rgba(217, 134, 79, 0.6), 0 0 30px rgba(217, 134, 79, 0.3);
-            }
+            text-decoration: none;
         }
 
         .nav-terminal {
@@ -238,16 +98,6 @@
             font-size: 0.65rem;
             color: var(--steel);
             letter-spacing: 2px;
-            animation: terminalFlicker 5s infinite;
-        }
-
-        @keyframes terminalFlicker {
-            0%, 100% { opacity: 1; }
-            95% { opacity: 1; }
-            96% { opacity: 0.3; }
-            97% { opacity: 1; }
-            98% { opacity: 0.5; }
-            99% { opacity: 1; }
         }
 
         .nav-links {
@@ -263,20 +113,7 @@
             text-decoration: none;
             letter-spacing: 2px;
             text-transform: uppercase;
-            position: relative;
             transition: all 0.3s ease;
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--ember);
-            transition: width 0.3s ease;
-            box-shadow: 0 0 10px var(--ember);
         }
 
         .nav-links a:hover {
@@ -284,292 +121,48 @@
             text-shadow: 0 0 10px rgba(217, 134, 79, 0.5);
         }
 
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        /* HERO SECTION WITH CINEMATIC ENTRANCE */
-        .hero {
-            position: relative;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 0 5%;
-            margin-top: 0;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at 50% 50%, rgba(217, 134, 79, 0.1) 0%, transparent 50%);
-            animation: heroPulse 8s ease-in-out infinite;
-        }
-
-        @keyframes heroPulse {
-            0%, 100% {
-                transform: scale(1);
-                opacity: 0.5;
-            }
-            50% {
-                transform: scale(1.1);
-                opacity: 0.8;
-            }
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 10;
-            text-align: center;
-            max-width: 1000px;
-            animation: heroFadeIn 2s ease-out;
-        }
-
-        @keyframes heroFadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .site-title {
-            font-family: 'Cinzel', serif;
-            font-size: clamp(3rem, 8vw, 7rem);
-            font-weight: 700;
-            color: var(--sand);
-            letter-spacing: 12px;
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-            text-shadow: 
-                2px 2px 4px rgba(0, 0, 0, 0.8),
-                0 0 40px rgba(180, 94, 72, 0.4),
-                0 0 80px rgba(180, 94, 72, 0.2);
-            line-height: 1.2;
-            animation: titleGlitch 8s infinite, titleFloat 4s ease-in-out infinite;
-        }
-
-        @keyframes titleGlitch {
-            0%, 90%, 100% {
-                transform: translate(0, 0);
-                text-shadow: 
-                    2px 2px 4px rgba(0, 0, 0, 0.8),
-                    0 0 40px rgba(180, 94, 72, 0.4);
-            }
-            91% {
-                transform: translate(-2px, 1px);
-                text-shadow: 
-                    2px 2px 4px rgba(0, 0, 0, 0.8),
-                    -2px 0 rgba(217, 134, 79, 0.8),
-                    2px 0 rgba(180, 94, 72, 0.8);
-            }
-            92% {
-                transform: translate(2px, -1px);
-            }
-            93% {
-                transform: translate(0, 0);
-            }
-        }
-
-        @keyframes titleFloat {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-10px);
-            }
-        }
-
-        .site-subtitle {
-            font-family: 'Space Mono', monospace;
-            font-size: clamp(0.7rem, 2vw, 0.9rem);
-            color: var(--ember);
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            margin-bottom: 3rem;
-            animation: subtitleFlicker 6s infinite, fadeIn 1.5s ease-out 0.5s both;
-        }
-
-        @keyframes subtitleFlicker {
-            0%, 100% { opacity: 1; }
-            97% { opacity: 1; }
-            98% { opacity: 0.4; }
-            99% { opacity: 1; }
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        .hero-tagline {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(1.3rem, 3vw, 2rem);
-            font-style: italic;
-            color: var(--sand);
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
-            opacity: 0;
-            animation: fadeIn 1.5s ease-out 1s forwards;
-        }
-
-        .hero-whisper {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(1.2rem, 2.5vw, 1.5rem);
-            font-style: italic;
-            color: var(--sand);
-            line-height: 1.8;
-            opacity: 0;
-            animation: fadeIn 1.5s ease-out 1.5s forwards;
-            font-weight: 400;
-        }
-
-        /* SCROLL REVEAL ANIMATIONS */
-        .reveal {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 1s ease-out;
-        }
-
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* MAIN CONTAINER */
         main {
             position: relative;
             z-index: 5;
             max-width: 1400px;
             margin: 0 auto;
-            padding: 0 5%;
+            padding: 8rem 5% 4rem;
         }
 
-        /* SECTION STYLES WITH ENTRANCE ANIMATIONS */
-        .section {
-            padding: 8rem 0;
-        }
-
-        .section-title {
-            font-family: 'Cinzel', serif;
-            font-size: clamp(2rem, 5vw, 3.5rem);
-            font-weight: 600;
-            color: var(--sand);
+        .page-header {
             text-align: center;
-            letter-spacing: 6px;
+            margin-bottom: 6rem;
+            padding-top: 4rem;
+        }
+
+        .page-title {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 700;
+            color: var(--sand);
+            letter-spacing: 8px;
             margin-bottom: 1rem;
             text-transform: lowercase;
-            position: relative;
-            text-shadow: 0 0 20px rgba(217, 134, 79, 0.3);
+            text-shadow: 0 0 30px rgba(217, 134, 79, 0.4);
         }
 
-        .section-subtitle {
+        .page-subtitle {
             font-family: 'Space Mono', monospace;
-            font-size: 0.7rem;
-            color: var(--steel);
-            text-align: center;
+            font-size: 0.8rem;
+            color: var(--ember);
             letter-spacing: 3px;
             text-transform: uppercase;
-            margin-bottom: 4rem;
-            animation: terminalFlicker 5s infinite;
+            margin-bottom: 2rem;
         }
 
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 2px;
-            background: var(--rust);
-            margin: 2rem auto 0;
-            box-shadow: 0 0 10px var(--rust);
-            animation: lineGrow 1.5s ease-out;
-        }
-
-        @keyframes lineGrow {
-            from { width: 0; }
-            to { width: 80px; }
-        }
-
-        /* ABOUT SECTION - ENHANCED */
-        .about-section {
-            padding: 8rem 0;
-        }
-
-        .about-container {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .about-fragment {
-            background: linear-gradient(135deg, rgba(26, 20, 16, 0.4), rgba(13, 10, 8, 0.6));
-            border-left: 3px solid var(--rust);
-            padding: 3rem;
-            margin-bottom: 3rem;
-            position: relative;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
-            transition: all 0.5s ease;
-        }
-
-        .about-fragment:hover {
-            transform: translateX(10px);
-            box-shadow: 
-                0 15px 50px rgba(0, 0, 0, 0.7),
-                -5px 0 20px rgba(180, 94, 72, 0.3);
-            border-left-color: var(--ember);
-        }
-
-        .about-fragment::before {
-            content: '//';
-            position: absolute;
-            top: 1rem;
-            left: 1rem;
-            font-family: 'Space Mono', monospace;
-            font-size: 0.7rem;
-            color: var(--rust);
-            opacity: 0.5;
-            animation: terminalFlicker 5s infinite;
-        }
-
-        .about-text {
+        .page-description {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1.3rem;
-            line-height: 2.2;
-            color: var(--sand);
-            margin-bottom: 1.5rem;
-        }
-
-        .about-text.whisper {
-            font-style: italic;
+            font-size: 1.2rem;
             color: var(--steel);
-            font-size: 1.1rem;
-        }
-
-        .about-text.emphasis {
-            color: var(--ember);
-            font-weight: 600;
-            text-shadow: 0 0 15px rgba(217, 134, 79, 0.3);
-        }
-
-        .terminal-line {
-            font-family: 'Space Mono', monospace;
-            font-size: 0.75rem;
-            color: var(--ember);
-            letter-spacing: 2px;
-            margin: 2rem 0;
-            opacity: 0.7;
-            animation: terminalFlicker 5s infinite;
-        }
-
-        /* BLOG SECTION - ENHANCED */
-        .blog-section {
-            padding: 8rem 0;
+            font-style: italic;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
         }
 
         .blog-entry {
@@ -577,22 +170,15 @@
             border: 1px solid rgba(180, 94, 72, 0.2);
             border-left: 3px solid var(--rust);
             margin-bottom: 6rem;
-            padding: 0;
-            position: relative;
-            box-shadow: 
-                0 20px 60px rgba(0, 0, 0, 0.5),
-                inset 0 1px 0 rgba(212, 197, 169, 0.05);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
             transition: all 0.5s ease;
         }
 
         .blog-entry:hover {
             transform: translateY(-10px);
-            box-shadow: 
-                0 30px 80px rgba(0, 0, 0, 0.7),
-                0 0 40px rgba(180, 94, 72, 0.2),
-                inset 0 1px 0 rgba(212, 197, 169, 0.1);
-            border-left-width: 5px;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.7), 0 0 40px rgba(180, 94, 72, 0.2);
             border-left-color: var(--ember);
+            border-left-width: 5px;
         }
 
         .blog-header {
@@ -607,7 +193,6 @@
             letter-spacing: 3px;
             text-transform: uppercase;
             margin-bottom: 1rem;
-            animation: terminalFlicker 5s infinite;
         }
 
         .blog-title {
@@ -622,7 +207,6 @@
 
         .blog-entry:hover .blog-title {
             color: var(--ember);
-            text-shadow: 0 0 20px rgba(217, 134, 79, 0.5);
         }
 
         .blog-location {
@@ -648,549 +232,21 @@
             color: var(--steel);
         }
 
-        /* VIDEO SECTION - ENHANCED */
-        .video-section {
-            padding: 8rem 0;
-        }
-
-        .featured-video {
-            background: linear-gradient(135deg, rgba(26, 20, 16, 0.6), rgba(13, 10, 8, 0.8));
-            border: 2px solid rgba(180, 94, 72, 0.4);
-            border-left: 4px solid var(--ember);
-            padding: 3rem;
-            margin-bottom: 6rem;
-            box-shadow: 
-                0 20px 60px rgba(0, 0, 0, 0.6),
-                inset 0 1px 0 rgba(212, 197, 169, 0.05);
-            transition: all 0.5s ease;
-        }
-
-        .featured-video:hover {
-            transform: scale(1.02);
-            box-shadow: 
-                0 30px 80px rgba(0, 0, 0, 0.8),
-                0 0 50px rgba(180, 94, 72, 0.3),
-                inset 0 1px 0 rgba(212, 197, 169, 0.1);
-        }
-
-        .featured-label {
-            font-family: 'Space Mono', monospace;
-            font-size: 0.75rem;
-            color: var(--ember);
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            animation: terminalFlicker 5s infinite;
-        }
-
-        .featured-label::before {
-            content: '▶';
-            font-size: 0.8rem;
-            animation: pulse 2s ease-in-out infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% {
-                opacity: 1;
-                transform: scale(1);
-            }
-            50% {
-                opacity: 0.6;
-                transform: scale(1.2);
-            }
-        }
-
-        .video-embed {
-            position: relative;
-            width: 100%;
-            padding-bottom: 56.25%;
-            background: #000;
-            border: 1px solid rgba(180, 94, 72, 0.3);
-            margin-bottom: 2rem;
-            overflow: hidden;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
-        }
-
-        .video-embed iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-
-        .video-info {
-            text-align: center;
-        }
-
-        .video-title {
-            font-family: 'Cinzel', serif;
-            font-size: 1.8rem;
-            color: var(--sand);
-            margin-bottom: 1rem;
-            letter-spacing: 2px;
-            text-shadow: 0 0 15px rgba(217, 134, 79, 0.2);
-        }
-
-        .video-description {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.1rem;
-            color: var(--steel);
-            font-style: italic;
-            line-height: 1.8;
-        }
-
-        .video-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 3rem;
-            margin-top: 4rem;
-        }
-
-        .video-card {
-            background: linear-gradient(135deg, rgba(26, 20, 16, 0.6), rgba(13, 10, 8, 0.8));
-            border: 1px solid rgba(180, 94, 72, 0.3);
-            padding: 1.5rem;
-            transition: all 0.4s ease;
-        }
-
-        .video-card:hover {
-            border-color: var(--ember);
-            box-shadow: 0 15px 50px rgba(180, 94, 72, 0.4);
-            transform: translateY(-10px);
-        }
-
-        .video-card .video-embed {
-            margin-bottom: 1.5rem;
-        }
-
-        .video-card .video-title {
-            font-size: 1.3rem;
-            text-align: left;
-            margin-bottom: 0.5rem;
-        }
-
-        .video-card .video-description {
-            font-size: 1rem;
-            text-align: left;
-        }
-
-        /* GEAR SECTION - PREMIUM TERMINAL WITH GLITCH */
-        .gear-section {
-            padding: 8rem 0;
-        }
-
-        .gear-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .product-showcase {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            background: linear-gradient(135deg, rgba(26, 20, 16, 0.6), rgba(13, 10, 8, 0.8));
-            border: 2px solid rgba(180, 94, 72, 0.4);
-            border-left: 4px solid var(--ember);
-            padding: 3rem;
-            box-shadow: 
-                0 20px 60px rgba(0, 0, 0, 0.6),
-                inset 0 1px 0 rgba(212, 197, 169, 0.05);
-            transition: all 0.5s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .product-showcase::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, 
-                transparent 0%, 
-                rgba(217, 134, 79, 0.1) 50%, 
-                transparent 100%);
-            transform: translateX(-100%);
-            animation: shimmer 3s infinite;
-        }
-
-        @keyframes shimmer {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
-        }
-
-        .product-showcase:hover {
-            transform: scale(1.02);
-            box-shadow: 
-                0 30px 80px rgba(0, 0, 0, 0.8),
-                0 0 50px rgba(180, 94, 72, 0.4),
-                inset 0 1px 0 rgba(212, 197, 169, 0.1);
-        }
-
-        .product-image-section {
-            position: relative;
-        }
-
-        .product-badge {
-            position: absolute;
-            top: -1rem;
-            left: -1rem;
-            background: var(--ember);
-            color: var(--night);
-            font-family: 'Space Mono', monospace;
-            font-size: 0.65rem;
-            letter-spacing: 2px;
-            padding: 0.5rem 1rem;
-            z-index: 10;
-            font-weight: 700;
-            box-shadow: 0 4px 20px rgba(217, 134, 79, 0.5);
-            animation: badgePulse 2s ease-in-out infinite;
-        }
-
-        @keyframes badgePulse {
-            0%, 100% {
-                transform: scale(1);
-                box-shadow: 0 4px 20px rgba(217, 134, 79, 0.5);
-            }
-            50% {
-                transform: scale(1.05);
-                box-shadow: 0 6px 30px rgba(217, 134, 79, 0.7);
-            }
-        }
-
-        .product-image-container {
-            width: 100%;
-            aspect-ratio: 1;
-            background: linear-gradient(135deg, rgba(13, 10, 8, 0.95), rgba(26, 20, 16, 0.9));
-            border: 1px solid rgba(180, 94, 72, 0.3);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-            padding: 2rem;
-        }
-
-        .product-image-container::before {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: 
-                repeating-linear-gradient(
-                    45deg,
-                    transparent,
-                    transparent 10px,
-                    rgba(180, 94, 72, 0.03) 10px,
-                    rgba(180, 94, 72, 0.03) 20px
-                );
-            pointer-events: none;
-            animation: scanlines 8s linear infinite;
-        }
-
-        @keyframes scanlines {
-            0% { transform: translateY(0); }
-            100% { transform: translateY(20px); }
-        }
-
-        .product-image {
-            width: 100%;
-            height: auto;
-            position: relative;
-            z-index: 10;
-            filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.6));
-            transition: all 0.5s ease;
-        }
-
-        .terminal-image {
-            filter: drop-shadow(0 0 30px rgba(217, 134, 79, 0.4)) drop-shadow(0 10px 40px rgba(0, 0, 0, 0.8));
-            animation: terminalGlitch 10s infinite;
-        }
-
-        @keyframes terminalGlitch {
-            0%, 90%, 100% {
-                transform: translate(0, 0);
-                filter: drop-shadow(0 0 30px rgba(217, 134, 79, 0.4)) drop-shadow(0 10px 40px rgba(0, 0, 0, 0.8));
-            }
-            91% {
-                transform: translate(-2px, 2px);
-                filter: 
-                    drop-shadow(2px 0 rgba(217, 134, 79, 0.8)) 
-                    drop-shadow(-2px 0 rgba(180, 94, 72, 0.8))
-                    drop-shadow(0 10px 40px rgba(0, 0, 0, 0.8));
-            }
-            92% {
-                transform: translate(2px, -2px);
-            }
-            93% {
-                transform: translate(0, 0);
-            }
-        }
-
-        .product-image-container:hover .terminal-image {
-            transform: scale(1.05);
-            filter: 
-                drop-shadow(0 0 40px rgba(217, 134, 79, 0.6)) 
-                drop-shadow(0 15px 50px rgba(0, 0, 0, 1));
-        }
-
-        .product-details {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-        }
-
-        .product-header {
-            border-bottom: 1px solid rgba(180, 94, 72, 0.2);
-            padding-bottom: 1.5rem;
-        }
-
-        .product-name {
-            font-family: 'Cinzel', serif;
-            font-size: 2.5rem;
-            color: var(--sand);
-            letter-spacing: 3px;
-            margin-bottom: 0.5rem;
-            line-height: 1.2;
-            text-shadow: 0 0 20px rgba(217, 134, 79, 0.3);
-            animation: titleFloat 4s ease-in-out infinite;
-        }
-
-        .product-edition {
-            font-family: 'Space Mono', monospace;
-            font-size: 0.75rem;
-            color: var(--ember);
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 1rem;
-            animation: terminalFlicker 5s infinite;
-        }
-
-        .product-price {
-            font-family: 'Cinzel', serif;
-            font-size: 2rem;
-            color: var(--ember);
-            font-weight: 700;
-            text-shadow: 0 0 20px rgba(217, 134, 79, 0.4);
-        }
-
-        .product-tagline {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.3rem;
-            font-style: italic;
-            color: var(--steel);
-            line-height: 1.8;
-            padding: 1.5rem;
-            background: rgba(180, 94, 72, 0.1);
-            border-left: 2px solid var(--rust);
-        }
-
-        .product-description {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .desc-main {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.2rem;
-            color: var(--sand);
-            line-height: 1.8;
-            font-weight: 600;
-        }
-
-        .desc-detail {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.1rem;
-            color: var(--sand);
-            line-height: 1.8;
-        }
-
-        .desc-detail.whisper {
-            font-style: italic;
-            color: var(--steel);
-        }
-
-        .desc-emphasis {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.2rem;
-            color: var(--ember);
-            font-weight: 600;
-            text-align: center;
-            padding: 1rem 0;
-            text-shadow: 0 0 15px rgba(217, 134, 79, 0.3);
-        }
-
-        .product-specs {
-            background: rgba(13, 10, 8, 0.5);
-            border: 1px solid rgba(180, 94, 72, 0.2);
-            padding: 1.5rem;
-            transition: all 0.3s ease;
-        }
-
-        .product-specs:hover {
-            background: rgba(13, 10, 8, 0.7);
-            border-color: rgba(180, 94, 72, 0.4);
-        }
-
-        .spec-title {
-            font-family: 'Space Mono', monospace;
-            font-size: 0.7rem;
-            color: var(--ember);
-            letter-spacing: 3px;
-            margin-bottom: 1rem;
-            animation: terminalFlicker 5s infinite;
-        }
-
-        .spec-list {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 0.8rem;
-        }
-
-        .spec-list li {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1rem;
-            color: var(--sand);
-            padding-left: 1.5rem;
-            position: relative;
-            transition: all 0.3s ease;
-        }
-
-        .spec-list li::before {
-            content: '▸';
-            position: absolute;
-            left: 0;
-            color: var(--rust);
-            transition: all 0.3s ease;
-        }
-
-        .spec-list li:hover {
-            color: var(--ember);
-            transform: translateX(5px);
-        }
-
-        .spec-list li:hover::before {
-            color: var(--ember);
-        }
-
-        .product-actions {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .claim-button {
-            display: block;
-            padding: 1.5rem;
-            background: var(--ember);
-            color: var(--night);
-            font-family: 'Cinzel', serif;
-            font-size: 1.1rem;
-            font-weight: 700;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            text-decoration: none;
-            text-align: center;
-            transition: all 0.4s ease;
-            box-shadow: 
-                0 4px 20px rgba(217, 134, 79, 0.4),
-                inset 0 1px 0 rgba(255, 255, 255, 0.2);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .claim-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-            transition: left 0.5s ease;
-        }
-
-        .claim-button:hover {
-            background: var(--rust);
-            box-shadow: 
-                0 6px 30px rgba(217, 134, 79, 0.6),
-                inset 0 1px 0 rgba(255, 255, 255, 0.3);
-            transform: translateY(-2px);
-        }
-
-        .claim-button:hover::before {
-            left: 100%;
-        }
-
-        .claim-button:active {
-            transform: translateY(0);
-            box-shadow: 0 2px 10px rgba(217, 134, 79, 0.4);
-        }
-
-        .store-link {
-            display: block;
-            padding: 1rem;
-            background: transparent;
-            border: 1px solid var(--steel);
-            color: var(--steel);
-            font-family: 'Space Mono', monospace;
-            font-size: 0.75rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            text-decoration: none;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-
-        .store-link:hover {
-            border-color: var(--ember);
-            color: var(--ember);
-            box-shadow: 0 0 20px rgba(217, 134, 79, 0.3);
-        }
-
-        .product-note {
-            padding: 1.5rem;
-            background: rgba(180, 94, 72, 0.1);
-            border-left: 2px solid var(--rust);
-        }
-
-        .note-text {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1rem;
-            color: var(--steel);
-            font-style: italic;
-            line-height: 1.8;
-        }
-
-        /* FOOTER - ENHANCED */
         footer {
             padding: 6rem 5% 4rem;
             text-align: center;
             border-top: 1px solid rgba(180, 94, 72, 0.2);
             background: linear-gradient(180deg, transparent 0%, rgba(13, 10, 8, 0.8) 100%);
-            box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.5);
         }
 
         .footer-quote {
             font-family: 'Cormorant Garamond', serif;
             font-size: clamp(1.1rem, 2.5vw, 1.5rem);
             font-style: italic;
-            line-height: 2;
             color: var(--sand);
             max-width: 800px;
             margin: 0 auto 3rem;
-            text-shadow: 0 0 10px rgba(217, 134, 79, 0.2);
-        }
-
-        .footer-links {
-            margin-bottom: 2rem;
+            line-height: 2;
         }
 
         .footer-links a {
@@ -1205,7 +261,6 @@
 
         .footer-links a:hover {
             color: var(--ember);
-            text-shadow: 0 0 15px rgba(217, 134, 79, 0.5);
         }
 
         .footer-text {
@@ -1214,484 +269,81 @@
             color: var(--steel);
             letter-spacing: 2px;
             opacity: 0.6;
-            animation: terminalFlicker 5s infinite;
+            margin-top: 2rem;
         }
 
-        /* SECTION DIVIDER - ENHANCED */
-        .section-divider {
-            width: 60px;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, var(--rust), transparent);
-            margin: 0 auto;
-            opacity: 0.5;
-            box-shadow: 0 0 10px var(--rust);
-            animation: dividerGlow 3s ease-in-out infinite;
-        }
-
-        @keyframes dividerGlow {
-            0%, 100% {
-                box-shadow: 0 0 10px var(--rust);
-                opacity: 0.5;
-            }
-            50% {
-                box-shadow: 0 0 20px var(--rust);
-                opacity: 0.8;
-            }
-        }
-
-        /* RESPONSIVE - ENHANCED */
         @media (max-width: 768px) {
-            nav {
-                padding: 1rem 3%;
-            }
-
-            .nav-links {
-                gap: 1rem;
-            }
-
-            .nav-links a {
-                font-size: 0.65rem;
-            }
-
-            .video-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .featured-video {
-                padding: 2rem;
-            }
-
-            .blog-header,
-            .blog-content {
-                padding: 2rem;
-            }
-
-            .about-fragment {
-                padding: 2rem;
-            }
-
-            .product-showcase {
-                grid-template-columns: 1fr;
-                padding: 2rem;
-                gap: 2rem;
-            }
-
-            .product-name {
-                font-size: 2rem;
-            }
-        }
-
-        /* LOADING ANIMATION */
-        .loading {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--night);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 10001;
-            animation: fadeOut 1s ease-out 1s forwards;
-        }
-
-        @keyframes fadeOut {
-            to {
-                opacity: 0;
-                pointer-events: none;
-            }
-        }
-
-        .loading-text {
-            font-family: 'Space Mono', monospace;
-            font-size: 1.2rem;
-            color: var(--ember);
-            letter-spacing: 4px;
-            animation: terminalFlicker 0.5s infinite;
-        }
-
-        /* CUSTOM CURSOR GLOW (OPTIONAL - SUPER PREMIUM) */
-        body {
-            cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"><circle cx="10" cy="10" r="8" fill="rgba(217,134,79,0.3)" stroke="rgba(217,134,79,0.8)" stroke-width="1"/></svg>'), auto;
+            nav { padding: 1rem 3%; }
+            .nav-links { gap: 1rem; }
+            .nav-links a { font-size: 0.65rem; }
+            main { padding: 6rem 3% 2rem; }
+            .blog-header, .blog-content { padding: 2rem; }
+            .page-header { margin-bottom: 4rem; }
         }
     </style>
 </head>
 <body>
-    <!-- LOADING SCREEN -->
-    <div class="loading">
-        <div class="loading-text">INITIALIZING...</div>
-    </div>
-
-    <!-- FLOATING PARTICLES -->
-    <div class="particles" id="particles"></div>
-
-    <!-- NAVIGATION -->
     <nav>
         <div class="nav-content">
             <div>
-                <div class="nav-logo">arceology</div>
+                <a href="index.html" class="nav-logo">arceology</a>
                 <div class="nav-terminal">terminal.speranza</div>
             </div>
             <div class="nav-links">
-                <a href="#about">who i am</a>
-                <a href="#blog">logs</a>
-                <a href="#videos">footage</a>
-                <a href="#store">gear</a>
+                <a href="blog.html">logs</a>
+                <a href="videos.html">gameplay</a>
+                <a href="store.html">gear</a>
             </div>
         </div>
     </nav>
 
-    <!-- HERO SECTION -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1 class="site-title">ARCEOLOGY</h1>
-            <p class="site-subtitle">ARC Raiders Content Creator // Speranza Underground</p>
-            <p class="hero-tagline">
-                "I wear my emotions on my sleeve.<br>
-                I can't help it."
-            </p>
-            <p class="hero-whisper">
-                ARC Raiders raider logs. Fragmented. Honest. Raw.
+    <main>
+        <div class="page-header">
+            <h1 class="page-title">ARC Raiders field logs</h1>
+            <p class="page-subtitle">Recorded entries // Speranza archives</p>
+            <p class="page-description">
+                Story-driven ARC Raiders raider logs from the front lines—each entry tied to in‑game locations, choices, and the emotional cost of surviving.
             </p>
         </div>
-    </section>
 
-    <main>
-        <div class="section-divider"></div>
-
-        <!-- ABOUT SECTION -->
-        <section id="about" class="about-section reveal">
-            <h2 class="section-title">transmission</h2>
-            <p class="section-subtitle">Who I Am // What This Is</p>
-
-            <div class="about-container">
-                <div class="about-fragment reveal">
-                    <p class="about-text">
-                        They call me Arceology.
-                    </p>
-                    <p class="about-text whisper">
-                        I don't remember when that started. Don't remember if I chose it or if it chose me. 
-                        Down here, names are like everything else—fragments of who we used to be.
-                    </p>
-                </div>
-
-                <div class="about-fragment reveal">
-                    <p class="about-text emphasis">
-                        I should be better at this. At the distance. At the cold professionalism every other raider seems to have.
-                    </p>
-                    <p class="about-text">
-                        But I'm not. I feel every loss. Every close call. Every friend who didn't make it back from topside. 
-                        It sits in my chest like rust on metal—corroding, permanent, impossible to scrub away.
-                    </p>
-                    <p class="about-text whisper">
-                        I wear my emotions on my sleeve. I can't help it.
-                    </p>
-                </div>
-
-                <p class="terminal-line">// LOG.PURPOSE</p>
-
-                <div class="about-fragment reveal">
-                    <p class="about-text">
-                        This terminal... it's all I have left to process it. The runs. The grief. The small victories that feel hollow. 
-                        The weight of surviving when others didn't.
-                    </p>
-                    <p class="about-text">
-                        Every time I go topside, I tell myself I'll be numb to it. Professional. Detached.
-                    </p>
-                    <p class="about-text emphasis">
-                        Every time, I come back feeling too much.
-                    </p>
-                </div>
-
-                <div class="about-fragment reveal">
-                    <p class="about-text whisper">
-                        So I write. I record. I document every run like it matters. 
-                        Because maybe it does. Maybe someone will read these logs and know we were here. 
-                        That we tried. That we cared, even when caring made it harder to survive.
-                    </p>
-                    <p class="about-text">
-                        I know I shouldn't let it hit me this hard. But I do.
-                    </p>
-                    <p class="about-text">
-                        And maybe that's what makes me human in a world full of machines.
-                    </p>
-                </div>
-
-                <p class="terminal-line">// END.TRANSMISSION</p>
+        <div class="blog-entry">
+            <div class="blog-header">
+                <div class="blog-date">Day 101 // 2180.03.14</div>
+                <h2 class="blog-title">The Weight of Silence</h2>
+                <div class="blog-location">📍 Buried City</div>
             </div>
-        </section>
-
-        <div class="section-divider"></div>
-
-        <!-- BLOG SECTION -->
-        <section id="blog" class="blog-section reveal">
-            <h2 class="section-title">ARC Raiders field logs</h2>
-            <p class="section-subtitle">Recorded Entries // Speranza Archives</p>
-
-            <div class="blog-entry reveal">
-                <div class="blog-header">
-                    <div class="blog-date">Day 101 // 2180.03.14</div>
-                    <h3 class="blog-title">The Weight of Silence</h3>
-                    <div class="blog-location">📍 Buried City</div>
-                </div>
-                <div class="blog-content">
-                    <p>
-                        Came back from Buried City today. Extracted with a full pack. Good loot. 
-                        The kind of run others would celebrate.
-                    </p>
-                    <p class="whisper">
-                        I can't stop thinking about the silence.
-                    </p>
-                    <p>
-                        There was a raider—didn't know their name—pinned under rubble near the old subway entrance. 
-                        Still alive. Calling for help. The ARC patrol was circling. Timer was running out.
-                    </p>
-                    <p>
-                        I had a choice. Stay and help, probably die. Or run.
-                    </p>
-                    <p class="whisper">
-                        I ran.
-                    </p>
-                    <p>
-                        Made extraction with 43 seconds left. Good haul. Traded it all to Tian Wen for parts. 
-                        Upgraded my gear. Professional. Efficient.
-                    </p>
-                    <p>
-                        But I can still hear them calling. In the dark. Under the stone.
-                    </p>
-                    <p class="whisper">
-                        I should feel nothing. Survival is survival. But I feel everything. 
-                        And I hate that I do.
-                    </p>
-                </div>
+            <div class="blog-content">
+                <p>Came back from Buried City today. Extracted with a full pack. Good loot. The kind of run others would celebrate.</p>
+                <p class="whisper">I can't stop thinking about the silence.</p>
+                <p>There was a raider—didn't know their name—pinned under rubble near the old subway entrance. Still alive. Calling for help. The ARC patrol was circling. Timer was running out.</p>
+                <p>I had a choice. Stay and help, probably die. Or run.</p>
+                <p class="whisper">I ran.</p>
+                <p>Made extraction with 43 seconds left. Good haul. Traded it all to Tian Wen for parts. Upgraded my gear. Professional. Efficient.</p>
+                <p>But I can still hear them calling. In the dark. Under the stone.</p>
+                <p class="whisper">I should feel nothing. Survival is survival. But I feel everything. And I hate that I do.</p>
             </div>
+        </div>
 
-            <div class="blog-entry reveal">
-                <div class="blog-header">
-                    <div class="blog-date">Day 78 // 2180.02.19</div>
-                    <h3 class="blog-title">Rust and Regret</h3>
-                    <div class="blog-location">📍 Dam Battlegrounds</div>
-                </div>
-                <div class="blog-content">
-                    <p>
-                        Another day. Another run. Another reminder that I'm still breathing when so many aren't.
-                    </p>
-                    <p>
-                        The Dam was quiet today. Too quiet. Found a cache near the old control room. 
-                        Red arrows. Ticking sound. You know the drill.
-                    </p>
-                    <p class="whisper">
-                        My hands were shaking when I opened it.
-                    </p>
-                    <p>
-                        Not from fear. From the thought that this—this rusted metal box rigged to explode—might be 
-                        the last thing someone left behind. A raider who set this up, hoping someone would find it. 
-                        Hoping their work meant something.
-                    </p>
-                    <p>
-                        I got the loot. Made extraction. Survival.
-                    </p>
-                    <p>
-                        But I keep thinking about all the caches I've opened. All the raiders who aren't here anymore. 
-                        All the things they touched, now just... items in my pack.
-                    </p>
-                    <p class="whisper">
-                        I'm supposed to be grateful I'm alive. And I am.
-                    </p>
-                    <p>
-                        But gratitude feels heavy when you carry the weight of everyone who didn't make it.
-                    </p>
-                </div>
+        <div class="blog-entry">
+            <div class="blog-header">
+                <div class="blog-date">Day 78 // 2180.02.19</div>
+                <h2 class="blog-title">Rust and Regret</h2>
+                <div class="blog-location">📍 Dam Battlegrounds</div>
             </div>
-        </section>
-
-        <div class="section-divider"></div>
-
-        <!-- VIDEO SECTION -->
-        <section id="videos" class="video-section reveal">
-            <h2 class="section-title">ARC Raiders gameplay</h2>
-            <p class="section-subtitle">Visual Archives // Helmet Cam Footage</p>
-
-            <div class="featured-video reveal">
-                <div class="featured-label">Latest Recording</div>
-                <div class="video-embed">
-                    <iframe 
-                        src="https://www.youtube-nocookie.com/embed/8Wjkr9tlmxc?rel=0" 
-                        title="Latest Run" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                        referrerpolicy="strict-origin-when-cross-origin"
-                        allowfullscreen>
-                    </iframe>
-                </div>
-                <div class="video-info">
-                    <h3 class="video-title">Recent Topside Run</h3>
-                    <p class="video-description">
-                        Helmet cam footage. Raw. Unedited. This is what it's like up there.
-                    </p>
-                </div>
+            <div class="blog-content">
+                <p>Another day. Another run. Another reminder that I'm still breathing when so many aren't.</p>
+                <p>The Dam was quiet today. Too quiet. Found a cache near the old control room. Red arrows. Ticking sound. You know the drill.</p>
+                <p class="whisper">My hands were shaking when I opened it.</p>
+                <p>Not from fear. From the thought that this—this rusted metal box rigged to explode—might be the last thing someone left behind. A raider who set this up, hoping someone would find it. Hoping their work meant something.</p>
+                <p>I got the loot. Made extraction. Survival.</p>
+                <p>But I keep thinking about all the caches I've opened. All the raiders who aren't here anymore. All the things they touched, now just... items in my pack.</p>
+                <p class="whisper">I'm supposed to be grateful I'm alive. And I am.</p>
+                <p>But gratitude feels heavy when you carry the weight of everyone who didn't make it.</p>
             </div>
-
-            <div class="video-grid">
-                <div class="video-card reveal">
-                    <div class="video-embed">
-                        <iframe 
-                            src="https://www.youtube-nocookie.com/embed/SZzDL9Mwx2o?rel=0" 
-                            title="Archive Entry" 
-                            frameborder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                            referrerpolicy="strict-origin-when-cross-origin"
-                            allowfullscreen>
-                        </iframe>
-                    </div>
-                    <h4 class="video-title">Survival Protocol</h4>
-                    <p class="video-description">
-                        Another run. Another extraction. Another day I made it back.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <div class="section-divider"></div>
-
-        <!-- GEAR SECTION -->
-        <section id="store" class="gear-section reveal">
-            <h2 class="section-title">ARC Raiders merch</h2>
-            <p class="section-subtitle">Raider Gear // Official Arceology Store</p>
-
-            <div class="gear-container">
-                <div class="product-showcase reveal">
-                    <div class="product-image-section">
-                        <div class="product-badge">AVAILABLE NOW</div>
-                        <div class="product-image-container">
-                            <svg width="100%" height="100%" viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg" class="product-image terminal-image">
-                              <defs>
-                                <filter id="glow">
-                                  <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
-                                  <feMerge>
-                                    <feMergeNode in="coloredBlur"/>
-                                    <feMergeNode in="SourceGraphic"/>
-                                  </feMerge>
-                                </filter>
-                              </defs>
-                              
-                              <!-- Dark background -->
-                              <rect width="800" height="800" fill="#0d0a08"/>
-                              
-                              <!-- Subtle gradient -->
-                              <radialGradient id="bg-gradient" cx="50%" cy="50%" r="50%">
-                                <stop offset="0%" style="stop-color:rgba(217,134,79,0.1);stop-opacity:1" />
-                                <stop offset="100%" style="stop-color:rgba(13,10,8,0);stop-opacity:1" />
-                              </radialGradient>
-                              <rect width="800" height="800" fill="url(#bg-gradient)"/>
-                              
-                              <!-- Central crate/box icon -->
-                              <g transform="translate(400, 350)">
-                                <!-- Main box -->
-                                <rect x="-120" y="-80" width="240" height="160" fill="none" stroke="#b65e48" stroke-width="3" opacity="0.8"/>
-                                <rect x="-115" y="-75" width="230" height="150" fill="rgba(26,20,16,0.6)"/>
-                                
-                                <!-- Corner brackets -->
-                                <line x1="-120" y1="-80" x2="-90" y2="-80" stroke="#d9864f" stroke-width="4"/>
-                                <line x1="-120" y1="-80" x2="-120" y2="-50" stroke="#d9864f" stroke-width="4"/>
-                                
-                                <line x1="120" y1="-80" x2="90" y2="-80" stroke="#d9864f" stroke-width="4"/>
-                                <line x1="120" y1="-80" x2="120" y2="-50" stroke="#d9864f" stroke-width="4"/>
-                                
-                                <line x1="-120" y1="80" x2="-90" y2="80" stroke="#d9864f" stroke-width="4"/>
-                                <line x1="-120" y1="80" x2="-120" y2="50" stroke="#d9864f" stroke-width="4"/>
-                                
-                                <line x1="120" y1="80" x2="90" y2="80" stroke="#d9864f" stroke-width="4"/>
-                                <line x1="120" y1="80" x2="120" y2="50" stroke="#d9864f" stroke-width="4"/>
-                                
-                                <!-- Straps/bands -->
-                                <rect x="-120" y="-10" width="240" height="20" fill="none" stroke="#b65e48" stroke-width="2"/>
-                                <rect x="-115" y="-8" width="230" height="16" fill="rgba(180,94,72,0.2)"/>
-                              </g>
-                              
-                              <!-- Text -->
-                              <text x="400" y="550" font-family="monospace" font-size="48" font-weight="bold" fill="#d9864f" text-anchor="middle" filter="url(#glow)">
-                                RAIDER
-                              </text>
-                              <text x="400" y="600" font-family="monospace" font-size="48" font-weight="bold" fill="#d9864f" text-anchor="middle" filter="url(#glow)">
-                                SUPPLY
-                              </text>
-                              
-                              <!-- Subtitle -->
-                              <text x="400" y="650" font-family="monospace" font-size="16" fill="#6b6355" text-anchor="middle" letter-spacing="4">
-                                EQUIPMENT CACHE
-                              </text>
-                            </svg>
-                        </div>
-                    </div>
-
-                    <div class="product-details">
-                        <div class="product-header">
-                            <h3 class="product-name">LOOT Sling Bag</h3>
-                            <div class="product-edition">Raider Edition // Grove Sling Pack</div>
-                            <div class="product-price">$34.99</div>
-                        </div>
-
-                        <div class="product-tagline">
-                            "Worn by survivors. Recognized by scavengers."
-                        </div>
-
-                        <div class="product-description">
-                            <p class="desc-main">
-                                Official ARC Raiders merchandise - A tactical sling bag with rugged printed LOOT patch designed for raiders and fans of the game.
-                            </p>
-                            <p class="desc-detail">
-                                The Grove Sling Pack features a high-detail printed LOOT graphic inspired by ARC Raiders gameplay. Realistic stitched texture and distressed fabric styling—designed to resemble gear from Speranza.
-                            </p>
-                            <p class="desc-detail whisper">
-                                Lightweight, durable, and built for everyday carry. Perfect ARC Raiders merch for raiders who need to move fast.
-                            </p>
-                            <p class="desc-emphasis">
-                                Subtle. Worn-in. Claimed.
-                            </p>
-                            <p class="desc-detail">
-                                Whether you're playing ARC Raiders or just navigating the real world... this marks you as a raider.
-                            </p>
-                        </div>
-
-                        <div class="product-specs">
-                            <div class="spec-title">SPECIFICATIONS</div>
-                            <ul class="spec-list">
-                                <li>Grove Sling Bag with printed LOOT patch design</li>
-                                <li>High-quality printed graphic (embroidered look)</li>
-                                <li>Distressed fabric-style texture</li>
-                                <li>Lightweight and durable construction</li>
-                                <li>Optimized for tactical carry</li>
-                                <li>Perfect for everyday raider gear</li>
-                            </ul>
-                        </div>
-
-                        <div class="product-actions">
-                            <a href="https://www.bonfire.com/loot-sling-pack-patch-raider-edition/" target="_blank" class="claim-button">
-                                CLAIM THIS GEAR
-                            </a>
-                            <a href="https://www.bonfire.com/store/arceologys-cache/" target="_blank" class="store-link">
-                                View Full Cache →
-                            </a>
-                        </div>
-
-                        <div class="product-note">
-                            <p class="terminal-line">// FIELD.NOTE</p>
-                            <p class="note-text">
-                                Every piece helps fund the next run topside. Gear with purpose. Gear that remembers.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <div class="section-divider"></div>
+        </div>
     </main>
 
-    <!-- FOOTER -->
-    <footer class="reveal">
+    <footer>
         <p class="footer-quote">
             "I should be numb to it by now.<br>
             But I feel everything.<br>
@@ -1700,87 +352,7 @@
         <div class="footer-links">
             <a href="https://youtube.com/@arceology" target="_blank">YOUTUBE</a>
         </div>
-        <p class="footer-text">
-            ARCEOLOGY.TERMINAL // SPERANZA ARCHIVES // 2180
-        </p>
+        <p class="footer-text">ARCEOLOGY.TERMINAL // SPERANZA ARCHIVES // 2180</p>
     </footer>
-
-    <!-- JAVASCRIPT FOR PREMIUM EFFECTS -->
-    <script>
-        // Smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Generate floating particles
-        const particlesContainer = document.getElementById('particles');
-        const particleCount = 30;
-
-        for (let i = 0; i < particleCount; i++) {
-            const particle = document.createElement('div');
-            particle.classList.add('particle');
-            particle.style.left = Math.random() * 100 + '%';
-            particle.style.animationDelay = Math.random() * 15 + 's';
-            particle.style.animationDuration = (10 + Math.random() * 10) + 's';
-            particlesContainer.appendChild(particle);
-        }
-
-        // Scroll reveal animation
-        const revealElements = document.querySelectorAll('.reveal');
-        
-        const revealOnScroll = () => {
-            const windowHeight = window.innerHeight;
-            revealElements.forEach(element => {
-                const elementTop = element.getBoundingClientRect().top;
-                const revealPoint = 150;
-                
-                if (elementTop < windowHeight - revealPoint) {
-                    element.classList.add('active');
-                }
-            });
-        };
-
-        window.addEventListener('scroll', revealOnScroll);
-        revealOnScroll(); // Initial check
-
-        // Random glitch effect on title
-        const siteTitle = document.querySelector('.site-title');
-        setInterval(() => {
-            if (Math.random() > 0.95) {
-                siteTitle.style.transform = `translate(${Math.random() * 4 - 2}px, ${Math.random() * 4 - 2}px)`;
-                setTimeout(() => {
-                    siteTitle.style.transform = 'translate(0, 0)';
-                }, 50);
-            }
-        }, 3000);
-
-        // Terminal image random glitch
-        const terminalImage = document.querySelector('.terminal-image');
-        if (terminalImage) {
-            setInterval(() => {
-                if (Math.random() > 0.92) {
-                    terminalImage.style.filter = `
-                        drop-shadow(2px 0 rgba(217, 134, 79, 0.8)) 
-                        drop-shadow(-2px 0 rgba(180, 94, 72, 0.8))
-                        drop-shadow(0 10px 40px rgba(0, 0, 0, 0.8))
-                    `;
-                    terminalImage.style.transform = `translate(${Math.random() * 4 - 2}px, ${Math.random() * 4 - 2}px)`;
-                    setTimeout(() => {
-                        terminalImage.style.filter = 'drop-shadow(0 0 30px rgba(217, 134, 79, 0.4)) drop-shadow(0 10px 40px rgba(0, 0, 0, 0.8))';
-                        terminalImage.style.transform = 'translate(0, 0)';
-                    }, 100);
-                }
-            }, 4000);
-        }
-    </script>
 </body>
 </html>
