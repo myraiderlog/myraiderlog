@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -477,113 +478,262 @@
             text-align: left;
         }
 
-        /* STORE SECTION */
-        .cache-section {
+        /* STORE SECTION - PRODUCT SHOWCASE */
+        .gear-section {
             padding: 8rem 0;
-            text-align: center;
+        }
+
+        .gear-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .product-showcase {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            background: linear-gradient(135deg, rgba(26, 20, 16, 0.6), rgba(13, 10, 8, 0.8));
+            border: 2px solid rgba(180, 94, 72, 0.4);
+            border-left: 4px solid var(--ember);
+            padding: 3rem;
+            box-shadow: 
+                0 20px 60px rgba(0, 0, 0, 0.6),
+                inset 0 1px 0 rgba(212, 197, 169, 0.05);
+        }
+
+        .product-image-section {
             position: relative;
         }
 
-        .cache-section::before {
+        .product-badge {
+            position: absolute;
+            top: -1rem;
+            left: -1rem;
+            background: var(--ember);
+            color: var(--night);
+            font-family: 'Space Mono', monospace;
+            font-size: 0.65rem;
+            letter-spacing: 2px;
+            padding: 0.5rem 1rem;
+            z-index: 10;
+            font-weight: 700;
+        }
+
+        .product-image-container {
+            width: 100%;
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, rgba(13, 10, 8, 0.95), rgba(26, 20, 16, 0.9));
+            border: 1px solid rgba(180, 94, 72, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            padding: 2rem;
+        }
+
+        .product-image-container::before {
             content: '';
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(217, 134, 79, 0.1) 0%, transparent 70%);
+            width: 100%;
+            height: 100%;
+            background: 
+                repeating-linear-gradient(
+                    45deg,
+                    transparent,
+                    transparent 10px,
+                    rgba(180, 94, 72, 0.03) 10px,
+                    rgba(180, 94, 72, 0.03) 20px
+                );
             pointer-events: none;
         }
 
-        .cache-content {
+        .product-image {
+            width: 100%;
+            height: auto;
             position: relative;
             z-index: 10;
+            filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.6));
         }
 
-        .cache-icon {
-            width: 140px;
-            height: 160px;
-            margin: 0 auto 3rem;
-            position: relative;
-            filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.5)) drop-shadow(0 0 40px rgba(217, 134, 79, 0.2));
-            animation: cacheFloat 4s ease-in-out infinite;
+        .product-details {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
         }
 
-        .cache-icon svg {
-            width: 100%;
-            height: 100%;
+        .product-header {
+            border-bottom: 1px solid rgba(180, 94, 72, 0.2);
+            padding-bottom: 1.5rem;
         }
 
-        @keyframes cacheFloat {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
-        }
-
-        .cache-title {
+        .product-name {
             font-family: 'Cinzel', serif;
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 700;
-            color: var(--ember);
-            letter-spacing: 6px;
-            margin-bottom: 1.5rem;
-            text-transform: lowercase;
-        }
-
-        .cache-subtitle {
-            font-family: 'Space Mono', monospace;
-            font-size: 0.8rem;
-            color: var(--steel);
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            margin-bottom: 2rem;
-        }
-
-        .cache-description {
-            font-size: 1.2rem;
-            line-height: 2;
+            font-size: 2.5rem;
             color: var(--sand);
-            max-width: 700px;
-            margin: 0 auto 4rem;
-            font-style: italic;
+            letter-spacing: 3px;
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
         }
 
-        .cache-button {
-            display: inline-block;
-            padding: 1.5rem 4rem;
-            background: transparent;
-            border: 2px solid var(--ember);
+        .product-edition {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.75rem;
             color: var(--ember);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .product-price {
             font-family: 'Cinzel', serif;
-            font-size: 1rem;
+            font-size: 2rem;
+            color: var(--ember);
+            font-weight: 700;
+        }
+
+        .product-tagline {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            font-style: italic;
+            color: var(--steel);
+            line-height: 1.8;
+            padding: 1.5rem;
+            background: rgba(180, 94, 72, 0.1);
+            border-left: 2px solid var(--rust);
+        }
+
+        .product-description {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .desc-main {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            color: var(--sand);
+            line-height: 1.8;
             font-weight: 600;
+        }
+
+        .desc-detail {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            color: var(--sand);
+            line-height: 1.8;
+        }
+
+        .desc-detail.whisper {
+            font-style: italic;
+            color: var(--steel);
+        }
+
+        .desc-emphasis {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            color: var(--ember);
+            font-weight: 600;
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        .product-specs {
+            background: rgba(13, 10, 8, 0.5);
+            border: 1px solid rgba(180, 94, 72, 0.2);
+            padding: 1.5rem;
+        }
+
+        .spec-title {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.7rem;
+            color: var(--ember);
+            letter-spacing: 3px;
+            margin-bottom: 1rem;
+        }
+
+        .spec-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .spec-list li {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1rem;
+            color: var(--sand);
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .spec-list li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--rust);
+        }
+
+        .product-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .claim-button {
+            display: block;
+            padding: 1.5rem;
+            background: var(--ember);
+            color: var(--night);
+            font-family: 'Cinzel', serif;
+            font-size: 1.1rem;
+            font-weight: 700;
             letter-spacing: 3px;
             text-transform: uppercase;
             text-decoration: none;
-            position: relative;
-            overflow: hidden;
+            text-align: center;
             transition: all 0.4s;
+            box-shadow: 0 4px 20px rgba(217, 134, 79, 0.4);
         }
 
-        .cache-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: var(--ember);
-            transition: left 0.4s;
-            z-index: -1;
+        .claim-button:hover {
+            background: var(--rust);
+            box-shadow: 0 6px 30px rgba(217, 134, 79, 0.6);
+            transform: translateY(-2px);
         }
 
-        .cache-button:hover {
-            color: var(--night);
-            box-shadow: 0 0 40px rgba(217, 134, 79, 0.5);
+        .store-link {
+            display: block;
+            padding: 1rem;
+            background: transparent;
+            border: 1px solid var(--steel);
+            color: var(--steel);
+            font-family: 'Space Mono', monospace;
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.3s;
         }
 
-        .cache-button:hover::before {
-            left: 0;
+        .store-link:hover {
+            border-color: var(--ember);
+            color: var(--ember);
+        }
+
+        .product-note {
+            padding: 1.5rem;
+            background: rgba(180, 94, 72, 0.1);
+            border-left: 2px solid var(--rust);
+        }
+
+        .note-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1rem;
+            color: var(--steel);
+            font-style: italic;
+            line-height: 1.8;
         }
 
         /* FOOTER */
@@ -669,6 +819,20 @@
             .about-fragment {
                 padding: 2rem;
             }
+
+            .product-showcase {
+                grid-template-columns: 1fr;
+                padding: 2rem;
+                gap: 2rem;
+            }
+
+            .product-name {
+                font-size: 2rem;
+            }
+
+            .loot-logo {
+                font-size: 3rem;
+            }
         }
     </style>
 </head>
@@ -684,7 +848,7 @@
                 <a href="#about">who i am</a>
                 <a href="#blog">logs</a>
                 <a href="#videos">footage</a>
-                <a href="#store">cache</a>
+                <a href="#store">gear</a>
             </div>
         </div>
     </nav>
@@ -950,42 +1114,79 @@
 
         <div class="section-divider"></div>
 
-        <!-- STORE SECTION -->
-        <section id="store" class="cache-section">
-            <div class="cache-content">
-                <div class="cache-icon">
-                    <svg viewBox="0 0 140 120" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="20" y="30" width="100" height="70" fill="#6b6355" stroke="#8a5842" stroke-width="2"/>
-                        <rect x="22" y="32" width="96" height="66" fill="#53372c"/>
-                        <rect x="15" y="20" width="110" height="15" fill="#7a6b5a" stroke="#8a5842" stroke-width="2"/>
-                        <rect x="17" y="22" width="106" height="11" fill="#6b6355"/>
-                        <rect x="20" y="23" width="100" height="3" fill="#8a7a68" opacity="0.6"/>
-                        <rect x="15" y="28" width="12" height="3" fill="#4a4238"/>
-                        <rect x="113" y="28" width="12" height="3" fill="#4a4238"/>
-                        <rect x="15" y="97" width="12" height="3" fill="#4a4238"/>
-                        <rect x="113" y="97" width="12" height="3" fill="#4a4238"/>
-                        <rect x="30" y="40" width="8" height="50" fill="#b65e48" opacity="0.3"/>
-                        <rect x="65" y="35" width="12" height="60" fill="#b65e48" opacity="0.25"/>
-                        <rect x="100" y="45" width="10" height="45" fill="#b65e48" opacity="0.3"/>
-                        <circle cx="25" cy="40" r="2.5" fill="#4a4238" opacity="0.8"/>
-                        <circle cx="25" cy="90" r="2.5" fill="#4a4238" opacity="0.8"/>
-                        <circle cx="115" cy="40" r="2.5" fill="#4a4238" opacity="0.8"/>
-                        <circle cx="115" cy="90" r="2.5" fill="#4a4238" opacity="0.8"/>
-                        <rect x="25" y="60" width="90" height="6" fill="#b65e48"/>
-                        <rect x="25" y="61" width="90" height="2" fill="#d9864f" opacity="0.7"/>
-                        <rect x="62" y="10" width="16" height="4" rx="2" fill="#6b6355" stroke="#8a5842" stroke-width="1.5"/>
-                        <path d="M 65 14 Q 70 8 75 14" fill="none" stroke="#6b6355" stroke-width="3" stroke-linecap="round"/>
-                    </svg>
+        <!-- GEAR SECTION -->
+        <section id="store" class="gear-section">
+            <h2 class="section-title">field equipment</h2>
+            <p class="section-subtitle">Raider Gear // Personal Cache</p>
+
+            <div class="gear-container">
+                <!-- Product Showcase -->
+                <div class="product-showcase">
+                    <div class="product-image-section">
+                        <div class="product-badge">AVAILABLE NOW</div>
+                        <div class="product-image-container">
+                            <img src="loot-sling-bag.png" alt="LOOT Sling Pack Patch - Raider Edition" class="product-image">
+                        </div>
+                    </div>
+
+                    <div class="product-details">
+                        <div class="product-header">
+                            <h3 class="product-name">LOOT Sling Bag</h3>
+                            <div class="product-edition">Raider Edition // Grove Sling Pack</div>
+                            <div class="product-price">$34.99</div>
+                        </div>
+
+                        <div class="product-tagline">
+                            "Worn by survivors. Recognized by scavengers."
+                        </div>
+
+                        <div class="product-description">
+                            <p class="desc-main">
+                                A tactical sling bag with rugged printed LOOT patch—designed to look like recovered raider gear.
+                            </p>
+                            <p class="desc-detail">
+                                The Grove Sling Pack features a high-detail printed LOOT graphic with realistic stitched texture and distressed fabric styling—designed to resemble an old-world embroidered patch pulled from a forgotten cache.
+                            </p>
+                            <p class="desc-detail whisper">
+                                Lightweight, durable, and built for everyday carry. The raw, post-collapse aesthetic without the bulk. Perfect for raiders who need to move fast.
+                            </p>
+                            <p class="desc-emphasis">
+                                Subtle. Worn-in. Claimed.
+                            </p>
+                            <p class="desc-detail">
+                                Whether you're heading topside or just navigating the underground... this marks you as a raider.
+                            </p>
+                        </div>
+
+                        <div class="product-specs">
+                            <div class="spec-title">SPECIFICATIONS</div>
+                            <ul class="spec-list">
+                                <li>Grove Sling Bag with printed LOOT patch design</li>
+                                <li>High-quality printed graphic (embroidered look)</li>
+                                <li>Distressed fabric-style texture</li>
+                                <li>Lightweight and durable construction</li>
+                                <li>Optimized for tactical carry</li>
+                                <li>Perfect for everyday raider gear</li>
+                            </ul>
+                        </div>
+
+                        <div class="product-actions">
+                            <a href="https://www.bonfire.com/loot-sling-pack-patch-raider-edition/" target="_blank" class="claim-button">
+                                CLAIM THIS GEAR
+                            </a>
+                            <a href="https://www.bonfire.com/store/arceologys-cache/" target="_blank" class="store-link">
+                                View Full Cache →
+                            </a>
+                        </div>
+
+                        <div class="product-note">
+                            <p class="terminal-line">// FIELD.NOTE</p>
+                            <p class="note-text">
+                                Every piece helps fund the next run topside. Gear with purpose. Gear that remembers.
+                            </p>
+                        </div>
+                    </div>
                 </div>
-                <h2 class="cache-title">arceology's cache</h2>
-                <p class="cache-subtitle">Personal Collection</p>
-                <p class="cache-description">
-                    Raider-inspired designs. Gear that carries the weight. 
-                    Every piece helps fund the next run topside.
-                </p>
-                <a href="https://www.bonfire.com/store/arceologys-cache/" target="_blank" class="cache-button">
-                    Access Cache
-                </a>
             </div>
         </section>
 
