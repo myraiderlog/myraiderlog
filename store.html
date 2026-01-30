@@ -270,3 +270,218 @@
             text-transform: uppercase;
             text-decoration: none;
             text-align: center;
+            transition: all 0.4s ease;
+            margin-top: 2rem;
+        }
+
+        .claim-button:hover {
+            background: var(--rust);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 30px rgba(217, 134, 79, 0.6);
+        }
+
+        .store-link {
+            display: block;
+            padding: 1rem;
+            background: transparent;
+            border: 1px solid var(--steel);
+            color: var(--steel);
+            font-family: 'Space Mono', monospace;
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .store-link:hover {
+            border-color: var(--ember);
+            color: var(--ember);
+        }
+
+        .product-note {
+            padding: 1.5rem;
+            background: rgba(180, 94, 72, 0.1);
+            border-left: 2px solid var(--rust);
+            margin-top: 2rem;
+        }
+
+        .note-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1rem;
+            color: var(--steel);
+            font-style: italic;
+        }
+
+        footer {
+            padding: 6rem 5% 4rem;
+            text-align: center;
+            border-top: 1px solid rgba(180, 94, 72, 0.2);
+            background: linear-gradient(180deg, transparent 0%, rgba(13, 10, 8, 0.8) 100%);
+        }
+
+        .footer-quote {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+            font-style: italic;
+            color: var(--sand);
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            line-height: 2;
+        }
+
+        .footer-links a {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--steel);
+            text-decoration: none;
+            letter-spacing: 2px;
+            margin: 0 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--ember);
+        }
+
+        .footer-text {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.7rem;
+            color: var(--steel);
+            letter-spacing: 2px;
+            opacity: 0.6;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            nav { padding: 1rem 3%; }
+            .nav-links { gap: 1rem; }
+            .nav-links a { font-size: 0.65rem; }
+            main { padding: 6rem 3% 2rem; }
+            .product-showcase {
+                grid-template-columns: 1fr;
+                padding: 2rem;
+                gap: 2rem;
+            }
+            .product-name { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-content">
+            <div>
+                <a href="index.html" class="nav-logo">arceology</a>
+                <div class="nav-terminal">terminal.speranza</div>
+            </div>
+            <div class="nav-links">
+                <a href="blog.html">logs</a>
+                <a href="videos.html">gameplay</a>
+                <a href="store.html">gear</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div class="page-header">
+            <h1 class="page-title">ARC Raiders–inspired gear</h1>
+            <p class="page-subtitle">Raider gear // Arceology field cache</p>
+        </div>
+
+        <div class="product-showcase">
+            <div class="product-image-section">
+                <div class="product-badge">AVAILABLE NOW</div>
+                <div class="product-image-container">
+                    <svg viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="800" height="800" fill="#0d0a08"/>
+                        <radialGradient id="bg-gradient" cx="50%" cy="50%" r="50%">
+                            <stop offset="0%" style="stop-color:rgba(217,134,79,0.1);stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:rgba(13,10,8,0);stop-opacity:1" />
+                        </radialGradient>
+                        <rect width="800" height="800" fill="url(#bg-gradient)"/>
+                        <g transform="translate(400, 350)">
+                            <rect x="-120" y="-80" width="240" height="160" fill="none" stroke="#b65e48" stroke-width="3" opacity="0.8"/>
+                            <rect x="-115" y="-75" width="230" height="150" fill="rgba(26,20,16,0.6)"/>
+                            <line x1="-120" y1="-80" x2="-90" y2="-80" stroke="#d9864f" stroke-width="4"/>
+                            <line x1="-120" y1="-80" x2="-120" y2="-50" stroke="#d9864f" stroke-width="4"/>
+                            <line x1="120" y1="-80" x2="90" y2="-80" stroke="#d9864f" stroke-width="4"/>
+                            <line x1="120" y1="-80" x2="120" y2="-50" stroke="#d9864f" stroke-width="4"/>
+                            <line x1="-120" y1="80" x2="-90" y2="80" stroke="#d9864f" stroke-width="4"/>
+                            <line x1="-120" y1="80" x2="-120" y2="50" stroke="#d9864f" stroke-width="4"/>
+                            <line x1="120" y1="80" x2="90" y2="80" stroke="#d9864f" stroke-width="4"/>
+                            <line x1="120" y1="80" x2="120" y2="50" stroke="#d9864f" stroke-width="4"/>
+                            <rect x="-120" y="-10" width="240" height="20" fill="none" stroke="#b65e48" stroke-width="2"/>
+                            <rect x="-115" y="-8" width="230" height="16" fill="rgba(180,94,72,0.2)"/>
+                        </g>
+                        <text x="400" y="550" font-family="monospace" font-size="48" font-weight="bold" fill="#d9864f" text-anchor="middle">
+                            RAIDER
+                        </text>
+                        <text x="400" y="600" font-family="monospace" font-size="48" font-weight="bold" fill="#d9864f" text-anchor="middle">
+                            SUPPLY
+                        </text>
+                        <text x="400" y="650" font-family="monospace" font-size="16" fill="#6b6355" text-anchor="middle" letter-spacing="4">
+                            EQUIPMENT CACHE
+                        </text>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="product-details">
+                <div>
+                    <h2 class="product-name">LOOT Sling Bag</h2>
+                    <p class="product-edition">Raider Edition // Grove Sling Pack</p>
+                    <p class="product-price">$34.99</p>
+                </div>
+
+                <p class="product-tagline">
+                    "Worn by survivors. Recognized by scavengers."
+                </p>
+
+                <div class="product-description">
+                    <p>
+                        ARC Raiders–inspired raider gear designed by content creator Arceology. A tactical sling bag with a rugged LOOT patch, created for ARC Raiders players and fans of post‑apocalyptic sci‑fi worlds.
+                    </p>
+                    <p class="whisper">
+                        Lightweight, durable, and built for everyday carry, this ARC Raiders–inspired sling bag is made for raiders who need to move fast—whether you are queuing into ARC Raiders or navigating the real world.
+                    </p>
+                    <p style="font-size: 0.9rem; opacity: 0.8; margin-top: 1.5rem;">
+                        This is fan‑made, ARC Raiders–inspired gear. It is not official ARC Raiders merchandise or affiliated with the ARC Raiders team.
+                    </p>
+                </div>
+
+                <div>
+                    <a href="https://www.bonfire.com/loot-sling-pack-patch-raider-edition/" target="_blank" class="claim-button">
+                        CLAIM THIS GEAR
+                    </a>
+                    <a href="https://www.bonfire.com/store/arceologys-cache/" target="_blank" class="store-link">
+                        View Full Cache →
+                    </a>
+                </div>
+
+                <div class="product-note">
+                    <p style="font-family: 'Space Mono', monospace; font-size: 0.75rem; color: var(--ember); letter-spacing: 2px; margin-bottom: 0.5rem;">
+                        // FIELD.NOTE
+                    </p>
+                    <p class="note-text">
+                        Every piece helps fund the next run topside. Gear with purpose. Gear that remembers—and keeps the ARC Raiders raider logs coming.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p class="footer-quote">
+            "I should be numb to it by now.<br>
+            But I feel everything.<br>
+            Maybe that's what makes me human."
+        </p>
+        <div class="footer-links">
+            <a href="https://youtube.com/@arceology" target="_blank">YOUTUBE</a>
+        </div>
+        <p class="footer-text">ARCEOLOGY.TERMINAL // SPERANZA ARCHIVES // 2180</p>
+    </footer>
+</body>
+</html>
