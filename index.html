@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MY RAIDER LOG // Through the Dust</title>
+    <title>ARCEOLOGY // Raider Log Terminal</title>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -74,98 +74,17 @@
             z-index: 9998;
         }
 
-        /* STICKY LIVE EVENTS BAR */
-        .live-events-sticky {
+        /* NAVIGATION */
+        nav {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            background: linear-gradient(135deg, rgba(26, 20, 16, 0.98), rgba(13, 10, 8, 0.98));
-            border-bottom: 2px solid rgba(180, 94, 72, 0.5);
-            padding: 1rem 3%;
-            z-index: 10001;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.8);
-        }
-
-        .events-ticker {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-            overflow-x: auto;
-            scrollbar-width: none;
-        }
-
-        .events-ticker::-webkit-scrollbar {
-            display: none;
-        }
-
-        .events-label {
-            font-family: 'Space Mono', monospace;
-            font-size: 0.75rem;
-            color: var(--ember);
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            white-space: nowrap;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .live-indicator {
-            width: 8px;
-            height: 8px;
-            background: #ff4444;
-            border-radius: 50%;
-            animation: pulse 2s ease-in-out infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.6; transform: scale(1.2); }
-        }
-
-        .event-ticker-item {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 0.95rem;
-            color: var(--sand);
-            white-space: nowrap;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .event-ticker-name {
-            font-weight: 600;
-        }
-
-        .event-ticker-map {
-            color: var(--steel);
-            font-size: 0.85rem;
-        }
-
-        .event-ticker-timer {
-            font-family: 'Space Mono', monospace;
-            font-size: 0.7rem;
-            color: var(--ember);
-            padding: 0.3rem 0.8rem;
-            background: rgba(217, 134, 79, 0.15);
-            border: 1px solid rgba(217, 134, 79, 0.3);
-            border-radius: 2px;
-        }
-
-        /* NAVIGATION */
-        nav {
-            position: fixed;
-            top: 60px;
-            left: 0;
-            width: 100%;
             padding: 1.5rem 5%;
-            background: linear-gradient(180deg, rgba(13, 10, 8, 0.9) 0%, transparent 100%);
+            background: linear-gradient(180deg, rgba(13, 10, 8, 0.98) 0%, rgba(13, 10, 8, 0.9) 100%);
             backdrop-filter: blur(10px);
             z-index: 10000;
+            border-bottom: 1px solid rgba(180, 94, 72, 0.3);
         }
 
         .nav-content {
@@ -183,6 +102,13 @@
             color: var(--sand);
             letter-spacing: 3px;
             text-transform: lowercase;
+        }
+
+        .nav-terminal {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.65rem;
+            color: var(--steel);
+            letter-spacing: 2px;
         }
 
         .nav-links {
@@ -230,7 +156,7 @@
             justify-content: center;
             align-items: center;
             padding: 0 5%;
-            margin-top: 60px;
+            margin-top: 0;
         }
 
         .hero-content {
@@ -242,15 +168,15 @@
 
         .site-title {
             font-family: 'Cinzel', serif;
-            font-size: clamp(2.5rem, 8vw, 6rem);
+            font-size: clamp(3rem, 8vw, 7rem);
             font-weight: 700;
             color: var(--sand);
-            letter-spacing: 8px;
+            letter-spacing: 12px;
             margin-bottom: 1rem;
-            text-transform: lowercase;
+            text-transform: uppercase;
             text-shadow: 
                 2px 2px 4px rgba(0, 0, 0, 0.8),
-                0 0 30px rgba(180, 94, 72, 0.3);
+                0 0 40px rgba(180, 94, 72, 0.4);
             line-height: 1.2;
         }
 
@@ -269,7 +195,17 @@
             font-style: italic;
             color: var(--sand);
             line-height: 1.8;
-            margin-bottom: 3rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+
+        .hero-whisper {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            font-style: italic;
+            color: var(--steel);
+            line-height: 1.8;
+            opacity: 0.7;
         }
 
         /* MAIN CONTAINER */
@@ -283,7 +219,7 @@
 
         /* SECTION STYLES */
         .section {
-            padding: 6rem 0;
+            padding: 8rem 0;
         }
 
         .section-title {
@@ -293,9 +229,19 @@
             color: var(--sand);
             text-align: center;
             letter-spacing: 6px;
-            margin-bottom: 4rem;
+            margin-bottom: 1rem;
             text-transform: lowercase;
             position: relative;
+        }
+
+        .section-subtitle {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.7rem;
+            color: var(--steel);
+            text-align: center;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 4rem;
         }
 
         .section-title::after {
@@ -307,7 +253,130 @@
             margin: 2rem auto 0;
         }
 
-        /* FEATURED VIDEO */
+        /* ABOUT SECTION - EMOTIONAL & FRAGMENTED */
+        .about-section {
+            padding: 8rem 0;
+        }
+
+        .about-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .about-fragment {
+            background: linear-gradient(135deg, rgba(26, 20, 16, 0.4), rgba(13, 10, 8, 0.6));
+            border-left: 3px solid var(--rust);
+            padding: 3rem;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .about-fragment::before {
+            content: '//';
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.7rem;
+            color: var(--rust);
+            opacity: 0.5;
+        }
+
+        .about-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            line-height: 2.2;
+            color: var(--sand);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text.whisper {
+            font-style: italic;
+            color: var(--steel);
+            font-size: 1.1rem;
+        }
+
+        .about-text.emphasis {
+            color: var(--ember);
+            font-weight: 600;
+        }
+
+        .terminal-line {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--ember);
+            letter-spacing: 2px;
+            margin: 2rem 0;
+            opacity: 0.7;
+        }
+
+        /* BLOG SECTION */
+        .blog-section {
+            padding: 8rem 0;
+        }
+
+        .blog-entry {
+            background: linear-gradient(135deg, rgba(26, 20, 16, 0.6), rgba(13, 10, 8, 0.8));
+            border: 1px solid rgba(180, 94, 72, 0.2);
+            border-left: 3px solid var(--rust);
+            margin-bottom: 6rem;
+            padding: 0;
+            position: relative;
+            box-shadow: 
+                0 20px 60px rgba(0, 0, 0, 0.5),
+                inset 0 1px 0 rgba(212, 197, 169, 0.05);
+        }
+
+        .blog-header {
+            padding: 2rem 3rem;
+            border-bottom: 1px solid rgba(180, 94, 72, 0.2);
+        }
+
+        .blog-date {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.7rem;
+            color: var(--ember);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .blog-title {
+            font-family: 'Cinzel', serif;
+            font-size: 2rem;
+            color: var(--sand);
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+        }
+
+        .blog-location {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.7rem;
+            color: var(--steel);
+            letter-spacing: 2px;
+        }
+
+        .blog-content {
+            padding: 3rem 3rem 4rem;
+            font-size: 1.2rem;
+            line-height: 2.2;
+        }
+
+        .blog-content p {
+            margin-bottom: 2rem;
+            color: var(--sand);
+        }
+
+        .blog-content .whisper {
+            font-style: italic;
+            color: var(--steel);
+        }
+
+        /* VIDEO SECTION */
+        .video-section {
+            padding: 8rem 0;
+        }
+
         .featured-video {
             background: linear-gradient(135deg, rgba(26, 20, 16, 0.6), rgba(13, 10, 8, 0.8));
             border: 2px solid rgba(180, 94, 72, 0.4);
@@ -332,8 +401,8 @@
         }
 
         .featured-label::before {
-            content: '⭐';
-            font-size: 1rem;
+            content: '▶';
+            font-size: 0.8rem;
         }
 
         .video-embed {
@@ -373,7 +442,6 @@
             line-height: 1.8;
         }
 
-        /* VIDEO GRID */
         .video-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -409,7 +477,7 @@
             text-align: left;
         }
 
-        /* RAIDER CACHE STORE */
+        /* STORE SECTION */
         .cache-section {
             padding: 8rem 0;
             text-align: center;
@@ -477,6 +545,7 @@
             color: var(--sand);
             max-width: 700px;
             margin: 0 auto 4rem;
+            font-style: italic;
         }
 
         .cache-button {
@@ -566,30 +635,13 @@
             width: 60px;
             height: 2px;
             background: linear-gradient(90deg, transparent, var(--rust), transparent);
-            margin: 6rem auto;
+            margin: 0 auto;
             opacity: 0.5;
         }
 
         /* RESPONSIVE */
         @media (max-width: 768px) {
-            .live-events-sticky {
-                padding: 0.8rem 3%;
-            }
-
-            .events-ticker {
-                gap: 1rem;
-            }
-
-            .events-label {
-                font-size: 0.65rem;
-            }
-
-            .event-ticker-item {
-                font-size: 0.85rem;
-            }
-
             nav {
-                top: 50px;
                 padding: 1rem 3%;
             }
 
@@ -608,34 +660,31 @@
             .featured-video {
                 padding: 2rem;
             }
+
+            .blog-header,
+            .blog-content {
+                padding: 2rem;
+            }
+
+            .about-fragment {
+                padding: 2rem;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- STICKY LIVE EVENTS BAR -->
-    <div class="live-events-sticky">
-        <div class="events-ticker">
-            <div class="events-label">
-                <span class="live-indicator"></span>
-                LIVE NOW
-            </div>
-            <div id="events-ticker-container">
-                <div class="event-ticker-item">
-                    <span class="event-ticker-name">Night Raid</span>
-                    <span class="event-ticker-map">📍 Dam Battlegrounds</span>
-                    <span class="event-ticker-timer">2h 45m</span>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- NAVIGATION -->
     <nav>
         <div class="nav-content">
-            <div class="nav-logo">my raider log</div>
+            <div>
+                <div class="nav-logo">arceology</div>
+                <div class="nav-terminal">terminal.speranza</div>
+            </div>
             <div class="nav-links">
-                <a href="#videos">videos</a>
-                <a href="#store">store</a>
+                <a href="#about">who i am</a>
+                <a href="#blog">logs</a>
+                <a href="#videos">footage</a>
+                <a href="#store">cache</a>
             </div>
         </div>
     </nav>
@@ -643,11 +692,14 @@
     <!-- HERO SECTION -->
     <section class="hero">
         <div class="hero-content">
-            <h1 class="site-title">my raider log</h1>
-            <p class="site-subtitle">Speranza // Year 2180</p>
+            <h1 class="site-title">ARCEOLOGY</h1>
+            <p class="site-subtitle">Raider // Speranza Underground</p>
             <p class="hero-tagline">
-                "Through the dust, through the loss,<br>
-                I document what remains."
+                "I wear my emotions on my sleeve.<br>
+                I can't help it."
+            </p>
+            <p class="hero-whisper">
+                These are my logs. Fragmented. Honest. Raw.
             </p>
         </div>
     </section>
@@ -655,26 +707,199 @@
     <main>
         <div class="section-divider"></div>
 
-        <!-- FEATURED VIDEO SECTION -->
-        <section id="videos" class="section">
-            <h2 class="section-title">raider footage</h2>
+        <!-- ABOUT SECTION -->
+        <section id="about" class="about-section">
+            <h2 class="section-title">transmission</h2>
+            <p class="section-subtitle">Who I Am // What This Is</p>
+
+            <div class="about-container">
+                <div class="about-fragment">
+                    <p class="about-text">
+                        They call me Arceology.
+                    </p>
+                    <p class="about-text whisper">
+                        I don't remember when that started. Don't remember if I chose it or if it chose me. 
+                        Down here, names are like everything else—fragments of who we used to be.
+                    </p>
+                </div>
+
+                <div class="about-fragment">
+                    <p class="about-text emphasis">
+                        I should be better at this. At the distance. At the cold professionalism every other raider seems to have.
+                    </p>
+                    <p class="about-text">
+                        But I'm not. I feel every loss. Every close call. Every friend who didn't make it back from topside. 
+                        It sits in my chest like rust on metal—corroding, permanent, impossible to scrub away.
+                    </p>
+                    <p class="about-text whisper">
+                        I wear my emotions on my sleeve. I can't help it.
+                    </p>
+                </div>
+
+                <p class="terminal-line">// LOG.PURPOSE</p>
+
+                <div class="about-fragment">
+                    <p class="about-text">
+                        This terminal... it's all I have left to process it. The runs. The grief. The small victories that feel hollow. 
+                        The weight of surviving when others didn't.
+                    </p>
+                    <p class="about-text">
+                        Every time I go topside, I tell myself I'll be numb to it. Professional. Detached.
+                    </p>
+                    <p class="about-text emphasis">
+                        Every time, I come back feeling too much.
+                    </p>
+                </div>
+
+                <div class="about-fragment">
+                    <p class="about-text whisper">
+                        So I write. I record. I document every run like it matters. 
+                        Because maybe it does. Maybe someone will read these logs and know we were here. 
+                        That we tried. That we cared, even when caring made it harder to survive.
+                    </p>
+                    <p class="about-text">
+                        I know I shouldn't let it hit me this hard. But I do.
+                    </p>
+                    <p class="about-text">
+                        And maybe that's what makes me human in a world full of machines.
+                    </p>
+                </div>
+
+                <p class="terminal-line">// END.TRANSMISSION</p>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- BLOG SECTION -->
+        <section id="blog" class="blog-section">
+            <h2 class="section-title">field logs</h2>
+            <p class="section-subtitle">Recorded Entries // Speranza Archives</p>
+
+            <!-- BLOG ENTRY 1 -->
+            <div class="blog-entry">
+                <div class="blog-header">
+                    <div class="blog-date">Day 101 // 2180.03.14</div>
+                    <h3 class="blog-title">The Weight of Silence</h3>
+                    <div class="blog-location">📍 Buried City</div>
+                </div>
+                <div class="blog-content">
+                    <p>
+                        Came back from Buried City today. Extracted with a full pack. Good loot. 
+                        The kind of run others would celebrate.
+                    </p>
+                    <p class="whisper">
+                        I can't stop thinking about the silence.
+                    </p>
+                    <p>
+                        There was a raider—didn't know their name—pinned under rubble near the old subway entrance. 
+                        Still alive. Calling for help. The ARC patrol was circling. Timer was running out.
+                    </p>
+                    <p>
+                        I had a choice. Stay and help, probably die. Or run.
+                    </p>
+                    <p class="whisper">
+                        I ran.
+                    </p>
+                    <p>
+                        Made extraction with 43 seconds left. Good haul. Traded it all to Tian Wen for parts. 
+                        Upgraded my gear. Professional. Efficient.
+                    </p>
+                    <p>
+                        But I can still hear them calling. In the dark. Under the stone.
+                    </p>
+                    <p class="whisper">
+                        I should feel nothing. Survival is survival. But I feel everything. 
+                        And I hate that I do.
+                    </p>
+                </div>
+            </div>
+
+            <!-- BLOG ENTRY 2 -->
+            <div class="blog-entry">
+                <div class="blog-header">
+                    <div class="blog-date">Day 78 // 2180.02.19</div>
+                    <h3 class="blog-title">Rust and Regret</h3>
+                    <div class="blog-location">📍 Dam Battlegrounds</div>
+                </div>
+                <div class="blog-content">
+                    <p>
+                        Another day. Another run. Another reminder that I'm still breathing when so many aren't.
+                    </p>
+                    <p>
+                        The Dam was quiet today. Too quiet. Found a cache near the old control room. 
+                        Red arrows. Ticking sound. You know the drill.
+                    </p>
+                    <p class="whisper">
+                        My hands were shaking when I opened it.
+                    </p>
+                    <p>
+                        Not from fear. From the thought that this—this rusted metal box rigged to explode—might be 
+                        the last thing someone left behind. A raider who set this up, hoping someone would find it. 
+                        Hoping their work meant something.
+                    </p>
+                    <p>
+                        I got the loot. Made extraction. Survival.
+                    </p>
+                    <p>
+                        But I keep thinking about all the caches I've opened. All the raiders who aren't here anymore. 
+                        All the things they touched, now just... items in my pack.
+                    </p>
+                    <p class="whisper">
+                        I'm supposed to be grateful I'm alive. And I am.
+                    </p>
+                    <p>
+                        But gratitude feels heavy when you carry the weight of everyone who didn't make it.
+                    </p>
+                </div>
+            </div>
+
+            <!--  
+            
+            TO ADD MORE BLOG POSTS:
+            
+            Copy this template and paste it above this comment:
+            
+            <div class="blog-entry">
+                <div class="blog-header">
+                    <div class="blog-date">Day XXX // 2180.XX.XX</div>
+                    <h3 class="blog-title">Your Title Here</h3>
+                    <div class="blog-location">📍 Map Name</div>
+                </div>
+                <div class="blog-content">
+                    <p>Your first paragraph...</p>
+                    <p class="whisper">Whispered/emotional thoughts in italics...</p>
+                    <p>More paragraphs...</p>
+                </div>
+            </div>
+            
+            -->
+
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- VIDEO SECTION -->
+        <section id="videos" class="video-section">
+            <h2 class="section-title">recorded runs</h2>
+            <p class="section-subtitle">Visual Archives // Helmet Cam Footage</p>
 
             <!-- FEATURED VIDEO -->
             <div class="featured-video">
-                <div class="featured-label">Latest Upload</div>
+                <div class="featured-label">Latest Recording</div>
                 <div class="video-embed">
                     <iframe 
                         src="https://www.youtube.com/embed/8Wjkr9tlmxc" 
-                        title="Raider Log - Latest" 
+                        title="Latest Run" 
                         frameborder="0" 
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                         allowfullscreen>
                     </iframe>
                 </div>
                 <div class="video-info">
-                    <h3 class="video-title">Latest Raider Log</h3>
+                    <h3 class="video-title">Recent Topside Run</h3>
                     <p class="video-description">
-                        My most recent run through the Rust Belt. Every second counts when the ARC machines are hunting.
+                        Helmet cam footage. Raw. Unedited. This is what it's like up there.
                     </p>
                 </div>
             </div>
@@ -685,23 +910,47 @@
                     <div class="video-embed">
                         <iframe 
                             src="https://www.youtube.com/embed/SZzDL9Mwx2o" 
-                            title="Raider Log Entry" 
+                            title="Archive Entry" 
                             frameborder="0" 
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                             allowfullscreen>
                         </iframe>
                     </div>
-                    <h4 class="video-title">Survival Run</h4>
+                    <h4 class="video-title">Survival Protocol</h4>
                     <p class="video-description">
-                        Another day topside. Another chance to not come back.
+                        Another run. Another extraction. Another day I made it back.
                     </p>
                 </div>
+
+                <!-- 
+                
+                TO ADD MORE VIDEOS:
+                
+                Copy this template and paste it here:
+                
+                <div class="video-card">
+                    <div class="video-embed">
+                        <iframe 
+                            src="https://www.youtube.com/embed/YOUR_VIDEO_ID" 
+                            title="Video Title" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <h4 class="video-title">Your Video Title</h4>
+                    <p class="video-description">
+                        Your video description.
+                    </p>
+                </div>
+                
+                -->
             </div>
         </section>
 
         <div class="section-divider"></div>
 
-        <!-- RAIDER CACHE STORE -->
+        <!-- STORE SECTION -->
         <section id="store" class="cache-section">
             <div class="cache-content">
                 <div class="cache-icon">
@@ -728,11 +977,11 @@
                         <path d="M 65 14 Q 70 8 75 14" fill="none" stroke="#6b6355" stroke-width="3" stroke-linecap="round"/>
                     </svg>
                 </div>
-                <h2 class="cache-title">raider cache</h2>
-                <p class="cache-subtitle">Arceology's Store</p>
+                <h2 class="cache-title">arceology's cache</h2>
+                <p class="cache-subtitle">Personal Collection</p>
                 <p class="cache-description">
-                    My personal collection. Raider-inspired designs and gear.<br>
-                    Support my journey through the Rust Belt.
+                    Raider-inspired designs. Gear that carries the weight. 
+                    Every piece helps fund the next run topside.
                 </p>
                 <a href="https://www.bonfire.com/store/arceologys-cache/" target="_blank" class="cache-button">
                     Access Cache
@@ -746,15 +995,15 @@
     <!-- FOOTER -->
     <footer>
         <p class="footer-quote">
-            "Hope is what keeps us underground.<br>
-            Courage is what sends us topside.<br>
-            Memory is what keeps us human."
+            "I should be numb to it by now.<br>
+            But I feel everything.<br>
+            Maybe that's what makes me human."
         </p>
         <div class="footer-links">
             <a href="https://youtube.com/@arceology" target="_blank">YOUTUBE</a>
         </div>
         <p class="footer-text">
-            MY RAIDER LOG © 2180 // SPERANZA ARCHIVES
+            ARCEOLOGY.TERMINAL // SPERANZA ARCHIVES // 2180
         </p>
     </footer>
 
