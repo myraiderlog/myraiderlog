@@ -35,6 +35,7 @@
             line-height: 1.8;
         }
 
+        /* FILM GRAIN */
         body::before {
             content: '';
             position: fixed;
@@ -42,16 +43,30 @@
             width: 200%; height: 200%;
             background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23n)" opacity="0.12"/></svg>');
             pointer-events: none;
-            animation: grain 8s steps(10) infinite;
+            animation: grain 8s steps(10) infinite, grainPulse 4s ease-in-out infinite;
             z-index: 9999;
             mix-blend-mode: overlay;
         }
 
         @keyframes grain {
             0%, 100% { transform: translate(0, 0); }
+            10% { transform: translate(-5%, -10%); }
+            20% { transform: translate(-15%, 5%); }
+            30% { transform: translate(7%, -25%); }
+            40% { transform: translate(-5%, 25%); }
             50% { transform: translate(-15%, 10%); }
+            60% { transform: translate(15%, 0%); }
+            70% { transform: translate(0%, 15%); }
+            80% { transform: translate(3%, 10%); }
+            90% { transform: translate(-10%, 5%); }
         }
 
+        @keyframes grainPulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+
+        /* VIGNETTE */
         body::after {
             content: '';
             position: fixed;
@@ -60,6 +75,40 @@
             background: radial-gradient(ellipse at center, transparent 0%, transparent 35%, rgba(13, 10, 8, 0.5) 70%, rgba(13, 10, 8, 0.9) 100%);
             pointer-events: none;
             z-index: 9998;
+            animation: vignettePulse 8s ease-in-out infinite;
+        }
+
+        @keyframes vignettePulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.85; }
+        }
+
+        /* PARTICLES */
+        .particles {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 9997;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: var(--ember);
+            border-radius: 50%;
+            opacity: 0;
+            animation: float 15s infinite ease-in-out;
+            box-shadow: 0 0 4px var(--ember);
+        }
+
+        @keyframes float {
+            0% { transform: translateY(100vh) translateX(0) scale(0); opacity: 0; }
+            10% { opacity: 0.6; }
+            90% { opacity: 0.4; }
+            100% { transform: translateY(-10vh) translateX(50px) scale(1); opacity: 0; }
         }
 
         nav {
@@ -72,6 +121,12 @@
             z-index: 10000;
             border-bottom: 1px solid rgba(180, 94, 72, 0.3);
             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+            animation: navSlideDown 1s ease-out;
+        }
+
+        @keyframes navSlideDown {
+            from { transform: translateY(-100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
         }
 
         .nav-content {
@@ -90,6 +145,12 @@
             letter-spacing: 3px;
             text-transform: lowercase;
             text-decoration: none;
+            animation: textGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes textGlow {
+            0%, 100% { text-shadow: 0 0 10px rgba(217, 134, 79, 0.3); }
+            50% { text-shadow: 0 0 20px rgba(217, 134, 79, 0.6), 0 0 30px rgba(217, 134, 79, 0.3); }
         }
 
         .nav-terminal {
@@ -97,6 +158,16 @@
             font-size: 0.65rem;
             color: var(--steel);
             letter-spacing: 2px;
+            animation: terminalFlicker 5s infinite;
+        }
+
+        @keyframes terminalFlicker {
+            0%, 100% { opacity: 1; }
+            95% { opacity: 1; }
+            96% { opacity: 0.3; }
+            97% { opacity: 1; }
+            98% { opacity: 0.5; }
+            99% { opacity: 1; }
         }
 
         .nav-links {
@@ -113,11 +184,28 @@
             letter-spacing: 2px;
             text-transform: uppercase;
             transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--ember);
+            transition: width 0.3s ease;
+            box-shadow: 0 0 10px var(--ember);
         }
 
         .nav-links a:hover {
             color: var(--ember);
             text-shadow: 0 0 10px rgba(217, 134, 79, 0.5);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
         }
 
         main {
@@ -132,6 +220,12 @@
             text-align: center;
             margin-bottom: 6rem;
             padding-top: 4rem;
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .page-title {
@@ -143,6 +237,14 @@
             margin-bottom: 1rem;
             text-transform: lowercase;
             text-shadow: 0 0 30px rgba(217, 134, 79, 0.4);
+            animation: titleGlitch 8s infinite;
+        }
+
+        @keyframes titleGlitch {
+            0%, 90%, 100% { transform: translate(0, 0); }
+            91% { transform: translate(-2px, 1px); }
+            92% { transform: translate(2px, -1px); }
+            93% { transform: translate(0, 0); }
         }
 
         .page-subtitle {
@@ -152,6 +254,7 @@
             letter-spacing: 3px;
             text-transform: uppercase;
             margin-bottom: 2rem;
+            animation: terminalFlicker 5s infinite;
         }
 
         .page-description {
@@ -171,6 +274,7 @@
             margin-bottom: 6rem;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
             transition: all 0.5s ease;
+            animation: fadeIn 1s ease-out;
         }
 
         .blog-entry:hover {
@@ -192,6 +296,7 @@
             letter-spacing: 3px;
             text-transform: uppercase;
             margin-bottom: 1rem;
+            animation: terminalFlicker 5s infinite;
         }
 
         .blog-title {
@@ -269,6 +374,7 @@
             letter-spacing: 2px;
             opacity: 0.6;
             margin-top: 2rem;
+            animation: terminalFlicker 5s infinite;
         }
 
         @media (max-width: 768px) {
@@ -282,6 +388,20 @@
     </style>
 </head>
 <body>
+    <!-- LOADING SCREEN -->
+    <div class="loading" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--night); display: flex; align-items: center; justify-content: center; z-index: 10001; animation: fadeOut 1s ease-out 1s forwards;">
+        <div style="font-family: 'Space Mono', monospace; font-size: 1.2rem; color: var(--ember); letter-spacing: 4px; animation: terminalFlicker 0.5s infinite;">LOADING LOGS...</div>
+    </div>
+
+    <style>
+        @keyframes fadeOut {
+            to { opacity: 0; pointer-events: none; }
+        }
+    </style>
+
+    <!-- PARTICLES -->
+    <div class="particles" id="particles"></div>
+
     <nav>
         <div class="nav-content">
             <div>
@@ -353,5 +473,30 @@
         </div>
         <p class="footer-text">ARCEOLOGY.TERMINAL // SPERANZA ARCHIVES // 2180</p>
     </footer>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // Particles
+        const particlesContainer = document.getElementById('particles');
+        for (let i = 0; i < 30; i++) {
+            const particle = document.createElement('div');
+            particle.classList.add('particle');
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.animationDelay = Math.random() * 15 + 's';
+            particle.style.animationDuration = (10 + Math.random() * 10) + 's';
+            particlesContainer.appendChild(particle);
+        }
+
+        // Title glitch
+        const pageTitle = document.querySelector('.page-title');
+        if (pageTitle) {
+            setInterval(() => {
+                if (Math.random() > 0.95) {
+                    pageTitle.style.transform = `translate(${Math.random() * 4 - 2}px, ${Math.random() * 4 - 2}px)`;
+                    setTimeout(() => { pageTitle.style.transform = 'translate(0, 0)'; }, 50);
+                }
+            }, 3000);
+        }
+    </script>
 </body>
 </html>
