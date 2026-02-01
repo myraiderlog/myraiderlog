@@ -643,7 +643,7 @@
     <div id="emberContainer"></div>
 
     <div class="container">
-        <a href="raider-market-clean.html" class="back-btn">← BACK TO MARKET</a>
+        <a href="raider-market.html" class="back-btn">← BACK TO MARKET</a>
 
         <!-- Profile Header -->
         <div class="profile-header">
@@ -775,7 +775,7 @@
             
             if (!profileUserId) {
                 alert('No user specified');
-                window.location.href = 'raider-market-clean.html';
+                window.location.href = 'raider-market.html';
                 return;
             }
 
@@ -784,7 +784,7 @@
                 
                 if (!userDoc.exists) {
                     alert('User not found');
-                    window.location.href = 'raider-market-clean.html';
+                    window.location.href = 'raider-market.html';
                     return;
                 }
 
@@ -1016,7 +1016,7 @@
 
         // Go to trade
         function goToTrade(tradeId) {
-            window.location.href = `raider-market-clean.html#trade-${tradeId}`;
+            window.location.href = `raider-market.html#trade-${tradeId}`;
         }
 
         // Check if user is premium
@@ -1055,7 +1055,7 @@
                     <div class="premium-notice">
                         🔒 PREMIUM ACCESS REQUIRED TO LEAVE REVIEWS
                         <br><br>
-                        <a href="raider-market-clean.html" style="color: var(--primary-orange); text-decoration: underline;">Upgrade to Premium</a>
+                        <a href="raider-market.html" style="color: var(--primary-orange); text-decoration: underline;">Upgrade to Premium</a>
                     </div>
                 `;
             }
