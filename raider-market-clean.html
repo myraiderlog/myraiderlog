@@ -980,6 +980,19 @@
 
             <div id="paypal-button-container"></div>
 
+            <!-- Backup PayPal Link -->
+            <div style="margin: 40px auto; text-align: center;">
+                <p style="color: var(--text-dim); margin-bottom: 20px; font-family: 'Share Tech Mono', monospace; letter-spacing: 2px;">OR PAY DIRECTLY:</p>
+                <a href="https://www.paypal.com/ncp/payment/BMATRHWFS9Z52" 
+                   target="_blank"
+                   style="display: inline-block; padding: 20px 50px; background: transparent; border: 3px solid var(--primary-orange); color: var(--primary-orange); text-decoration: none; font-size: 1.3em; font-family: 'Share Tech Mono', monospace; letter-spacing: 3px; text-transform: uppercase; font-weight: bold; transition: all 0.3s; box-shadow: 0 0 20px var(--glow); position: relative; overflow: hidden;"
+                   onmouseover="this.style.background='var(--primary-orange)'; this.style.color='var(--dark-bg)'; this.style.transform='translateY(-3px)'; this.style.boxShadow='0 0 30px var(--glow)'" 
+                   onmouseout="this.style.background='transparent'; this.style.color='var(--primary-orange)'; this.style.transform='translateY(0)'; this.style.boxShadow='0 0 20px var(--glow)'">
+                    💳 PAY $4.99 - UNLOCK ACCESS
+                </a>
+                <p style="color: var(--text-dim); margin-top: 20px; font-size: 0.9em; font-family: 'Share Tech Mono', monospace;">After payment, use token input below to activate premium access</p>
+            </div>
+
             <div class="token-section">
                 <p style="margin-bottom: 20px; font-size: 1.1em;">ALREADY HAVE AN ACCESS TOKEN?</p>
                 <input type="text" id="tokenInput" placeholder="ENTER TOKEN..." maxlength="100">
@@ -1021,8 +1034,7 @@
                 <div class="loading">LOADING TRADES</div>
             </div>
         </div>
-
-        <!-- New Post Modal -->
+<!-- New Post Modal -->
         <div class="modal" id="newPostModal">
             <div class="modal-content">
                 <div class="modal-header">
