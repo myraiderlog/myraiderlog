@@ -983,7 +983,7 @@
             <!-- Backup PayPal Link -->
             <div style="margin: 40px auto; text-align: center;">
                 <p style="color: var(--text-dim); margin-bottom: 20px; font-family: 'Share Tech Mono', monospace; letter-spacing: 2px;">OR PAY DIRECTLY:</p>
-                <a href="https://www.paypal.com/ncp/payment/BMATRHWFS9Z52" 
+                <a href="https://www.paypal.com/ncp/payment/7JA8E3MM5KK9E" 
                    target="_blank"
                    style="display: inline-block; padding: 20px 50px; background: transparent; border: 3px solid var(--primary-orange); color: var(--primary-orange); text-decoration: none; font-size: 1.3em; font-family: 'Share Tech Mono', monospace; letter-spacing: 3px; text-transform: uppercase; font-weight: bold; transition: all 0.3s; box-shadow: 0 0 20px var(--glow); position: relative; overflow: hidden;"
                    onmouseover="this.style.background='var(--primary-orange)'; this.style.color='var(--dark-bg)'; this.style.transform='translateY(-3px)'; this.style.boxShadow='0 0 30px var(--glow)'" 
@@ -1034,7 +1034,8 @@
                 <div class="loading">LOADING TRADES</div>
             </div>
         </div>
-<!-- New Post Modal -->
+
+        <!-- New Post Modal -->
         <div class="modal" id="newPostModal">
             <div class="modal-content">
                 <div class="modal-header">
@@ -1597,11 +1598,53 @@
           return Math.floor(diff / 86400) + 'd ago';
         }
 
+        // Check for payment success from PayPal redirect
+        function checkPaymentSuccess() {
+          const urlParams = new URLSearchParams(window.location.search);
+          const paymentSuccess = urlParams.get('payment');
+          const payerId = urlParams.get('PayerID');
+          
+          if (paymentSuccess === 'success' && payerId) {
+            // Payment confirmed!
+            const gamertag = prompt('PAYMENT CONFIRMED! Enter your in-game name/gamertag:');
+            
+            if (gamertag) {
+              // Save to localStorage for instant access
+              localStorage.setItem('raiderMarketPremium', 'true');
+              localStorage.setItem('raiderMarketGamertag', gamertag);
+              localStorage.setItem('raiderMarketToken', 'PREMIUM_' + Date.now());
+              
+              // Save to Firebase
+              db.collection('premiumUsers').add({
+                gamertag: gamertag,
+                payerId: payerId,
+                activatedAt: firebase.firestore.FieldValue.serverTimestamp(),
+                status: 'active'
+              });
+              
+              // Grant access
+              isPremium = true;
+              document.getElementById('premiumBanner').classList.add('hidden');
+              
+              // Clean URL
+              window.history.replaceState({}, document.title, window.location.pathname);
+              
+              alert('✓ PREMIUM ACCESS ACTIVATED! Welcome to Raider.Market!');
+              location.reload();
+            }
+          }
+        }
+
         // Check user access on load
         async function checkUserAccess() {
+          // First check for payment success
+          checkPaymentSuccess();
+          
+          // Then check existing access
+          const premiumStatus = localStorage.getItem('raiderMarketPremium');
           const token = localStorage.getItem('raiderMarketToken');
           
-          if (token) {
+          if (premiumStatus === 'true' || token) {
             // Check for admin codes
             if (token === 'ARCEOLOGY_ADMIN_2026' || token === 'PATTI_ADMIN_ACCESS') {
               isPremium = true;
@@ -1618,6 +1661,13 @@
 
         // Setup PayPal
         function setupPayPal() {
+          // Check if PayPal SDK is loaded
+          if (typeof paypal === 'undefined') {
+            console.log('PayPal SDK not loaded yet, retrying...');
+            setTimeout(setupPayPal, 500);
+            return;
+          }
+          
           paypal.Buttons({
             createOrder: function(data, actions) {
               return actions.order.create({
