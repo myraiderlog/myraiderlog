@@ -1,0 +1,1658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAIDER.MARKET - Trading Terminal // SPERANZA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-orange: #FF6B35;
+            --dark-orange: #D64D26;
+            --light-orange: #FF8C5F;
+            --dark-bg: #0a0a0a;
+            --card-bg: #1a1a1a;
+            --text-primary: #e0e0e0;
+            --text-dim: #888;
+            --border-color: #FF6B35;
+            --glow: rgba(255, 107, 53, 0.6);
+            --ember-glow: rgba(255, 107, 53, 0.3);
+        }
+
+        body {
+            font-family: 'Share Tech Mono', 'Courier New', monospace;
+            background: var(--dark-bg);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Loading screen */
+        #loadingScreen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--dark-bg);
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            animation: fadeOut 1s 2s forwards;
+        }
+
+        @keyframes fadeOut {
+            to {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+
+        .loading-text {
+            font-size: 1.5em;
+            color: var(--primary-orange);
+            text-shadow: 0 0 20px var(--glow);
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        /* Scanline effect */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                0deg,
+                rgba(0, 0, 0, 0.15),
+                rgba(0, 0, 0, 0.15) 1px,
+                transparent 1px,
+                transparent 2px
+            );
+            pointer-events: none;
+            z-index: 1000;
+            animation: scanline 8s linear infinite;
+        }
+
+        @keyframes scanline {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(10px); }
+        }
+
+        /* Ember particles */
+        .ember {
+            position: fixed;
+            width: 3px;
+            height: 3px;
+            background: var(--primary-orange);
+            border-radius: 50%;
+            pointer-events: none;
+            opacity: 0;
+            box-shadow: 0 0 10px var(--ember-glow);
+            animation: float linear infinite;
+        }
+
+        @keyframes float {
+            0% {
+                opacity: 0;
+                transform: translateY(100vh) translateX(0);
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-100vh) translateX(var(--drift));
+            }
+        }
+
+        /* Glitch effect */
+        .glitch {
+            position: relative;
+        }
+
+        .glitch::before,
+        .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .glitch::before {
+            animation: glitch-1 2.5s infinite;
+            color: #ff00de;
+            z-index: -1;
+        }
+
+        .glitch::after {
+            animation: glitch-2 2.5s infinite;
+            color: #00fff9;
+            z-index: -2;
+        }
+
+        @keyframes glitch-1 {
+            0%, 100% {
+                transform: translate(0);
+                clip-path: inset(0 0 0 0);
+            }
+            20% {
+                transform: translate(-2px, 2px);
+                clip-path: inset(0 0 85% 0);
+            }
+            40% {
+                transform: translate(-2px, -2px);
+                clip-path: inset(85% 0 0 0);
+            }
+            60% {
+                transform: translate(2px, 2px);
+                clip-path: inset(0 85% 0 0);
+            }
+            80% {
+                transform: translate(2px, -2px);
+                clip-path: inset(0 0 0 85%);
+            }
+        }
+
+        @keyframes glitch-2 {
+            0%, 100% {
+                transform: translate(0);
+                clip-path: inset(0 0 0 0);
+            }
+            20% {
+                transform: translate(2px, -2px);
+                clip-path: inset(0 85% 0 0);
+            }
+            40% {
+                transform: translate(2px, 2px);
+                clip-path: inset(0 0 0 85%);
+            }
+            60% {
+                transform: translate(-2px, -2px);
+                clip-path: inset(85% 0 0 0);
+            }
+            80% {
+                transform: translate(-2px, 2px);
+                clip-path: inset(0 0 85% 0);
+            }
+        }
+
+        /* Container */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Header */
+        header {
+            border: 2px solid var(--border-color);
+            padding: 40px;
+            margin-bottom: 50px;
+            background: var(--card-bg);
+            box-shadow: 0 0 30px var(--glow), inset 0 0 30px rgba(255, 107, 53, 0.1);
+            position: relative;
+            overflow: hidden;
+            animation: slideDown 0.8s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        header::before {
+            content: "INITIALIZING...";
+            position: absolute;
+            top: 15px;
+            right: 25px;
+            font-size: 0.7em;
+            color: var(--primary-orange);
+            opacity: 0.7;
+            animation: blink 2s infinite;
+        }
+
+        @keyframes blink {
+            0%, 50%, 100% { opacity: 0.7; }
+            25%, 75% { opacity: 0.2; }
+        }
+
+        h1 {
+            font-size: 3.5em;
+            color: var(--primary-orange);
+            text-shadow: 0 0 20px var(--glow), 0 0 40px var(--glow), 0 0 60px var(--glow);
+            letter-spacing: 5px;
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .subtitle {
+            color: var(--text-dim);
+            font-size: 1em;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        /* Premium Gate Banner */
+        .premium-banner {
+            border: 3px solid var(--primary-orange);
+            padding: 30px;
+            margin: 40px 0;
+            background: linear-gradient(135deg, var(--card-bg) 0%, rgba(255, 107, 53, 0.05) 100%);
+            text-align: center;
+            box-shadow: 0 0 40px var(--glow), inset 0 0 40px rgba(255, 107, 53, 0.1);
+            position: relative;
+            animation: slideUp 0.8s ease-out 0.3s backwards;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .premium-banner h3 {
+            color: var(--primary-orange);
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+
+        .premium-banner.hidden {
+            display: none;
+        }
+
+        /* Full premium gate (for initial display) */
+        .premium-gate {
+            border: 3px solid var(--primary-orange);
+            padding: 50px;
+            margin: 40px 0;
+            background: linear-gradient(135deg, var(--card-bg) 0%, rgba(255, 107, 53, 0.05) 100%);
+            text-align: center;
+            box-shadow: 0 0 40px var(--glow), inset 0 0 40px rgba(255, 107, 53, 0.1);
+            position: relative;
+            animation: slideUp 0.8s ease-out 0.3s backwards;
+        }
+
+        .premium-gate::before {
+            content: "⚠ PREMIUM ACCESS REQUIRED ⚠";
+            position: absolute;
+            top: -18px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--dark-bg);
+            padding: 8px 25px;
+            color: var(--primary-orange);
+            font-size: 0.85em;
+            letter-spacing: 2px;
+            border: 2px solid var(--primary-orange);
+            box-shadow: 0 0 20px var(--glow);
+        }
+
+        .premium-gate h2 {
+            color: var(--primary-orange);
+            font-size: 2.5em;
+            margin-bottom: 25px;
+            text-shadow: 0 0 15px var(--glow);
+        }
+
+        .premium-gate p {
+            font-size: 1.2em;
+            margin: 20px 0;
+            color: var(--text-primary);
+        }
+
+        .price {
+            font-size: 3.5em;
+            color: var(--primary-orange);
+            font-weight: bold;
+            margin: 30px 0;
+            text-shadow: 0 0 20px var(--glow);
+            animation: priceGlow 2s infinite;
+        }
+
+        @keyframes priceGlow {
+            0%, 100% { text-shadow: 0 0 20px var(--glow); }
+            50% { text-shadow: 0 0 30px var(--glow), 0 0 50px var(--glow); }
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+            text-align: left;
+        }
+
+        .benefit-item {
+            padding: 20px;
+            background: rgba(255, 107, 53, 0.05);
+            border: 1px solid var(--border-color);
+            transition: all 0.3s;
+        }
+
+        .benefit-item:hover {
+            background: rgba(255, 107, 53, 0.1);
+            box-shadow: 0 0 20px var(--ember-glow);
+            transform: translateY(-3px);
+        }
+
+        .benefit-item::before {
+            content: "✓";
+            color: var(--primary-orange);
+            font-size: 1.5em;
+            margin-right: 10px;
+        }
+
+        /* PayPal button */
+        #paypal-button-container {
+            margin: 40px auto;
+            max-width: 450px;
+        }
+
+        /* Token section */
+        .token-section {
+            margin-top: 40px;
+            padding-top: 40px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .token-display {
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, rgba(255, 107, 53, 0.05) 100%);
+            border: 2px solid var(--primary-orange);
+            padding: 40px;
+            margin: 30px 0;
+            text-align: center;
+            display: none;
+            animation: slideUp 0.5s ease-out;
+        }
+
+        .token-display.active {
+            display: block;
+        }
+
+        .token-code {
+            font-size: 1.4em;
+            color: var(--primary-orange);
+            word-break: break-all;
+            margin: 25px 0;
+            padding: 20px;
+            background: var(--dark-bg);
+            border: 1px solid var(--border-color);
+            font-family: 'Share Tech Mono', monospace;
+            box-shadow: inset 0 0 20px rgba(255, 107, 53, 0.1);
+        }
+
+        /* Buttons */
+        button, .btn {
+            background: transparent;
+            border: 2px solid var(--primary-orange);
+            color: var(--primary-orange);
+            padding: 15px 35px;
+            cursor: pointer;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 1em;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        button::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: var(--primary-orange);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+            z-index: -1;
+        }
+
+        button:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        button:hover {
+            color: var(--dark-bg);
+            box-shadow: 0 0 25px var(--glow);
+            transform: translateY(-2px);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        /* Input fields */
+        input, textarea, select {
+            width: 100%;
+            padding: 15px;
+            margin: 15px 0;
+            background: var(--dark-bg);
+            border: 2px solid var(--border-color);
+            color: var(--primary-orange);
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 1em;
+            transition: all 0.3s;
+        }
+
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            box-shadow: 0 0 20px var(--glow), inset 0 0 10px rgba(255, 107, 53, 0.1);
+            border-color: var(--light-orange);
+        }
+
+        input::placeholder, textarea::placeholder {
+            color: var(--text-dim);
+        }
+
+        textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        /* Forum section */
+        .forum-section {
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Controls */
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 40px 0;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .search-box {
+            flex: 1;
+            min-width: 300px;
+            position: relative;
+        }
+
+        .search-box::before {
+            content: "🔍";
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.2em;
+        }
+
+        .search-box input {
+            padding-left: 50px;
+        }
+
+        /* Filter tabs */
+        .filters {
+            display: flex;
+            gap: 15px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 12px 30px;
+            background: var(--card-bg);
+            border: 2px solid var(--text-dim);
+            color: var(--text-dim);
+            transition: all 0.3s;
+        }
+
+        .filter-btn.active {
+            border-color: var(--primary-orange);
+            color: var(--primary-orange);
+            background: rgba(255, 107, 53, 0.1);
+            box-shadow: 0 0 15px var(--ember-glow);
+        }
+
+        /* Posts grid */
+        .posts-grid {
+            display: grid;
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .post-card {
+            border: 2px solid var(--border-color);
+            padding: 30px;
+            background: linear-gradient(135deg, var(--card-bg) 0%, rgba(255, 107, 53, 0.02) 100%);
+            transition: all 0.4s;
+            cursor: pointer;
+            position: relative;
+            animation: slideUp 0.5s ease-out backwards;
+        }
+
+        .post-card:nth-child(1) { animation-delay: 0.1s; }
+        .post-card:nth-child(2) { animation-delay: 0.2s; }
+        .post-card:nth-child(3) { animation-delay: 0.3s; }
+        .post-card:nth-child(4) { animation-delay: 0.4s; }
+        .post-card:nth-child(5) { animation-delay: 0.5s; }
+
+        .post-card:hover {
+            box-shadow: 0 0 30px var(--glow), inset 0 0 30px rgba(255, 107, 53, 0.05);
+            transform: translateY(-5px);
+            border-color: var(--light-orange);
+        }
+
+        .post-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--primary-orange);
+            box-shadow: 0 0 10px var(--glow);
+        }
+
+        .post-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .post-title {
+            font-size: 1.5em;
+            color: var(--primary-orange);
+            margin-bottom: 10px;
+            flex: 1;
+            text-shadow: 0 0 10px var(--ember-glow);
+        }
+
+        .post-category {
+            display: inline-block;
+            padding: 8px 20px;
+            background: var(--primary-orange);
+            color: var(--dark-bg);
+            font-size: 0.8em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 0 10px var(--glow);
+        }
+
+        .post-author {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-dim);
+            font-size: 0.9em;
+            margin-bottom: 15px;
+        }
+
+        .user-rating {
+            color: var(--primary-orange);
+        }
+
+        .post-content {
+            color: var(--text-primary);
+            margin: 20px 0;
+            line-height: 1.8;
+        }
+
+        .post-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid var(--text-dim);
+            font-size: 0.9em;
+            color: var(--text-dim);
+        }
+
+        .post-contact {
+            color: var(--primary-orange);
+            filter: blur(6px);
+            user-select: none;
+            transition: filter 0.3s;
+        }
+
+        .post-contact.unlocked {
+            filter: none;
+            user-select: text;
+        }
+
+        .lock-icon {
+            color: var(--primary-orange);
+            margin-right: 8px;
+            font-size: 1.1em;
+        }
+
+        .comment-count {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s;
+        }
+
+        .comment-count:hover {
+            color: var(--primary-orange);
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 2000;
+            overflow-y: auto;
+        }
+
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: fadeIn 0.3s;
+        }
+
+        .modal-content {
+            border: 3px solid var(--primary-orange);
+            background: var(--dark-bg);
+            padding: 50px;
+            max-width: 900px;
+            width: 90%;
+            margin: 40px;
+            box-shadow: 0 0 60px var(--glow), inset 0 0 40px rgba(255, 107, 53, 0.05);
+            position: relative;
+            animation: modalSlideIn 0.5s ease-out;
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9) translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .modal-header h2 {
+            color: var(--primary-orange);
+            font-size: 2em;
+            text-shadow: 0 0 15px var(--glow);
+        }
+
+        .close-btn {
+            background: none;
+            border: 2px solid var(--primary-orange);
+            color: var(--primary-orange);
+            font-size: 2em;
+            cursor: pointer;
+            padding: 5px 15px;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .close-btn:hover {
+            background: var(--primary-orange);
+            color: var(--dark-bg);
+            transform: rotate(90deg);
+        }
+
+        /* Comment section */
+        .comments-section {
+            margin-top: 40px;
+            padding-top: 40px;
+            border-top: 2px solid var(--border-color);
+        }
+
+        .comment {
+            border-left: 4px solid var(--text-dim);
+            padding: 20px 25px;
+            margin: 20px 0;
+            background: rgba(255, 107, 53, 0.03);
+            transition: all 0.3s;
+        }
+
+        .comment:hover {
+            border-left-color: var(--primary-orange);
+            background: rgba(255, 107, 53, 0.08);
+        }
+
+        .comment-author {
+            color: var(--primary-orange);
+            font-size: 1em;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .comment-text {
+            color: var(--text-primary);
+            line-height: 1.8;
+        }
+
+        .comment-time {
+            font-size: 0.8em;
+            color: var(--text-dim);
+            margin-top: 10px;
+        }
+
+        /* Free user message */
+        .free-user-message {
+            background: rgba(255, 107, 53, 0.1);
+            border: 2px solid var(--primary-orange);
+            padding: 30px;
+            margin: 30px 0;
+            text-align: center;
+            color: var(--primary-orange);
+            box-shadow: 0 0 20px var(--ember-glow);
+        }
+
+        /* Loading state */
+        .loading {
+            text-align: center;
+            padding: 60px;
+            color: var(--text-dim);
+            font-size: 1.3em;
+        }
+
+        .loading::after {
+            content: "...";
+            animation: dots 1.5s infinite;
+        }
+
+        @keyframes dots {
+            0%, 20% { content: "."; }
+            40% { content: ".."; }
+            60%, 100% { content: "..."; }
+        }
+
+        /* Empty state */
+        .empty-state {
+            text-align: center;
+            padding: 80px 20px;
+            color: var(--text-dim);
+        }
+
+        .empty-state-icon {
+            font-size: 5em;
+            margin-bottom: 25px;
+            opacity: 0.5;
+        }
+
+        /* Form styling */
+        .form-group {
+            margin: 25px 0;
+        }
+
+        .form-group label {
+            display: block;
+            color: var(--primary-orange);
+            margin-bottom: 10px;
+            font-size: 0.95em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .form-actions {
+            display: flex;
+            gap: 20px;
+            margin-top: 40px;
+            justify-content: flex-end;
+        }
+
+        /* Disclaimer */
+        .disclaimer {
+            border: 3px solid var(--primary-orange);
+            padding: 30px;
+            margin: 40px 0;
+            background: rgba(255, 107, 53, 0.05);
+            animation: slideUp 0.8s ease-out 0.6s backwards;
+        }
+
+        .disclaimer h3 {
+            color: var(--primary-orange);
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px var(--glow);
+        }
+
+        .disclaimer ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .disclaimer li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .disclaimer li::before {
+            content: "⚠";
+            position: absolute;
+            left: 0;
+            color: var(--primary-orange);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5em;
+            }
+
+            .controls {
+                flex-direction: column;
+            }
+
+            .search-box {
+                width: 100%;
+            }
+
+            .modal-content {
+                padding: 30px 20px;
+                width: 95%;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 80px;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-dim);
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading screen -->
+    <div id="loadingScreen">
+        <div class="loading-text glitch" data-text="INITIALIZING...">INITIALIZING...</div>
+    </div>
+
+    <!-- Ember particles container -->
+    <div id="emberContainer"></div>
+
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1 class="glitch" data-text="⚡ RAIDER.MARKET ⚡">⚡ RAIDER.MARKET ⚡</h1>
+            <p class="subtitle">// TRADING TERMINAL // SPERANZA UNDERGROUND //</p>
+        </header>
+
+        <!-- Disclaimer -->
+        <div class="disclaimer">
+            <h3>⚠ RAIDER RESPONSIBILITY NOTICE</h3>
+            <ul>
+                <li>RAIDER.MARKET IS NOT RESPONSIBLE FOR ANY TRADES, ITEMS, OR CURRENCY LOST</li>
+                <li>ALL TRADES ARE AT YOUR OWN RISK</li>
+                <li>VERIFY TRADERS USING THE RATING SYSTEM</li>
+                <li>REPORT SUSPICIOUS ACTIVITY IMMEDIATELY</li>
+                <li>SCAMMERS WILL BE PERMANENTLY BANNED</li>
+                <li>AUTO-BAN AFTER 3 REPORTS FROM DIFFERENT USERS</li>
+            </ul>
+        </div>
+
+        <!-- Premium Banner (shows when browsing as free user) -->
+        <div class="premium-banner" id="premiumBanner">
+            <h3>🔒 BROWSING AS FREE USER</h3>
+            <p>Upgrade to $4.99 one-time to post trades and see contact info</p>
+            <button onclick="showPremiumGate()">UPGRADE NOW</button>
+        </div>
+
+        <!-- Premium Gate (full paywall) -->
+        <div class="premium-gate" id="premiumGate" style="display: none;">
+            <h2>PREMIUM ACCESS</h2>
+            <p>Browse trades freely. Unlock posting & contact info:</p>
+            <div class="price">$4.99</div>
+            <p style="font-size: 1.1em;">ONE-TIME PAYMENT // LIFETIME ACCESS // NO SUBSCRIPTIONS</p>
+            
+            <div class="benefits-grid">
+                <div class="benefit-item">POST UNLIMITED TRADES</div>
+                <div class="benefit-item">SEE CONTACT INFO</div>
+                <div class="benefit-item">COMMENT ON TRADES</div>
+                <div class="benefit-item">RATE TRADERS</div>
+                <div class="benefit-item">PREMIUM BADGE</div>
+                <div class="benefit-item">PRIORITY SUPPORT</div>
+            </div>
+
+            <div id="paypal-button-container"></div>
+
+            <div class="token-section">
+                <p style="margin-bottom: 20px; font-size: 1.1em;">ALREADY HAVE AN ACCESS TOKEN?</p>
+                <input type="text" id="tokenInput" placeholder="ENTER TOKEN..." maxlength="100">
+                <button onclick="verifyToken()">VERIFY ACCESS</button>
+                <button onclick="hidePremiumGate()" style="margin-left: 10px;">CONTINUE BROWSING</button>
+            </div>
+        </div>
+
+        <!-- Token Display -->
+        <div class="token-display" id="tokenDisplay">
+            <h3>✓ PAYMENT CONFIRMED</h3>
+            <p>YOUR ACCESS TOKEN:</p>
+            <div class="token-code" id="tokenCode"></div>
+            <p style="margin-top: 20px; color: var(--text-dim);">
+                SAVE THIS TOKEN. USE IT TO RESTORE ACCESS ON ANY DEVICE.
+            </p>
+            <button onclick="copyToken()">COPY TOKEN</button>
+        </div>
+
+        <!-- Forum Section (always visible) -->
+        <div class="forum-section" id="forumSection">
+            <div class="controls">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="SEARCH TRADES..." onkeyup="searchPosts()">
+                </div>
+                <button id="newPostBtn" onclick="openNewPostModal()">+ NEW TRADE</button>
+            </div>
+
+            <div class="filters">
+                <button class="filter-btn active" onclick="filterPosts('all', event)">ALL TRADES</button>
+                <button class="filter-btn" onclick="filterPosts('blueprints', event)">BLUEPRINTS</button>
+                <button class="filter-btn" onclick="filterPosts('weapons', event)">WEAPONS</button>
+                <button class="filter-btn" onclick="filterPosts('augments', event)">AUGMENTS</button>
+                <button class="filter-btn" onclick="filterPosts('resources', event)">RESOURCES</button>
+            </div>
+
+            <div class="posts-grid" id="postsGrid">
+                <div class="loading">LOADING TRADES</div>
+            </div>
+        </div>
+
+        <!-- New Post Modal -->
+        <div class="modal" id="newPostModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>NEW TRADE POST</h2>
+                    <button class="close-btn" onclick="closeNewPostModal()">×</button>
+                </div>
+                <form id="newPostForm" onsubmit="handleNewPost(event)">
+                    <div class="form-group">
+                        <label>TRADE TITLE</label>
+                        <input type="text" id="postTitle" placeholder="e.g., [TRADING] Wolfpack Blueprint for Batina Blueprint" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>CATEGORY</label>
+                        <select id="postCategory" required>
+                            <option value="">SELECT CATEGORY...</option>
+                            <option value="blueprints">BLUEPRINTS</option>
+                            <option value="weapons">WEAPONS</option>
+                            <option value="augments">AUGMENTS</option>
+                            <option value="resources">RESOURCES</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>TRADE DETAILS</label>
+                        <textarea id="postContent" placeholder="Describe what you're offering and what you want in return..." required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>IN-GAME NAME / GAMERTAG</label>
+                        <input type="text" id="postContact" placeholder="Your in-game identifier for trades" required>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="button" onclick="closeNewPostModal()">CANCEL</button>
+                        <button type="submit">POST TRADE</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- View Post Modal -->
+        <div class="modal" id="viewPostModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 id="modalPostTitle"></h2>
+                    <button class="close-btn" onclick="closeViewPostModal()">×</button>
+                </div>
+                
+                <div id="modalPostCategory" class="post-category"></div>
+                <div class="post-author" id="modalPostAuthor"></div>
+                <div id="modalPostContent" class="post-content"></div>
+                
+                <div class="post-meta">
+                    <span id="modalPostContact"></span>
+                    <span id="modalPostTime"></span>
+                </div>
+
+                <div class="comments-section" id="commentsSection">
+                    <h3 style="color: var(--primary-orange); margin-bottom: 25px;">PUBLIC NEGOTIATIONS</h3>
+                    <div id="commentsList"></div>
+                    
+                    <div id="commentForm" style="margin-top: 40px;">
+                        <textarea id="commentText" placeholder="Reply to this trade..." style="margin-bottom: 20px;"></textarea>
+                        <button onclick="postComment()">POST REPLY</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <p>RAIDER.MARKET // SPERANZA ARCHIVES // 2180</p>
+            <p style="margin-top: 10px; font-size: 0.85em;">
+                <a href="terms.html" style="color: var(--primary-orange); text-decoration: none;">TERMS</a> // 
+                <a href="privacy.html" style="color: var(--primary-orange); text-decoration: none;">PRIVACY</a> // 
+                <a href="index.html" style="color: var(--primary-orange); text-decoration: none;">BACK TO ARCEOLOGY</a>
+            </p>
+        </footer>
+    </div>
+
+    <!-- PayPal SDK -->
+    <script src="https://www.paypal.com/sdk/js?client-id=AaF4sec_kH6Fhzwh9gOWdCO-VzwlY8wMdI5F1lD5vKqRJC_0c1y7I0N-4JqP3FxYO0TYJhsxdN_kbjfX&currency=USD"></script>
+
+    <!-- Firebase SDK (without modules) -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+
+    <!-- Main App Script -->
+    <script>
+        // Global state - MUST BE FIRST
+        var isPremium = false;
+        var currentFilter = 'all';
+        var allPosts = [];
+        var currentPostId = null;
+
+        // Firebase Configuration
+        const firebaseConfig = {
+          apiKey: "AIzaSyDXpDRA-xuHmY-vt_KQ31ZMsxmCyrMPaZs",
+          authDomain: "cache-network-e8219.firebaseapp.com",
+          projectId: "cache-network-e8219",
+          storageBucket: "cache-network-e8219.firebasestorage.app",
+          messagingSenderId: "452273831255",
+          appId: "1:452273831255:web:54be8991c8ecac226fd212",
+          measurementId: "G-3PL0VJGL6Z"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+
+        // Create ember particles
+        function createEmbers() {
+            const container = document.getElementById('emberContainer');
+            for (let i = 0; i < 30; i++) {
+                const ember = document.createElement('div');
+                ember.className = 'ember';
+                ember.style.left = Math.random() * 100 + '%';
+                ember.style.animationDuration = (Math.random() * 10 + 15) + 's';
+                ember.style.animationDelay = Math.random() * 10 + 's';
+                ember.style.setProperty('--drift', (Math.random() * 100 - 50) + 'px');
+                container.appendChild(ember);
+            }
+        }
+
+        // Generate access token
+        function generateAccessToken() {
+          return 'RAID_' + Math.random().toString(36).substring(2, 15).toUpperCase() + 
+                 '_' + Math.random().toString(36).substring(2, 15).toUpperCase() + 
+                 '_' + Date.now().toString(36).toUpperCase();
+        }
+
+        // Process payment
+        async function processPayment(paypalOrderId, amount, payerEmail) {
+          try {
+            const accessToken = generateAccessToken();
+            
+            await db.collection('transactions').add({
+              paypalOrderId: paypalOrderId,
+              amount: amount,
+              payerEmail: payerEmail,
+              accessToken: accessToken,
+              timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+              status: 'completed'
+            });
+            
+            await db.collection('accessTokens').add({
+              token: accessToken,
+              active: true,
+              createdAt: firebase.firestore.FieldValue.serverTimestamp()
+            });
+            
+            return { success: true, accessToken: accessToken };
+          } catch (error) {
+            console.error('Error processing payment:', error);
+            return { success: false, error: error.message };
+          }
+        }
+
+        // Verify access token
+        async function verifyAccessToken(token) {
+          try {
+            const querySnapshot = await db.collection('accessTokens')
+              .where('token', '==', token)
+              .get();
+            
+            if (!querySnapshot.empty) {
+              const data = querySnapshot.docs[0].data();
+              return data.active === true;
+            }
+            return false;
+          } catch (error) {
+            console.error('Error verifying token:', error);
+            return false;
+          }
+        }
+
+        // Show/hide premium gate
+        function showPremiumGate() {
+            document.getElementById('premiumGate').style.display = 'block';
+            document.getElementById('premiumBanner').style.display = 'none';
+        }
+
+        function hidePremiumGate() {
+            document.getElementById('premiumGate').style.display = 'none';
+            document.getElementById('premiumBanner').style.display = 'block';
+        }
+
+        // Verify token
+        async function verifyToken() {
+          const tokenInput = document.getElementById('tokenInput').value.trim();
+          
+          if (!tokenInput) {
+            alert('Please enter a token');
+            return;
+          }
+          
+          // Admin bypass codes
+          if (tokenInput === 'ARCEOLOGY_ADMIN_2026' || tokenInput === 'PATTI_ADMIN_ACCESS') {
+            localStorage.setItem('raiderMarketToken', tokenInput);
+            
+            if (!localStorage.getItem('raiderMarketGamertag')) {
+              const gamertag = prompt('Enter your in-game name/gamertag for trades:');
+              if (gamertag) {
+                localStorage.setItem('raiderMarketGamertag', gamertag);
+              }
+            }
+            
+            isPremium = true;
+            document.getElementById('premiumGate').style.display = 'none';
+            document.getElementById('premiumBanner').classList.add('hidden');
+            alert('Admin access granted!');
+            loadPosts();
+            return;
+          }
+          
+          const isValid = await verifyAccessToken(tokenInput);
+          
+          if (isValid) {
+            localStorage.setItem('raiderMarketToken', tokenInput);
+            
+            if (!localStorage.getItem('raiderMarketGamertag')) {
+              const gamertag = prompt('Enter your in-game name/gamertag for trades:');
+              if (gamertag) {
+                localStorage.setItem('raiderMarketGamertag', gamertag);
+              }
+            }
+            
+            isPremium = true;
+            document.getElementById('premiumGate').style.display = 'none';
+            document.getElementById('premiumBanner').classList.add('hidden');
+            loadPosts();
+          } else {
+            alert('Invalid token. Please check and try again.');
+          }
+        }
+
+        // Copy token
+        function copyToken() {
+          const token = document.getElementById('tokenCode').textContent;
+          navigator.clipboard.writeText(token);
+          alert('Token copied to clipboard!');
+        }
+
+        // Create post
+        async function createPost(postData) {
+          try {
+            const docRef = await db.collection('posts').add({
+              title: postData.title,
+              category: postData.category,
+              content: postData.content,
+              contact: postData.contact,
+              author: postData.author,
+              rating: 5,
+              timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+              comments: [],
+              status: 'active'
+            });
+            
+            return { success: true, postId: docRef.id };
+          } catch (error) {
+            console.error('Error creating post:', error);
+            return { success: false, error: error.message };
+          }
+        }
+
+        // Get all posts
+        async function getAllPosts() {
+          try {
+            const querySnapshot = await db.collection('posts')
+              .where('status', '==', 'active')
+              .orderBy('timestamp', 'desc')
+              .get();
+            
+            const posts = [];
+            querySnapshot.forEach((doc) => {
+              posts.push({ id: doc.id, ...doc.data() });
+            });
+            
+            return posts;
+          } catch (error) {
+            console.error('Error getting posts:', error);
+            return [];
+          }
+        }
+
+        // Display posts
+        function displayPosts(posts) {
+          const grid = document.getElementById('postsGrid');
+          
+          if (posts.length === 0) {
+            grid.innerHTML = `
+              <div class="empty-state">
+                <div class="empty-state-icon">📭</div>
+                <p>NO ACTIVE TRADES</p>
+                <p style="font-size: 0.9em; margin-top: 10px;">Be the first to post a trade</p>
+              </div>
+            `;
+            return;
+          }
+          
+          grid.innerHTML = posts.map(post => {
+            const commentCount = post.comments ? post.comments.length : 0;
+            const timeAgo = post.timestamp ? getTimeAgo(post.timestamp.seconds) : 'Just now';
+            const rating = (post.rating || 5).toFixed(1);
+            const ratingDisplay = `[${rating}/5.0]`;
+            
+            return `
+              <div class="post-card" onclick="openPost('${post.id}')">
+                <div class="post-header">
+                  <div>
+                    <div class="post-title">${escapeHtml(post.title)}</div>
+                    <div class="post-author">
+                      <span>${escapeHtml(post.author || 'Anonymous Raider')}</span>
+                      <span class="user-rating">${ratingDisplay}</span>
+                    </div>
+                  </div>
+                  <span class="post-category">${post.category.toUpperCase()}</span>
+                </div>
+                <div class="post-content">${escapeHtml(post.content)}</div>
+                <div class="post-meta">
+                  <span class="post-contact ${isPremium ? 'unlocked' : ''}">
+                    ${isPremium ? '' : '<span class="lock-icon">🔒</span>'}
+                    ${isPremium ? escapeHtml(post.contact) : 'PREMIUM ACCESS REQUIRED'}
+                  </span>
+                  <div>
+                    <span class="comment-count">💬 ${commentCount}</span>
+                    <span style="margin-left: 15px;">${timeAgo}</span>
+                  </div>
+                </div>
+              </div>
+            `;
+          }).join('');
+        }
+
+        // Open post detail
+        function openPost(postId) {
+          currentPostId = postId;
+          const post = allPosts.find(p => p.id === postId);
+          
+          if (!post) return;
+          
+          document.getElementById('modalPostTitle').textContent = post.title;
+          document.getElementById('modalPostCategory').textContent = post.category.toUpperCase();
+          
+          const rating = (post.rating || 5).toFixed(1);
+          const ratingDisplay = `[${rating}/5.0]`;
+          document.getElementById('modalPostAuthor').innerHTML = `
+            <span onclick="viewUserProfile('${post.author}')">${escapeHtml(post.author || 'Anonymous Raider')}</span>
+            <span class="user-rating">${ratingDisplay}</span>
+          `;
+          
+          document.getElementById('modalPostContent').textContent = post.content;
+          
+          const contactSpan = document.getElementById('modalPostContact');
+          if (isPremium) {
+            contactSpan.innerHTML = `<strong>CONTACT:</strong> ${escapeHtml(post.contact)}`;
+            contactSpan.className = '';
+          } else {
+            contactSpan.innerHTML = '<span class="lock-icon">🔒</span> PREMIUM ACCESS REQUIRED';
+            contactSpan.className = 'post-contact';
+          }
+          
+          const timeAgo = post.timestamp ? getTimeAgo(post.timestamp.seconds) : 'Just now';
+          document.getElementById('modalPostTime').textContent = timeAgo;
+          
+          displayComments(post.comments || []);
+          
+          const commentForm = document.getElementById('commentForm');
+          if (isPremium) {
+            commentForm.style.display = 'block';
+          } else {
+            commentForm.innerHTML = `
+              <div class="free-user-message">
+                🔒 PREMIUM ACCESS REQUIRED TO POST REPLIES
+              </div>
+            `;
+          }
+          
+          document.getElementById('viewPostModal').classList.add('active');
+        }
+
+        // Display comments
+        function displayComments(comments) {
+          const list = document.getElementById('commentsList');
+          
+          if (comments.length === 0) {
+            list.innerHTML = '<p style="color: var(--text-dim); text-align: center; padding: 20px;">No replies yet. Start the negotiation!</p>';
+            return;
+          }
+          
+          list.innerHTML = comments.map(comment => `
+            <div class="comment">
+              <div class="comment-author">
+                ${isPremium ? escapeHtml(comment.author) : '<span class="lock-icon">🔒</span> PREMIUM USER'}
+              </div>
+              <div class="comment-text">${escapeHtml(comment.text)}</div>
+              <div class="comment-time">${getTimeAgo(new Date(comment.timestamp).getTime() / 1000)}</div>
+            </div>
+          `).join('');
+        }
+
+        // Post comment
+        async function postComment() {
+          if (!isPremium) {
+            alert('Premium access required to post replies');
+            return;
+          }
+          
+          const commentText = document.getElementById('commentText').value.trim();
+          
+          if (!commentText) {
+            alert('Please enter a reply');
+            return;
+          }
+          
+          const author = localStorage.getItem('raiderMarketGamertag') || 'Anonymous Raider';
+          
+          const comment = {
+            author: author,
+            text: commentText,
+            timestamp: new Date().toISOString()
+          };
+          
+          try {
+            await db.collection('posts').doc(currentPostId).update({
+              comments: firebase.firestore.FieldValue.arrayUnion(comment)
+            });
+            
+            document.getElementById('commentText').value = '';
+            
+            const docSnap = await db.collection('posts').doc(currentPostId).get();
+            if (docSnap.exists) {
+              const updatedPost = { id: docSnap.id, ...docSnap.data() };
+              allPosts = allPosts.map(p => p.id === currentPostId ? updatedPost : p);
+              openPost(currentPostId);
+            }
+          } catch (error) {
+            console.error('Error posting comment:', error);
+            alert('Failed to post reply. Please try again.');
+          }
+        }
+
+        // Close modals
+        function closeViewPostModal() {
+          document.getElementById('viewPostModal').classList.remove('active');
+          currentPostId = null;
+        }
+
+        function openNewPostModal() {
+          if (!isPremium) {
+            alert('Premium access required to create posts');
+            showPremiumGate();
+            return;
+          }
+          document.getElementById('newPostModal').classList.add('active');
+        }
+
+        function closeNewPostModal() {
+          document.getElementById('newPostModal').classList.remove('active');
+          document.getElementById('newPostForm').reset();
+        }
+
+        // Filter posts
+        function filterPosts(category, event) {
+          currentFilter = category;
+          
+          document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.classList.remove('active');
+          });
+          event.target.classList.add('active');
+          
+          if (category === 'all') {
+            displayPosts(allPosts);
+          } else {
+            const filtered = allPosts.filter(p => p.category === category);
+            displayPosts(filtered);
+          }
+        }
+
+        // Search posts
+        function searchPosts() {
+          const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+          
+          if (searchTerm.trim() === '') {
+            if (currentFilter === 'all') {
+              displayPosts(allPosts);
+            } else {
+              const filtered = allPosts.filter(p => p.category === currentFilter);
+              displayPosts(filtered);
+            }
+          } else {
+            const results = allPosts.filter(post => 
+              post.title.toLowerCase().includes(searchTerm) ||
+              post.content.toLowerCase().includes(searchTerm)
+            );
+            displayPosts(results);
+          }
+        }
+
+        // Handle new post form
+        async function handleNewPost(event) {
+          event.preventDefault();
+          
+          if (!isPremium) {
+            alert('Premium access required');
+            return;
+          }
+          
+          const gamertag = localStorage.getItem('raiderMarketGamertag');
+          if (!gamertag) {
+            const newGamertag = prompt('Enter your in-game name/gamertag:');
+            if (newGamertag) {
+              localStorage.setItem('raiderMarketGamertag', newGamertag);
+            } else {
+              return;
+            }
+          }
+          
+          const postData = {
+            title: document.getElementById('postTitle').value,
+            category: document.getElementById('postCategory').value,
+            content: document.getElementById('postContent').value,
+            contact: document.getElementById('postContact').value,
+            author: localStorage.getItem('raiderMarketGamertag')
+          };
+          
+          const result = await createPost(postData);
+          
+          if (result.success) {
+            alert('Trade posted successfully!');
+            closeNewPostModal();
+            loadPosts();
+          } else {
+            alert('Failed to create post. Please try again.');
+          }
+        }
+
+        // Load posts
+        async function loadPosts() {
+          allPosts = await getAllPosts();
+          displayPosts(allPosts);
+        }
+
+        // Utility functions
+        function escapeHtml(text) {
+          const div = document.createElement('div');
+          div.textContent = text;
+          return div.innerHTML;
+        }
+
+        function getTimeAgo(timestamp) {
+          const now = Date.now() / 1000;
+          const diff = now - timestamp;
+          
+          if (diff < 60) return 'Just now';
+          if (diff < 3600) return Math.floor(diff / 60) + 'm ago';
+          if (diff < 86400) return Math.floor(diff / 3600) + 'h ago';
+          return Math.floor(diff / 86400) + 'd ago';
+        }
+
+        // Check user access on load
+        async function checkUserAccess() {
+          const token = localStorage.getItem('raiderMarketToken');
+          
+          if (token) {
+            // Check for admin codes
+            if (token === 'ARCEOLOGY_ADMIN_2026' || token === 'PATTI_ADMIN_ACCESS') {
+              isPremium = true;
+              document.getElementById('premiumBanner').classList.add('hidden');
+            } else {
+              const isValid = await verifyAccessToken(token);
+              if (isValid) {
+                isPremium = true;
+                document.getElementById('premiumBanner').classList.add('hidden');
+              }
+            }
+          }
+        }
+
+        // Setup PayPal
+        function setupPayPal() {
+          paypal.Buttons({
+            createOrder: function(data, actions) {
+              return actions.order.create({
+                purchase_units: [{
+                  amount: { value: '4.99', currency_code: 'USD' },
+                  description: 'Raider.Market Premium Access'
+                }]
+              });
+            },
+            onApprove: async function(data, actions) {
+              const order = await actions.order.capture();
+              
+              const result = await processPayment(order.id, '4.99', order.payer.email_address);
+              
+              if (result.success) {
+                localStorage.setItem('raiderMarketToken', result.accessToken);
+                
+                const gamertag = prompt('Enter your in-game name/gamertag for trades:');
+                if (gamertag) {
+                  localStorage.setItem('raiderMarketGamertag', gamertag);
+                }
+                
+                document.getElementById('tokenCode').textContent = result.accessToken;
+                document.getElementById('tokenDisplay').classList.add('active');
+                
+                setTimeout(() => {
+                  isPremium = true;
+                  document.getElementById('premiumGate').style.display = 'none';
+                  document.getElementById('premiumBanner').classList.add('hidden');
+                  loadPosts();
+                }, 3000);
+              } else {
+                alert('Payment processing failed. Please contact support.');
+              }
+            },
+            onError: function(err) {
+              console.error('PayPal error:', err);
+              alert('Payment failed. Please try again.');
+            }
+          }).render('#paypal-button-container');
+        }
+
+        // Initialize everything
+        window.addEventListener('DOMContentLoaded', async () => {
+          createEmbers();
+          await checkUserAccess();
+          await loadPosts();
+          setupPayPal();
+        });
+    </script>
+</body>
+</html>
