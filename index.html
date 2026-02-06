@@ -5,61 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-adsense-account" content="ca-pub-7264545503146086">
     <title>Arceology – ARC Raiders Raider Logs, Gameplay & Inspired Gear</title>
-    
     <!-- SEO Meta Tags -->
     <meta name="description" content="ARC Raiders raider logs, story-driven gameplay, and ARC Raiders–inspired gear from content creator Arceology. Helmet cam footage, survivor journals, and post-apocalyptic field notes from Speranza.">
     <meta name="keywords" content="ARC Raiders, Arceology, raider log, ARC Raiders gameplay, ARC Raiders videos, Speranza, raider stories, ARC Raiders merch, gaming content, extraction shooter, ARC Raiders guide, ARC Raiders tips">
     <meta name="author" content="Arceology">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://myraiderlog.github.io/myraiderlog/">
-    
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://myraiderlog.github.io/myraiderlog/">
     <meta property="og:title" content="Arceology - ARC Raiders Raider Log">
     <meta property="og:description" content="Watch emotional ARC Raiders gameplay, read fragmented field logs from Speranza, and shop exclusive merch. A raider who wears emotions on their sleeve.">
     <meta property="og:site_name" content="Arceology Raider Log">
-    
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://myraiderlog.github.io/myraiderlog/">
     <meta property="twitter:title" content="Arceology - ARC Raiders Raider Log">
     <meta property="twitter:description" content="Watch emotional ARC Raiders gameplay, read fragmented field logs from Speranza, and shop exclusive merch.">
-    
     <!-- Structured Data - Person -->
     <script type="application/ld+json">
     {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Arceology",
-      "url": "https://myraiderlog.github.io/myraiderlog/",
-      "sameAs": [
-        "https://youtube.com/@arceology"
-      ],
-      "description": "ARC Raiders content creator documenting raider logs from Speranza",
-      "jobTitle": "Gaming Content Creator",
-      "knowsAbout": ["ARC Raiders", "Gaming", "Content Creation", "Storytelling"]
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Arceology",
+        "url": "https://myraiderlog.github.io/myraiderlog/",
+        "sameAs": [
+            "https://youtube.com/@arceology"
+        ],
+        "description": "ARC Raiders content creator documenting raider logs from Speranza",
+        "jobTitle": "Gaming Content Creator",
+        "knowsAbout": ["ARC Raiders", "Gaming", "Content Creation", "Storytelling"]
     }
     </script>
-    
     <!-- Structured Data - WebSite -->
     <script type="application/ld+json">
     {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "@name": "Arceology Raider Log",
-      "url": "https://myraiderlog.github.io/myraiderlog/",
-      "description": "Official raider log documenting ARC Raiders gameplay, stories, and field logs from Speranza",
-      "keywords": "ARC Raiders, raider log, gameplay, Speranza, gaming content"
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "@name": "Arceology Raider Log",
+        "url": "https://myraiderlog.github.io/myraiderlog/",
+        "description": "Official raider log documenting ARC Raiders gameplay, stories, and field logs from Speranza",
+        "keywords": "ARC Raiders, raider log, gameplay, Speranza, gaming content"
     }
     </script>
-    
     <!-- Google AdSense -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7264545503146086"
-     crossorigin="anonymous"></script>
-    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7264545503146086" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-    
     <style>
         :root {
             --rust: #b65e48;
@@ -70,15 +61,8 @@
             --steel: #6b6355;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
 
         body {
             font-family: 'Cormorant Garamond', serif;
@@ -89,14 +73,259 @@
             position: relative;
         }
 
+        /* ========== TERMINAL BOOT LOADING SCREEN ========== */
+        #boot-screen {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: #020201;
+            z-index: 99999;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Space Mono', monospace;
+            overflow: hidden;
+            transition: opacity 0.8s ease;
+        }
+
+        #boot-screen.fade-out {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        #boot-screen::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: repeating-linear-gradient(
+                0deg,
+                rgba(0, 0, 0, 0.15) 0px,
+                rgba(0, 0, 0, 0.15) 1px,
+                transparent 1px,
+                transparent 3px
+            );
+            pointer-events: none;
+            z-index: 2;
+            animation: scanlines 0.1s linear infinite;
+        }
+
+        @keyframes scanlines {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(3px); }
+        }
+
+        #boot-screen::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: radial-gradient(ellipse at center, transparent 50%, rgba(0,0,0,0.7) 100%);
+            pointer-events: none;
+            z-index: 3;
+        }
+
+        .boot-terminal {
+            position: relative;
+            z-index: 4;
+            width: 90%;
+            max-width: 700px;
+            text-align: left;
+        }
+
+        .boot-line {
+            color: var(--ember);
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            line-height: 1.8;
+            opacity: 0;
+            transform: translateY(5px);
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        .boot-line.visible {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .boot-line.success { color: #5a8a5a; }
+        .boot-line.warning { color: #c9a84c; }
+        .boot-line.error { color: var(--rust); }
+        .boot-line.header {
+            color: var(--sand);
+            font-size: 0.85rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .boot-cursor {
+            display: inline-block;
+            width: 8px;
+            height: 14px;
+            background: var(--ember);
+            margin-left: 4px;
+            animation: blink 0.6s step-end infinite;
+            vertical-align: text-bottom;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        .boot-progress-bar {
+            width: 100%;
+            height: 3px;
+            background: rgba(107, 99, 85, 0.3);
+            margin-top: 1.5rem;
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .boot-progress-fill {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, var(--ember), var(--rust));
+            transition: width 0.3s ease;
+            box-shadow: 0 0 10px var(--ember);
+        }
+
+        .boot-title {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            color: var(--sand);
+            letter-spacing: 8px;
+            text-align: center;
+            margin-bottom: 2rem;
+            text-shadow: 0 0 30px rgba(217, 134, 79, 0.4);
+            opacity: 0;
+            animation: bootTitleReveal 1s ease-out 0.5s forwards;
+        }
+
+        @keyframes bootTitleReveal {
+            0% { opacity: 0; transform: translateY(-20px); letter-spacing: 20px; }
+            100% { opacity: 1; transform: translateY(0); letter-spacing: 8px; }
+        }
+
+        .glitch-flash {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(217, 134, 79, 0.1);
+            z-index: 99998;
+            pointer-events: none;
+            opacity: 0;
+        }
+
+        .glitch-flash.active {
+            animation: glitchFlash 0.15s ease-out;
+        }
+
+        @keyframes glitchFlash {
+            0% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+
+        /* ========== AMBIENT AUDIO TOGGLE ========== */
+        #audio-toggle {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 10001;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            border: 1px solid rgba(180, 94, 72, 0.5);
+            background: rgba(13, 10, 8, 0.85);
+            backdrop-filter: blur(10px);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+        }
+
+        #audio-toggle:hover {
+            border-color: var(--ember);
+            box-shadow: 0 4px 30px rgba(217, 134, 79, 0.3);
+            transform: scale(1.05);
+        }
+
+        #audio-toggle svg {
+            width: 20px;
+            height: 20px;
+            fill: none;
+            stroke: var(--ember);
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        #audio-toggle .audio-bars {
+            display: flex;
+            align-items: center;
+            gap: 3px;
+            height: 16px;
+        }
+
+        #audio-toggle .audio-bar {
+            width: 3px;
+            background: var(--ember);
+            border-radius: 2px;
+            transition: height 0.2s ease;
+        }
+
+        #audio-toggle.playing .audio-bar {
+            animation: audioBar 1.2s ease-in-out infinite;
+        }
+
+        #audio-toggle .audio-bar:nth-child(1) { height: 6px; animation-delay: 0s; }
+        #audio-toggle .audio-bar:nth-child(2) { height: 10px; animation-delay: 0.15s; }
+        #audio-toggle .audio-bar:nth-child(3) { height: 14px; animation-delay: 0.3s; }
+        #audio-toggle .audio-bar:nth-child(4) { height: 8px; animation-delay: 0.45s; }
+        #audio-toggle .audio-bar:nth-child(5) { height: 12px; animation-delay: 0.6s; }
+
+        @keyframes audioBar {
+            0%, 100% { transform: scaleY(1); }
+            50% { transform: scaleY(0.3); }
+        }
+
+        #audio-toggle.muted .audio-bar {
+            height: 3px !important;
+            animation: none !important;
+            opacity: 0.4;
+        }
+
+        .audio-label {
+            position: fixed;
+            bottom: 2rem;
+            right: 5.5rem;
+            z-index: 10001;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.6rem;
+            color: var(--steel);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+            white-space: nowrap;
+            line-height: 48px;
+        }
+
+        #audio-toggle:hover + .audio-label {
+            opacity: 1;
+        }
+
         /* PREMIUM FILM GRAIN */
         body::before {
             content: '';
             position: fixed;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
             background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23n)" opacity="0.12"/></svg>');
             pointer-events: none;
             animation: grain 8s steps(10) infinite, grainPulse 4s ease-in-out infinite;
@@ -126,10 +355,8 @@
         body::after {
             content: '';
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
             background: radial-gradient(ellipse at center, transparent 0%, transparent 35%, rgba(13, 10, 8, 0.5) 70%, rgba(13, 10, 8, 0.9) 100%);
             pointer-events: none;
             z-index: 9998;
@@ -144,10 +371,8 @@
         /* FLOATING PARTICLES */
         .particles {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
             pointer-events: none;
             z-index: 9997;
             overflow: hidden;
@@ -155,8 +380,7 @@
 
         .particle {
             position: absolute;
-            width: 2px;
-            height: 2px;
+            width: 2px; height: 2px;
             background: var(--ember);
             border-radius: 50%;
             opacity: 0;
@@ -165,27 +389,16 @@
         }
 
         @keyframes float {
-            0% {
-                transform: translateY(100vh) translateX(0) scale(0);
-                opacity: 0;
-            }
-            10% {
-                opacity: 0.6;
-            }
-            90% {
-                opacity: 0.4;
-            }
-            100% {
-                transform: translateY(-10vh) translateX(50px) scale(1);
-                opacity: 0;
-            }
+            0% { transform: translateY(100vh) translateX(0) scale(0); opacity: 0; }
+            10% { opacity: 0.6; }
+            90% { opacity: 0.4; }
+            100% { transform: translateY(-10vh) translateX(50px) scale(1); opacity: 0; }
         }
 
         /* NAVIGATION */
         nav {
             position: fixed;
-            top: 0;
-            left: 0;
+            top: 0; left: 0;
             width: 100%;
             padding: 1.5rem 5%;
             background: linear-gradient(180deg, rgba(13, 10, 8, 0.98) 0%, rgba(13, 10, 8, 0.9) 100%);
@@ -197,14 +410,8 @@
         }
 
         @keyframes navSlideDown {
-            from {
-                transform: translateY(-100%);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
+            from { transform: translateY(-100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
         }
 
         .nav-content {
@@ -215,10 +422,7 @@
             align-items: center;
         }
 
-        .nav-logo-section {
-            display: flex;
-            flex-direction: column;
-        }
+        .nav-logo-section { display: flex; flex-direction: column; }
 
         .nav-logo {
             font-family: 'Cinzel', serif;
@@ -232,12 +436,8 @@
         }
 
         @keyframes textGlow {
-            0%, 100% {
-                text-shadow: 0 0 10px rgba(217, 134, 79, 0.3);
-            }
-            50% {
-                text-shadow: 0 0 20px rgba(217, 134, 79, 0.6), 0 0 30px rgba(217, 134, 79, 0.3);
-            }
+            0%, 100% { text-shadow: 0 0 10px rgba(217, 134, 79, 0.3); }
+            50% { text-shadow: 0 0 20px rgba(217, 134, 79, 0.6), 0 0 30px rgba(217, 134, 79, 0.3); }
         }
 
         .nav-terminal {
@@ -257,11 +457,7 @@
             99% { opacity: 1; }
         }
 
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            flex-wrap: wrap;
-        }
+        .nav-links { display: flex; gap: 2rem; flex-wrap: wrap; }
 
         .nav-links a {
             font-family: 'Space Mono', monospace;
@@ -277,23 +473,15 @@
         .nav-links a::after {
             content: '';
             position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 0;
-            height: 2px;
+            bottom: -4px; left: 0;
+            width: 0; height: 2px;
             background: var(--ember);
             transition: width 0.3s ease;
             box-shadow: 0 0 10px var(--ember);
         }
 
-        .nav-links a:hover {
-            color: var(--ember);
-            text-shadow: 0 0 10px rgba(217, 134, 79, 0.5);
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
+        .nav-links a:hover { color: var(--ember); text-shadow: 0 0 10px rgba(217, 134, 79, 0.5); }
+        .nav-links a:hover::after { width: 100%; }
 
         /* HERO SECTION */
         .hero {
@@ -311,21 +499,14 @@
         .hero::before {
             content: '';
             position: absolute;
-            width: 100%;
-            height: 100%;
+            width: 100%; height: 100%;
             background: radial-gradient(circle at 50% 50%, rgba(217, 134, 79, 0.1) 0%, transparent 50%);
             animation: heroPulse 8s ease-in-out infinite;
         }
 
         @keyframes heroPulse {
-            0%, 100% {
-                transform: scale(1);
-                opacity: 0.5;
-            }
-            50% {
-                transform: scale(1.1);
-                opacity: 0.8;
-            }
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 0.8; }
         }
 
         .hero-content {
@@ -337,14 +518,8 @@
         }
 
         @keyframes heroFadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .site-title {
@@ -355,28 +530,14 @@
             letter-spacing: 12px;
             margin-bottom: 1rem;
             text-transform: uppercase;
-            text-shadow: 
-                2px 2px 4px rgba(0, 0, 0, 0.8),
-                0 0 40px rgba(180, 94, 72, 0.4),
-                0 0 80px rgba(180, 94, 72, 0.2);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8), 0 0 40px rgba(180, 94, 72, 0.4), 0 0 80px rgba(180, 94, 72, 0.2);
             line-height: 1.2;
             animation: titleGlitch 8s infinite, titleFloat 4s ease-in-out infinite;
         }
 
         @keyframes titleGlitch {
-            0%, 90%, 100% {
-                transform: translate(0, 0);
-                text-shadow: 
-                    2px 2px 4px rgba(0, 0, 0, 0.8),
-                    0 0 40px rgba(180, 94, 72, 0.4);
-            }
-            91% {
-                transform: translate(-2px, 1px);
-                text-shadow: 
-                    2px 2px 4px rgba(0, 0, 0, 0.8),
-                    -2px 0 rgba(217, 134, 79, 0.8),
-                    2px 0 rgba(180, 94, 72, 0.8);
-            }
+            0%, 90%, 100% { transform: translate(0, 0); text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8), 0 0 40px rgba(180, 94, 72, 0.4); }
+            91% { transform: translate(-2px, 1px); text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8), -2px 0 rgba(217, 134, 79, 0.8), 2px 0 rgba(180, 94, 72, 0.8); }
             92% { transform: translate(2px, -1px); }
             93% { transform: translate(0, 0); }
         }
@@ -439,9 +600,7 @@
             padding: 0 5%;
         }
 
-        .section {
-            padding: 8rem 0;
-        }
+        .section { padding: 8rem 0; }
 
         .section-title {
             font-family: 'Cinzel', serif;
@@ -487,18 +646,11 @@
 
         .preview-card:hover {
             transform: translateY(-10px);
-            box-shadow: 
-                0 30px 80px rgba(0, 0, 0, 0.7),
-                0 0 40px rgba(180, 94, 72, 0.3);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.7), 0 0 40px rgba(180, 94, 72, 0.3);
             border-left-color: var(--ember);
         }
 
-        .preview-icon {
-            font-size: 3rem;
-            color: var(--ember);
-            margin-bottom: 1.5rem;
-            display: block;
-        }
+        .preview-icon { font-size: 3rem; color: var(--ember); margin-bottom: 1.5rem; display: block; }
 
         .preview-title {
             font-family: 'Cinzel', serif;
@@ -509,9 +661,7 @@
             text-shadow: 0 0 15px rgba(217, 134, 79, 0.2);
         }
 
-        .preview-card:hover .preview-title {
-            color: var(--ember);
-        }
+        .preview-card:hover .preview-title { color: var(--ember); }
 
         .preview-description {
             font-family: 'Cormorant Garamond', serif;
@@ -531,9 +681,7 @@
             display: inline-block;
         }
 
-        .preview-card:hover .preview-cta {
-            text-shadow: 0 0 10px rgba(217, 134, 79, 0.5);
-        }
+        .preview-card:hover .preview-cta { text-shadow: 0 0 10px rgba(217, 134, 79, 0.5); }
 
         /* FOOTER */
         footer {
@@ -555,9 +703,7 @@
             text-shadow: 0 0 10px rgba(217, 134, 79, 0.2);
         }
 
-        .footer-links {
-            margin-bottom: 2rem;
-        }
+        .footer-links { margin-bottom: 2rem; }
 
         .footer-links a {
             font-family: 'Space Mono', monospace;
@@ -569,10 +715,7 @@
             transition: all 0.3s ease;
         }
 
-        .footer-links a:hover {
-            color: var(--ember);
-            text-shadow: 0 0 15px rgba(217, 134, 79, 0.5);
-        }
+        .footer-links a:hover { color: var(--ember); text-shadow: 0 0 15px rgba(217, 134, 79, 0.5); }
 
         .footer-text {
             font-family: 'Space Mono', monospace;
@@ -585,47 +728,59 @@
 
         /* MOBILE RESPONSIVE */
         @media (max-width: 768px) {
-            nav {
-                padding: 1rem 3%;
-            }
-
-            .nav-links {
-                gap: 1rem;
-            }
-
-            .nav-links a {
-                font-size: 0.65rem;
-            }
-
-            .preview-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .hero {
-                padding: 0 3%;
-            }
-
-            main {
-                padding: 0 3%;
-            }
-
-            .section {
-                padding: 4rem 0;
-            }
+            nav { padding: 1rem 3%; }
+            .nav-links { gap: 1rem; }
+            .nav-links a { font-size: 0.65rem; }
+            .preview-grid { grid-template-columns: 1fr; }
+            .hero { padding: 0 3%; }
+            main { padding: 0 3%; }
+            .section { padding: 4rem 0; }
+            #audio-toggle { bottom: 1rem; right: 1rem; width: 40px; height: 40px; }
+            .audio-label { bottom: 1rem; right: 4.5rem; }
+            .boot-line { font-size: 0.6rem; }
         }
     </style>
 </head>
 <body>
-    <!-- LOADING SCREEN -->
-    <div class="loading" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--night); display: flex; align-items: center; justify-content: center; z-index: 10001; animation: fadeOut 1s ease-out 1s forwards;">
-        <div style="font-family: 'Space Mono', monospace; font-size: 1.2rem; color: var(--ember); letter-spacing: 4px; animation: terminalFlicker 0.5s infinite;">INITIALIZING...</div>
+
+    <!-- ========== TERMINAL BOOT LOADING SCREEN ========== -->
+    <div id="boot-screen">
+        <div class="boot-title">ARCEOLOGY</div>
+        <div class="boot-terminal" id="boot-terminal">
+            <div class="boot-line header">[SPERANZA TERMINAL v2.1.80]</div>
+            <div class="boot-line">Establishing uplink to Speranza network...</div>
+            <div class="boot-line success">> Connection secured [ENCRYPTED]</div>
+            <div class="boot-line">Loading raider profile: ARCEOLOGY</div>
+            <div class="boot-line success">> Identity verified — clearance: UNDERGROUND</div>
+            <div class="boot-line">Syncing field log archives...</div>
+            <div class="boot-line warning">> WARNING: Signal unstable — topside interference detected</div>
+            <div class="boot-line">Initializing helmet cam feed...</div>
+            <div class="boot-line success">> Visual systems online</div>
+            <div class="boot-line">Loading gear manifest...</div>
+            <div class="boot-line success">> Raider cache loaded [14 items]</div>
+            <div class="boot-line">Mounting atmospheric processors...</div>
+            <div class="boot-line success">> Environment systems active</div>
+            <div class="boot-line error">> REMINDER: Trust no one topside.</div>
+            <div class="boot-line header" style="margin-top: 0.5rem;">> TERMINAL READY. WELCOME BACK, RAIDER.<span class="boot-cursor"></span></div>
+            <div class="boot-progress-bar">
+                <div class="boot-progress-fill" id="boot-progress"></div>
+            </div>
+        </div>
     </div>
 
-    <style>
-        @keyframes fadeOut {
-            to { opacity: 0; pointer-events: none; }
-        }
-    </style>
+    <div class="glitch-flash" id="glitch-flash"></div>
+
+    <!-- AMBIENT AUDIO TOGGLE -->
+    <button id="audio-toggle" class="muted" title="Toggle ambient audio" aria-label="Toggle ambient audio">
+        <div class="audio-bars">
+            <div class="audio-bar"></div>
+            <div class="audio-bar"></div>
+            <div class="audio-bar"></div>
+            <div class="audio-bar"></div>
+            <div class="audio-bar"></div>
+        </div>
+    </button>
+    <div class="audio-label">AMBIENT AUDIO</div>
 
     <!-- FLOATING PARTICLES -->
     <div class="particles" id="particles"></div>
@@ -655,7 +810,8 @@
                 I can't help it."
             </p>
             <p class="hero-whisper">
-                ARC Raiders raider logs, gameplay footage, and field notes from the underground. Fragmented, honest, raw stories and helmet cam runs from ARC Raiders content creator Arceology.
+                ARC Raiders raider logs, gameplay footage, and field notes from the underground.
+                Fragmented, honest, raw stories and helmet cam runs from ARC Raiders content creator Arceology.
             </p>
         </div>
     </section>
@@ -681,9 +837,10 @@
                     </svg>
                     <h3 class="preview-title">Field Logs</h3>
                     <p class="preview-description">
-                        Story-driven ARC Raiders raider logs from the front lines. Each entry tied to in-game locations, choices, and the emotional cost of surviving.
+                        Story-driven ARC Raiders raider logs from the front lines. Each entry tied to in-game locations,
+                        choices, and the emotional cost of surviving.
                     </p>
-                    <span class="preview-cta">Read logs →</span>
+                    <span class="preview-cta">Read logs &#8594;</span>
                 </a>
 
                 <!-- GAMEPLAY -->
@@ -702,7 +859,7 @@
                     <p class="preview-description">
                         Raw, unfiltered helmet cam runs from Speranza. ARC Raiders gameplay that pairs with the written logs.
                     </p>
-                    <span class="preview-cta">Watch gameplay →</span>
+                    <span class="preview-cta">Watch gameplay &#8594;</span>
                 </a>
 
                 <!-- GEAR -->
@@ -722,9 +879,9 @@
                     </svg>
                     <h3 class="preview-title">Raider Gear</h3>
                     <p class="preview-description">
-                        ARC Raiders–inspired gear designed by me. Worn-in, tactical, claimed. Every piece funds the next run topside.
+                        ARC Raiders&#8211;inspired gear designed by me. Worn-in, tactical, claimed. Every piece funds the next run topside.
                     </p>
-                    <span class="preview-cta">Browse gear →</span>
+                    <span class="preview-cta">Browse gear &#8594;</span>
                 </a>
             </div>
         </section>
@@ -745,12 +902,228 @@
         </p>
     </footer>
 
-    <!-- JAVASCRIPT FOR EFFECTS -->
+    <!-- JAVASCRIPT -->
     <script>
-        // Generate floating particles
+        // ========== TERMINAL BOOT SEQUENCE ==========
+        (function() {
+            const bootScreen = document.getElementById('boot-screen');
+            const bootLines = document.querySelectorAll('#boot-terminal .boot-line');
+            const progressBar = document.getElementById('boot-progress');
+            const glitchFlash = document.getElementById('glitch-flash');
+            const totalLines = bootLines.length;
+            let currentLine = 0;
+
+            function showNextLine() {
+                if (currentLine < totalLines) {
+                    bootLines[currentLine].classList.add('visible');
+                    const progress = ((currentLine + 1) / totalLines) * 100;
+                    progressBar.style.width = progress + '%';
+
+                    // Random glitch flash
+                    if (Math.random() > 0.7) {
+                        glitchFlash.classList.add('active');
+                        setTimeout(() => glitchFlash.classList.remove('active'), 150);
+                    }
+
+                    currentLine++;
+
+                    // Variable timing for realism
+                    let delay;
+                    if (currentLine === 1) delay = 600;
+                    else if (currentLine === totalLines - 1) delay = 800;
+                    else delay = 150 + Math.random() * 250;
+
+                    setTimeout(showNextLine, delay);
+                } else {
+                    // Boot complete — transition out
+                    setTimeout(() => {
+                        // Final glitch burst
+                        for (let i = 0; i < 3; i++) {
+                            setTimeout(() => {
+                                glitchFlash.classList.add('active');
+                                setTimeout(() => glitchFlash.classList.remove('active'), 100);
+                            }, i * 120);
+                        }
+
+                        setTimeout(() => {
+                            bootScreen.classList.add('fade-out');
+                            setTimeout(() => {
+                                bootScreen.style.display = 'none';
+                            }, 800);
+                        }, 400);
+                    }, 1200);
+                }
+            }
+
+            // Start boot sequence
+            setTimeout(showNextLine, 800);
+        })();
+
+        // ========== AMBIENT AUDIO ENGINE (Web Audio API) ==========
+        (function() {
+            const toggleBtn = document.getElementById('audio-toggle');
+            let audioCtx = null;
+            let isPlaying = false;
+            let masterGain = null;
+            let nodes = [];
+
+            function createAmbientAudio() {
+                audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+                masterGain = audioCtx.createGain();
+                masterGain.gain.value = 0;
+                masterGain.connect(audioCtx.destination);
+
+                // Layer 1: Deep rumble / wind
+                const windBufferSize = 2 * audioCtx.sampleRate;
+                const windBuffer = audioCtx.createBuffer(2, windBufferSize, audioCtx.sampleRate);
+                for (let channel = 0; channel < 2; channel++) {
+                    const data = windBuffer.getChannelData(channel);
+                    let lastOut = 0;
+                    for (let i = 0; i < windBufferSize; i++) {
+                        const white = Math.random() * 2 - 1;
+                        data[i] = (lastOut + (0.02 * white)) / 1.02;
+                        lastOut = data[i];
+                        data[i] *= 3.5;
+                    }
+                }
+                const windSource = audioCtx.createBufferSource();
+                windSource.buffer = windBuffer;
+                windSource.loop = true;
+
+                const windFilter = audioCtx.createBiquadFilter();
+                windFilter.type = 'lowpass';
+                windFilter.frequency.value = 200;
+                windFilter.Q.value = 1;
+
+                const windGain = audioCtx.createGain();
+                windGain.gain.value = 0.4;
+
+                windSource.connect(windFilter);
+                windFilter.connect(windGain);
+                windGain.connect(masterGain);
+                windSource.start();
+                nodes.push(windSource);
+
+                // Modulate wind filter for movement
+                const windLFO = audioCtx.createOscillator();
+                const windLFOGain = audioCtx.createGain();
+                windLFO.frequency.value = 0.05;
+                windLFOGain.gain.value = 80;
+                windLFO.connect(windLFOGain);
+                windLFOGain.connect(windFilter.frequency);
+                windLFO.start();
+                nodes.push(windLFO);
+
+                // Layer 2: Distant mechanical hum
+                const hum = audioCtx.createOscillator();
+                hum.type = 'sine';
+                hum.frequency.value = 55;
+                const humGain = audioCtx.createGain();
+                humGain.gain.value = 0.06;
+                const humFilter = audioCtx.createBiquadFilter();
+                humFilter.type = 'lowpass';
+                humFilter.frequency.value = 120;
+                hum.connect(humFilter);
+                humFilter.connect(humGain);
+                humGain.connect(masterGain);
+                hum.start();
+                nodes.push(hum);
+
+                // Layer 3: High atmospheric whistle
+                const whistle = audioCtx.createOscillator();
+                whistle.type = 'sine';
+                whistle.frequency.value = 2400;
+                const whistleGain = audioCtx.createGain();
+                whistleGain.gain.value = 0.008;
+                const whistleFilter = audioCtx.createBiquadFilter();
+                whistleFilter.type = 'bandpass';
+                whistleFilter.frequency.value = 2400;
+                whistleFilter.Q.value = 30;
+                whistle.connect(whistleFilter);
+                whistleFilter.connect(whistleGain);
+                whistleGain.connect(masterGain);
+                whistle.start();
+                nodes.push(whistle);
+
+                // Modulate whistle
+                const whistleLFO = audioCtx.createOscillator();
+                const whistleLFOGain = audioCtx.createGain();
+                whistleLFO.frequency.value = 0.1;
+                whistleLFOGain.gain.value = 200;
+                whistleLFO.connect(whistleLFOGain);
+                whistleLFOGain.connect(whistle.frequency);
+                whistleLFO.start();
+                nodes.push(whistleLFO);
+
+                // Layer 4: Intermittent radio static crackle
+                const staticBufferSize = 2 * audioCtx.sampleRate;
+                const staticBuffer = audioCtx.createBuffer(1, staticBufferSize, audioCtx.sampleRate);
+                const staticData = staticBuffer.getChannelData(0);
+                for (let i = 0; i < staticBufferSize; i++) {
+                    staticData[i] = Math.random() * 2 - 1;
+                }
+                const staticSource = audioCtx.createBufferSource();
+                staticSource.buffer = staticBuffer;
+                staticSource.loop = true;
+
+                const staticFilter = audioCtx.createBiquadFilter();
+                staticFilter.type = 'bandpass';
+                staticFilter.frequency.value = 3000;
+                staticFilter.Q.value = 0.5;
+
+                const staticGain = audioCtx.createGain();
+                staticGain.gain.value = 0.015;
+
+                staticSource.connect(staticFilter);
+                staticFilter.connect(staticGain);
+                staticGain.connect(masterGain);
+                staticSource.start();
+                nodes.push(staticSource);
+
+                // Pulse the static for intermittent crackle
+                function pulseStatic() {
+                    if (!isPlaying) return;
+                    const now = audioCtx.currentTime;
+                    staticGain.gain.setValueAtTime(0.015, now);
+                    staticGain.gain.linearRampToValueAtTime(0.06, now + 0.1);
+                    staticGain.gain.linearRampToValueAtTime(0.015, now + 0.4);
+                    setTimeout(pulseStatic, 3000 + Math.random() * 8000);
+                }
+                setTimeout(pulseStatic, 2000);
+            }
+
+            toggleBtn.addEventListener('click', function() {
+                if (!audioCtx) {
+                    createAmbientAudio();
+                }
+
+                if (audioCtx.state === 'suspended') {
+                    audioCtx.resume();
+                }
+
+                if (!isPlaying) {
+                    // Fade in
+                    masterGain.gain.cancelScheduledValues(audioCtx.currentTime);
+                    masterGain.gain.setValueAtTime(masterGain.gain.value, audioCtx.currentTime);
+                    masterGain.gain.linearRampToValueAtTime(0.7, audioCtx.currentTime + 1.5);
+                    isPlaying = true;
+                    toggleBtn.classList.remove('muted');
+                    toggleBtn.classList.add('playing');
+                } else {
+                    // Fade out
+                    masterGain.gain.cancelScheduledValues(audioCtx.currentTime);
+                    masterGain.gain.setValueAtTime(masterGain.gain.value, audioCtx.currentTime);
+                    masterGain.gain.linearRampToValueAtTime(0, audioCtx.currentTime + 1);
+                    isPlaying = false;
+                    toggleBtn.classList.add('muted');
+                    toggleBtn.classList.remove('playing');
+                }
+            });
+        })();
+
+        // ========== FLOATING PARTICLES ==========
         const particlesContainer = document.getElementById('particles');
         const particleCount = 30;
-
         for (let i = 0; i < particleCount; i++) {
             const particle = document.createElement('div');
             particle.classList.add('particle');
