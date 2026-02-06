@@ -1141,6 +1141,7 @@
         // ========== RADIO TRANSMISSION AUDIO ENGINE ==========
         (function() {
             const toggleBtn = document.getElementById('audio-toggle');
+            const bootScreen = document.getElementById('boot-screen');
             let audioCtx = null;
             let isPlaying = false;
             let masterGain = null;
@@ -1149,8 +1150,8 @@
             let staticSource = null;
             let nodes = [];
             let isLoaded = false;
+            let hasAutoPlayed = false;
 
-            // Pre-load the audio file
             async function loadAudio() {
                 try {
                     audioCtx = new (window.AudioContext || window.webkitAudioContext)();
@@ -1163,11 +1164,13 @@
                 }
             }
 
-            function startTransmission() {
+            function startTransmission(autoPlay) {
                 if (!audioBuffer || !audioCtx) return;
-                
-                // Stop any existing playback
                 stopAll();
+
+                if (audioCtx.state === 'suspended') {
+                    audioCtx.resume();
+                }
 
                 masterGain = audioCtx.createGain();
                 masterGain.gain.value = 0;
@@ -1178,27 +1181,22 @@
                 voiceSource.buffer = audioBuffer;
                 voiceSource.loop = true;
 
-                // Bandpass filter — makes it sound like radio comms
                 const radioFilter = audioCtx.createBiquadFilter();
                 radioFilter.type = 'bandpass';
                 radioFilter.frequency.value = 1800;
                 radioFilter.Q.value = 0.8;
 
-                // Second filter for more radio character
                 const radioFilter2 = audioCtx.createBiquadFilter();
                 radioFilter2.type = 'highpass';
                 radioFilter2.frequency.value = 300;
 
-                // Compressor to even out volume
                 const compressor = audioCtx.createDynamicsCompressor();
                 compressor.threshold.value = -20;
                 compressor.ratio.value = 8;
 
-                // Voice gain for signal dropout effect
                 const voiceGain = audioCtx.createGain();
                 voiceGain.gain.value = 1.0;
 
-                // Light distortion via waveshaper
                 const distortion = audioCtx.createWaveShaper();
                 const curve = new Float32Array(256);
                 for (let i = 0; i < 256; i++) {
@@ -1217,7 +1215,7 @@
                 voiceSource.start();
                 nodes.push(voiceSource);
 
-                // === STATIC NOISE LAYER ===
+                // === STATIC NOISE ===
                 const staticBufferSize = 2 * audioCtx.sampleRate;
                 const staticBuf = audioCtx.createBuffer(1, staticBufferSize, audioCtx.sampleRate);
                 const staticData = staticBuf.getChannelData(0);
@@ -1242,31 +1240,23 @@
                 staticSource.start();
                 nodes.push(staticSource);
 
-                // === SIGNAL DROPOUT EFFECT ===
-                // Randomly drop the voice signal and spike the static
+                // === SIGNAL DROPOUT ===
                 function signalDropout() {
                     if (!isPlaying) return;
                     const now = audioCtx.currentTime;
                     const dropDuration = 0.1 + Math.random() * 0.4;
-                    
-                    // Voice cuts out
                     voiceGain.gain.setValueAtTime(1.0, now);
                     voiceGain.gain.linearRampToValueAtTime(0.05, now + 0.05);
                     voiceGain.gain.setValueAtTime(0.05, now + dropDuration);
                     voiceGain.gain.linearRampToValueAtTime(1.0, now + dropDuration + 0.08);
-
-                    // Static swells during dropout
                     staticGain.gain.setValueAtTime(0.12, now);
                     staticGain.gain.linearRampToValueAtTime(0.5, now + 0.05);
                     staticGain.gain.setValueAtTime(0.5, now + dropDuration);
                     staticGain.gain.linearRampToValueAtTime(0.12, now + dropDuration + 0.15);
-
-                    // Next dropout at random interval
-                    const nextDropout = 2000 + Math.random() * 5000;
-                    setTimeout(signalDropout, nextDropout);
+                    setTimeout(signalDropout, 2000 + Math.random() * 5000);
                 }
 
-                // === PITCH WOBBLE on radio filter ===
+                // === PITCH WOBBLE ===
                 function pitchWobble() {
                     if (!isPlaying) return;
                     const now = audioCtx.currentTime;
@@ -1276,7 +1266,7 @@
                     setTimeout(pitchWobble, 1500 + Math.random() * 3000);
                 }
 
-                // === STATIC CRACKLE BURSTS ===
+                // === STATIC CRACKLE ===
                 function crackle() {
                     if (!isPlaying) return;
                     const now = audioCtx.currentTime;
@@ -1286,15 +1276,18 @@
                     setTimeout(crackle, 500 + Math.random() * 2000);
                 }
 
-                // Fade in master
-                masterGain.gain.cancelScheduledValues(audioCtx.currentTime);
+                // Fade in
                 masterGain.gain.setValueAtTime(0, audioCtx.currentTime);
                 masterGain.gain.linearRampToValueAtTime(0.8, audioCtx.currentTime + 0.5);
+                isPlaying = true;
 
-                // Start all effects with slight delays
                 setTimeout(signalDropout, 1500);
                 setTimeout(pitchWobble, 1000);
                 setTimeout(crackle, 800);
+
+                // Update toggle button state
+                toggleBtn.classList.remove('muted');
+                toggleBtn.classList.add('playing');
             }
 
             function stopAll() {
@@ -1302,43 +1295,65 @@
                 nodes = [];
             }
 
-            toggleBtn.addEventListener('click', function() {
+            function stopTransmission() {
+                if (masterGain) {
+                    masterGain.gain.cancelScheduledValues(audioCtx.currentTime);
+                    masterGain.gain.setValueAtTime(masterGain.gain.value, audioCtx.currentTime);
+                    masterGain.gain.linearRampToValueAtTime(0, audioCtx.currentTime + 0.8);
+                    setTimeout(function() { stopAll(); }, 1000);
+                }
+                isPlaying = false;
+                toggleBtn.classList.add('muted');
+                toggleBtn.classList.remove('playing');
+            }
+
+            // AUTO-PLAY: Start on first user interaction (click/touch anywhere)
+            function autoPlayOnInteraction() {
+                if (hasAutoPlayed) return;
+                hasAutoPlayed = true;
+
                 if (!isLoaded) {
-                    loadAudio().then(() => {
+                    loadAudio().then(function() {
+                        if (isLoaded) startTransmission(true);
+                    });
+                } else {
+                    startTransmission(true);
+                }
+
+                document.removeEventListener('click', autoPlayOnInteraction);
+                document.removeEventListener('touchstart', autoPlayOnInteraction);
+            }
+
+            // Listen for any click/touch to auto-start audio
+            document.addEventListener('click', autoPlayOnInteraction);
+            document.addEventListener('touchstart', autoPlayOnInteraction);
+
+            // Toggle button controls
+            toggleBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+
+                if (!isLoaded) {
+                    loadAudio().then(function() {
                         if (isLoaded) {
-                            isPlaying = true;
-                            startTransmission();
-                            toggleBtn.classList.remove('muted');
-                            toggleBtn.classList.add('playing');
+                            hasAutoPlayed = true;
+                            startTransmission(false);
                         }
                     });
                     return;
                 }
 
-                if (audioCtx.state === 'suspended') {
+                if (audioCtx && audioCtx.state === 'suspended') {
                     audioCtx.resume();
                 }
 
                 if (!isPlaying) {
-                    isPlaying = true;
-                    startTransmission();
-                    toggleBtn.classList.remove('muted');
-                    toggleBtn.classList.add('playing');
+                    startTransmission(false);
                 } else {
-                    // Fade out
-                    if (masterGain) {
-                        masterGain.gain.cancelScheduledValues(audioCtx.currentTime);
-                        masterGain.gain.setValueAtTime(masterGain.gain.value, audioCtx.currentTime);
-                        masterGain.gain.linearRampToValueAtTime(0, audioCtx.currentTime + 0.8);
-                        setTimeout(() => { stopAll(); }, 1000);
-                    }
-                    isPlaying = false;
-                    toggleBtn.classList.add('muted');
-                    toggleBtn.classList.remove('playing');
+                    stopTransmission();
                 }
             });
 
-            // Also auto-play during boot sequence with static
+            // Pre-load the audio
             loadAudio();
         })();
 
