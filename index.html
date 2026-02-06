@@ -1139,120 +1139,103 @@ section>
             setTimeout(showNextLine, 800);
         })();
 
-        // ========== AMBIENT AUDIO ENGINE (Web Audio API) ==========
+        // ========== RADIO TRANSMISSION AUDIO ENGINE ==========
         (function() {
             const toggleBtn = document.getElementById('audio-toggle');
             let audioCtx = null;
             let isPlaying = false;
             let masterGain = null;
+            let voiceSource = null;
+            let audioBuffer = null;
+            let staticSource = null;
             let nodes = [];
+            let isLoaded = false;
 
-            function createAmbientAudio() {
-                audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            // Pre-load the audio file
+            async function loadAudio() {
+                try {
+                    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+                    const response = await fetch('helloraider.mp3');
+                    const arrayBuffer = await response.arrayBuffer();
+                    audioBuffer = await audioCtx.decodeAudioData(arrayBuffer);
+                    isLoaded = true;
+                } catch(e) {
+                    console.log('Audio load error:', e);
+                }
+            }
+
+            function startTransmission() {
+                if (!audioBuffer || !audioCtx) return;
+                
+                // Stop any existing playback
+                stopAll();
+
                 masterGain = audioCtx.createGain();
                 masterGain.gain.value = 0;
                 masterGain.connect(audioCtx.destination);
 
-                // Layer 1: Deep rumble / wind
-                const windBufferSize = 2 * audioCtx.sampleRate;
-                const windBuffer = audioCtx.createBuffer(2, windBufferSize, audioCtx.sampleRate);
-                for (let channel = 0; channel < 2; channel++) {
-                    const data = windBuffer.getChannelData(channel);
-                    let lastOut = 0;
-                    for (let i = 0; i < windBufferSize; i++) {
-                        const white = Math.random() * 2 - 1;
-                        data[i] = (lastOut + (0.02 * white)) / 1.02;
-                        lastOut = data[i];
-                        data[i] *= 3.5;
-                    }
+                // === VOICE CHAIN ===
+                voiceSource = audioCtx.createBufferSource();
+                voiceSource.buffer = audioBuffer;
+                voiceSource.loop = true;
+
+                // Bandpass filter — makes it sound like radio comms
+                const radioFilter = audioCtx.createBiquadFilter();
+                radioFilter.type = 'bandpass';
+                radioFilter.frequency.value = 1800;
+                radioFilter.Q.value = 0.8;
+
+                // Second filter for more radio character
+                const radioFilter2 = audioCtx.createBiquadFilter();
+                radioFilter2.type = 'highpass';
+                radioFilter2.frequency.value = 300;
+
+                // Compressor to even out volume
+                const compressor = audioCtx.createDynamicsCompressor();
+                compressor.threshold.value = -20;
+                compressor.ratio.value = 8;
+
+                // Voice gain for signal dropout effect
+                const voiceGain = audioCtx.createGain();
+                voiceGain.gain.value = 1.0;
+
+                // Light distortion via waveshaper
+                const distortion = audioCtx.createWaveShaper();
+                const curve = new Float32Array(256);
+                for (let i = 0; i < 256; i++) {
+                    const x = (i * 2) / 256 - 1;
+                    curve[i] = (Math.PI + 3) * x / (Math.PI + 3 * Math.abs(x));
                 }
-                const windSource = audioCtx.createBufferSource();
-                windSource.buffer = windBuffer;
-                windSource.loop = true;
+                distortion.curve = curve;
+                distortion.oversample = '2x';
 
-                const windFilter = audioCtx.createBiquadFilter();
-                windFilter.type = 'lowpass';
-                windFilter.frequency.value = 200;
-                windFilter.Q.value = 1;
+                voiceSource.connect(radioFilter);
+                radioFilter.connect(radioFilter2);
+                radioFilter2.connect(distortion);
+                distortion.connect(compressor);
+                compressor.connect(voiceGain);
+                voiceGain.connect(masterGain);
+                voiceSource.start();
+                nodes.push(voiceSource);
 
-                const windGain = audioCtx.createGain();
-                windGain.gain.value = 0.4;
-
-                windSource.connect(windFilter);
-                windFilter.connect(windGain);
-                windGain.connect(masterGain);
-                windSource.start();
-                nodes.push(windSource);
-
-                // Modulate wind filter for movement
-                const windLFO = audioCtx.createOscillator();
-                const windLFOGain = audioCtx.createGain();
-                windLFO.frequency.value = 0.05;
-                windLFOGain.gain.value = 80;
-                windLFO.connect(windLFOGain);
-                windLFOGain.connect(windFilter.frequency);
-                windLFO.start();
-                nodes.push(windLFO);
-
-                // Layer 2: Distant mechanical hum
-                const hum = audioCtx.createOscillator();
-                hum.type = 'sine';
-                hum.frequency.value = 55;
-                const humGain = audioCtx.createGain();
-                humGain.gain.value = 0.06;
-                const humFilter = audioCtx.createBiquadFilter();
-                humFilter.type = 'lowpass';
-                humFilter.frequency.value = 120;
-                hum.connect(humFilter);
-                humFilter.connect(humGain);
-                humGain.connect(masterGain);
-                hum.start();
-                nodes.push(hum);
-
-                // Layer 3: High atmospheric whistle
-                const whistle = audioCtx.createOscillator();
-                whistle.type = 'sine';
-                whistle.frequency.value = 2400;
-                const whistleGain = audioCtx.createGain();
-                whistleGain.gain.value = 0.008;
-                const whistleFilter = audioCtx.createBiquadFilter();
-                whistleFilter.type = 'bandpass';
-                whistleFilter.frequency.value = 2400;
-                whistleFilter.Q.value = 30;
-                whistle.connect(whistleFilter);
-                whistleFilter.connect(whistleGain);
-                whistleGain.connect(masterGain);
-                whistle.start();
-                nodes.push(whistle);
-
-                // Modulate whistle
-                const whistleLFO = audioCtx.createOscillator();
-                const whistleLFOGain = audioCtx.createGain();
-                whistleLFO.frequency.value = 0.1;
-                whistleLFOGain.gain.value = 200;
-                whistleLFO.connect(whistleLFOGain);
-                whistleLFOGain.connect(whistle.frequency);
-                whistleLFO.start();
-                nodes.push(whistleLFO);
-
-                // Layer 4: Intermittent radio static crackle
+                // === STATIC NOISE LAYER ===
                 const staticBufferSize = 2 * audioCtx.sampleRate;
-                const staticBuffer = audioCtx.createBuffer(1, staticBufferSize, audioCtx.sampleRate);
-                const staticData = staticBuffer.getChannelData(0);
+                const staticBuf = audioCtx.createBuffer(1, staticBufferSize, audioCtx.sampleRate);
+                const staticData = staticBuf.getChannelData(0);
                 for (let i = 0; i < staticBufferSize; i++) {
                     staticData[i] = Math.random() * 2 - 1;
                 }
-                const staticSource = audioCtx.createBufferSource();
-                staticSource.buffer = staticBuffer;
+                staticSource = audioCtx.createBufferSource();
+                staticSource.buffer = staticBuf;
                 staticSource.loop = true;
 
                 const staticFilter = audioCtx.createBiquadFilter();
                 staticFilter.type = 'bandpass';
                 staticFilter.frequency.value = 3000;
-                staticFilter.Q.value = 0.5;
+                staticFilter.Q.value = 0.7;
 
                 const staticGain = audioCtx.createGain();
-                staticGain.gain.value = 0.015;
+                staticGain.gain.value = 0.12;
 
                 staticSource.connect(staticFilter);
                 staticFilter.connect(staticGain);
@@ -1260,21 +1243,77 @@ section>
                 staticSource.start();
                 nodes.push(staticSource);
 
-                // Pulse the static for intermittent crackle
-                function pulseStatic() {
+                // === SIGNAL DROPOUT EFFECT ===
+                // Randomly drop the voice signal and spike the static
+                function signalDropout() {
                     if (!isPlaying) return;
                     const now = audioCtx.currentTime;
-                    staticGain.gain.setValueAtTime(0.015, now);
-                    staticGain.gain.linearRampToValueAtTime(0.06, now + 0.1);
-                    staticGain.gain.linearRampToValueAtTime(0.015, now + 0.4);
-                    setTimeout(pulseStatic, 3000 + Math.random() * 8000);
+                    const dropDuration = 0.1 + Math.random() * 0.4;
+                    
+                    // Voice cuts out
+                    voiceGain.gain.setValueAtTime(1.0, now);
+                    voiceGain.gain.linearRampToValueAtTime(0.05, now + 0.05);
+                    voiceGain.gain.setValueAtTime(0.05, now + dropDuration);
+                    voiceGain.gain.linearRampToValueAtTime(1.0, now + dropDuration + 0.08);
+
+                    // Static swells during dropout
+                    staticGain.gain.setValueAtTime(0.12, now);
+                    staticGain.gain.linearRampToValueAtTime(0.5, now + 0.05);
+                    staticGain.gain.setValueAtTime(0.5, now + dropDuration);
+                    staticGain.gain.linearRampToValueAtTime(0.12, now + dropDuration + 0.15);
+
+                    // Next dropout at random interval
+                    const nextDropout = 2000 + Math.random() * 5000;
+                    setTimeout(signalDropout, nextDropout);
                 }
-                setTimeout(pulseStatic, 2000);
+
+                // === PITCH WOBBLE on radio filter ===
+                function pitchWobble() {
+                    if (!isPlaying) return;
+                    const now = audioCtx.currentTime;
+                    const wobbleTo = 1400 + Math.random() * 800;
+                    radioFilter.frequency.setValueAtTime(radioFilter.frequency.value, now);
+                    radioFilter.frequency.linearRampToValueAtTime(wobbleTo, now + 0.5 + Math.random());
+                    setTimeout(pitchWobble, 1500 + Math.random() * 3000);
+                }
+
+                // === STATIC CRACKLE BURSTS ===
+                function crackle() {
+                    if (!isPlaying) return;
+                    const now = audioCtx.currentTime;
+                    staticGain.gain.setValueAtTime(staticGain.gain.value, now);
+                    staticGain.gain.linearRampToValueAtTime(0.35, now + 0.02);
+                    staticGain.gain.linearRampToValueAtTime(0.12, now + 0.15);
+                    setTimeout(crackle, 500 + Math.random() * 2000);
+                }
+
+                // Fade in master
+                masterGain.gain.cancelScheduledValues(audioCtx.currentTime);
+                masterGain.gain.setValueAtTime(0, audioCtx.currentTime);
+                masterGain.gain.linearRampToValueAtTime(0.8, audioCtx.currentTime + 0.5);
+
+                // Start all effects with slight delays
+                setTimeout(signalDropout, 1500);
+                setTimeout(pitchWobble, 1000);
+                setTimeout(crackle, 800);
+            }
+
+            function stopAll() {
+                nodes.forEach(n => { try { n.stop(); } catch(e) {} });
+                nodes = [];
             }
 
             toggleBtn.addEventListener('click', function() {
-                if (!audioCtx) {
-                    createAmbientAudio();
+                if (!isLoaded) {
+                    loadAudio().then(() => {
+                        if (isLoaded) {
+                            isPlaying = true;
+                            startTransmission();
+                            toggleBtn.classList.remove('muted');
+                            toggleBtn.classList.add('playing');
+                        }
+                    });
+                    return;
                 }
 
                 if (audioCtx.state === 'suspended') {
@@ -1282,23 +1321,26 @@ section>
                 }
 
                 if (!isPlaying) {
-                    // Fade in
-                    masterGain.gain.cancelScheduledValues(audioCtx.currentTime);
-                    masterGain.gain.setValueAtTime(masterGain.gain.value, audioCtx.currentTime);
-                    masterGain.gain.linearRampToValueAtTime(0.7, audioCtx.currentTime + 1.5);
                     isPlaying = true;
+                    startTransmission();
                     toggleBtn.classList.remove('muted');
                     toggleBtn.classList.add('playing');
                 } else {
                     // Fade out
-                    masterGain.gain.cancelScheduledValues(audioCtx.currentTime);
-                    masterGain.gain.setValueAtTime(masterGain.gain.value, audioCtx.currentTime);
-                    masterGain.gain.linearRampToValueAtTime(0, audioCtx.currentTime + 1);
+                    if (masterGain) {
+                        masterGain.gain.cancelScheduledValues(audioCtx.currentTime);
+                        masterGain.gain.setValueAtTime(masterGain.gain.value, audioCtx.currentTime);
+                        masterGain.gain.linearRampToValueAtTime(0, audioCtx.currentTime + 0.8);
+                        setTimeout(() => { stopAll(); }, 1000);
+                    }
                     isPlaying = false;
                     toggleBtn.classList.add('muted');
                     toggleBtn.classList.remove('playing');
                 }
             });
+
+            // Also auto-play during boot sequence with static
+            loadAudio();
         })();
 
         // ========== FLOATING PARTICLES ==========
