@@ -739,6 +739,166 @@
             .audio-label { bottom: 1rem; right: 4.5rem; }
             .boot-line { font-size: 0.6rem; }
         }
+
+        /* ========== KO-FI SUPPORT TERMINAL ========== */
+        .support-terminal {
+            padding: 6rem 0;
+            position: relative;
+        }
+
+        .support-container {
+            max-width: 750px;
+            margin: 0 auto;
+            border: 1px solid rgba(180, 94, 72, 0.4);
+            background: linear-gradient(135deg, rgba(13, 10, 8, 0.95), rgba(26, 20, 16, 0.8));
+            padding: 3rem;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.6), inset 0 0 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .support-container::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: repeating-linear-gradient(
+                0deg,
+                rgba(217, 134, 79, 0.02) 0px,
+                rgba(217, 134, 79, 0.02) 1px,
+                transparent 1px,
+                transparent 4px
+            );
+            pointer-events: none;
+            animation: supportScanlines 0.15s linear infinite;
+        }
+
+        @keyframes supportScanlines {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(4px); }
+        }
+
+        .support-container::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: radial-gradient(ellipse at center, transparent 60%, rgba(13, 10, 8, 0.6) 100%);
+            pointer-events: none;
+        }
+
+        .support-header {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.7rem;
+            color: var(--ember);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 2;
+            animation: terminalFlicker 5s infinite;
+        }
+
+        .support-divider {
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--rust), transparent);
+            margin: 1rem 0 1.5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .support-message {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            font-style: italic;
+            color: var(--sand);
+            line-height: 1.9;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 2;
+            text-shadow: 0 0 10px rgba(217, 134, 79, 0.1);
+        }
+
+        .support-btn-wrapper {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .support-btn {
+            display: inline-block;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.8rem;
+            color: var(--ember);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            text-decoration: none;
+            padding: 1rem 2.5rem;
+            border: 1px solid var(--rust);
+            background: rgba(13, 10, 8, 0.8);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            cursor: pointer;
+        }
+
+        .support-btn::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(217, 134, 79, 0.15), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .support-btn:hover::before {
+            left: 100%;
+        }
+
+        .support-btn:hover {
+            border-color: var(--ember);
+            color: var(--sand);
+            box-shadow: 0 0 25px rgba(217, 134, 79, 0.3), inset 0 0 25px rgba(217, 134, 79, 0.05);
+            text-shadow: 0 0 10px rgba(217, 134, 79, 0.5);
+            animation: btnGlitch 0.3s ease;
+        }
+
+        @keyframes btnGlitch {
+            0% { transform: translate(0, 0); }
+            20% { transform: translate(-2px, 1px); }
+            40% { transform: translate(2px, -1px); }
+            60% { transform: translate(-1px, -1px); }
+            80% { transform: translate(1px, 1px); }
+            100% { transform: translate(0, 0); }
+        }
+
+        .support-btn-cursor {
+            display: inline-block;
+            width: 2px;
+            height: 14px;
+            background: var(--ember);
+            margin-left: 8px;
+            vertical-align: text-bottom;
+            animation: blink 0.6s step-end infinite;
+        }
+
+        .support-status {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.6rem;
+            color: var(--steel);
+            letter-spacing: 2px;
+            margin-top: 1.5rem;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            opacity: 0.6;
+        }
+
+        .support-status span {
+            color: #5a8a5a;
+        }
+
     </style>
 </head>
 <body>
@@ -884,7 +1044,27 @@
                     <span class="preview-cta">Browse gear &#8594;</span>
                 </a>
             </div>
+        </
+        <!-- KO-FI SUPPORT TERMINAL -->
+        <section class="support-terminal">
+            <div class="support-container">
+                <div class="support-header">// incoming.transmission</div>
+                <div class="support-divider"></div>
+                <p class="support-message">
+                    If this raider's logs mean something to you — keep the signal alive.<br>
+                    Every contribution funds the next run topside. Gear repairs, ammo, archive maintenance.<br>
+                    The underground doesn't run on hope alone.
+                </p>
+                <div class="support-btn-wrapper">
+                    <a href="https://ko-fi.com/arceology" target="_blank" rel="noopener noreferrer" class="support-btn">
+                        fund the next run<span class="support-btn-cursor"></span>
+                    </a>
+                </div>
+                <p class="support-status"><span>></span> signal.origin: ko-fi // encryption: active // status: awaiting_response</p>
+            </div>
         </section>
+
+section>
     </main>
 
     <!-- FOOTER -->
