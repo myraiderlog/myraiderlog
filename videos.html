@@ -353,6 +353,43 @@
             margin-bottom: 0.5rem;
             display: block;
         }
+
+        /* TABLET */
+        @media (max-width: 768px) {
+            nav { padding: 1rem 3%; }
+            .nav-content { flex-wrap: wrap; gap: 0.5rem; }
+            .nav-links { gap: 1.2rem; }
+            .nav-links a { font-size: 0.65rem; padding: 0.3rem 0; }
+            main { padding: 6rem 3% 2rem; }
+            .shorts-grid { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; }
+            .footer-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.8rem; }
+            .footer-links a { margin: 0; }
+        }
+
+        /* MOBILE */
+        @media (max-width: 480px) {
+            nav { padding: 0.8rem 3%; }
+            .nav-logo { font-size: 1rem; letter-spacing: 2px; }
+            .nav-terminal { font-size: 0.55rem; letter-spacing: 1px; }
+            .nav-links { gap: 0.7rem; }
+            .nav-links a { font-size: 0.55rem; letter-spacing: 1px; padding: 0.4rem 0; min-height: 44px; display: inline-flex; align-items: center; }
+            main { padding: 5rem 2% 2rem; }
+            .page-title { font-size: 1.8rem; letter-spacing: 4px; }
+            .page-subtitle { font-size: 0.65rem; letter-spacing: 2px; }
+            .page-description { font-size: 1rem; }
+            .page-header { margin-bottom: 3rem; padding-top: 2rem; }
+            .shorts-section { margin-top: 2rem; }
+            .shorts-header h2 { font-size: 1.8rem; letter-spacing: 3px; }
+            .shorts-header p { font-size: 0.6rem; letter-spacing: 2px; }
+            .shorts-grid { grid-template-columns: repeat(2, 1fr); gap: 0.8rem; }
+            .short-info { padding: 0.6rem; }
+            .short-info h3 { font-size: 0.85rem; }
+            .short-info p { font-size: 0.55rem; }
+            .short-rank { font-size: 0.5rem; letter-spacing: 1px; }
+            .footer-quote { font-size: 1rem; padding: 0 1rem; }
+            .footer-links a { font-size: 0.65rem; letter-spacing: 1px; margin: 0; padding: 0.3rem; }
+            .footer-text { font-size: 0.6rem; letter-spacing: 1px; }
+        }
     </style>
 </head>
 <body>
