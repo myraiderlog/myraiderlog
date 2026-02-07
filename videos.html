@@ -411,6 +411,92 @@
             .featured-video { padding: 2rem; }
             .video-grid { grid-template-columns: 1fr; }
         }
+
+        /* SHORTS GRID */
+        .shorts-section {
+            margin-top: 6rem;
+        }
+        .shorts-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .shorts-header h2 {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 600;
+            color: var(--sand);
+            letter-spacing: 6px;
+            margin-bottom: 0.5rem;
+            text-transform: lowercase;
+            text-shadow: 0 0 20px rgba(217, 134, 79, 0.3);
+        }
+        .shorts-header p {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.7rem;
+            color: var(--steel);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            animation: terminalFlicker 5s infinite;
+        }
+        .shorts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+        .short-card {
+            background: linear-gradient(135deg, rgba(26, 20, 16, 0.6), rgba(13, 10, 8, 0.8));
+            border: 1px solid rgba(180, 94, 72, 0.3);
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+        .short-card:hover {
+            border-color: var(--ember);
+            transform: translateY(-6px);
+            box-shadow: 0 15px 40px rgba(180, 94, 72, 0.3);
+        }
+        .short-embed {
+            position: relative;
+            width: 100%;
+            padding-bottom: 177.78%;
+            background: #000;
+            overflow: hidden;
+        }
+        .short-embed iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        .short-info {
+            padding: 1rem;
+        }
+        .short-info h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 1rem;
+            color: var(--sand);
+            margin-bottom: 0.3rem;
+            letter-spacing: 1px;
+        }
+        .short-card:hover .short-info h3 {
+            color: var(--ember);
+        }
+        .short-info p {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.65rem;
+            color: var(--steel);
+            letter-spacing: 1px;
+        }
+        .short-rank {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.6rem;
+            color: var(--ember);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
     </style>
 </head>
 <body>
@@ -488,6 +574,66 @@
                 <p class="video-description">
                     Another run. Another extraction. Another day I made it back.
                 </p>
+            </div>
+        </div>
+
+        <!-- TOP SHORTS SECTION -->
+        <div class="shorts-section">
+            <div class="shorts-header">
+                <h2>top shorts</h2>
+                <p>Most Viewed // Helmet Cam Clips</p>
+            </div>
+            <div class="shorts-grid">
+                <div class="short-card">
+                    <div class="short-embed">
+                        <iframe src="https://www.youtube-nocookie.com/embed/8TRvQG_NmzY?rel=0" title="Raider Log Day 112 | Fireballs Let Me Live" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <div class="short-info">
+                        <span class="short-rank">// #1 Most Viewed</span>
+                        <h3>Fireballs Let Me Live</h3>
+                        <p>Day 112 // 2.8K views</p>
+                    </div>
+                </div>
+                <div class="short-card">
+                    <div class="short-embed">
+                        <iframe src="https://www.youtube-nocookie.com/embed/SZzDL9Mwx2o?rel=0" title="Raider Log Day 88 | Sunset Over Buried City" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <div class="short-info">
+                        <span class="short-rank">// #2 Most Viewed</span>
+                        <h3>Sunset Over Buried City</h3>
+                        <p>Day 88 // 1.4K views</p>
+                    </div>
+                </div>
+                <div class="short-card">
+                    <div class="short-embed">
+                        <iframe src="https://www.youtube-nocookie.com/embed/_hdoEvWSAU4?rel=0" title="Raider Log Day 57 | Topside Found Footage" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <div class="short-info">
+                        <span class="short-rank">// #3 Most Viewed</span>
+                        <h3>Topside Found Footage</h3>
+                        <p>Day 57 // 1.4K views</p>
+                    </div>
+                </div>
+                <div class="short-card">
+                    <div class="short-embed">
+                        <iframe src="https://www.youtube-nocookie.com/embed/8JS8QUpRjwo?rel=0" title="ARC Raiders Friendly Flute Song" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <div class="short-info">
+                        <span class="short-rank">// #4 Most Viewed</span>
+                        <h3>Friendly Flute Song</h3>
+                        <p>PvP Trust Moment // 1.3K views</p>
+                    </div>
+                </div>
+                <div class="short-card">
+                    <div class="short-embed">
+                        <iframe src="https://www.youtube-nocookie.com/embed/8DO3sENCSIE?rel=0" title="ARC Raiders Blue Gate Flats - Day 77" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <div class="short-info">
+                        <span class="short-rank">// #5 Most Viewed</span>
+                        <h3>Blue Gate Flats</h3>
+                        <p>Day 77 // 1.2K views</p>
+                    </div>
+                </div>
             </div>
         </div>
     </main>
