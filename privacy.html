@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-adsense-account" content="ca-pub-7264545503146086">
+    <title>Privacy Policy – Arceology / MyRaiderLog.com</title>
+    <meta name="description" content="Privacy policy for MyRaiderLog.com, the ARC Raiders content site by Arceology. Learn how we handle visitor data, cookies, and third-party services.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://myraiderlog.com/privacy.html">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7264545503146086" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --rust: #b65e48; --ash: #4a4238; --sand: #d4c5a9;
+            --night: #0d0a08; --ember: #d9864f; --steel: #6b6355;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Cormorant Garamond', serif;
+            background: var(--night); color: var(--sand);
+            overflow-x: hidden; line-height: 1.8;
+        }
+        body::before {
+            content: ''; position: fixed; top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23n)" opacity="0.12"/></svg>');
+            pointer-events: none; animation: grain 8s steps(10) infinite;
+            z-index: 9999; mix-blend-mode: overlay;
+        }
+        @keyframes grain {
+            0%, 100% { transform: translate(0, 0); }
+            10% { transform: translate(-5%, -10%); } 20% { transform: translate(-15%, 5%); }
+            30% { transform: translate(7%, -25%); } 40% { transform: translate(-5%, 25%); }
+            50% { transform: translate(-15%, 10%); } 60% { transform: translate(15%, 0%); }
+            70% { transform: translate(0%, 15%); } 80% { transform: translate(3%, 10%); }
+            90% { transform: translate(-10%, 5%); }
+        }
+        body::after {
+            content: ''; position: fixed; top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: radial-gradient(ellipse at center, transparent 0%, transparent 35%, rgba(13, 10, 8, 0.5) 70%, rgba(13, 10, 8, 0.9) 100%);
+            pointer-events: none; z-index: 9998;
+        }
+        nav {
+            position: fixed; top: 0; left: 0; width: 100%;
+            padding: 1.5rem 5%;
+            background: linear-gradient(180deg, rgba(13, 10, 8, 0.98) 0%, rgba(13, 10, 8, 0.9) 100%);
+            backdrop-filter: blur(15px); z-index: 10000;
+            border-bottom: 1px solid rgba(180, 94, 72, 0.3);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+        }
+        .nav-content { max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .nav-logo {
+            font-family: 'Cinzel', serif; font-size: 1.2rem; font-weight: 600;
+            color: var(--sand); letter-spacing: 3px; text-transform: lowercase;
+            text-decoration: none;
+        }
+        .nav-terminal {
+            font-family: 'Space Mono', monospace; font-size: 0.65rem;
+            color: var(--steel); letter-spacing: 2px;
+        }
+        .nav-links { display: flex; gap: 2rem; flex-wrap: wrap; }
+        .nav-links a {
+            font-family: 'Space Mono', monospace; font-size: 0.7rem;
+            color: var(--steel); text-decoration: none; letter-spacing: 2px;
+            text-transform: uppercase; transition: all 0.3s ease;
+        }
+        .nav-links a:hover { color: var(--ember); }
+        main {
+            position: relative; z-index: 5;
+            max-width: 900px; margin: 0 auto;
+            padding: 10rem 5% 4rem;
+        }
+        .page-header { text-align: center; margin-bottom: 4rem; }
+        .page-title {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(2rem, 5vw, 3rem); font-weight: 700;
+            color: var(--sand); letter-spacing: 6px; margin-bottom: 1rem;
+            text-transform: lowercase;
+        }
+        .page-subtitle {
+            font-family: 'Space Mono', monospace; font-size: 0.8rem;
+            color: var(--ember); letter-spacing: 3px; text-transform: uppercase;
+        }
+        .policy-section { margin-bottom: 3rem; }
+        .policy-section h2 {
+            font-family: 'Cinzel', serif; font-size: 1.5rem;
+            color: var(--sand); letter-spacing: 2px; margin-bottom: 1rem;
+        }
+        .policy-section p {
+            font-family: 'Cormorant Garamond', serif; font-size: 1.15rem;
+            color: var(--sand); line-height: 2; margin-bottom: 1rem;
+        }
+        .policy-section ul {
+            list-style: none; padding-left: 1.5rem; margin-bottom: 1rem;
+        }
+        .policy-section ul li {
+            font-family: 'Cormorant Garamond', serif; font-size: 1.1rem;
+            color: var(--steel); line-height: 2; position: relative;
+        }
+        .policy-section ul li::before {
+            content: '>'; color: var(--ember);
+            font-family: 'Space Mono', monospace; font-size: 0.8rem;
+            position: absolute; left: -1.5rem;
+        }
+        .policy-divider {
+            width: 100%; height: 1px;
+            background: linear-gradient(90deg, transparent, var(--rust), transparent);
+            margin: 2rem 0;
+        }
+        .last-updated {
+            font-family: 'Space Mono', monospace; font-size: 0.75rem;
+            color: var(--steel); letter-spacing: 2px; text-align: center;
+            margin-top: 3rem; opacity: 0.6;
+        }
+        footer {
+            padding: 4rem 5% 3rem; text-align: center;
+            border-top: 1px solid rgba(180, 94, 72, 0.2);
+        }
+        .footer-links a {
+            font-family: 'Space Mono', monospace; font-size: 0.75rem;
+            color: var(--steel); text-decoration: none; letter-spacing: 2px;
+            margin: 0 1rem; transition: all 0.3s ease;
+        }
+        .footer-links a:hover { color: var(--ember); }
+        .footer-text {
+            font-family: 'Space Mono', monospace; font-size: 0.7rem;
+            color: var(--steel); letter-spacing: 2px; opacity: 0.6; margin-top: 2rem;
+        }
+        @media (max-width: 768px) {
+            nav { padding: 1rem 3%; }
+            .nav-links { gap: 1rem; }
+            .nav-links a { font-size: 0.65rem; }
+            main { padding: 8rem 3% 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-content">
+            <div>
+                <a href="index.html" class="nav-logo">arceology</a>
+                <div class="nav-terminal">terminal.speranza</div>
+            </div>
+            <div class="nav-links">
+                <a href="blog.html">logs</a>
+                <a href="videos.html">gameplay</a>
+                <a href="store.html">gear</a>
+                <a href="about.html">about</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div class="page-header">
+            <h1 class="page-title">privacy policy</h1>
+            <p class="page-subtitle">Data Protocols // Transparency Report</p>
+        </div>
+
+        <div class="policy-section">
+            <h2>Overview</h2>
+            <p>
+                This Privacy Policy explains how MyRaiderLog.com ("the Site"), operated by Arceology, collects, uses, and protects information from visitors. This site is a personal, fan-created project dedicated to ARC Raiders content including field logs, gameplay footage, and inspired merchandise. Your privacy is respected and protected.
+            </p>
+        </div>
+
+        <div class="policy-divider"></div>
+
+        <div class="policy-section">
+            <h2>Information We Collect</h2>
+            <p>
+                This Site is a static website hosted on GitHub Pages. We do not directly collect, store, or process personal information from visitors. We do not require account creation, login credentials, or form submissions to access content on this site.
+            </p>
+            <p>
+                However, certain third-party services integrated into this site may collect information as described below.
+            </p>
+        </div>
+
+        <div class="policy-divider"></div>
+
+        <div class="policy-section">
+            <h2>Third-Party Services</h2>
+            <p>
+                This site uses the following third-party services that may collect data independently:
+            </p>
+            <ul>
+                <li><strong>Google AdSense:</strong> We use Google AdSense to display advertisements. Google may use cookies and similar technologies to serve ads based on your prior visits to this site or other websites. You can opt out of personalized advertising by visiting Google's Ads Settings at ads.google.com/settings.</li>
+                <li><strong>Google Fonts:</strong> This site loads fonts from Google Fonts, which may log your IP address. Google's Privacy Policy applies to this data collection.</li>
+                <li><strong>YouTube (via youtube-nocookie.com):</strong> Embedded gameplay videos use YouTube's privacy-enhanced mode, which reduces data collection. YouTube's Privacy Policy governs any data collected through these embeds.</li>
+                <li><strong>GitHub Pages:</strong> This site is hosted on GitHub Pages, which may collect server logs including IP addresses and user agent strings. GitHub's Privacy Statement applies.</li>
+                <li><strong>Bonfire:</strong> Links to the merchandise store direct you to Bonfire.com, a separate platform with its own privacy policy. Any purchases or data provided on Bonfire are governed by their privacy practices.</li>
+                <li><strong>Ko-fi:</strong> Links to our support page direct you to Ko-fi.com, a separate platform. Any data provided on Ko-fi is governed by their privacy policy.</li>
+            </ul>
+        </div>
+
+        <div class="policy-divider"></div>
+
+        <div class="policy-section">
+            <h2>Cookies</h2>
+            <p>
+                This site itself does not set cookies. However, third-party services such as Google AdSense may use cookies to serve relevant advertisements. These cookies allow Google to serve ads based on your visits to this site and other sites on the internet.
+            </p>
+            <p>
+                You can manage your cookie preferences through your browser settings. You can also opt out of Google's use of cookies by visiting the Google Advertising Cookie Opt-Out page. Additionally, you can opt out of third-party vendor cookies by visiting the Network Advertising Initiative's opt-out page at optout.networkadvertising.org.
+            </p>
+        </div>
+
+        <div class="policy-divider"></div>
+
+        <div class="policy-section">
+            <h2>External Links</h2>
+            <p>
+                This site contains links to external websites including YouTube, Ko-fi, and Bonfire. We are not responsible for the privacy practices or content of these external sites. We encourage you to review the privacy policies of any external site you visit through links on this site.
+            </p>
+        </div>
+
+        <div class="policy-divider"></div>
+
+        <div class="policy-section">
+            <h2>Children's Privacy</h2>
+            <p>
+                This site is not directed at children under the age of 13. We do not knowingly collect personal information from children. If you believe a child has provided personal information through any of the third-party services on this site, please contact the respective service provider.
+            </p>
+        </div>
+
+        <div class="policy-divider"></div>
+
+        <div class="policy-section">
+            <h2>Changes to This Policy</h2>
+            <p>
+                We may update this Privacy Policy from time to time to reflect changes in our practices or in the third-party services we use. Any changes will be posted on this page with an updated revision date. We encourage visitors to review this page periodically.
+            </p>
+        </div>
+
+        <div class="policy-divider"></div>
+
+        <div class="policy-section">
+            <h2>Contact</h2>
+            <p>
+                If you have questions about this Privacy Policy, you can reach Arceology through Ko-fi at ko-fi.com/arceology or through the YouTube channel at youtube.com/@arceologist214.
+            </p>
+        </div>
+
+        <p class="last-updated">Last updated: February 2026</p>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <a href="index.html">HOME</a>
+            <a href="about.html">ABOUT</a>
+            <a href="https://www.youtube.com/@arceologist214" target="_blank">YOUTUBE</a>
+        </div>
+        <p class="footer-text">ARCEOLOGY.TERMINAL // SPERANZA ARCHIVES // 2180</p>
+    </footer>
+
+</body>
+</html>
