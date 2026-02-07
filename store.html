@@ -486,17 +486,43 @@
             animation: terminalFlicker 5s infinite;
         }
 
+        /* TABLET */
         @media (max-width: 768px) {
             nav { padding: 1rem 3%; }
-            .nav-links { gap: 1rem; }
-            .nav-links a { font-size: 0.65rem; }
+            .nav-content { flex-wrap: wrap; gap: 0.5rem; }
+            .nav-links { gap: 1.2rem; }
+            .nav-links a { font-size: 0.65rem; padding: 0.3rem 0; }
             main { padding: 6rem 3% 2rem; }
-            .product-showcase {
-                grid-template-columns: 1fr;
-                padding: 2rem;
-                gap: 2rem;
-            }
+            .product-showcase { grid-template-columns: 1fr; padding: 2rem; gap: 2rem; }
             .product-name { font-size: 2rem; }
+            .footer-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.8rem; }
+            .footer-links a { margin: 0; }
+        }
+
+        /* MOBILE */
+        @media (max-width: 480px) {
+            nav { padding: 0.8rem 3%; }
+            .nav-logo { font-size: 1rem; letter-spacing: 2px; }
+            .nav-terminal { font-size: 0.55rem; letter-spacing: 1px; }
+            .nav-links { gap: 0.7rem; }
+            .nav-links a { font-size: 0.55rem; letter-spacing: 1px; padding: 0.4rem 0; min-height: 44px; display: inline-flex; align-items: center; }
+            main { padding: 5rem 2% 2rem; }
+            .page-title { font-size: 1.6rem; letter-spacing: 4px; }
+            .page-subtitle { font-size: 0.65rem; letter-spacing: 2px; }
+            .page-header { margin-bottom: 3rem; padding-top: 2rem; }
+            .product-showcase { padding: 1.2rem; gap: 1.5rem; border-left-width: 3px; }
+            .product-badge { font-size: 0.55rem; padding: 0.4rem 0.8rem; top: -0.5rem; left: -0.5rem; }
+            .product-name { font-size: 1.5rem; letter-spacing: 2px; }
+            .product-edition { font-size: 0.65rem; }
+            .product-price { font-size: 1.5rem; }
+            .product-tagline { font-size: 1.1rem; padding: 1rem; }
+            .product-description p { font-size: 1rem; }
+            .claim-button { font-size: 0.9rem; padding: 1.2rem; letter-spacing: 2px; min-height: 48px; }
+            .store-link { font-size: 0.7rem; min-height: 44px; display: flex; align-items: center; justify-content: center; }
+            .product-note { padding: 1rem; }
+            .footer-quote { font-size: 1rem; padding: 0 1rem; }
+            .footer-links a { font-size: 0.65rem; letter-spacing: 1px; margin: 0; padding: 0.3rem; }
+            .footer-text { font-size: 0.6rem; letter-spacing: 1px; }
         }
     </style>
 </head>
