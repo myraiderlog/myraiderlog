@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-adsense-account" content="ca-pub-7264545503146086">
+    <title>About Arceology – ARC Raiders Content Creator</title>
+    <meta name="description" content="Learn about Arceology, an independent ARC Raiders content creator documenting survival stories, gameplay footage, and raider-inspired gear from the world of Speranza.">
+    <meta name="keywords" content="about Arceology, ARC Raiders content creator, ARC Raiders community, Speranza, raider logs, gaming content creator">
+    <meta name="author" content="Arceology">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://myraiderlog.com/about.html">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7264545503146086" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --rust: #b65e48;
+            --ash: #4a4238;
+            --sand: #d4c5a9;
+            --night: #0d0a08;
+            --ember: #d9864f;
+            --steel: #6b6355;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Cormorant Garamond', serif;
+            background: var(--night);
+            color: var(--sand);
+            overflow-x: hidden;
+            line-height: 1.8;
+        }
+        body::before {
+            content: '';
+            position: fixed;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23n)" opacity="0.12"/></svg>');
+            pointer-events: none;
+            animation: grain 8s steps(10) infinite, grainPulse 4s ease-in-out infinite;
+            z-index: 9999;
+            mix-blend-mode: overlay;
+        }
+        @keyframes grain {
+            0%, 100% { transform: translate(0, 0); }
+            10% { transform: translate(-5%, -10%); }
+            20% { transform: translate(-15%, 5%); }
+            30% { transform: translate(7%, -25%); }
+            40% { transform: translate(-5%, 25%); }
+            50% { transform: translate(-15%, 10%); }
+            60% { transform: translate(15%, 0%); }
+            70% { transform: translate(0%, 15%); }
+            80% { transform: translate(3%, 10%); }
+            90% { transform: translate(-10%, 5%); }
+        }
+        @keyframes grainPulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.8; } }
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: radial-gradient(ellipse at center, transparent 0%, transparent 35%, rgba(13, 10, 8, 0.5) 70%, rgba(13, 10, 8, 0.9) 100%);
+            pointer-events: none;
+            z-index: 9998;
+            animation: vignettePulse 8s ease-in-out infinite;
+        }
+        @keyframes vignettePulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.85; } }
+        .particles {
+            position: fixed; top: 0; left: 0;
+            width: 100%; height: 100%;
+            pointer-events: none; z-index: 9997; overflow: hidden;
+        }
+        .particle {
+            position: absolute; width: 2px; height: 2px;
+            background: var(--ember); border-radius: 50%; opacity: 0;
+            animation: float 15s infinite ease-in-out;
+            box-shadow: 0 0 4px var(--ember);
+        }
+        @keyframes float {
+            0% { transform: translateY(100vh) translateX(0) scale(0); opacity: 0; }
+            10% { opacity: 0.6; }
+            90% { opacity: 0.4; }
+            100% { transform: translateY(-10vh) translateX(50px) scale(1); opacity: 0; }
+        }
+        nav {
+            position: fixed; top: 0; left: 0; width: 100%;
+            padding: 1.5rem 5%;
+            background: linear-gradient(180deg, rgba(13, 10, 8, 0.98) 0%, rgba(13, 10, 8, 0.9) 100%);
+            backdrop-filter: blur(15px);
+            z-index: 10000;
+            border-bottom: 1px solid rgba(180, 94, 72, 0.3);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+            animation: navSlideDown 1s ease-out;
+        }
+        @keyframes navSlideDown { from { transform: translateY(-100%); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+        .nav-content { max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .nav-logo {
+            font-family: 'Cinzel', serif; font-size: 1.2rem; font-weight: 600;
+            color: var(--sand); letter-spacing: 3px; text-transform: lowercase;
+            text-decoration: none; animation: textGlow 3s ease-in-out infinite;
+        }
+        @keyframes textGlow { 0%, 100% { text-shadow: 0 0 10px rgba(217, 134, 79, 0.3); } 50% { text-shadow: 0 0 20px rgba(217, 134, 79, 0.6), 0 0 30px rgba(217, 134, 79, 0.3); } }
+        .nav-terminal {
+            font-family: 'Space Mono', monospace; font-size: 0.65rem;
+            color: var(--steel); letter-spacing: 2px;
+            animation: terminalFlicker 5s infinite;
+        }
+        @keyframes terminalFlicker { 0%, 100% { opacity: 1; } 95% { opacity: 1; } 96% { opacity: 0.3; } 97% { opacity: 1; } 98% { opacity: 0.5; } 99% { opacity: 1; } }
+        .nav-links { display: flex; gap: 2rem; flex-wrap: wrap; }
+        .nav-links a {
+            font-family: 'Space Mono', monospace; font-size: 0.7rem;
+            color: var(--steel); text-decoration: none; letter-spacing: 2px;
+            text-transform: uppercase; transition: all 0.3s ease; position: relative;
+        }
+        .nav-links a::after {
+            content: ''; position: absolute; bottom: -4px; left: 0;
+            width: 0; height: 2px; background: var(--ember);
+            transition: width 0.3s ease; box-shadow: 0 0 10px var(--ember);
+        }
+        .nav-links a:hover { color: var(--ember); text-shadow: 0 0 10px rgba(217, 134, 79, 0.5); }
+        .nav-links a:hover::after { width: 100%; }
+        main {
+            position: relative; z-index: 5;
+            max-width: 900px; margin: 0 auto;
+            padding: 8rem 5% 4rem;
+        }
+        .page-header {
+            text-align: center; margin-bottom: 4rem; padding-top: 4rem;
+            animation: fadeIn 1.5s ease-out;
+        }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        .page-title {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 700;
+            color: var(--sand); letter-spacing: 8px; margin-bottom: 1rem;
+            text-transform: lowercase;
+            text-shadow: 0 0 30px rgba(217, 134, 79, 0.4);
+            animation: titleGlitch 8s infinite;
+        }
+        @keyframes titleGlitch { 0%, 90%, 100% { transform: translate(0, 0); } 91% { transform: translate(-2px, 1px); } 92% { transform: translate(2px, -1px); } 93% { transform: translate(0, 0); } }
+        .page-subtitle {
+            font-family: 'Space Mono', monospace; font-size: 0.8rem;
+            color: var(--ember); letter-spacing: 3px; text-transform: uppercase;
+            margin-bottom: 2rem; animation: terminalFlicker 5s infinite;
+        }
+        .about-section {
+            margin-bottom: 4rem;
+            animation: fadeIn 1s ease-out;
+        }
+        .about-section h2 {
+            font-family: 'Cinzel', serif; font-size: 1.8rem;
+            color: var(--sand); letter-spacing: 3px; margin-bottom: 1.5rem;
+            text-shadow: 0 0 15px rgba(217, 134, 79, 0.2);
+        }
+        .about-section p {
+            font-family: 'Cormorant Garamond', serif; font-size: 1.2rem;
+            color: var(--sand); line-height: 2.2; margin-bottom: 1.5rem;
+        }
+        .about-section p.steel {
+            color: var(--steel); font-style: italic;
+        }
+        .about-divider {
+            width: 100%; height: 1px;
+            background: linear-gradient(90deg, transparent, var(--rust), transparent);
+            margin: 3rem 0;
+        }
+        .terminal-block {
+            background: linear-gradient(135deg, rgba(26, 20, 16, 0.6), rgba(13, 10, 8, 0.8));
+            border: 1px solid rgba(180, 94, 72, 0.3);
+            border-left: 3px solid var(--rust);
+            padding: 2rem 2.5rem;
+            margin: 2rem 0;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.8rem;
+            color: var(--ember);
+            letter-spacing: 1px;
+            line-height: 2;
+        }
+        .terminal-block .label {
+            color: var(--steel);
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        .link-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .link-card {
+            display: block;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, rgba(26, 20, 16, 0.6), rgba(13, 10, 8, 0.8));
+            border: 1px solid rgba(180, 94, 72, 0.3);
+            text-decoration: none;
+            transition: all 0.4s ease;
+        }
+        .link-card:hover {
+            border-color: var(--ember);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(180, 94, 72, 0.3);
+        }
+        .link-card h3 {
+            font-family: 'Cinzel', serif; font-size: 1.2rem;
+            color: var(--sand); margin-bottom: 0.5rem;
+        }
+        .link-card p {
+            font-family: 'Cormorant Garamond', serif; font-size: 1rem;
+            color: var(--steel); font-style: italic;
+        }
+        .link-card:hover h3 { color: var(--ember); }
+        footer {
+            padding: 6rem 5% 4rem; text-align: center;
+            border-top: 1px solid rgba(180, 94, 72, 0.2);
+            background: linear-gradient(180deg, transparent 0%, rgba(13, 10, 8, 0.8) 100%);
+        }
+        .footer-quote {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.1rem, 2.5vw, 1.5rem); font-style: italic;
+            color: var(--sand); max-width: 800px; margin: 0 auto 3rem; line-height: 2;
+        }
+        .footer-links a {
+            font-family: 'Space Mono', monospace; font-size: 0.75rem;
+            color: var(--steel); text-decoration: none; letter-spacing: 2px;
+            margin: 0 1rem; transition: all 0.3s ease;
+        }
+        .footer-links a:hover { color: var(--ember); }
+        .footer-text {
+            font-family: 'Space Mono', monospace; font-size: 0.7rem;
+            color: var(--steel); letter-spacing: 2px; opacity: 0.6;
+            margin-top: 2rem; animation: terminalFlicker 5s infinite;
+        }
+        @media (max-width: 768px) {
+            nav { padding: 1rem 3%; }
+            .nav-links { gap: 1rem; }
+            .nav-links a { font-size: 0.65rem; }
+            main { padding: 6rem 3% 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="loading" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--night); display: flex; align-items: center; justify-content: center; z-index: 10001; animation: fadeOut 1s ease-out 1s forwards;">
+        <div style="font-family: 'Space Mono', monospace; font-size: 1.2rem; color: var(--ember); letter-spacing: 4px; animation: terminalFlicker 0.5s infinite;">DECRYPTING SIGNAL...</div>
+    </div>
+    <style>
+        @keyframes fadeOut { to { opacity: 0; pointer-events: none; } }
+    </style>
+
+    <div class="particles" id="particles"></div>
+
+    <nav>
+        <div class="nav-content">
+            <div>
+                <a href="index.html" class="nav-logo">arceology</a>
+                <div class="nav-terminal">terminal.speranza</div>
+            </div>
+            <div class="nav-links">
+                <a href="blog.html">logs</a>
+                <a href="videos.html">gameplay</a>
+                <a href="store.html">gear</a>
+                <a href="about.html">about</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div class="page-header">
+            <h1 class="page-title">about arceology</h1>
+            <p class="page-subtitle">Signal File // Identity Verified</p>
+        </div>
+
+        <div class="about-section">
+            <h2>Who Is Arceology?</h2>
+            <p>
+                Arceology is an independent ARC Raiders content creator building a living archive of survival stories, gameplay footage, and raider-inspired gear from the world of Speranza. Everything on this site is created by one person with one belief: that the best gaming content comes from honesty, not performance.
+            </p>
+            <p>
+                Most ARC Raiders content focuses on optimal loadouts, extraction strategies, and competitive advantage. This project takes a different approach. The field logs published here are story-driven journal entries written from the perspective of a raider who refuses to stop feeling—even when survival demands emotional detachment. Each entry is tied to real in-game locations, events, and the moral weight of decisions made under pressure.
+            </p>
+            <p class="steel">
+                "I wear my emotions on my sleeve. I can't help it."
+            </p>
+        </div>
+
+        <div class="about-divider"></div>
+
+        <div class="about-section">
+            <h2>What This Site Is</h2>
+            <p>
+                MyRaiderLog.com is a fan-created content hub dedicated to ARC Raiders. It is not an official Embark Studios property, and it is not affiliated with the ARC Raiders development team. This is a creative project built on a genuine connection to the game and its world.
+            </p>
+            <p>
+                The site serves as a central archive for all of Arceology's ARC Raiders content. The field logs section contains narrative journal entries that document each raid with emotional depth and storytelling. The gameplay section features raw helmet cam footage from Speranza—unedited runs that pair directly with the written entries. The gear section showcases ARC Raiders-inspired apparel and accessories designed by Arceology and available through Bonfire.
+            </p>
+            <p>
+                This project is supported through Ko-fi contributions and merchandise sales. Every piece of support helps keep the archive running and funds the creation of new content.
+            </p>
+        </div>
+
+        <div class="about-divider"></div>
+
+        <div class="about-section">
+            <h2>The Raider Log Concept</h2>
+            <p>
+                A raider log is a personal field journal. In the world of ARC Raiders, raiders go topside to scavenge resources from ARC-controlled territory on Speranza. Each run is dangerous. Each extraction is uncertain. The raider logs capture what happens between the bullets—the quiet moments, the moral dilemmas, the cost of choosing survival over compassion.
+            </p>
+            <p>
+                Each log entry follows a consistent format: a day number, a date in the Speranza calendar, an in-game location, and a first-person account of what happened during the run. Some entries document successful extractions. Others document failure. All of them document the emotional reality of existing in a world where empathy is a liability.
+            </p>
+            <p class="steel">
+                The raider logs are fiction rooted in real gameplay. Every location mentioned is a real ARC Raiders map location. Every scenario described is something that happened during an actual run. The stories are dramatized, but the feelings are real.
+            </p>
+        </div>
+
+        <div class="about-divider"></div>
+
+        <div class="about-section">
+            <h2>Content Philosophy</h2>
+            <p>
+                Arceology creates content that prioritizes emotional authenticity over algorithm optimization. The field logs are written to be read slowly. The gameplay footage is presented without flashy editing or clickbait commentary. The gear is designed to feel like something a real raider would wear—worn-in, tactical, functional.
+            </p>
+            <p>
+                This approach means the content may not appeal to everyone. It is not designed to. It is designed for the kind of gamer who finishes a raid and sits quietly for a moment thinking about what just happened. For the player who names their loadout. For the one who feels something when another raider goes down and there is nothing they can do about it.
+            </p>
+            <p>
+                If that sounds like you, welcome to the underground.
+            </p>
+        </div>
+
+        <div class="about-divider"></div>
+
+        <div class="about-section">
+            <h2>Where to Find Arceology</h2>
+            <div class="link-grid">
+                <a href="https://www.youtube.com/@arceologist214" target="_blank" class="link-card">
+                    <h3>YouTube</h3>
+                    <p>Helmet cam footage and gameplay recordings from Speranza.</p>
+                </a>
+                <a href="https://ko-fi.com/arceology" target="_blank" class="link-card">
+                    <h3>Ko-fi</h3>
+                    <p>Support the archive. Fund the next run topside.</p>
+                </a>
+                <a href="https://www.bonfire.com/store/arceologys-cache/" target="_blank" class="link-card">
+                    <h3>Bonfire Store</h3>
+                    <p>ARC Raiders-inspired gear. Worn-in, tactical, claimed.</p>
+                </a>
+                <a href="blog.html" class="link-card">
+                    <h3>Field Logs</h3>
+                    <p>Story-driven raider journals from the front lines of Speranza.</p>
+                </a>
+            </div>
+        </div>
+
+        <div class="terminal-block">
+            <span class="label">// contact.protocol</span>
+            For collaborations, press inquiries, or to report issues with this site, reach out through Ko-fi or leave a comment on YouTube. Signal received. Signal acknowledged.
+        </div>
+
+    </main>
+
+    <footer>
+        <p class="footer-quote">
+            "I should be numb to it by now.<br>
+            But I feel everything.<br>
+            Maybe that's what makes me human."
+        </p>
+        <div class="footer-links">
+            <a href="https://www.youtube.com/@arceologist214" target="_blank">YOUTUBE</a>
+            <a href="about.html">ABOUT</a>
+            <a href="privacy.html">PRIVACY</a>
+        </div>
+        <p class="footer-text">ARCEOLOGY.TERMINAL // SPERANZA ARCHIVES // 2180</p>
+    </footer>
+
+    <script>
+        const particlesContainer = document.getElementById('particles');
+        for (let i = 0; i < 30; i++) {
+            const particle = document.createElement('div');
+            particle.classList.add('particle');
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.animationDelay = Math.random() * 15 + 's';
+            particle.style.animationDuration = (10 + Math.random() * 10) + 's';
+            particlesContainer.appendChild(particle);
+        }
+        const pageTitle = document.querySelector('.page-title');
+        if (pageTitle) {
+            setInterval(() => {
+                if (Math.random() > 0.95) {
+                    pageTitle.style.transform = `translate(${Math.random() * 4 - 2}px, ${Math.random() * 4 - 2}px)`;
+                    setTimeout(() => { pageTitle.style.transform = 'translate(0, 0)'; }, 50);
+                }
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
