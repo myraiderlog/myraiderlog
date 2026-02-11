@@ -1,0 +1,375 @@
+[
+  {
+    "id": "shared-watch",
+    "title": "Shared Watch Event",
+    "status": "confirmed",
+    "startDate": "2026-02-10",
+    "endDate": "2026-02-24",
+    "teaser": "For two weeks, raiders point barrels at machines instead of each other. Merits flow for those who cooperate.",
+    "summary": "The Shared Watch is a PvE-focused live event celebrating cooperation against the ARC. Players earn Merits by destroying, assisting, and damaging ARC machines. No Merits are earned from PvP encounters during this window. Bring a friend or bring a stranger, but bring enough ammo.",
+    "howItWorks": [
+      "Earn Merits from destroying, assisting, and damaging ARC machines",
+      "No Merits earned from PvP kills during the event window",
+      "Bring a squad or matchmake with strangers",
+      "Merit thresholds unlock tiered event rewards"
+    ],
+    "rewards": [
+      "Tiered Shared Watch event rewards based on Merit thresholds",
+      "Exclusive Shared Watch cosmetics",
+      "Event-specific loot tied to PvE performance"
+    ],
+    "raiderImpact": [
+      "Solo: Viable, focus on ARC farming in less contested zones",
+      "Duo: Strong PvE output, can cover more ground",
+      "Trio: Maximum Merit generation, ideal for hitting top reward tiers"
+    ],
+    "sources": [
+      {
+        "label": "Patch Notes 1.15.0",
+        "url": "https://arcraiders.com/news/patch-notes-1-15-0"
+      }
+    ],
+    "lastUpdated": "2026-02-10"
+  },
+  {
+    "id": "cold-snap",
+    "title": "Cold Snap Returns",
+    "status": "confirmed",
+    "startDate": "2026-02-10",
+    "endDate": "2026-02-24",
+    "teaser": "Winter is not done with the Rust Belt. Frostbite will end your run if you do not find shelter, but the loot is worth the risk.",
+    "summary": "The Cold Snap map condition is back in rotation on outdoor maps. Frostbite damage will cut your topside trip short if you do not seek shelter, but braving the tundra means increased loot value. Candleberries are collectible but no longer event-tied. Snowballs are throwable.",
+    "howItWorks": [
+      "Cold Snap active on outdoor maps in current rotation",
+      "Frostbite deals damage over time if you stay exposed",
+      "Seek shelter periodically to reset frostbite buildup",
+      "Increased loot value in Cold Snap zones as risk reward",
+      "Candleberries collectible, snowballs throwable"
+    ],
+    "rewards": [
+      "Increased loot value on Cold Snap maps",
+      "Candleberry collection",
+      "High-risk high-reward extraction runs"
+    ],
+    "raiderImpact": [
+      "Solo: Dangerous, frostbite management is harder without a squad watching timers",
+      "Duo: One watches exposure while the other loots",
+      "Trio: Can rotate shelter duty and maximize extraction hauls"
+    ],
+    "sources": [
+      {
+        "label": "Patch Notes 1.15.0",
+        "url": "https://arcraiders.com/news/patch-notes-1-15-0"
+      }
+    ],
+    "lastUpdated": "2026-02-10"
+  },
+  {
+    "id": "feb-update",
+    "title": "February Update 1.15.0",
+    "status": "confirmed",
+    "startDate": "2026-02-10",
+    "endDate": "2026-03-09",
+    "teaser": "New patch dropped. Fixes, balance passes, and two new cosmetic sets for those who like looking good while getting shot at.",
+    "summary": "The February Update brings the Shared Watch event, Cold Snap return, two new cosmetic sets (Vulpine and Slugger), and a round of bug fixes and balance changes. Trailblazer Grenade no longer deals damage through walls. Several known issues remain under investigation.",
+    "howItWorks": [
+      "Shared Watch event and Cold Snap map condition now active",
+      "Vulpine and Slugger cosmetic sets available",
+      "Trailblazer Grenade explosion no longer pierces walls",
+      "Reconnection improvements after disconnects",
+      "Trials objective reward timeout fix applied"
+    ],
+    "rewards": [
+      "Vulpine cosmetic set",
+      "Slugger cosmetic set",
+      "Shared Watch event rewards"
+    ],
+    "raiderImpact": [
+      "Solo: Trailblazer nerf affects grenade-dependent solo builds",
+      "Duo: Reconnection fix means fewer lost runs to disconnects",
+      "Trio: Trials reward fix means earned rewards actually grant properly"
+    ],
+    "sources": [
+      {
+        "label": "Patch Notes 1.15.0",
+        "url": "https://arcraiders.com/news/patch-notes-1-15-0"
+      }
+    ],
+    "lastUpdated": "2026-02-10"
+  },
+  {
+    "id": "escalation-roadmap",
+    "title": "Escalation Season Roadmap",
+    "status": "confirmed",
+    "startDate": "2026-01-01",
+    "endDate": "2026-04-30",
+    "teaser": "Four months. Four major updates. The Rust Belt is getting worse before it gets better.",
+    "summary": "The Escalation season runs January through April 2026 with four major content drops: Headwinds (Jan), Shrouded Sky (Feb), Flashpoint (Mar), and Riven Tides (Apr). Each update brings new enemies, map conditions, and gear. Monthly content cadence confirmed by Embark Studios.",
+    "howItWorks": [
+      "Headwinds (January): Solo vs Squads matchmaking for level 40+, Trophy Display project, new map condition",
+      "Shrouded Sky (February): New gusty wind map condition, new ARC enemy type, new Raider Deck",
+      "Flashpoint (March): Lightning hazards, additional enemies, Scrappy companion improvements",
+      "Riven Tides (April): New or heavily updated map, new high-level ARC boss"
+    ],
+    "rewards": [
+      "Monthly Raider Deck progression tracks",
+      "New cosmetic sets with each update",
+      "New enemy-specific loot tables",
+      "Season-long progression rewards"
+    ],
+    "raiderImpact": [
+      "Solo: Headwinds Solo vs Squads mode is built for you",
+      "Duo: Solid through all four updates",
+      "Trio: Riven Tides boss content likely tuned for full squads"
+    ],
+    "sources": [
+      {
+        "label": "Official Roadmap",
+        "url": "https://arcraiders.com/news/roadmap-january-april-2026"
+      }
+    ],
+    "lastUpdated": "2026-01-23"
+  },
+  {
+    "id": "shrouded-sky",
+    "title": "Shrouded Sky Update",
+    "status": "confirmed",
+    "startDate": "2026-02-17",
+    "endDate": "2026-03-15",
+    "teaser": "Wind conditions incoming. New ARC threats spotted on the perimeter. Topside is about to get a lot less predictable.",
+    "summary": "Shrouded Sky is the second major Escalation update. It introduces a new gusty wind map condition affecting visibility and movement, a new ARC enemy type, a new Raider Deck with cosmetics and Raider Tokens, and at least one existing map receiving a significant update.",
+    "howItWorks": [
+      "New gusty wind map condition reduces visibility and affects movement",
+      "New ARC enemy type being introduced",
+      "New Raider Deck with gadgets, cosmetics, and Raider Tokens",
+      "At least one existing map receives a gameplay-affecting update",
+      "Second Expedition window opens for sign-ups"
+    ],
+    "rewards": [
+      "New Raider Deck progression rewards",
+      "New ARC enemy-specific loot drops",
+      "Updated map loot tables",
+      "Expedition sign-up bonuses"
+    ],
+    "raiderImpact": [
+      "Solo: Wind conditions make solo navigation harder, plan routes carefully",
+      "Duo: One spots through the wind while the other moves, strong synergy",
+      "Trio: New enemy likely requires coordinated fire, trio recommended"
+    ],
+    "sources": [
+      {
+        "label": "Escalation Roadmap",
+        "url": "https://arcraiders.com/news/roadmap-january-april-2026"
+      },
+      {
+        "label": "Shrouded Sky Info",
+        "url": "https://blast.tv/gaming/news/arc-raiders-info-so-far-on-shrouded-sky-update"
+      }
+    ],
+    "lastUpdated": "2026-02-05"
+  },
+  {
+    "id": "expedition-2",
+    "title": "Second Expedition",
+    "status": "confirmed",
+    "startDate": "2026-02-25",
+    "endDate": "2026-03-01",
+    "teaser": "The tunnels out of Speranza open again. Fresh start, new bonuses, but everything you built gets left behind. Choose wisely.",
+    "summary": "The second Expedition is the seasonal character reset. Sign-ups open February 25 and departure is March 1. Stash value requirement for max rewards has been lowered to 3 million Coins (down from 5 million). Catch-up mechanic lets Raiders who missed first Expedition skill points recover them at a 50% discount.",
+    "howItWorks": [
+      "Sign-up opens February 25, departure March 1",
+      "Stash value requirement lowered to 3M Coins for max 5 Skill Points",
+      "Catch-up mechanic: missed Skill Points from Expedition 1 available at 50% cost",
+      "Permanent: cosmetics, Raider Tokens, Trophy Display, Codex, Raider Deck progress",
+      "Reset: level, stash, inventory, loadouts, skill tree",
+      "Patchwork outfit evolves with new toggles and color options",
+      "Buffs stack for consecutive departures but reset if you skip one"
+    ],
+    "rewards": [
+      "Up to 5 Skill Points for 3M stash value",
+      "12 to 24 stash spaces permanent unlock",
+      "Evolved Patchwork outfit with new customization",
+      "New Scrappy outfit",
+      "Expedition Indicator icon upgrade",
+      "Stacking buffs for consecutive departures"
+    ],
+    "raiderImpact": [
+      "Solo: Grind to 3M is achievable solo but tight on time, start stacking now",
+      "Duo: Split loot routes to hit stash value faster",
+      "Trio: Most efficient for speed-running the coin requirement before March 1"
+    ],
+    "sources": [
+      {
+        "label": "Expedition Details",
+        "url": "https://arcraiders.com/news/second-expedition-rewards-and-requirements"
+      }
+    ],
+    "lastUpdated": "2026-02-05"
+  },
+  {
+    "id": "headwinds",
+    "title": "Headwinds Update",
+    "status": "confirmed",
+    "startDate": "2026-01-27",
+    "endDate": "2026-02-09",
+    "teaser": "The ice melted. The survivors thawed. Solo vs Squads is live and the Trophy Display gives hunters something to mount.",
+    "summary": "Headwinds was the first Escalation update. It introduced Solo vs Squads matchmaking for level 40+ Raiders, the Trophy Display player project for ARC hunting, a new map condition, and two new cosmetic sets. Extra XP is awarded for entering squad lobbies as a solo.",
+    "howItWorks": [
+      "Solo vs Squads matchmaking unlocked at level 40+",
+      "Extra XP bonus for solo players entering squad lobbies",
+      "Trophy Display project: hunt ARC for sport, mount trophies",
+      "New map condition introduced",
+      "Two new cosmetic sets released"
+    ],
+    "rewards": [
+      "Solo vs Squads XP bonus",
+      "Trophy Display progression rewards",
+      "Sandwalker cosmetic set",
+      "New map condition loot tables"
+    ],
+    "raiderImpact": [
+      "Solo: Built for you, Solo vs Squads is the headline feature",
+      "Duo: Not directly affected, but Trophy Display is fun co-op content",
+      "Trio: Standard squad play unchanged"
+    ],
+    "sources": [
+      {
+        "label": "Headwinds Announcement",
+        "url": "https://arcraiders.com/news/headwinds-content-update"
+      }
+    ],
+    "lastUpdated": "2026-01-27"
+  },
+  {
+    "id": "flashpoint",
+    "title": "Flashpoint Update",
+    "status": "confirmed",
+    "startDate": "2026-03-01",
+    "endDate": "2026-03-31",
+    "teaser": "Lightning on the horizon. New threats. The Scrappy might actually be useful after this one.",
+    "summary": "Flashpoint is the third Escalation update, planned for March 2026. It introduces lightning hazards as a new environmental threat, additional enemy types, and meaningful improvements to the Scrappy companion. Details remain limited but the roadmap confirms it as a major content drop.",
+    "howItWorks": [
+      "New lightning hazard environmental condition",
+      "Additional ARC enemy types",
+      "Scrappy companion improvements and new functionality",
+      "Expected to continue monthly Raider Deck cadence"
+    ],
+    "rewards": [
+      "New Raider Deck expected",
+      "Lightning hazard-specific loot",
+      "Scrappy companion upgrades",
+      "New enemy drop tables"
+    ],
+    "raiderImpact": [
+      "Solo: Lightning hazards add another survival variable to manage",
+      "Duo: Scrappy improvements may reduce the need for a third",
+      "Trio: New enemies likely scale to squad size"
+    ],
+    "sources": [
+      {
+        "label": "Escalation Roadmap",
+        "url": "https://arcraiders.com/news/roadmap-january-april-2026"
+      }
+    ],
+    "lastUpdated": "2026-01-23"
+  },
+  {
+    "id": "riven-tides",
+    "title": "Riven Tides Update",
+    "status": "confirmed",
+    "startDate": "2026-04-01",
+    "endDate": "2026-04-30",
+    "teaser": "New ground. A major ARC presence. The season finale hits in April and it is bringing something big.",
+    "summary": "Riven Tides is the fourth and final Escalation update, planned for April 2026. It is expected to feature a new or heavily reworked map, potentially coastal themed, and a significant new high-level ARC boss. This is the culmination of the Escalation season narrative arc.",
+    "howItWorks": [
+      "New or heavily updated map expected",
+      "Major new ARC boss encounter",
+      "Culmination of Escalation season storyline",
+      "Full details not yet revealed"
+    ],
+    "rewards": [
+      "New map-specific loot tables",
+      "Boss-specific drops",
+      "Escalation season finale rewards",
+      "New Raider Deck expected"
+    ],
+    "raiderImpact": [
+      "Solo: Boss content historically requires squad play",
+      "Duo: May be viable depending on boss mechanics",
+      "Trio: Almost certainly the intended squad size for boss content"
+    ],
+    "sources": [
+      {
+        "label": "Escalation Roadmap",
+        "url": "https://arcraiders.com/news/roadmap-january-april-2026"
+      }
+    ],
+    "lastUpdated": "2026-01-23"
+  },
+  {
+    "id": "shrouded-sky-timing",
+    "title": "Shrouded Sky Drop Date",
+    "status": "unconfirmed",
+    "startDate": null,
+    "endDate": null,
+    "rumoredWindow": "Week of February 17, 2026",
+    "teaser": "Community is split on when the wind picks up. Some say the 10th, others the 17th. Nothing from Embark yet.",
+    "summary": "The ARC Raiders community is actively speculating on the exact release date for the Shrouded Sky update. Reddit threads show most players expecting a mid-to-late February drop, with February 17 being the most common prediction. Embark has not confirmed a specific date beyond February.",
+    "howItWorks": [
+      "Embark confirmed Shrouded Sky for February but no exact date",
+      "Community consensus leans toward February 17 based on past update cadence",
+      "Previous updates dropped on Mondays and Tuesdays",
+      "Some datamine activity suggests content is already staged"
+    ],
+    "rewards": [
+      "N/A until update drops"
+    ],
+    "raiderImpact": [
+      "Solo: Use the wait to stack coins for Expedition 2",
+      "Duo: Farm Cold Snap while it lasts",
+      "Trio: Finish Shared Watch Merit grind before rotation changes"
+    ],
+    "sources": [
+      {
+        "label": "Reddit Discussion",
+        "url": "https://www.reddit.com/r/ArcRaiders/"
+      },
+      {
+        "label": "Community Speculation",
+        "url": "https://www.reddit.com/r/ArcRaiders/"
+      }
+    ],
+    "lastUpdated": "2026-02-08"
+  },
+  {
+    "id": "escalation-narrative",
+    "title": "Escalation Endgame",
+    "status": "unconfirmed",
+    "startDate": null,
+    "endDate": null,
+    "rumoredWindow": "April 2026",
+    "teaser": "The roadmap says the scale of the impending escalation remains unknown. Shani is worried. That should worry you.",
+    "summary": "Official roadmap language hints at a larger narrative event building across the Escalation season. Embark wrote that no one holds all the pieces and the scale remains unknown. Community theorists believe the four monthly updates are building toward a major ARC incursion event in April, possibly tied to Riven Tides.",
+    "howItWorks": [
+      "Roadmap references an impending escalation with unknown scale",
+      "Each monthly update appears to increase ARC threat level",
+      "Shani character mentioned as being troubled by increased ARC presence",
+      "Possible culmination event during or after Riven Tides"
+    ],
+    "rewards": [
+      "Unknown, speculative"
+    ],
+    "raiderImpact": [
+      "Solo: Keep leveling, whatever is coming will test you",
+      "Duo: Build synergy now for what may be endgame content",
+      "Trio: If a major incursion event drops, full squads will be essential"
+    ],
+    "sources": [
+      {
+        "label": "Roadmap Language",
+        "url": "https://arcraiders.com/news/roadmap-january-april-2026"
+      }
+    ],
+    "lastUpdated": "2026-01-23"
+  }
+]
