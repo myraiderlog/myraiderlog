@@ -4,6 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>USER PROFILE - Raider.Market</title>
+  <meta name="description" content="ARC Raiders user profile page on Arceology. View raider stats, trade history, and customize your survivor identity.">
+  <meta name="keywords" content="ARC Raiders profile, raider profile, ARC Raiders user, Arceology profile, ARC Raiders stats, raider market">
+  <meta name="author" content="Arceology">
+  <meta name="robots" content="index, follow">
+  <meta name="google-adsense-account" content="ca-pub-7264545503146086">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7264545503146086" crossorigin="anonymous"></script>
+  <link rel="canonical" href="https://myraiderlog.com/user-profile.html">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://myraiderlog.com/user-profile.html">
+  <meta property="og:title" content="User Profile - Arceology Raider Market">
+  <meta property="og:description" content="ARC Raiders user profile page on Arceology. View raider stats, trade history, and customize your survivor identity.">
+  <meta property="og:site_name" content="Arceology Raider Log">
+  <!-- Twitter Card -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://myraiderlog.com/user-profile.html">
+  <meta property="twitter:title" content="User Profile - Arceology Raider Market">
+  <meta property="twitter:description" content="ARC Raiders user profile page on Arceology. View raider stats and trade history.">
     <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
     <style>
         * {
@@ -643,7 +661,7 @@
     <div id="emberContainer"></div>
 
     <div class="container">
-        <a href="raider-market.html" class="back-btn">← BACK TO MARKET</a>
+        <a href="store.html" class="back-btn">â BACK TO MARKET</a>
 
         <!-- Profile Header -->
         <div class="profile-header">
@@ -687,11 +705,11 @@
             <div class="rate-user">
                 <p style="margin-bottom: 20px; font-size: 1.1em;">How was your trade experience?</p>
                 <div class="star-rating" id="starRating">
-                    <span class="star" data-rating="1" onclick="selectRating(1)">★</span>
-                    <span class="star" data-rating="2" onclick="selectRating(2)">★</span>
-                    <span class="star" data-rating="3" onclick="selectRating(3)">★</span>
-                    <span class="star" data-rating="4" onclick="selectRating(4)">★</span>
-                    <span class="star" data-rating="5" onclick="selectRating(5)">★</span>
+                    <span class="star" data-rating="1" onclick="selectRating(1)">â</span>
+                    <span class="star" data-rating="2" onclick="selectRating(2)">â</span>
+                    <span class="star" data-rating="3" onclick="selectRating(3)">â</span>
+                    <span class="star" data-rating="4" onclick="selectRating(4)">â</span>
+                    <span class="star" data-rating="5" onclick="selectRating(5)">â</span>
                 </div>
                 <textarea id="reviewText" placeholder="Share details about your trade experience..."></textarea>
                 <button onclick="submitReview()">SUBMIT REVIEW</button>
@@ -775,7 +793,7 @@
             
             if (!profileUserId) {
                 alert('No user specified');
-                window.location.href = 'raider-market.html';
+                window.location.href = 'store.html';
                 return;
             }
 
@@ -784,7 +802,7 @@
                 
                 if (!userDoc.exists) {
                     alert('User not found');
-                    window.location.href = 'raider-market.html';
+                    window.location.href = 'store.html';
                     return;
                 }
 
@@ -821,15 +839,15 @@
                 badgesContainer.innerHTML = '';
                 
                 if (userData.isPremium) {
-                    badgesContainer.innerHTML += '<span class="badge premium">👑 PREMIUM</span>';
+                    badgesContainer.innerHTML += '<span class="badge premium">ð PREMIUM</span>';
                 }
                 
                 if (rating >= 4.5 && userData.totalRatings >= 10) {
-                    badgesContainer.innerHTML += '<span class="badge verified">✓ VERIFIED TRADER</span>';
+                    badgesContainer.innerHTML += '<span class="badge verified">â VERIFIED TRADER</span>';
                 }
                 
                 if (userData.isBanned) {
-                    badgesContainer.innerHTML += '<span class="badge banned">⚠ BANNED</span>';
+                    badgesContainer.innerHTML += '<span class="badge banned">â  BANNED</span>';
                 }
                 
                 // Load reviews and trades
@@ -854,7 +872,7 @@
                 if (reviewsSnapshot.empty) {
                     reviewsList.innerHTML = `
                         <div class="empty-state">
-                            <div class="empty-state-icon">💬</div>
+                            <div class="empty-state-icon">ð¬</div>
                             <p>No reviews yet</p>
                         </div>
                     `;
@@ -901,7 +919,7 @@
                 if (tradesSnapshot.empty) {
                     tradesList.innerHTML = `
                         <div class="empty-state">
-                            <div class="empty-state-icon">📭</div>
+                            <div class="empty-state-icon">ð­</div>
                             <p>No active trades</p>
                         </div>
                     `;
@@ -1016,7 +1034,7 @@
 
         // Go to trade
         function goToTrade(tradeId) {
-            window.location.href = `raider-market.html#trade-${tradeId}`;
+            window.location.href = `store.html#trade-${tradeId}`;
         }
 
         // Check if user is premium
@@ -1053,9 +1071,9 @@
                 document.getElementById('rateSection').innerHTML = `
                     <h2>RATE THIS TRADER</h2>
                     <div class="premium-notice">
-                        🔒 PREMIUM ACCESS REQUIRED TO LEAVE REVIEWS
+                        ð PREMIUM ACCESS REQUIRED TO LEAVE REVIEWS
                         <br><br>
-                        <a href="raider-market.html" style="color: var(--primary-orange); text-decoration: underline;">Upgrade to Premium</a>
+                        <a href="store.html" style="color: var(--primary-orange); text-decoration: underline;">Upgrade to Premium</a>
                     </div>
                 `;
             }
