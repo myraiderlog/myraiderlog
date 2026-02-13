@@ -1,5 +1,175 @@
 [
   {
+    "id": "riven-tides",
+    "title": "Riven Tides Update",
+    "status": "confirmed",
+    "startDate": "2026-04-01",
+    "endDate": "2026-04-30",
+    "teaser": "New ground. A major ARC presence. The season finale hits in April and it is bringing something big.",
+    "summary": "Riven Tides is the fourth and final Escalation update, planned for April 2026. It is expected to feature a new or heavily reworked map, potentially coastal themed, and a significant new high-level ARC boss. This is the culmination of the Escalation season narrative arc.",
+    "howItWorks": [
+      "New or heavily updated map expected",
+      "Major new ARC boss encounter",
+      "Culmination of Escalation season storyline",
+      "Full details not yet revealed"
+    ],
+    "rewards": [
+      "New map-specific loot tables",
+      "Boss-specific drops",
+      "Escalation season finale rewards",
+      "New Raider Deck expected"
+    ],
+    "raiderImpact": [
+      "Solo: Boss content historically requires squad play",
+      "Duo: May be viable depending on boss mechanics",
+      "Trio: Almost certainly the intended squad size for boss content"
+    ],
+    "sources": [
+      {
+        "label": "Escalation Roadmap",
+        "url": "https://arcraiders.com/news/roadmap-january-april-2026"
+      }
+    ],
+    "lastUpdated": "2026-01-23"
+  },
+  {
+    "id": "flashpoint",
+    "title": "Flashpoint Update",
+    "status": "confirmed",
+    "startDate": "2026-03-01",
+    "endDate": "2026-03-31",
+    "teaser": "Lightning on the horizon. New threats. The Scrappy might actually be useful after this one.",
+    "summary": "Flashpoint is the third Escalation update, planned for March 2026. It introduces lightning hazards as a new environmental threat, additional enemy types, and meaningful improvements to the Scrappy companion. Details remain limited but the roadmap confirms it as a major content drop.",
+    "howItWorks": [
+      "New lightning hazard environmental condition",
+      "Additional ARC enemy types",
+      "Scrappy companion improvements and new functionality",
+      "Expected to continue monthly Raider Deck cadence"
+    ],
+    "rewards": [
+      "New Raider Deck expected",
+      "Lightning hazard-specific loot",
+      "Scrappy companion upgrades",
+      "New enemy drop tables"
+    ],
+    "raiderImpact": [
+      "Solo: Lightning hazards add another survival variable to manage",
+      "Duo: Scrappy improvements may reduce the need for a third",
+      "Trio: New enemies likely scale to squad size"
+    ],
+    "sources": [
+      {
+        "label": "Escalation Roadmap",
+        "url": "https://arcraiders.com/news/roadmap-january-april-2026"
+      }
+    ],
+    "lastUpdated": "2026-01-23"
+  },
+  {
+    "id": "expedition-2",
+    "title": "Second Expedition",
+    "status": "confirmed",
+    "startDate": "2026-02-25",
+    "endDate": "2026-03-01",
+    "teaser": "The tunnels out of Speranza open again. Fresh start, new bonuses, but everything you built gets left behind. Choose wisely.",
+    "summary": "The second Expedition is the seasonal character reset. Sign-ups open February 25 and departure is March 1. Stash value requirement for max rewards has been lowered to 3 million Coins (down from 5 million). Catch-up mechanic lets Raiders who missed first Expedition skill points recover them at a 50% discount.",
+    "howItWorks": [
+      "Sign-up opens February 25, departure March 1",
+      "Stash value requirement lowered to 3M Coins for max 5 Skill Points",
+      "Catch-up mechanic: missed Skill Points from Expedition 1 available at 50% cost",
+      "Permanent: cosmetics, Raider Tokens, Trophy Display, Codex, Raider Deck progress",
+      "Reset: level, stash, inventory, loadouts, skill tree",
+      "Patchwork outfit evolves with new toggles and color options",
+      "Buffs stack for consecutive departures but reset if you skip one"
+    ],
+    "rewards": [
+      "Up to 5 Skill Points for 3M stash value",
+      "12 to 24 stash spaces permanent unlock",
+      "Evolved Patchwork outfit with new customization",
+      "New Scrappy outfit",
+      "Expedition Indicator icon upgrade",
+      "Stacking buffs for consecutive departures"
+    ],
+    "raiderImpact": [
+      "Solo: Grind to 3M is achievable solo but tight on time, start stacking now",
+      "Duo: Split loot routes to hit stash value faster",
+      "Trio: Most efficient for speed-running the coin requirement before March 1"
+    ],
+    "sources": [
+      {
+        "label": "Expedition Details",
+        "url": "https://arcraiders.com/news/second-expedition-rewards-and-requirements"
+      }
+    ],
+    "lastUpdated": "2026-02-05"
+  },
+  {
+    "id": "shrouded-sky",
+    "title": "Shrouded Sky Update",
+    "status": "confirmed",
+    "startDate": "2026-02-17",
+    "endDate": "2026-03-15",
+    "teaser": "Wind conditions incoming. New ARC threats spotted on the perimeter. Topside is about to get a lot less predictable.",
+    "summary": "Shrouded Sky is the second major Escalation update. It introduces a new gusty wind map condition affecting visibility and movement, a new ARC enemy type, a new Raider Deck with cosmetics and Raider Tokens, and at least one existing map receiving a significant update.",
+    "howItWorks": [
+      "New gusty wind map condition reduces visibility and affects movement",
+      "New ARC enemy type being introduced",
+      "New Raider Deck with gadgets, cosmetics, and Raider Tokens",
+      "At least one existing map receives a gameplay-affecting update",
+      "Second Expedition window opens for sign-ups"
+    ],
+    "rewards": [
+      "New Raider Deck progression rewards",
+      "New ARC enemy-specific loot drops",
+      "Updated map loot tables",
+      "Expedition sign-up bonuses"
+    ],
+    "raiderImpact": [
+      "Solo: Wind conditions make solo navigation harder, plan routes carefully",
+      "Duo: One spots through the wind while the other moves, strong synergy",
+      "Trio: New enemy likely requires coordinated fire, trio recommended"
+    ],
+    "sources": [
+      {
+        "label": "Escalation Roadmap",
+        "url": "https://arcraiders.com/news/roadmap-january-april-2026"
+      },
+      {
+        "label": "Shrouded Sky Info",
+        "url": "https://blast.tv/gaming/news/arc-raiders-info-so-far-on-shrouded-sky-update"
+      }
+    ],
+    "lastUpdated": "2026-02-05"
+  },
+  {
+    "id": "steam-the-sky-creator-awards-2026-are-coming",
+    "title": "The Sky Creator Awards 2026 are Coming!",
+    "status": "confirmed",
+    "startDate": "2026-02-13",
+    "endDate": null,
+    "teaser": "It's time for our community's creativity to shine together once more!The Sky Creator Awards 2026 are coming this July, where we gather to celebrate...",
+    "summary": "It's time for our community's creativity to shine together once more!The Sky Creator Awards 2026 are coming this July, where we gather to celebrate the community creators who bring Sky to life beyond the game. Content entries and fan voting opportunities will be open from March 1st through 31st PST. Our main categories this year are:Visual ArtCraftCosplayMusicStorytellingIn-Game CreationComedy Along with four premier categories:Content of the YearPlayer Choice AwardRising StarMentor Award Kee...",
+    "howItWorks": [
+      "Details sourced from official Steam news feed",
+      "Check the source link for full information"
+    ],
+    "rewards": [
+      "See official announcement for details"
+    ],
+    "raiderImpact": [
+      "Solo: Check source for gameplay impact",
+      "Duo: Check source for gameplay impact",
+      "Trio: Check source for gameplay impact"
+    ],
+    "sources": [
+      {
+        "label": "Steam News",
+        "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1824644522837624"
+      }
+    ],
+    "lastUpdated": "2026-02-13"
+  },
+  {
     "id": "shared-watch",
     "title": "Shared Watch Event",
     "status": "confirmed",
@@ -98,113 +268,88 @@
     "lastUpdated": "2026-02-10"
   },
   {
-    "id": "escalation-roadmap",
-    "title": "Escalation Season Roadmap",
+    "id": "steam-days-of-fortune-year-of-the-horse",
+    "title": "Days of Fortune: Year of the Horse",
     "status": "confirmed",
-    "startDate": "2026-01-01",
-    "endDate": "2026-04-30",
-    "teaser": "Four months. Four major updates. The Rust Belt is getting worse before it gets better.",
-    "summary": "The Escalation season runs January through April 2026 with four major content drops: Headwinds (Jan), Shrouded Sky (Feb), Flashpoint (Mar), and Riven Tides (Apr). Each update brings new enemies, map conditions, and gear. Monthly content cadence confirmed by Embark Studios.",
+    "startDate": "2026-02-10",
+    "endDate": null,
+    "teaser": "Days of Fortune is back for Year of the Horse! From February 13th through 26th, talk to the Fortune Spirit in Aviary to teleport to a festive scene...",
+    "summary": "Days of Fortune is back for Year of the Horse! From February 13th through 26th, talk to the Fortune Spirit in Aviary to teleport to a festive scene in the Village of Dreams. Get ready for dumplings, games, and adorable collectibles!For the first three days of the event, the main carousel is under construction while the Spirits get ready to celebrate. Help them by cleaning up the debris, and collect Event Tickets as a reward for your assistance. Once the carousel is complete on February 16th, ...",
     "howItWorks": [
-      "Headwinds (January): Solo vs Squads matchmaking for level 40+, Trophy Display project, new map condition",
-      "Shrouded Sky (February): New gusty wind map condition, new ARC enemy type, new Raider Deck",
-      "Flashpoint (March): Lightning hazards, additional enemies, Scrappy companion improvements",
-      "Riven Tides (April): New or heavily updated map, new high-level ARC boss"
+      "Details sourced from official Steam news feed",
+      "Check the source link for full information"
     ],
     "rewards": [
-      "Monthly Raider Deck progression tracks",
-      "New cosmetic sets with each update",
-      "New enemy-specific loot tables",
-      "Season-long progression rewards"
+      "See official announcement for details"
     ],
     "raiderImpact": [
-      "Solo: Headwinds Solo vs Squads mode is built for you",
-      "Duo: Solid through all four updates",
-      "Trio: Riven Tides boss content likely tuned for full squads"
+      "Solo: Check source for gameplay impact",
+      "Duo: Check source for gameplay impact",
+      "Trio: Check source for gameplay impact"
     ],
     "sources": [
       {
-        "label": "Official Roadmap",
-        "url": "https://arcraiders.com/news/roadmap-january-april-2026"
+        "label": "Steam News",
+        "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1823825466507051"
       }
     ],
-    "lastUpdated": "2026-01-23"
+    "lastUpdated": "2026-02-10"
   },
   {
-    "id": "shrouded-sky",
-    "title": "Shrouded Sky Update",
+    "id": "steam-this-month-in-sky-february-2026-edition",
+    "title": "This Month in Sky: February 2026 Edition",
     "status": "confirmed",
-    "startDate": "2026-02-17",
-    "endDate": "2026-03-15",
-    "teaser": "Wind conditions incoming. New ARC threats spotted on the perimeter. Topside is about to get a lot less predictable.",
-    "summary": "Shrouded Sky is the second major Escalation update. It introduces a new gusty wind map condition affecting visibility and movement, a new ARC enemy type, a new Raider Deck with cosmetics and Raider Tokens, and at least one existing map receiving a significant update.",
+    "startDate": "2026-02-03",
+    "endDate": null,
+    "teaser": "Hello, Adventurers! Welcome to “This Month in Sky”, where we share Sky news, community activities, and creations from Sky Kids around the world. Th...",
+    "summary": "Hello, Adventurers! Welcome to “This Month in Sky”, where we share Sky news, community activities, and creations from Sky Kids around the world. This month we have an update, some returning favorites, and double Seasonal Light and Treasure Candles! Read more below. Please note: All dates and times are listed in PST/PDT. Sky NewsUpdate 32.5Our next update goes live on February 26th! For a rundown of what’s included, make sure to check out Tio’s update video later this month, or read the full p...",
     "howItWorks": [
-      "New gusty wind map condition reduces visibility and affects movement",
-      "New ARC enemy type being introduced",
-      "New Raider Deck with gadgets, cosmetics, and Raider Tokens",
-      "At least one existing map receives a gameplay-affecting update",
-      "Second Expedition window opens for sign-ups"
+      "Details sourced from official Steam news feed",
+      "Check the source link for full information"
     ],
     "rewards": [
-      "New Raider Deck progression rewards",
-      "New ARC enemy-specific loot drops",
-      "Updated map loot tables",
-      "Expedition sign-up bonuses"
+      "See official announcement for details"
     ],
     "raiderImpact": [
-      "Solo: Wind conditions make solo navigation harder, plan routes carefully",
-      "Duo: One spots through the wind while the other moves, strong synergy",
-      "Trio: New enemy likely requires coordinated fire, trio recommended"
+      "Solo: Check source for gameplay impact",
+      "Duo: Check source for gameplay impact",
+      "Trio: Check source for gameplay impact"
     ],
     "sources": [
       {
-        "label": "Escalation Roadmap",
-        "url": "https://arcraiders.com/news/roadmap-january-april-2026"
-      },
-      {
-        "label": "Shrouded Sky Info",
-        "url": "https://blast.tv/gaming/news/arc-raiders-info-so-far-on-shrouded-sky-update"
+        "label": "Steam News",
+        "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1823825466492499"
       }
     ],
-    "lastUpdated": "2026-02-05"
+    "lastUpdated": "2026-02-03"
   },
   {
-    "id": "expedition-2",
-    "title": "Second Expedition",
+    "id": "steam-hotfix-32-2-january-29-2026",
+    "title": "Hotfix 32.2 - January 29, 2026",
     "status": "confirmed",
-    "startDate": "2026-02-25",
-    "endDate": "2026-03-01",
-    "teaser": "The tunnels out of Speranza open again. Fresh start, new bonuses, but everything you built gets left behind. Choose wisely.",
-    "summary": "The second Expedition is the seasonal character reset. Sign-ups open February 25 and departure is March 1. Stash value requirement for max rewards has been lowered to 3 million Coins (down from 5 million). Catch-up mechanic lets Raiders who missed first Expedition skill points recover them at a 50% discount.",
+    "startDate": "2026-01-29",
+    "endDate": null,
+    "teaser": "Greetings, Adventurers!Hotfix 32.2 is now live. Changes include:Tips and motivational messages are returning to the loading screen Bug Fixes:AR Cam...",
+    "summary": "Greetings, Adventurers!Hotfix 32.2 is now live. Changes include:Tips and motivational messages are returning to the loading screen Bug Fixes:AR CameraFixes for some mobile devices that were crashing when attempting to use the AR Camera featureWhen entering the AR Camera mode, the in-game checkpoints will no longer be overwritten and should work as intended Map Anywhere Fix for the Isle of Dawn map showing incorrect wing light count Other:Capeless Sky Kids will no longer be shadowed after ligh...",
     "howItWorks": [
-      "Sign-up opens February 25, departure March 1",
-      "Stash value requirement lowered to 3M Coins for max 5 Skill Points",
-      "Catch-up mechanic: missed Skill Points from Expedition 1 available at 50% cost",
-      "Permanent: cosmetics, Raider Tokens, Trophy Display, Codex, Raider Deck progress",
-      "Reset: level, stash, inventory, loadouts, skill tree",
-      "Patchwork outfit evolves with new toggles and color options",
-      "Buffs stack for consecutive departures but reset if you skip one"
+      "Details sourced from official Steam news feed",
+      "Check the source link for full information"
     ],
     "rewards": [
-      "Up to 5 Skill Points for 3M stash value",
-      "12 to 24 stash spaces permanent unlock",
-      "Evolved Patchwork outfit with new customization",
-      "New Scrappy outfit",
-      "Expedition Indicator icon upgrade",
-      "Stacking buffs for consecutive departures"
+      "See official announcement for details"
     ],
     "raiderImpact": [
-      "Solo: Grind to 3M is achievable solo but tight on time, start stacking now",
-      "Duo: Split loot routes to hit stash value faster",
-      "Trio: Most efficient for speed-running the coin requirement before March 1"
+      "Solo: Check source for gameplay impact",
+      "Duo: Check source for gameplay impact",
+      "Trio: Check source for gameplay impact"
     ],
     "sources": [
       {
-        "label": "Expedition Details",
-        "url": "https://arcraiders.com/news/second-expedition-rewards-and-requirements"
+        "label": "Steam News",
+        "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1823191198603603"
       }
     ],
-    "lastUpdated": "2026-02-05"
+    "lastUpdated": "2026-01-29"
   },
   {
     "id": "headwinds",
@@ -241,70 +386,345 @@
     "lastUpdated": "2026-01-27"
   },
   {
-    "id": "flashpoint",
-    "title": "Flashpoint Update",
+    "id": "steam-tournament-of-triumph-returns-for-2026",
+    "title": "Tournament of Triumph Returns for 2026",
     "status": "confirmed",
-    "startDate": "2026-03-01",
-    "endDate": "2026-03-31",
-    "teaser": "Lightning on the horizon. New threats. The Scrappy might actually be useful after this one.",
-    "summary": "Flashpoint is the third Escalation update, planned for March 2026. It introduces lightning hazards as a new environmental threat, additional enemy types, and meaningful improvements to the Scrappy companion. Details remain limited but the roadmap confirms it as a major content drop.",
+    "startDate": "2026-01-23",
+    "endDate": null,
+    "teaser": "It’s time for the Tournament of Triumph’s big return!Thanks to your feedback during the 2024 Tournament of Triumph, we've made some changes to the ...",
+    "summary": "It’s time for the Tournament of Triumph’s big return!Thanks to your feedback during the 2024 Tournament of Triumph, we've made some changes to the way the event will work this year. From January 30th through February 12th, cheer on your favorite Spirits and play through winter-themed Sky activities to help them progress through the event bracket. A bevy of spirits have signed up to participate this year, but they need your support!When Tournament of Triumph begins, you can join the contest by...",
     "howItWorks": [
-      "New lightning hazard environmental condition",
-      "Additional ARC enemy types",
-      "Scrappy companion improvements and new functionality",
-      "Expected to continue monthly Raider Deck cadence"
+      "Details sourced from official Steam news feed",
+      "Check the source link for full information"
     ],
     "rewards": [
-      "New Raider Deck expected",
-      "Lightning hazard-specific loot",
-      "Scrappy companion upgrades",
-      "New enemy drop tables"
+      "See official announcement for details"
     ],
     "raiderImpact": [
-      "Solo: Lightning hazards add another survival variable to manage",
-      "Duo: Scrappy improvements may reduce the need for a third",
-      "Trio: New enemies likely scale to squad size"
+      "Solo: Check source for gameplay impact",
+      "Duo: Check source for gameplay impact",
+      "Trio: Check source for gameplay impact"
     ],
     "sources": [
       {
-        "label": "Escalation Roadmap",
+        "label": "Steam News",
+        "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1822556746160540"
+      }
+    ],
+    "lastUpdated": "2026-01-23"
+  },
+  {
+    "id": "steam-hotfix-32-1-january-13-2026",
+    "title": "Hotfix 32.1 - January 13, 2026",
+    "status": "confirmed",
+    "startDate": "2026-01-14",
+    "endDate": null,
+    "teaser": "Greetings, Adventurers! Hotfix 32.1 (364087) iOS, (363499) Android, Huawei, PlayStation, and Steam is now live. Bug Fixes: Fix for crashing reporte...",
+    "summary": "Greetings, Adventurers! Hotfix 32.1 (364087) iOS, (363499) Android, Huawei, PlayStation, and Steam is now live. Bug Fixes: Fix for crashing reported in multiple levels with staggered release. As always, we look forward to hearing your feedback, and encourage you to join the community discussion on our official Discord server at discord.gg/thatskygame!Current Known Issues for each patch can be found here, along with updates: https://bit.ly/SkyKnownIssuesAnd in case you missed it, please make s...",
+    "howItWorks": [
+      "Details sourced from official Steam news feed",
+      "Check the source link for full information"
+    ],
+    "rewards": [
+      "See official announcement for details"
+    ],
+    "raiderImpact": [
+      "Solo: Check source for gameplay impact",
+      "Duo: Check source for gameplay impact",
+      "Trio: Check source for gameplay impact"
+    ],
+    "sources": [
+      {
+        "label": "Steam News",
+        "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1821922921809781"
+      }
+    ],
+    "lastUpdated": "2026-01-14"
+  },
+  {
+    "id": "steam-join-together-in-season-of-lightmending",
+    "title": "Join Together in Season of Lightmending",
+    "status": "confirmed",
+    "startDate": "2026-01-13",
+    "endDate": null,
+    "teaser": "Beginning on January 16th and concluding on April 2nd, players who have unlocked the Vault of Knowledge will be able to work with their friends to ...",
+    "summary": "Beginning on January 16th and concluding on April 2nd, players who have unlocked the Vault of Knowledge will be able to work with their friends to help the newest season’s spirits restore fractured lanterns in the archives. Join together, use your light, and fix what has been broken.Who could have guessed that Memory Lanterns are so fragile? Answer the call from this season’s Quest Giver, who has recruited some old friends to show Sky Kids everywhere that they can work together with their lig...",
+    "howItWorks": [
+      "Details sourced from official Steam news feed",
+      "Check the source link for full information"
+    ],
+    "rewards": [
+      "See official announcement for details"
+    ],
+    "raiderImpact": [
+      "Solo: Check source for gameplay impact",
+      "Duo: Check source for gameplay impact",
+      "Trio: Check source for gameplay impact"
+    ],
+    "sources": [
+      {
+        "label": "Steam News",
+        "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1821288646587050"
+      }
+    ],
+    "lastUpdated": "2026-01-13"
+  },
+  {
+    "id": "steam-this-month-in-sky-january-2026-edition",
+    "title": "This Month in Sky: January 2026 Edition",
+    "status": "confirmed",
+    "startDate": "2026-01-07",
+    "endDate": null,
+    "teaser": "Hello, Adventurers! Welcome to “This Month in Sky”, where we share Sky news, community activities, and creations from Sky Kids around the world. Ha...",
+    "summary": "Hello, Adventurers! Welcome to “This Month in Sky”, where we share Sky news, community activities, and creations from Sky Kids around the world. Happy New Year! We’re so excited to embark on new adventures with all of you in 2026. Please note: All dates and times are listed in PST/PDT. Sky NewsUpdate 32.0Update 32.0 is out today! It includes:AR Camera FeatureMap AnywhereBug fixesAs well as other fixes and improvements. For a more complete list of what’s included in this patch, use the Patch N...",
+    "howItWorks": [
+      "Details sourced from official Steam news feed",
+      "Check the source link for full information"
+    ],
+    "rewards": [
+      "See official announcement for details"
+    ],
+    "raiderImpact": [
+      "Solo: Check source for gameplay impact",
+      "Duo: Check source for gameplay impact",
+      "Trio: Check source for gameplay impact"
+    ],
+    "sources": [
+      {
+        "label": "Steam News",
+        "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1821288646575794"
+      }
+    ],
+    "lastUpdated": "2026-01-07"
+  },
+  {
+    "id": "steam-what-color-is-your-light-sky-s-personality-quiz-ev",
+    "title": "What Color is Your Light? Sky’s Personality Quiz Event",
+    "status": "confirmed",
+    "startDate": "2026-01-07",
+    "endDate": null,
+    "teaser": "Ever wonder what personality types the spirits of Sky are? What about your own personality type? From January 9th through 23rd, players who have un...",
+    "summary": "Ever wonder what personality types the spirits of Sky are? What about your own personality type? From January 9th through 23rd, players who have unlocked the Daylight Prairie portal can visit the event guide to take Sky’s new Personality Quiz and participate in a fun Community Trivia Game!What is Your Personality Type?Upon teleporting to the new event space, you can engage with the new Personality Quiz and go through a series of questions. To respond to each, simply approach the diorama for t...",
+    "howItWorks": [
+      "Details sourced from official Steam news feed",
+      "Check the source link for full information"
+    ],
+    "rewards": [
+      "See official announcement for details"
+    ],
+    "raiderImpact": [
+      "Solo: Check source for gameplay impact",
+      "Duo: Check source for gameplay impact",
+      "Trio: Check source for gameplay impact"
+    ],
+    "sources": [
+      {
+        "label": "Steam News",
+        "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1821288646575761"
+      }
+    ],
+    "lastUpdated": "2026-01-07"
+  },
+  {
+    "id": "steam-update-32-0-january-6th-2026",
+    "title": "Update 32.0 - January 6th, 2026",
+    "status": "confirmed",
+    "startDate": "2026-01-06",
+    "endDate": null,
+    "teaser": "Greetings, Adventurers!Update 32.0 is live on Android, Huawei, iOS, PlayStation, Switch, and Steam!For a preview of what’s coming to Sky, be sure t...",
+    "summary": "Greetings, Adventurers!Update 32.0 is live on Android, Huawei, iOS, PlayStation, Switch, and Steam!For a preview of what’s coming to Sky, be sure to check out January’s This Month in Sky!Update highlightsFor a quick overview of the update highlights, and Tio shenanigans, check out this video:https://bit.ly/UpdateVideo320New FeaturesMap Anywhere makes exploring Sky easier! With one button, you can open the map and tap on areas to see:How many spirits remainWinged LightsDaily QuestsHow to acces...",
+    "howItWorks": [
+      "Details sourced from official Steam news feed",
+      "Check the source link for full information"
+    ],
+    "rewards": [
+      "See official announcement for details"
+    ],
+    "raiderImpact": [
+      "Solo: Check source for gameplay impact",
+      "Duo: Check source for gameplay impact",
+      "Trio: Check source for gameplay impact"
+    ],
+    "sources": [
+      {
+        "label": "Steam News",
+        "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1821288646575629"
+      }
+    ],
+    "lastUpdated": "2026-01-06"
+  },
+  {
+    "id": "escalation-roadmap",
+    "title": "Escalation Season Roadmap",
+    "status": "confirmed",
+    "startDate": "2026-01-01",
+    "endDate": "2026-04-30",
+    "teaser": "Four months. Four major updates. The Rust Belt is getting worse before it gets better.",
+    "summary": "The Escalation season runs January through April 2026 with four major content drops: Headwinds (Jan), Shrouded Sky (Feb), Flashpoint (Mar), and Riven Tides (Apr). Each update brings new enemies, map conditions, and gear. Monthly content cadence confirmed by Embark Studios.",
+    "howItWorks": [
+      "Headwinds (January): Solo vs Squads matchmaking for level 40+, Trophy Display project, new map condition",
+      "Shrouded Sky (February): New gusty wind map condition, new ARC enemy type, new Raider Deck",
+      "Flashpoint (March): Lightning hazards, additional enemies, Scrappy companion improvements",
+      "Riven Tides (April): New or heavily updated map, new high-level ARC boss"
+    ],
+    "rewards": [
+      "Monthly Raider Deck progression tracks",
+      "New cosmetic sets with each update",
+      "New enemy-specific loot tables",
+      "Season-long progression rewards"
+    ],
+    "raiderImpact": [
+      "Solo: Headwinds Solo vs Squads mode is built for you",
+      "Duo: Solid through all four updates",
+      "Trio: Riven Tides boss content likely tuned for full squads"
+    ],
+    "sources": [
+      {
+        "label": "Official Roadmap",
         "url": "https://arcraiders.com/news/roadmap-january-april-2026"
       }
     ],
     "lastUpdated": "2026-01-23"
   },
   {
-    "id": "riven-tides",
-    "title": "Riven Tides Update",
+    "id": "steam-thank-you-to-our-amazing-sky-community-for-your-ge",
+    "title": "Thank you to our Amazing Sky Community for your Generosity in 2025!",
     "status": "confirmed",
-    "startDate": "2026-04-01",
-    "endDate": "2026-04-30",
-    "teaser": "New ground. A major ARC presence. The season finale hits in April and it is bringing something big.",
-    "summary": "Riven Tides is the fourth and final Escalation update, planned for April 2026. It is expected to feature a new or heavily reworked map, potentially coastal themed, and a significant new high-level ARC boss. This is the culmination of the Escalation season narrative arc.",
+    "startDate": "2025-12-19",
+    "endDate": null,
+    "teaser": "As we close out 2025, we want to extend our deepest gratitude to every Sky player who lifted their light for two important causes this year. Thanks...",
+    "summary": "As we close out 2025, we want to extend our deepest gratitude to every Sky player who lifted their light for two important causes this year. Thanks to your generosity and compassion, our amazing community has collectively raised more than $837,000 in support of The Ocean Cleanup and The Trevor Project.Days of Nature: Supporting The Ocean CleanupThrough your participation in our Days of Nature event, the Sky community came together once again to help protect our planet’s oceans. This year’s ef...",
     "howItWorks": [
-      "New or heavily updated map expected",
-      "Major new ARC boss encounter",
-      "Culmination of Escalation season storyline",
-      "Full details not yet revealed"
+      "Details sourced from official Steam news feed",
+      "Check the source link for full information"
     ],
     "rewards": [
-      "New map-specific loot tables",
-      "Boss-specific drops",
-      "Escalation season finale rewards",
-      "New Raider Deck expected"
+      "See official announcement for details"
     ],
     "raiderImpact": [
-      "Solo: Boss content historically requires squad play",
-      "Duo: May be viable depending on boss mechanics",
-      "Trio: Almost certainly the intended squad size for boss content"
+      "Solo: Check source for gameplay impact",
+      "Duo: Check source for gameplay impact",
+      "Trio: Check source for gameplay impact"
     ],
     "sources": [
       {
-        "label": "Escalation Roadmap",
-        "url": "https://arcraiders.com/news/roadmap-january-april-2026"
+        "label": "Steam News",
+        "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1819386365096302"
       }
     ],
-    "lastUpdated": "2026-01-23"
+    "lastUpdated": "2025-12-19"
+  },
+  {
+    "id": "steam-hotfix-31-6-december-11-2025",
+    "title": "Hotfix 31.6 - December 11, 2025",
+    "status": "confirmed",
+    "startDate": "2025-12-11",
+    "endDate": null,
+    "teaser": "Greetings, Adventurers!Hotfix 31.6 (359532) is now live on iOS, PlayStation, Huawei, Switch and Steam, and (360232) on Android. Bug Fixes:Corrected...",
+    "summary": "Greetings, Adventurers!Hotfix 31.6 (359532) is now live on iOS, PlayStation, Huawei, Switch and Steam, and (360232) on Android. Bug Fixes:Corrected the flow for binding, casting, or informing the player that a STAR pin is already bound when scanning pins on Google Pixel devicesFix for location icons missing or at previously visited landmarks on the map\\ Fixed the currency display of the UI when opening the in-game IAP shop for devices set to Japanese As always, we look forward to hearing your...",
+    "howItWorks": [
+      "Details sourced from official Steam news feed",
+      "Check the source link for full information"
+    ],
+    "rewards": [
+      "See official announcement for details"
+    ],
+    "raiderImpact": [
+      "Solo: Check source for gameplay impact",
+      "Duo: Check source for gameplay impact",
+      "Trio: Check source for gameplay impact"
+    ],
+    "sources": [
+      {
+        "label": "Steam News",
+        "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1818752592125116"
+      }
+    ],
+    "lastUpdated": "2025-12-11"
+  },
+  {
+    "id": "steam-frozen-fun-during-days-of-feast",
+    "title": "Frozen Fun during Days of Feast",
+    "status": "confirmed",
+    "startDate": "2025-12-04",
+    "endDate": null,
+    "teaser": "Put on your mittens and get ready for frozen fun during Days of Feast! From December 12th through January 1st, team up with friends or explore on y...",
+    "summary": "Put on your mittens and get ready for frozen fun during Days of Feast! From December 12th through January 1st, team up with friends or explore on your own to find playful new activities in the Village of Dreams during Sky’s snowy season, as well as a few returning favorites. Snowball Target PracticeThe Chuckling Scout spirit is ready for fresh fun! Use the meditation circle next to them to begin the snowball target practice activity alone or with friends. Don’t forget to don your mittens by c...",
+    "howItWorks": [
+      "Details sourced from official Steam news feed",
+      "Check the source link for full information"
+    ],
+    "rewards": [
+      "See official announcement for details"
+    ],
+    "raiderImpact": [
+      "Solo: Check source for gameplay impact",
+      "Duo: Check source for gameplay impact",
+      "Trio: Check source for gameplay impact"
+    ],
+    "sources": [
+      {
+        "label": "Steam News",
+        "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1818118366171735"
+      }
+    ],
+    "lastUpdated": "2025-12-04"
+  },
+  {
+    "id": "steam-update-31-5-december-1-2025",
+    "title": "Update 31.5 - December 1, 2025",
+    "status": "confirmed",
+    "startDate": "2025-12-02",
+    "endDate": null,
+    "teaser": "Greetings, Adventurers!Update 31.5 is now live on Android, Huawei, iOS, PlayStation, Switch, and Steam!For a preview of what’s coming to Sky, be su...",
+    "summary": "Greetings, Adventurers!Update 31.5 is now live on Android, Huawei, iOS, PlayStation, Switch, and Steam!For a preview of what’s coming to Sky, be sure to check out December’s This Month in Sky!Update highlightsFor a quick overview of the update highlights, and Tio shenanigans, check out this video With this release, players will need to update their Apple device OS to iOS15+ as the minimum required specifications have been updated. New Features & changesUpdate to start screenImproved loading t...",
+    "howItWorks": [
+      "Details sourced from official Steam news feed",
+      "Check the source link for full information"
+    ],
+    "rewards": [
+      "See official announcement for details"
+    ],
+    "raiderImpact": [
+      "Solo: Check source for gameplay impact",
+      "Duo: Check source for gameplay impact",
+      "Trio: Check source for gameplay impact"
+    ],
+    "sources": [
+      {
+        "label": "Steam News",
+        "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1817483467047246"
+      }
+    ],
+    "lastUpdated": "2025-12-02"
+  },
+  {
+    "id": "steam-this-month-in-sky-december-2025-edition",
+    "title": "This Month in Sky: December 2025 Edition",
+    "status": "confirmed",
+    "startDate": "2025-12-02",
+    "endDate": null,
+    "teaser": "Hello, Adventurers! Welcome to “This Month in Sky”, where we share Sky news, community activities, and creations from Sky kids around the world. Th...",
+    "summary": "Hello, Adventurers! Welcome to “This Month in Sky”, where we share Sky news, community activities, and creations from Sky kids around the world. The year is coming to an end, but Sky has more fun moments in store before we turn to celebrating the new year! Please note: All dates and times are listed in PST/PDT. Sky NewsUpdate 31.5As mentioned in our last edition of This Month in Sky, Patch 31.5 is out today! If you haven’t seen it yet, you can find our update video here: https://bit.ly/TMiSUp...",
+    "howItWorks": [
+      "Details sourced from official Steam news feed",
+      "Check the source link for full information"
+    ],
+    "rewards": [
+      "See official announcement for details"
+    ],
+    "raiderImpact": [
+      "Solo: Check source for gameplay impact",
+      "Duo: Check source for gameplay impact",
+      "Trio: Check source for gameplay impact"
+    ],
+    "sources": [
+      {
+        "label": "Steam News",
+        "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1817483467046901"
+      }
+    ],
+    "lastUpdated": "2025-12-02"
   },
   {
     "id": "shrouded-sky-timing",
