@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARC Raiders Guides - Weapons, Builds, Maps & Strategy | Arceology</title>
+    <meta name="description" content="Complete ARC Raiders guide hub covering best weapons, optimal builds, map strategies, enemy weaknesses, extraction tips, and beginner guides. Updated for Escalation season 2026.">
+    <meta name="keywords" content="ARC Raiders guide, ARC Raiders best weapons, ARC Raiders builds, ARC Raiders map guide, ARC Raiders tips, ARC Raiders beginner guide, ARC Raiders extraction tips, ARC Raiders enemy guide, ARC Raiders Stella Montis, ARC Raiders solo guide, Arceology">
+    <meta name="author" content="Arceology">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://myraiderlog.com/guides.html">
+    <meta property="og:title" content="ARC Raiders Guides - Weapons, Builds & Strategy | Arceology">
+    <meta property="og:description" content="Complete guide hub for ARC Raiders. Weapons, builds, maps, enemies, and extraction strategies from Arceology.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://myraiderlog.com/guides.html">
+    <meta property="og:site_name" content="Arceology Raider Log">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="ARC Raiders Guides | Arceology">
+    <meta property="twitter:description" content="Weapons, builds, maps, enemies, and extraction strategies for ARC Raiders.">
+    <meta name="google-adsense-account" content="ca-pub-7264545503146086">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7264545503146086" crossorigin="anonymous"></script>
+    <link rel="manifest" href="manifest.json">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "ARC Raiders Guides",
+        "description": "Complete guide hub for ARC Raiders covering weapons, builds, maps, enemies, and strategies.",
+        "url": "https://myraiderlog.com/guides.html",
+        "publisher": {"@type": "Person", "name": "Arceology", "url": "https://myraiderlog.com/"},
+        "isPartOf": {"@type": "WebSite", "name": "Arceology Raider Log", "url": "https://myraiderlog.com/"}
+    }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root{--rust:#b65e48;--ash:#4a4238;--sand:#d4c9a9;--night:#0d0a08;--ember:#d9864f;--steel:#6b6355;--night-card:#16120e;--rust-dim:rgba(182,94,72,0.3);--ember-dim:rgba(217,134,79,0.15)}
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{background:var(--night);min-height:100vh;font-family:'Cormorant Garamond',serif;color:var(--sand)}
+        nav{position:fixed;top:0;left:0;width:100%;padding:1.2rem 5%;background:linear-gradient(180deg,rgba(13,10,8,0.98),rgba(13,10,8,0.9));backdrop-filter:blur(15px);z-index:10000;border-bottom:1px solid var(--rust-dim);display:flex;justify-content:space-between;align-items:center}
+        .nav-logo-section{display:flex;flex-direction:column}
+        .nav-logo{font-family:'Cinzel',serif;font-size:1.2rem;font-weight:600;color:var(--sand);text-decoration:none;text-transform:uppercase;letter-spacing:3px}
+        .nav-terminal{font-family:'Space Mono',monospace;font-size:0.6rem;color:var(--steel);letter-spacing:2px;margin-top:2px}
+        .nav-links{display:flex;gap:2rem;flex-wrap:wrap}
+        .nav-links a{font-family:'Space Mono',monospace;font-size:0.7rem;color:var(--steel);text-decoration:none;text-transform:uppercase;letter-spacing:2px;transition:color 0.3s}
+        .nav-links a:hover,.nav-links a.active{color:var(--ember)}
+        .page-header{text-align:center;padding:120px 20px 40px}
+        .page-header h1{font-family:'Cinzel',serif;font-size:clamp(1.8rem,4vw,3rem);color:var(--sand);text-transform:uppercase;letter-spacing:6px}
+        .page-header .subtitle{font-family:'Space Mono',monospace;color:var(--steel);font-size:0.7rem;margin-top:12px;letter-spacing:3px;text-transform:uppercase}
+        .page-header .intro{font-family:'Cormorant Garamond',serif;color:var(--steel);font-size:1.05rem;max-width:700px;margin:20px auto 0;line-height:1.7;font-style:italic}
+        .guides-container{max-width:1200px;margin:0 auto;padding:40px 20px 60px}
+        .guide-section{margin-bottom:60px}
+        .section-header{display:flex;align-items:center;gap:14px;margin-bottom:30px}
+        .section-header .icon{font-size:1.2rem;color:var(--ember);font-family:'Space Mono',monospace}
+        .section-header h2{font-family:'Cinzel',serif;font-size:1.2rem;color:var(--sand);text-transform:uppercase;letter-spacing:4px;white-space:nowrap}
+        .section-header .line{flex:1;height:1px;background:linear-gradient(90deg,var(--rust-dim),transparent)}
+        .guide-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:24px}
+        .guide-card{background:var(--night-card);border:1px solid var(--rust-dim);padding:28px 24px;transition:border-color 0.3s,box-shadow 0.3s,transform 0.2s;cursor:default}
+        .guide-card:hover{border-color:var(--rust);box-shadow:0 0 20px rgba(182,94,72,0.15);transform:translateY(-2px)}
+        .guide-card h3{font-family:'Cinzel',serif;font-size:1.05rem;color:var(--sand);margin-bottom:12px;letter-spacing:2px}
+        .guide-card p{font-family:'Cormorant Garamond',serif;font-size:0.95rem;color:var(--steel);line-height:1.7}
+        .guide-card .tag{display:inline-block;font-family:'Space Mono',monospace;font-size:0.55rem;color:var(--ember);border:1px solid var(--ember);padding:2px 8px;margin-top:14px;letter-spacing:2px;text-transform:uppercase}
+        .guide-card .difficulty{font-family:'Space Mono',monospace;font-size:0.55rem;color:var(--steel);letter-spacing:1px;margin-top:8px}
+        .tip-box{background:var(--night-card);border-left:3px solid var(--ember);padding:20px 24px;margin:20px 0;font-family:'Cormorant Garamond',serif;font-size:0.95rem;color:var(--sand);line-height:1.7}
+        .tip-box .tip-label{font-family:'Space Mono',monospace;font-size:0.6rem;color:var(--ember);letter-spacing:3px;text-transform:uppercase;margin-bottom:8px}
+        .share-bar{display:flex;gap:12px;justify-content:center;margin:40px 0;flex-wrap:wrap}
+        .share-btn{font-family:'Space Mono',monospace;font-size:0.65rem;color:var(--steel);border:1px solid var(--rust-dim);padding:8px 18px;text-decoration:none;letter-spacing:2px;text-transform:uppercase;transition:all 0.3s}
+        .share-btn:hover{color:var(--ember);border-color:var(--ember)}
+        footer{text-align:center;padding:40px 20px;border-top:1px solid var(--rust-dim)}
+        .footer-links{display:flex;justify-content:center;gap:2rem;margin-bottom:16px;flex-wrap:wrap}
+        .footer-links a{font-family:'Space Mono',monospace;font-size:0.7rem;color:var(--steel);text-decoration:none;letter-spacing:2px;text-transform:uppercase;transition:color 0.3s}
+        .footer-links a:hover{color:var(--ember)}
+        .footer-copy{font-family:'Space Mono',monospace;font-size:0.6rem;color:var(--steel);letter-spacing:2px;opacity:0.5}
+        @media(max-width:768px){.guide-grid{grid-template-columns:1fr}.nav-links{gap:1rem}.nav-links a{font-size:0.6rem}}
+        @media(max-width:480px){.nav-links{display:none}}
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-logo-section"><a href="index.html" class="nav-logo">arceology</a><div class="nav-terminal">terminal.speranza</div></div>
+        <div class="nav-links"><a href="blog.html">logs</a><a href="videos.html">gameplay</a><a href="bulletin.html">intel</a><a href="guides.html" class="active">guides</a><a href="store.html">gear</a><a href="about.html">about</a></div>
+    </nav>
+
+    <div class="page-header">
+        <h1>Raider Field Guides</h1>
+        <div class="subtitle">tactical archives // speranza survival database</div>
+        <p class="intro">Everything you need to survive topside. Weapons breakdowns, build strategies, map intel, enemy weaknesses, and extraction tactics compiled from hundreds of hours in the Rust Belt.</p>
+    </div>
+
+    <div class="guides-container">
+        <div class="guide-section">
+            <div class="section-header"><span class="icon">//</span><h2>Weapons & Loadouts</h2><div class="line"></div></div>
+            <div class="guide-grid">
+                <div class="guide-card">
+                    <h3>Best Weapons Tier List</h3>
+                    <p>A ranked breakdown of every weapon in ARC Raiders for the current Escalation season. What to bring topside, what to leave in Speranza, and what to grab if you find it on the ground.</p>
+                    <div class="tag">Updated Feb 2026</div>
+                    <div class="difficulty">Applies to: All playstyles</div>
+                </div>
+                <div class="guide-card">
+                    <h3>Solo Build Guide</h3>
+                    <p>Optimized loadouts for solo raiders running Solo vs Squads. Stealth setups, hit-and-run kits, and the gear that keeps you alive when nobody has your back.</p>
+                    <div class="tag">Solo vs Squads</div>
+                    <div class="difficulty">Difficulty: Advanced</div>
+                </div>
+                <div class="guide-card">
+                    <h3>Duo & Trio Squad Builds</h3>
+                    <p>Complementary loadout combinations for two and three-player squads. Role assignments, synergy picks, and communication callouts that win fights.</p>
+                    <div class="tag">Squad Play</div>
+                    <div class="difficulty">Difficulty: Intermediate</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="guide-section">
+            <div class="section-header"><span class="icon">>></span><h2>Maps & Extraction</h2><div class="line"></div></div>
+            <div class="guide-grid">
+                <div class="guide-card">
+                    <h3>Extraction Zone Guide</h3>
+                    <p>Every extraction point mapped out with approach routes, danger zones, and timing windows. Know where to go before you need to leave.</p>
+                    <div class="tag">Essential</div>
+                    <div class="difficulty">Difficulty: Beginner</div>
+                </div>
+                <div class="guide-card">
+                    <h3>Map Conditions Explained</h3>
+                    <p>Cold Snap frostbite mechanics, Shrouded Sky wind effects, and how each map condition changes loot tables, enemy behavior, and extraction difficulty.</p>
+                    <div class="tag">Escalation Season</div>
+                    <div class="difficulty">Difficulty: Intermediate</div>
+                </div>
+                <div class="guide-card">
+                    <h3>High-Value Loot Routes</h3>
+                    <p>Optimized paths through each map for maximum coin value per run. Where the best loot spawns, how to chain rooms efficiently, and when to cut and extract.</p>
+                    <div class="tag">Coin Farming</div>
+                    <div class="difficulty">Difficulty: Advanced</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="guide-section">
+            <div class="section-header"><span class="icon">!!</span><h2>Enemies & Combat</h2><div class="line"></div></div>
+            <div class="guide-grid">
+                <div class="guide-card">
+                    <h3>ARC Enemy Bestiary</h3>
+                    <p>Every ARC machine type cataloged with weak points, attack patterns, damage values, and the best tactics to take each one down. From basic drones to Stella Montis.</p>
+                    <div class="tag">Complete Database</div>
+                    <div class="difficulty">Reference Guide</div>
+                </div>
+                <div class="guide-card">
+                    <h3>Stella Montis Boss Guide</h3>
+                    <p>The biggest ARC threat in the game demands a real strategy. Phase breakdowns, safe positions, damage windows, and the loadouts that actually work.</p>
+                    <div class="tag">Boss Fight</div>
+                    <div class="difficulty">Difficulty: Expert</div>
+                </div>
+                <div class="guide-card">
+                    <h3>PvP Combat Tips</h3>
+                    <p>Positioning, peeking, audio cues, and engagement rules for raider-vs-raider fights. When to push, when to disengage, and how to win outnumbered.</p>
+                    <div class="tag">PvP</div>
+                    <div class="difficulty">Difficulty: Advanced</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="guide-section">
+            <div class="section-header"><span class="icon">++</span><h2>Progression & Economy</h2><div class="line"></div></div>
+            <div class="guide-grid">
+                <div class="guide-card">
+                    <h3>Beginner's Survival Guide</h3>
+                    <p>New to ARC Raiders? Start here. Core mechanics explained, first loadout recommendations, how extraction works, and the mistakes that kill new raiders.</p>
+                    <div class="tag">Start Here</div>
+                    <div class="difficulty">Difficulty: Beginner</div>
+                </div>
+                <div class="guide-card">
+                    <h3>Expedition Prep Guide</h3>
+                    <p>How the Expedition system works, stash value targets, what carries over and what resets, and the optimal timeline to hit max rewards before departure.</p>
+                    <div class="tag">Expedition 2</div>
+                    <div class="difficulty">Difficulty: Intermediate</div>
+                </div>
+                <div class="guide-card">
+                    <h3>Merit & Coin Farming</h3>
+                    <p>Efficient methods for earning Merits during events and stacking Coins for Expedition. The runs, the routes, and the math behind hitting your targets.</p>
+                    <div class="tag">Economy</div>
+                    <div class="difficulty">Difficulty: Intermediate</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tip-box">
+            <div class="tip-label">Raider Tip</div>
+            These guides are updated with each major patch. The Escalation season changes the meta monthly, so check back after Shrouded Sky, Flashpoint, and Riven Tides drop for updated weapon tiers and build recommendations.
+        </div>
+
+        <div class="share-bar">
+            <a class="share-btn" href="https://twitter.com/intent/tweet?url=https://myraiderlog.com/guides.html&text=ARC%20Raiders%20guides%20from%20Arceology" target="_blank" rel="noopener">Share on X</a>
+            <a class="share-btn" href="https://www.reddit.com/submit?url=https://myraiderlog.com/guides.html&title=ARC%20Raiders%20Guides%20-%20Arceology" target="_blank" rel="noopener">Share on Reddit</a>
+            <a class="share-btn" href="https://www.youtube.com/@arceologist214" target="_blank" rel="noopener">YouTube</a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-links">
+            <a href="https://www.youtube.com/@arceologist214" target="_blank" rel="noopener">youtube</a>
+            <a href="about.html">about</a>
+            <a href="privacy.html">privacy</a>
+            <a href="faq.html">faq</a>
+        </div>
+        <div class="footer-copy">arceology.terminal // speranza archives // raider field database v1.0</div>
+    </footer>
+</body>
+</html>
