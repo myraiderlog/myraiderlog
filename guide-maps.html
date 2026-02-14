@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-adsense-account" content="ca-pub-7264545503146086">
+    <title>ARC Raiders Maps Guide - Extraction Zones, Loot Routes & Map Conditions | Arceology</title>
+    <meta name="description" content="Complete ARC Raiders maps guide. Every extraction zone mapped, high-value loot routes, map conditions explained, and strategies for navigating the Rust Belt safely.">
+    <meta name="keywords" content="ARC Raiders maps, extraction zones, loot routes, map conditions, Cold Snap, Shrouded Sky, Rust Belt, ARC Raiders extraction guide">
+    <meta name="author" content="Arceology">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://myraiderlog.com/guide-maps.html">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://myraiderlog.com/guide-maps.html">
+    <meta property="og:title" content="ARC Raiders Maps Guide - Extraction Zones & Loot Routes">
+    <meta property="og:description" content="Every extraction point, map condition, and high-value loot path in ARC Raiders mapped and analyzed.">
+    <meta property="og:site_name" content="Arceology Raider Log">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="manifest" href="manifest.json">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7264545503146086" crossorigin="anonymous"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Space+Mono:wght@400;700&display=swap');
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: #0d0a08; color: #c4a882; font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; line-height: 1.8; min-height: 100vh; }
+        nav { position: fixed; top: 0; left: 0; width: 100%; padding: 1.2rem 5%; background: linear-gradient(180deg, rgba(13,10,8,0.98) 0%, rgba(13,10,8,0.9) 100%); backdrop-filter: blur(15px); z-index: 10000; border-bottom: 1px solid rgba(180,94,72,0.3); display: flex; justify-content: space-between; align-items: center; }
+        .nav-brand { font-family: 'Cinzel', serif; font-size: 1.3rem; color: #e8d5c0; text-decoration: none; letter-spacing: 3px; }
+        .nav-brand span { display: block; font-family: 'Space Mono', monospace; font-size: 0.55rem; color: #b45e48; letter-spacing: 2px; }
+        .nav-links a { color: #8a7560; text-decoration: none; font-family: 'Space Mono', monospace; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; margin-left: 2rem; transition: color 0.3s; }
+        .nav-links a:hover, .nav-links a.active { color: #b45e48; }
+        .hero { padding: 10rem 5% 4rem; text-align: center; background: radial-gradient(ellipse at center top, rgba(180,94,72,0.08) 0%, transparent 60%); }
+        .hero h1 { font-family: 'Cinzel', serif; font-size: clamp(2rem, 5vw, 3.5rem); color: #e8d5c0; letter-spacing: 6px; text-transform: uppercase; background: linear-gradient(180deg, #e8d5c0 0%, #b45e48 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero .subtitle { font-family: 'Space Mono', monospace; font-size: 0.75rem; color: #6a5a4a; letter-spacing: 4px; margin-top: 1rem; }
+        .breadcrumb { font-family: 'Space Mono', monospace; font-size: 0.7rem; color: #6a5a4a; margin-top: 1.5rem; }
+        .breadcrumb a { color: #b45e48; text-decoration: none; }
+        .content { max-width: 1000px; margin: 0 auto; padding: 2rem 5% 4rem; }
+        .toc { background: rgba(180,94,72,0.06); border: 1px solid rgba(180,94,72,0.2); padding: 2rem; margin-bottom: 3rem; border-radius: 2px; }
+        .toc h2 { font-family: 'Cinzel', serif; font-size: 1rem; color: #b45e48; letter-spacing: 3px; margin-bottom: 1rem; }
+        .toc ul { list-style: none; }
+        .toc li { padding: 0.3rem 0; }
+        .toc a { color: #c4a882; text-decoration: none; font-family: 'Space Mono', monospace; font-size: 0.8rem; transition: color 0.3s; }
+        .toc a:hover { color: #b45e48; }
+        .toc a::before { content: '> '; color: #b45e48; }
+        .guide-section { margin-bottom: 4rem; }
+        .guide-section h2 { font-family: 'Cinzel', serif; font-size: 1.6rem; color: #e8d5c0; letter-spacing: 4px; text-transform: uppercase; border-bottom: 1px solid rgba(180,94,72,0.3); padding-bottom: 0.8rem; margin-bottom: 1.5rem; }
+        .guide-section h2 span { color: #b45e48; }
+        .guide-section h3 { font-family: 'Cinzel', serif; font-size: 1.2rem; color: #d4b896; margin: 2rem 0 1rem; letter-spacing: 2px; }
+        .guide-section p { margin-bottom: 1.2rem; color: #a89478; }
+        .tip-box { background: rgba(180,94,72,0.08); border-left: 3px solid #b45e48; padding: 1.2rem 1.5rem; margin: 1.5rem 0; font-style: italic; }
+        .tip-box strong { color: #b45e48; font-style: normal; font-family: 'Space Mono', monospace; font-size: 0.75rem; letter-spacing: 2px; display: block; margin-bottom: 0.5rem; }
+        .zone-card { background: rgba(180,94,72,0.04); border: 1px solid rgba(180,94,72,0.15); padding: 1.5rem 2rem; margin: 1.5rem 0; }
+        .zone-card h4 { font-family: 'Cinzel', serif; color: #e8d5c0; font-size: 1.1rem; margin-bottom: 0.8rem; }
+        .zone-card .tag { display: inline-block; font-family: 'Space Mono', monospace; font-size: 0.65rem; color: #b45e48; border: 1px solid rgba(180,94,72,0.3); padding: 0.2rem 0.6rem; margin-right: 0.5rem; letter-spacing: 1px; }
+        .zone-card p { color: #a89478; margin-top: 0.8rem; }
+        .condition-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin: 1.5rem 0; }
+        .condition-card { background: rgba(180,94,72,0.04); border: 1px solid rgba(180,94,72,0.15); padding: 1.5rem; }
+        .condition-card h4 { font-family: 'Cinzel', serif; color: #e8d5c0; margin-bottom: 0.5rem; }
+        .condition-card .effect { font-family: 'Space Mono', monospace; font-size: 0.75rem; color: #b45e48; margin-bottom: 0.8rem; }
+        .condition-card p { color: #a89478; font-size: 1rem; margin: 0; }
+        .back-link { display: inline-block; margin-top: 3rem; font-family: 'Space Mono', monospace; font-size: 0.8rem; color: #b45e48; text-decoration: none; letter-spacing: 2px; border: 1px solid rgba(180,94,72,0.3); padding: 0.8rem 2rem; transition: all 0.3s; }
+        .back-link:hover { background: rgba(180,94,72,0.1); }
+        .related-guides { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid rgba(180,94,72,0.2); }
+        .related-guides h3 { font-family: 'Cinzel', serif; color: #b45e48; letter-spacing: 3px; margin-bottom: 1.5rem; font-size: 1rem; }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; }
+        .related-card { background: rgba(180,94,72,0.04); border: 1px solid rgba(180,94,72,0.15); padding: 1.2rem; text-decoration: none; transition: all 0.3s; }
+        .related-card:hover { border-color: #b45e48; background: rgba(180,94,72,0.08); }
+        .related-card h4 { font-family: 'Cinzel', serif; color: #e8d5c0; font-size: 0.95rem; margin-bottom: 0.5rem; }
+        .related-card p { color: #8a7560; font-size: 0.9rem; margin: 0; }
+        footer { text-align: center; padding: 3rem 5%; border-top: 1px solid rgba(180,94,72,0.15); font-family: 'Space Mono', monospace; font-size: 0.65rem; color: #4a3f35; }
+        footer a { color: #b45e48; text-decoration: none; }
+        @media (max-width: 768px) { .nav-links a { margin-left: 1rem; font-size: 0.6rem; } .content { padding: 1rem 4% 3rem; } }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="nav-brand">ARCEOLOGY<span>terminal.speranza</span></a>
+        <div class="nav-links">
+            <a href="blog.html">logs</a>
+            <a href="videos.html">gameplay</a>
+            <a href="bulletin.html">intel</a>
+            <a href="guides.html" class="active">guides</a>
+            <a href="faq.html">faq</a>
+            <a href="store.html">gear</a>
+            <a href="about.html">about</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <h1>Maps & Extraction</h1>
+        <div class="subtitle">TERRAIN ANALYSIS // EXTRACTION PROTOCOLS</div>
+        <div class="breadcrumb"><a href="guides.html">Guides</a> / Maps & Extraction</div>
+    </section>
+
+    <div class="content">
+        <div class="toc">
+            <h2>CONTENTS</h2>
+            <ul>
+                <li><a href="#overview">Map Overview</a></li>
+                <li><a href="#extraction-zones">Extraction Zones</a></li>
+                <li><a href="#conditions">Map Conditions</a></li>
+                <li><a href="#loot-routes">High-Value Loot Routes</a></li>
+                <li><a href="#hot-zones">Hot Zones & Contested Areas</a></li>
+                <li><a href="#rotation">Rotation Strategy</a></li>
+                <li><a href="#extraction-tips">Extraction Tips</a></li>
+            </ul>
+        </div>
+
+        <div id="overview" class="guide-section">
+            <h2><span>>></span> Map Overview</h2>
+            <p>The Rust Belt is the primary combat zone in ARC Raiders. It is a sprawling post-apocalyptic landscape stretching across industrial ruins, frozen valleys, overgrown facilities, and shattered urban centers. Each raid generates a version of the map with randomized loot placement, variable extraction point activation, and one of several possible map conditions that alter visibility, movement, and enemy behavior.</p>
+            <p>Understanding the map's geography is the single most important skill for consistent extraction. Knowing where loot concentrates, where ARC patrols route, and where other raiders are likely to push lets you plan efficient runs that maximize value while minimizing exposure to threats. Raiders who move with purpose and follow practiced routes extract more often than those who wander reactively.</p>
+            <p>The map is divided into three general zones by risk and reward. The outer ring contains low-tier loot, sparse ARC presence, and quiet extraction points. The mid-ring offers mid-tier loot with moderate ARC patrols and occasional raider traffic. The inner zone holds the highest-value loot crates, the densest ARC concentration including Sentinel-class machines, and the most contested extraction points where PvP encounters are nearly guaranteed.</p>
+        </div>
+
+        <div id="extraction-zones" class="guide-section">
+            <h2><span>>></span> Extraction Zones</h2>
+            <p>Extraction zones are the only way to leave a raid with your loot. Each raid activates a subset of the available extraction points, and their locations are revealed progressively throughout the match. Understanding each zone's characteristics helps you plan which extraction to target and how to approach it.</p>
+
+            <div class="zone-card">
+                <h4>Northern Ridge Extraction</h4>
+                <span class="tag">LOW TRAFFIC</span><span class="tag">OPEN TERRAIN</span>
+                <p>Located on elevated ground at the map's northern edge. The approach is across open terrain with minimal cover, making it dangerous if other raiders are watching from the ridge. However, traffic here is typically low because the surrounding area holds limited loot. This is the go-to extraction for raiders who loot the outer ring and want a quiet exit. Arrive early, scan the ridgeline for snipers, and move quickly across the open ground.</p>
+            </div>
+
+            <div class="zone-card">
+                <h4>Railyard Terminal</h4>
+                <span class="tag">HIGH TRAFFIC</span><span class="tag">CLOSE QUARTERS</span>
+                <p>A dense extraction point surrounded by shipping containers, train cars, and industrial debris. The tight sightlines make this a shotgun and SMG playground. Multiple approach angles mean you can be flanked from almost any direction. Raiders frequently camp the containers near the extraction beacon, waiting for others to activate it before ambushing. If you are extracting here, clear the immediate area thoroughly before calling the extraction. Flashbangs and scanner pulses are invaluable for flushing out hidden raiders.</p>
+            </div>
+
+            <div class="zone-card">
+                <h4>Comm Tower Plaza</h4>
+                <span class="tag">MEDIUM TRAFFIC</span><span class="tag">ELEVATED POSITIONS</span>
+                <p>A wide plaza surrounding a communications tower with catwalks and elevated platforms. The verticality here creates interesting engagements where raiders on the tower have sightline advantages but are exposed to fire from multiple directions. The extraction beacon sits in the center of the plaza, fully exposed. Smart raiders use the surrounding buildings for cover while the extraction timer counts down rather than standing in the open near the beacon.</p>
+            </div>
+
+            <div class="zone-card">
+                <h4>Bunker Entrance</h4>
+                <span class="tag">HIGH TRAFFIC</span><span class="tag">CHOKEPOINT</span>
+                <p>The most dangerous extraction point in the game. Located near the inner zone where the best loot spawns, this extraction draws the most raiders and sits adjacent to heavy ARC patrol routes. The bunker entrance creates a natural chokepoint with limited approach angles. Extracting here successfully requires either overwhelming firepower, perfect timing to arrive when the area is clear, or a well-coordinated squad that can lock down the approaches. Solo players should avoid this extraction unless they have no other option.</p>
+            </div>
+
+            <div class="zone-card">
+                <h4>Lakeside Dock</h4>
+                <span class="tag">LOW TRAFFIC</span><span class="tag">WATER HAZARD</span>
+                <p>A quiet extraction on the eastern edge of the map near a frozen lakebed. The approach involves crossing partially frozen water which slows movement and creates noise. Few raiders come here because the surrounding loot is sparse, but those who do tend to be experienced players specifically choosing this extraction for its reliability. Watch for thin ice sections that can break and deal damage. The dock itself offers decent cover from the one main approach angle.</p>
+            </div>
+        </div>
+
+        <div id="conditions" class="guide-section">
+            <h2><span>>></span> Map Conditions</h2>
+            <p>Each raid rolls one map condition that persists for the entire match. These conditions change how you play, what weapons are effective, and which strategies are viable. Checking the condition before deploying lets you adjust your loadout and plan accordingly.</p>
+
+            <div class="condition-grid">
+                <div class="condition-card">
+                    <h4>Cold Snap</h4>
+                    <div class="effect">EFFECT: Reduced visibility, slower stamina regen, frostbite damage over time outdoors</div>
+                    <p>Cold Snap turns the map into a frozen wasteland with heavy snow and fog. Visibility drops to roughly 40 meters outdoors, making snipers less effective and close-range weapons more dominant. The frostbite mechanic means you take slow damage while exposed outside, pushing raiders to move between buildings and covered areas rather than crossing open ground. Indoor areas become contested because everyone is funneled into the same warm spaces. Bring SMGs, shotguns, and extra healing.</p>
+                </div>
+                <div class="condition-card">
+                    <h4>Shrouded Sky</h4>
+                    <div class="effect">EFFECT: Darkness, ARC machines have reduced detection range, flashlights reveal position</div>
+                    <p>The map is plunged into near-total darkness. ARC machines cannot see as far, making stealth runs more viable, but raiders using flashlights become visible from enormous distances. The darkness favors players who know the map well enough to navigate without light. Suppressors become essential since muzzle flash is a beacon in the dark. This condition heavily rewards map knowledge and punishes players who rely on visual scanning to find threats.</p>
+                </div>
+                <div class="condition-card">
+                    <h4>ARC Storm</h4>
+                    <div class="effect">EFFECT: Increased ARC spawns, electromagnetic interference, scanner disruption</div>
+                    <p>ARC Storm floods the map with additional machine patrols and disables scanner-based gadgets intermittently. The electromagnetic interference causes your HUD to glitch periodically, temporarily removing your minimap and compass. Raids under ARC Storm conditions are chaotic and dangerous but also offer the highest loot potential since more ARC machines mean more salvage drops. Bring extra ammunition and be prepared for extended PvE fights between objectives.</p>
+                </div>
+                <div class="condition-card">
+                    <h4>Clear Skies</h4>
+                    <div class="effect">EFFECT: No modifiers, standard conditions</div>
+                    <p>The baseline condition with no special effects. Full visibility, normal ARC behavior, all gadgets functioning. Clear Skies raids are the most predictable and the best for learning the map. Snipers and marksman rifles reach their full potential under these conditions since sightlines are unobstructed. This is also when PvP encounters are most common at range since raiders can spot each other from far away.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="loot-routes" class="guide-section">
+            <h2><span>>></span> High-Value Loot Routes</h2>
+            <p>Efficient looting is about route planning, not random exploration. The best raiders follow practiced paths that hit the maximum number of loot containers in the minimum time, then extract before the raid timer creates desperation. Below are three proven routes for different risk tolerances.</p>
+
+            <h3>The Safe Route (Outer Ring)</h3>
+            <p>Drop on the eastern or western edge of the map. Loot the first cluster of buildings you encounter, which typically contains two to three basic weapon crates and scattered consumables. Move along the map edge toward the nearest low-traffic extraction point, looting any containers along the way. This route yields modest loot but extracts consistently. Expect to fill about 40 to 50 percent of your inventory. Best for new players learning the game or experienced raiders on losing streaks who need a clean extraction to reset their economy.</p>
+
+            <h3>The Mid-Risk Route (Mid Ring)</h3>
+            <p>Drop at a mid-ring POI such as the abandoned factory complex or the collapsed highway interchange. These locations contain mid-tier loot crates with a chance at rare weapon mods and valuable salvage. Clear the ARC machines guarding the area, loot thoroughly, then rotate toward the nearest activated extraction. You will likely encounter one or two other raider groups running similar routes. This is the sweet spot for most players: good loot, manageable risk, and reasonable extraction odds. Aim to spend 8 to 12 minutes in-raid before extracting.</p>
+
+            <h3>The High-Risk Route (Inner Zone)</h3>
+            <p>Drop as close to the map center as possible and immediately push toward the highest-tier POI. The inner zone holds military-grade weapon crates, rare crafting materials, and the best salvage values. It also holds the heaviest ARC presence, including Sentinel-class machines that require coordinated team fire to take down, and the most aggressive raider groups running the same high-value route. This is a feast-or-famine approach. A successful inner zone run fills your inventory with premium loot worth several times what an outer ring run produces. A failed run means losing everything. Best for confident squads with practiced teamwork.</p>
+
+            <div class="tip-box">
+                <strong>RAIDER TIP</strong>
+                Time your looting. The first three minutes of a raid are the safest because raiders are spread across the map. Minutes 5 through 10 are the most dangerous as raiders converge on extraction points. If you are still looting after minute 12, you are racing the clock and likely to make desperate decisions that get you killed.
+            </div>
+        </div>
+
+        <div id="hot-zones" class="guide-section">
+            <h2><span>>></span> Hot Zones & Contested Areas</h2>
+            <p>Certain map locations consistently produce PvP encounters because multiple loot routes and extraction paths converge there. Knowing these hot zones lets you either avoid them for safer runs or target them if you are looking for raider fights.</p>
+
+            <h3>The Crossroads</h3>
+            <p>A highway intersection near the map's center where four main paths converge. Raiders rotating from any direction frequently pass through here. The destroyed vehicles provide cover but the sightlines are long in every direction. Avoid lingering at the Crossroads. Move through quickly and decisively.</p>
+
+            <h3>Generator Station</h3>
+            <p>A multi-story industrial building with high-tier loot on the upper floors. ARC Sentinels patrol the ground level. The combination of valuable loot and a defensible position makes this a magnet for squads who set up inside and hold it against all comers. Assaulting a held Generator Station requires coordination, throwables, and a willingness to accept casualties.</p>
+
+            <h3>The Bridge</h3>
+            <p>A long damaged bridge spanning a ravine. It connects the eastern and western halves of the map and is the fastest crossing point. Raiders moving between regions often meet here. The bridge is exposed with no cover, making it deadly for anyone caught in the middle. Always scan both ends before crossing. Better yet, find an alternate route unless the bridge is your only option.</p>
+        </div>
+
+        <div id="rotation" class="guide-section">
+            <h2><span>>></span> Rotation Strategy</h2>
+            <p>Rotation refers to how you move between objectives on the map. Good rotation means choosing paths that keep you in cover, avoid known hot zones when you are not looking for fights, and position you close to extraction points as the raid timer progresses.</p>
+            <p>The cardinal rule of rotation is to never move without a destination. Before leaving any looted area, decide where you are going next and identify the safest path to get there. Moving reactively, running toward the nearest gunfire or wandering toward unexplored areas without a plan, gets raiders killed more than any other habit.</p>
+            <p>Use the map edges when possible. Edge rotation is slower but significantly safer than cutting through the center. The terrain along the edges often provides natural cover from the ridges, walls, and structures that line the map boundaries. Save your center-map crossings for when you have a specific objective that requires it.</p>
+        </div>
+
+        <div id="extraction-tips" class="guide-section">
+            <h2><span>>></span> Extraction Tips</h2>
+            <p>Arrive at your extraction point early. Rushing to extraction at the last moment means arriving without time to clear the area, heal up, or reposition if another squad is already there. Aim to reach your extraction zone with at least two minutes on the timer before you need to leave.</p>
+            <p>Never extract from the first point you see if you have other options available. The closest extraction to a high-traffic area will be the most contested. Check your map for alternative extraction points even if they require more travel time. A safe extraction is always better than a fast one.</p>
+            <p>If you hear gunfire at your planned extraction, stop and reassess. Either wait for the fight to end and let the survivors extract or leave, or reroute to a different extraction point entirely. Walking into an active firefight at an extraction zone is one of the fastest ways to lose a raid.</p>
+            <p>In squads, designate one player to watch the approach angles while the others interact with the extraction beacon. The extraction timer requires at least one player to stay near the beacon, but not all of you need to be standing on it. Spread out, hold angles, and collapse to the beacon only in the final seconds before extraction completes.</p>
+
+            <div class="tip-box">
+                <strong>ARCEOLOGIST'S NOTE</strong>
+                Map knowledge is the highest-leverage skill in ARC Raiders. Every hour you spend learning extraction positions, loot routes, and hot zones pays dividends across every future raid. There is no shortcut. Run the maps, memorize the landmarks, and your extraction rate will climb steadily.
+            </div>
+        </div>
+
+        <div class="related-guides">
+            <h3>RELATED GUIDES</h3>
+            <div class="related-grid">
+                <a href="guide-weapons.html" class="related-card">
+                    <h4>Weapons & Loadouts Guide</h4>
+                    <p>Complete tier list, weapon breakdowns, and build recommendations.</p>
+                </a>
+                <a href="guide-enemies.html" class="related-card">
+                    <h4>Enemies & Combat Guide</h4>
+                    <p>ARC machine bestiary, boss strategies, and PvP combat tactics.</p>
+                </a>
+                <a href="guide-progression.html" class="related-card">
+                    <h4>Progression & Economy Guide</h4>
+                    <p>Coin farming, vendor unlocks, crafting priorities, and season pass strategy.</p>
+                </a>
+            </div>
+        </div>
+
+        <a href="guides.html" class="back-link">&lt; BACK TO ALL GUIDES</a>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Arceology. All rights reserved. ARC Raiders is a trademark of Embark Studios.</p>
+        <p style="margin-top: 0.5rem;"><a href="privacy.html">Privacy Policy</a> | <a href="about.html">About</a> | <a href="faq.html">FAQ</a></p>
+    </footer>
+</body>
+</html>
