@@ -3,281 +3,357 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-adsense-account" content="ca-pub-7264545503146086">
-    <title>ARC Raiders Enemies Guide - Bestiary, Boss Fights & PvP Combat Tips | Arceology</title>
-    <meta name="description" content="Complete ARC Raiders enemies guide. Every ARC machine type cataloged with weak points and tactics. Boss fight strategies for Stella Montis. PvP combat tips for raider encounters.">
-    <meta name="keywords" content="ARC Raiders enemies, ARC machines, bestiary, Stella Montis boss, PvP combat, drone weak points, Sentinel guide, ARC Raiders combat tips">
-    <meta name="author" content="Arceology">
+    <title>ARC Raiders Enemies Guide - ARC Bestiary, Weak Points & Boss Tactics | Arceology</title>
+    <meta name="description" content="Complete ARC Raiders enemy guide. Every ARC machine from Snitches to Queens with weak points, drops, XP values, armor types, and combat tactics.">
+    <meta name="keywords" content="ARC Raiders enemies, ARC bestiary, ARC weak points, Queen boss, Matriarch, Bombardier, Bastion, Leaper, Rocketeer, ARC armor, ARC behavior">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://myraiderlog.com/guide-enemies.html">
-    <meta property="og:type" content="article">
+    <meta property="og:title" content="ARC Raiders Enemies Guide - Bestiary & Boss Tactics | Arceology">
+    <meta property="og:description" content="Every ARC machine cataloged with weak points, drops, XP, and the tactics to defeat them.">
     <meta property="og:url" content="https://myraiderlog.com/guide-enemies.html">
-    <meta property="og:title" content="ARC Raiders Enemies Guide - Bestiary & Combat Tactics">
-    <meta property="og:description" content="Every ARC machine analyzed with weak points, attack patterns, and strategies. Plus PvP combat tips.">
-    <meta property="og:site_name" content="Arceology Raider Log">
-    <meta name="twitter:card" content="summary_large_image">
-    <link rel="manifest" href="manifest.json">
+    <meta property="og:type" content="article">
+    <meta name="google-adsense-account" content="ca-pub-7264545503146086">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7264545503146086" crossorigin="anonymous"></script>
+    <link rel="manifest" href="manifest.json">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Space+Mono&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Space+Mono:wght@400;700&display=swap');
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background: #0d0a08; color: #c4a882; font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; line-height: 1.8; min-height: 100vh; }
-        nav { position: fixed; top: 0; left: 0; width: 100%; padding: 1.2rem 5%; background: linear-gradient(180deg, rgba(13,10,8,0.98) 0%, rgba(13,10,8,0.9) 100%); backdrop-filter: blur(15px); z-index: 10000; border-bottom: 1px solid rgba(180,94,72,0.3); display: flex; justify-content: space-between; align-items: center; }
-        .nav-brand { font-family: 'Cinzel', serif; font-size: 1.3rem; color: #e8d5c0; text-decoration: none; letter-spacing: 3px; }
-        .nav-brand span { display: block; font-family: 'Space Mono', monospace; font-size: 0.55rem; color: #b45e48; letter-spacing: 2px; }
-        .nav-links a { color: #8a7560; text-decoration: none; font-family: 'Space Mono', monospace; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; margin-left: 2rem; transition: color 0.3s; }
-        .nav-links a:hover, .nav-links a.active { color: #b45e48; }
-        .hero { padding: 10rem 5% 4rem; text-align: center; background: radial-gradient(ellipse at center top, rgba(180,94,72,0.08) 0%, transparent 60%); }
-        .hero h1 { font-family: 'Cinzel', serif; font-size: clamp(2rem, 5vw, 3.5rem); color: #e8d5c0; letter-spacing: 6px; text-transform: uppercase; background: linear-gradient(180deg, #e8d5c0 0%, #b45e48 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .hero .subtitle { font-family: 'Space Mono', monospace; font-size: 0.75rem; color: #6a5a4a; letter-spacing: 4px; margin-top: 1rem; }
-        .breadcrumb { font-family: 'Space Mono', monospace; font-size: 0.7rem; color: #6a5a4a; margin-top: 1.5rem; }
-        .breadcrumb a { color: #b45e48; text-decoration: none; }
-        .content { max-width: 1000px; margin: 0 auto; padding: 2rem 5% 4rem; }
-        .toc { background: rgba(180,94,72,0.06); border: 1px solid rgba(180,94,72,0.2); padding: 2rem; margin-bottom: 3rem; }
-        .toc h2 { font-family: 'Cinzel', serif; font-size: 1rem; color: #b45e48; letter-spacing: 3px; margin-bottom: 1rem; }
-        .toc ul { list-style: none; } .toc li { padding: 0.3rem 0; }
-        .toc a { color: #c4a882; text-decoration: none; font-family: 'Space Mono', monospace; font-size: 0.8rem; } .toc a:hover { color: #b45e48; } .toc a::before { content: '> '; color: #b45e48; }
-        .guide-section { margin-bottom: 4rem; }
-        .guide-section h2 { font-family: 'Cinzel', serif; font-size: 1.6rem; color: #e8d5c0; letter-spacing: 4px; text-transform: uppercase; border-bottom: 1px solid rgba(180,94,72,0.3); padding-bottom: 0.8rem; margin-bottom: 1.5rem; }
-        .guide-section h2 span { color: #b45e48; }
-        .guide-section h3 { font-family: 'Cinzel', serif; font-size: 1.2rem; color: #d4b896; margin: 2rem 0 1rem; letter-spacing: 2px; }
-        .guide-section p { margin-bottom: 1.2rem; color: #a89478; }
-        .tip-box { background: rgba(180,94,72,0.08); border-left: 3px solid #b45e48; padding: 1.2rem 1.5rem; margin: 1.5rem 0; font-style: italic; }
-        .tip-box strong { color: #b45e48; font-style: normal; font-family: 'Space Mono', monospace; font-size: 0.75rem; letter-spacing: 2px; display: block; margin-bottom: 0.5rem; }
-        .enemy-card { background: rgba(180,94,72,0.04); border: 1px solid rgba(180,94,72,0.15); padding: 1.5rem 2rem; margin: 1.5rem 0; }
-        .enemy-card h4 { font-family: 'Cinzel', serif; color: #e8d5c0; font-size: 1.1rem; margin-bottom: 0.3rem; }
-        .enemy-card .threat { font-family: 'Space Mono', monospace; font-size: 0.7rem; letter-spacing: 2px; margin-bottom: 0.8rem; }
-        .threat-low { color: #6a8a60; } .threat-medium { color: #c4a832; } .threat-high { color: #b45e48; } .threat-extreme { color: #ff4444; }
-        .enemy-card .stat-row { display: flex; gap: 2rem; flex-wrap: wrap; margin: 0.8rem 0; font-family: 'Space Mono', monospace; font-size: 0.75rem; }
-        .enemy-card .stat-label { color: #6a5a4a; } .enemy-card .stat-value { color: #c4a882; }
-        .enemy-card p { color: #a89478; margin-top: 0.8rem; }
-        .phase-box { background: rgba(180,94,72,0.06); border: 1px solid rgba(180,94,72,0.12); padding: 1rem 1.5rem; margin: 1rem 0; }
-        .phase-box h5 { font-family: 'Space Mono', monospace; font-size: 0.8rem; color: #b45e48; letter-spacing: 2px; margin-bottom: 0.5rem; }
-        .phase-box p { margin: 0; color: #a89478; font-size: 1rem; }
-        .back-link { display: inline-block; margin-top: 3rem; font-family: 'Space Mono', monospace; font-size: 0.8rem; color: #b45e48; text-decoration: none; letter-spacing: 2px; border: 1px solid rgba(180,94,72,0.3); padding: 0.8rem 2rem; transition: all 0.3s; }
-        .back-link:hover { background: rgba(180,94,72,0.1); }
-        .related-guides { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid rgba(180,94,72,0.2); }
-        .related-guides h3 { font-family: 'Cinzel', serif; color: #b45e48; letter-spacing: 3px; margin-bottom: 1.5rem; font-size: 1rem; }
-        .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; }
-        .related-card { background: rgba(180,94,72,0.04); border: 1px solid rgba(180,94,72,0.15); padding: 1.2rem; text-decoration: none; transition: all 0.3s; }
-        .related-card:hover { border-color: #b45e48; background: rgba(180,94,72,0.08); }
-        .related-card h4 { font-family: 'Cinzel', serif; color: #e8d5c0; font-size: 0.95rem; margin-bottom: 0.5rem; }
-        .related-card p { color: #8a7560; font-size: 0.9rem; margin: 0; }
-        footer { text-align: center; padding: 3rem 5%; border-top: 1px solid rgba(180,94,72,0.15); font-family: 'Space Mono', monospace; font-size: 0.65rem; color: #4a3f35; }
-        footer a { color: #b45e48; text-decoration: none; }
-        @media (max-width: 768px) { .nav-links a { margin-left: 1rem; font-size: 0.6rem; } .content { padding: 1rem 4% 3rem; } }
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{background:#0d0a08;color:#c4a882;font-family:'Cormorant Garamond',serif;font-size:1.1rem;line-height:1.8}
+        a{color:#b45e48;text-decoration:none}a:hover{color:#e8d5c0}
+        nav{position:fixed;top:0;left:0;width:100%;padding:1.2rem 5%;background:linear-gradient(180deg,rgba(13,10,8,.98)0%,rgba(13,10,8,.85)100%);z-index:1000;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(180,94,72,.15)}
+        .nav-logo{font-family:'Cinzel',serif;font-size:1.1rem;color:#c4a882;letter-spacing:.15em;text-transform:uppercase}
+        .nav-links a{font-family:'Space Mono',monospace;font-size:.7rem;color:#8a7e6b;margin-left:2rem;letter-spacing:.1em;text-transform:uppercase}
+        .nav-links a:hover{color:#e8d5c0}
+        .hero{padding:10rem 5% 4rem;text-align:center;background:radial-gradient(ellipse at center top,rgba(180,94,72,.08)0%,transparent 60%)}
+        .hero h1{font-family:'Cinzel',serif;font-size:2.8rem;color:#e8d5c0;letter-spacing:.08em;margin-bottom:.5rem}
+        .hero .subtitle{font-family:'Space Mono',monospace;font-size:.8rem;color:#b45e48;letter-spacing:.15em;text-transform:uppercase}
+        .content{max-width:1000px;margin:0 auto;padding:2rem 5% 4rem}
+        .toc{background:rgba(180,94,72,.06);border:1px solid rgba(180,94,72,.15);padding:2rem;margin-bottom:3rem;font-family:'Space Mono',monospace;font-size:.85rem}
+        .toc a{display:block;padding:.4rem 0;color:#8a7e6b}.toc a:hover{color:#e8d5c0}
+        .guide-section{margin-bottom:4rem}
+        .guide-section h2{font-family:'Cinzel',serif;font-size:1.6rem;color:#e8d5c0;letter-spacing:.06em;margin-bottom:1.5rem;padding-bottom:.5rem;border-bottom:1px solid rgba(180,94,72,.2)}
+        .guide-section h3{font-family:'Cinzel',serif;font-size:1.25rem;color:#c4a882;margin:2rem 0 .8rem}
+        .tip-box{background:rgba(180,94,72,.08);border-left:3px solid #b45e48;padding:1.2rem 1.5rem;margin:1.5rem 0;font-style:italic}
+        .tip-box strong{color:#b45e48;font-style:normal;display:block;margin-bottom:.3rem;font-family:'Space Mono',monospace;font-size:.8rem;letter-spacing:.1em}
+        .enemy-card{background:rgba(180,94,72,.04);border:1px solid rgba(180,94,72,.15);padding:1.5rem 2rem;margin:1rem 0}
+        .enemy-card h4{font-family:'Cinzel',serif;font-size:1.15rem;color:#e8d5c0;margin-bottom:.5rem}
+        .enemy-card .stats{font-family:'Space Mono',monospace;font-size:.7rem;color:#8a7560;margin-bottom:.5rem}
+        .enemy-card p{color:#a89878;line-height:1.7;margin-bottom:.5rem}
+        .enemy-card .drops{font-family:'Space Mono',monospace;font-size:.7rem;color:#6a8a6a;margin-top:.5rem}
+        .enemy-card .tip{font-family:'Space Mono',monospace;font-size:.75rem;color:#b45e48;margin-top:.5rem;font-style:italic}
+        .back-link{display:inline-block;margin-top:3rem;font-family:'Space Mono',monospace;font-size:.8rem;color:#b45e48;text-decoration:none}
+        .related-guides{margin-top:4rem;padding-top:2rem;border-top:1px solid rgba(180,94,72,.2)}
+        .related-guides h3{font-family:'Cinzel',serif;color:#e8d5c0;margin-bottom:1rem}
+        .related-guides a{display:block;padding:.6rem 0;font-family:'Space Mono',monospace;font-size:.8rem;color:#8a7e6b}
+        .related-guides a:hover{color:#b45e48}
+        footer{text-align:center;padding:3rem 5%;border-top:1px solid rgba(180,94,72,.15);font-family:'Space Mono',monospace;font-size:.7rem;color:#5a4e3b}
+        @media(max-width:768px){.nav-links a{margin-left:1rem;font-size:.6rem}.content{padding:1rem 4% 3rem}.hero h1{font-size:2rem}}
     </style>
 </head>
 <body>
     <nav>
-        <a href="index.html" class="nav-brand">ARCEOLOGY<span>terminal.speranza</span></a>
+        <div><a href="index.html" class="nav-logo">Arceology</a><br><span style="font-family:'Space Mono',monospace;font-size:.6rem;color:#5a4e3b">terminal.speranza</span></div>
         <div class="nav-links">
-            <a href="blog.html">logs</a>
-            <a href="videos.html">gameplay</a>
-            <a href="bulletin.html">intel</a>
-            <a href="guides.html" class="active">guides</a>
-            <a href="faq.html">faq</a>
-            <a href="store.html">gear</a>
-            <a href="about.html">about</a>
+            <a href="blog.html">Logs</a>
+            <a href="videos.html">Gameplay</a>
+            <a href="intel.html">Intel</a>
+            <a href="guides.html">Guides</a>
+            <a href="faq.html">FAQ</a>
+            <a href="store.html">Gear</a>
+            <a href="about.html">About</a>
         </div>
     </nav>
 
-    <section class="hero">
-        <h1>Enemies & Combat</h1>
-        <div class="subtitle">THREAT DATABASE // COMBAT PROTOCOLS</div>
-        <div class="breadcrumb"><a href="guides.html">Guides</a> / Enemies & Combat</div>
-    </section>
+    <div class="hero">
+        <h1>ARC Enemy Bestiary</h1>
+        <div class="subtitle">threat database // speranza intelligence division</div>
+    </div>
 
     <div class="content">
         <div class="toc">
-            <h2>CONTENTS</h2>
-            <ul>
-                <li><a href="#arc-overview">ARC Machine Overview</a></li>
-                <li><a href="#drones">Scout Drones</a></li>
-                <li><a href="#walkers">Walker Units</a></li>
-                <li><a href="#sentinels">Sentinel Class</a></li>
-                <li><a href="#harvesters">Harvesters</a></li>
-                <li><a href="#stella-montis">Stella Montis Boss Guide</a></li>
-                <li><a href="#pvp">PvP Combat Tactics</a></li>
-                <li><a href="#positioning">Positioning & Engagement Rules</a></li>
-            </ul>
+            <strong style="color:#e8d5c0;margin-bottom:.8rem;display:block">CONTENTS</strong>
+            <a href="#behavior">ARC Behavior & Detection</a>
+            <a href="#armor">ARC Armor Types</a>
+            <a href="#scouts">Scout Units — Snitch, Wasp, Hornet</a>
+            <a href="#ground">Ground Units — Tick, Pop, Fireball, Turret</a>
+            <a href="#heavy">Heavy Units — Sentinel, Surveyor, Shredder</a>
+            <a href="#spotter">Spotter & Bombardier</a>
+            <a href="#walkers">Walkers — Bastion, Leaper, Rocketeer</a>
+            <a href="#bosses">Boss ARC — Queen & Matriarch</a>
+            <a href="#husks">Husks & Probes</a>
+            <a href="#pvp">PvP Combat Tactics</a>
         </div>
 
-        <div id="arc-overview" class="guide-section">
-            <h2><span>!!</span> ARC Machine Overview</h2>
-            <p>ARC machines are autonomous robotic units that patrol the Rust Belt and aggressively engage any raiders they detect. They range from small aerial drones to massive armored Sentinels, each with distinct behavior patterns, weak points, and threat levels. Understanding how each machine type operates is essential for surviving raids efficiently and conserving ammunition for the encounters that matter most.</p>
-            <p>All ARC machines share a detection system based on sight, sound, and proximity. Unsuppressed weapons attract attention from farther away. Running generates more noise than walking. And every machine has a detection radius that increases if you are in its direct line of sight. Stealth is always an option against ARC machines. Not every patrol needs to be a fight.</p>
-            <p>ARC machines drop salvage components when destroyed. Higher-tier machines drop more valuable salvage. This creates a risk-reward calculation for every encounter: is the salvage worth the ammunition, health, and noise you will spend to get it?</p>
-        </div>
+        <div class="guide-section" id="behavior">
+            <h2>!! ARC Behavior & Detection</h2>
+            <p>Every ARC machine operates on a scanner-based detection system with three distinct modes, each indicated by the color of light its scanner emits. Understanding these modes lets you predict ARC behavior before an engagement begins.</p>
 
-        <div id="drones" class="guide-section">
-            <h2><span>!!</span> Scout Drones</h2>
+            <p><strong style="color:#5588cc">Blue Scanner</strong> — The machine is in passive patrol mode, searching for Raider activity. It follows a set route and will continue until it detects a disturbance. You can move near Blue-mode ARC if you stay quiet and out of direct line of sight.</p>
 
-            <div class="enemy-card">
-                <h4>Recon Drone</h4>
-                <div class="threat threat-low">THREAT: LOW</div>
-                <div class="stat-row">
-                    <div><span class="stat-label">HP:</span> <span class="stat-value">Low</span></div>
-                    <div><span class="stat-label">DAMAGE:</span> <span class="stat-value">None (alerts others)</span></div>
-                    <div><span class="stat-label">WEAK POINT:</span> <span class="stat-value">Sensor lens (front)</span></div>
-                </div>
-                <p>Recon Drones are small flying units that scan the environment in sweeping patterns. They do not attack directly but will alert all nearby ARC machines to your position if they spot you. A detected Recon Drone emits a piercing alarm sound and a red scanning beam locks onto your location. Destroying the drone quickly or avoiding its scan path entirely prevents the alert. One shot from any weapon destroys a Recon Drone. The sensor lens on the front is technically the weak point but the entire unit is fragile enough that hitting it anywhere works.</p>
-            </div>
+            <p><strong style="color:#ccaa33">Yellow Scanner</strong> — The machine is alerted. It has detected possible Raider activity and is investigating the location. If it finds nothing after searching, it will return to Blue mode. This is your window to reposition or hide.</p>
 
-            <div class="enemy-card">
-                <h4>Attack Drone</h4>
-                <div class="threat threat-medium">THREAT: MEDIUM</div>
-                <div class="stat-row">
-                    <div><span class="stat-label">HP:</span> <span class="stat-value">Low-Medium</span></div>
-                    <div><span class="stat-label">DAMAGE:</span> <span class="stat-value">Light sustained fire</span></div>
-                    <div><span class="stat-label">WEAK POINT:</span> <span class="stat-value">Thruster unit (underside)</span></div>
-                </div>
-                <p>Attack Drones are aggressive aerial units that strafe raiders with rapid-fire energy projectiles. Their individual shots deal light damage but they fire continuously, and they typically appear in groups of two to four. The accumulated damage from multiple Attack Drones can deplete your health quickly if you stand still. The key to fighting Attack Drones is movement. Their tracking struggles with lateral strafing. Move perpendicular to their flight path while returning fire. The thruster unit on their underside takes double damage, so shooting upward at passing drones is more ammo-efficient than hitting their armored top shell.</p>
+            <p><strong style="color:#cc4444">Red Scanner</strong> — The machine has found a target and entered combat mode. It will attack until it loses its target. If you attack an ARC machine while it is in Blue mode, it can skip Yellow entirely and go straight to Red.</p>
+
+            <div class="tip-box">
+                <strong>RAIDER TIP</strong>
+                Unsuppressed weapons attract attention from farther away. Running generates more noise than walking. Every ARC machine has a detection radius that increases when you are in its direct line of sight. Stealth is always an option — not every patrol needs to be a fight.
             </div>
         </div>
 
-        <div id="walkers" class="guide-section">
-            <h2><span>!!</span> Walker Units</h2>
+        <div class="guide-section" id="armor">
+            <h2>!! ARC Armor Types</h2>
+            <p>ARC machines have three visually distinct armor types that tell you where to aim at a glance. Weapons with higher ARC Armor Penetration are more effective across all types.</p>
 
-            <div class="enemy-card">
-                <h4>Patrol Walker</h4>
-                <div class="threat threat-medium">THREAT: MEDIUM</div>
-                <div class="stat-row">
-                    <div><span class="stat-label">HP:</span> <span class="stat-value">Medium</span></div>
-                    <div><span class="stat-label">DAMAGE:</span> <span class="stat-value">Moderate burst fire</span></div>
-                    <div><span class="stat-label">WEAK POINT:</span> <span class="stat-value">Leg joints, rear power cell</span></div>
-                </div>
-                <p>Patrol Walkers are quadrupedal machines roughly the size of a large dog. They move in pairs along set routes and engage with burst-fire weapons mounted on their backs. Their armor is moderate, requiring roughly one full magazine from an assault rifle to destroy. The leg joints are vulnerable: concentrated fire on a single leg will stagger the Walker and briefly immobilize it, creating a window to finish it off or reposition. The rear power cell is the highest-damage weak point but requires getting behind the Walker, which is risky when its partner is still active. In pairs, focus fire one Walker down completely before switching to the second.</p>
-            </div>
+            <p><strong style="color:#ddd">Unarmored Plating (Matte White)</strong> — All weapons deal semi-effective damage. Rounds with Moderate ARC Armor Penetration or above are most effective.</p>
 
-            <div class="enemy-card">
-                <h4>Heavy Walker</h4>
-                <div class="threat threat-high">THREAT: HIGH</div>
-                <div class="stat-row">
-                    <div><span class="stat-label">HP:</span> <span class="stat-value">High</span></div>
-                    <div><span class="stat-label">DAMAGE:</span> <span class="stat-value">High (charged beam + stomp)</span></div>
-                    <div><span class="stat-label">WEAK POINT:</span> <span class="stat-value">Exposed core after charge attack</span></div>
-                </div>
-                <p>Heavy Walkers are large armored machines with thick plating and devastating weapons. Their primary attack is a charged beam that deals massive damage in a line, followed by a ground stomp if you are close. The beam has a visible charge-up animation with a distinct audio cue, giving you roughly two seconds to sidestep. After firing the beam, the Heavy Walker's chest plates open briefly to vent heat, exposing its core. This three-second window is your best opportunity to deal meaningful damage. Focus fire on the exposed core during this window, then get back into cover before the next attack cycle. Solo players can defeat Heavy Walkers but it takes multiple attack cycles and careful ammunition management. Squads should coordinate to chain damage windows.</p>
+            <p><strong style="color:#888">Armored Plating (Shiny Dark Gray)</strong> — Requires Moderate ARC Armor Penetration or higher to damage. Anything below Moderate bounces off. Damaging Armored Plating can strip it off, revealing weaker plating underneath.</p>
+
+            <p><strong style="color:#ccaa33">Weak Points (Matte Bright Yellow)</strong> — Damaging Weak Points deals direct damage to the ARC machine. Always prioritize yellow-colored components when attacking.</p>
+
+            <div class="tip-box">
+                <strong>AMMO PENETRATION</strong>
+                Heavy Ammo (Bettina, Ferro, Anvil) has the strongest ARC Armor Penetration. Medium Ammo (Renegade, Tempest, Osprey) has moderate penetration. Light Ammo (Bobcat, Stitcher, Kettle) has the weakest penetration and bounces off Armored Plating. Use Heavy Ammo weapons against heavily armored ARC like Bombardiers, Bastions, and Queens.
             </div>
         </div>
 
-        <div id="sentinels" class="guide-section">
-            <h2><span>!!</span> Sentinel Class</h2>
+        <div class="guide-section" id="scouts">
+            <h2>!! Scout Units</h2>
+
+            <div class="enemy-card">
+                <h4>Snitch</h4>
+                <div class="stats">THREAT: LOW | XP: 100 destroy / 200 loot</div>
+                <p>The Snitch is a small flying drone that loudly alerts nearby ARC to Raider presence when it spots you. It does not attack directly but acts as an alarm system. Destroy it quickly before it summons ARC reinforcements. Its thrusters are easily destabilized — one or two shots from any weapon will take it down.</p>
+                <div class="drops">DROPS: ARC Thermo Lining, ARC Synthetic Resin, Sensors, Snitch Scanner</div>
+                <div class="tip">TIP: Destroy immediately on sight to prevent reinforcement calls.</div>
+            </div>
+
+            <div class="enemy-card">
+                <h4>Wasp</h4>
+                <div class="stats">THREAT: LOW-MEDIUM | XP: 100 destroy / 200 loot</div>
+                <p>The Wasp is a flying drone that engages Raiders with light attacks. Its thrusters are unarmored and easily destabilized. A few shots will bring it down. Wasps often appear in groups, so manage your targets to avoid getting swarmed.</p>
+                <div class="drops">DROPS: ARC Alloy, Light Ammo, Simple Gun Parts, Wasp Driver</div>
+                <div class="tip">TIP: Easily destabilized by shooting its thrusters.</div>
+            </div>
+
+            <div class="enemy-card">
+                <h4>Hornet</h4>
+                <div class="stats">THREAT: MEDIUM | XP: 150 destroy / 250 loot</div>
+                <p>The Hornet is a more aggressive flying drone than the Wasp with stronger attacks. Its rear thrusters are unarmored, making them the primary weak point. When it sounds its attack audio cue, dodge roll to avoid the damage. More dangerous than Wasps but still manageable with basic weapons.</p>
+                <div class="drops">DROPS: ARC Performance Steel, Hornet Driver, Medium Ammo, Simple Gun Parts</div>
+                <div class="tip">TIP: Dodge Roll when it sounds its attack. Target unarmored rear thrusters.</div>
+            </div>
+        </div>
+
+        <div class="guide-section" id="ground">
+            <h2>!! Ground Units</h2>
+
+            <div class="enemy-card">
+                <h4>Tick</h4>
+                <div class="stats">THREAT: LOW | XP: 50 destroy / 100 loot</div>
+                <p>Ticks are small ground-based ARC machines that are often heard before seen. They rush toward Raiders and latch on to deal damage. Any weapon destroys them easily. The key is reacting quickly — dodge roll as soon as one latches on to shake it off.</p>
+                <div class="drops">DROPS: ARC Flex Rubber, ARC Thermo Lining, Tick Pod</div>
+                <div class="tip">TIP: Listen for their distinctive sound. Dodge Roll as soon as one latches on.</div>
+            </div>
+
+            <div class="enemy-card">
+                <h4>Pop</h4>
+                <div class="stats">THREAT: LOW | XP: 50 destroy / 100 loot</div>
+                <p>Pops are explosive ground ARC that detonate when close to Raiders. Any weapon destroys them easily, but you need to keep distance. If ambushed, climb to avoid them. You can dodge roll over a Pop to bait its explosion, though the timing takes practice.</p>
+                <div class="drops">DROPS: ARC Coolant, ARC Thermo Lining, Crude Explosives, Pop Trigger</div>
+                <div class="tip">TIP: Climb to high ground if ambushed. Dodge roll over them to bait explosions.</div>
+            </div>
+
+            <div class="enemy-card">
+                <h4>Fireball</h4>
+                <div class="stats">THREAT: MEDIUM | XP: 100 destroy / 100 loot</div>
+                <p>Fireballs are explosive ARC that leave fire on the ground when destroyed. Their weak point is exposed when they open to attack — look for the white core. One Heavy Ammo round or a shot to the exposed core destroys them. Run or dodge roll away after destroying one to avoid the residual fire.</p>
+                <div class="drops">DROPS: ARC Coolant, ARC Thermo Lining, Crude Explosives, Fireball Burner</div>
+                <div class="tip">TIP: Shoot the white core when it opens. Move away immediately after destroying to avoid fire.</div>
+            </div>
+
+            <div class="enemy-card">
+                <h4>Turret</h4>
+                <div class="stats">THREAT: MEDIUM | XP: 100 destroy / 200 loot</div>
+                <p>Turrets are stationary ARC that fire sustained projectiles at Raiders. They are immobile but deal consistent damage if you stand in the open. Bait the turret's attack, then take cover and return fire between its bursts. Heavy Ammo is most efficient — usually two shots from a Ferro or Anvil will destroy one.</p>
+                <div class="drops">DROPS: ARC Synthetic Resin, ARC Thermo Lining, Light Ammo, Simple Gun Parts</div>
+                <div class="tip">TIP: Bait its attack and use cover. Two Heavy Ammo shots usually destroys it.</div>
+            </div>
+        </div>
+
+        <div class="guide-section" id="heavy">
+            <h2>!! Heavy Units</h2>
 
             <div class="enemy-card">
                 <h4>Sentinel</h4>
-                <div class="threat threat-extreme">THREAT: EXTREME</div>
-                <div class="stat-row">
-                    <div><span class="stat-label">HP:</span> <span class="stat-value">Very High</span></div>
-                    <div><span class="stat-label">DAMAGE:</span> <span class="stat-value">Lethal (multi-weapon platform)</span></div>
-                    <div><span class="stat-label">WEAK POINT:</span> <span class="stat-value">Dorsal antenna array, knee joints</span></div>
-                </div>
-                <p>Sentinels are the most dangerous standard ARC machine. They stand roughly three stories tall and mount multiple weapon systems including missile pods, rotating cannons, and close-range electrical discharge. Engaging a Sentinel is a commitment, not a casual encounter. You need significant ammunition reserves, healing, and ideally a full squad to take one down efficiently.</p>
-                <p>The Sentinel cycles through attack phases. The missile barrage covers a wide area and is best avoided by sprinting perpendicular to its facing rather than away from it. The rotating cannon tracks a single target with sustained fire, dealing heavy damage per second. If targeted by the cannon, break line of sight behind solid cover immediately. The electrical discharge activates when raiders are within melee range, dealing area damage around the Sentinel's legs.</p>
-                <p>The dorsal antenna array on top of the Sentinel takes triple damage from all sources. Hitting it requires elevation or precise vertical aim when the Sentinel turns to face you. The knee joints are easier to target and stagger the Sentinel temporarily when enough damage accumulates on a single knee. A staggered Sentinel drops lower, making the antenna array accessible from ground level for several seconds.</p>
-
-                <div class="tip-box">
-                    <strong>SQUAD TACTIC</strong>
-                    Assign one player to focus exclusively on knee joints while the others deal body damage. When the Sentinel staggers, everyone switches to the antenna array for maximum damage. Two or three stagger cycles should bring a Sentinel down if your team coordinates effectively.
-                </div>
+                <div class="stats">THREAT: HIGH | XP: 200 destroy / 300 loot</div>
+                <p>Sentinels are large, dangerous ARC machines with heavy firepower. They fire powerful shots that deal significant damage. Bait their attack and immediately take cover. The yellow canister on the Sentinel's arm is its weak point — focus fire there for maximum damage. Sentinels require a solid ammunition investment to destroy, so assess whether the fight is worth the resources before engaging.</p>
+                <div class="drops">DROPS: ARC Alloy, Advanced ARC Powercell, Sentinel Firing Core, Heavy Ammo</div>
+                <div class="tip">TIP: Bait attack, hide behind cover. Shoot the yellow canister on its arm for weak point damage.</div>
             </div>
-        </div>
-
-        <div id="harvesters" class="guide-section">
-            <h2><span>!!</span> Harvesters</h2>
 
             <div class="enemy-card">
-                <h4>Harvester</h4>
-                <div class="threat threat-low">THREAT: LOW (Non-aggressive)</div>
-                <div class="stat-row">
-                    <div><span class="stat-label">HP:</span> <span class="stat-value">Medium</span></div>
-                    <div><span class="stat-label">DAMAGE:</span> <span class="stat-value">Retaliatory shockwave only</span></div>
-                    <div><span class="stat-label">WEAK POINT:</span> <span class="stat-value">Collection arm joints</span></div>
-                </div>
-                <p>Harvesters are non-combat ARC machines that collect resources from the environment. They do not attack unprovoked but will emit a shockwave that pushes raiders back and deals light damage if attacked. Destroying a Harvester yields high-value salvage components, making them attractive targets for raiders who need crafting materials. The collection arm joints are vulnerable and destroying them reduces the Harvester's retaliation capability. Harvesters that lose both collection arms cannot emit shockwaves and become completely passive. The salvage they drop is consistently valuable, making them worth hunting whenever you spot one, provided no other threats are nearby.</p>
+                <h4>Surveyor</h4>
+                <div class="stats">THREAT: HIGH | XP: 200 destroy / 300 core + 100 per part loot</div>
+                <p>Surveyors are valuable but tricky ARC machines. Their weak point is only exposed when they fire their laser. The major challenge is that Surveyors flee at high speed when threatened. Stun them using Hornet Drivers, Showstoppers, or similar stun gadgets to prevent escape. Explosives are recommended for fast damage. The loot from a Surveyor is excellent, with its Vault being a high-value drop.</p>
+                <div class="drops">DROPS: ARC Alloy, ARC Powercell, Surveyor Vault</div>
+                <div class="tip">TIP: Weak point exposed when firing laser. Stun with Hornet Drivers to prevent escape. Explosives recommended.</div>
+            </div>
+
+            <div class="enemy-card">
+                <h4>Shredder</h4>
+                <div class="stats">THREAT: HIGH | XP: 200 destroy / 250 loot | STELLA MONTIS ONLY</div>
+                <p>Shredders are exclusive to the Stella Montis map. They are aggressive flying ARC with devastating attacks. Their weak point is their thrusters. Never engage a Shredder without adequate cover — when it signals its attack, immediately hide behind solid cover. Heavy Ammo, grenades, or the Hullcracker launcher are recommended. This is one of the most dangerous standard ARC units in the game.</p>
+                <div class="drops">DROPS: ARC Alloy, ARC Powercell, Mechanical Components, Shredder Gyro</div>
+                <div class="tip">TIP: Stella Montis only. Never engage without cover. Heavy Ammo or Hullcracker recommended.</div>
             </div>
         </div>
 
-        <div id="stella-montis" class="guide-section">
-            <h2><span>!!</span> Stella Montis Boss Guide</h2>
-            <p>Stella Montis is the apex ARC threat in the current Escalation season. It is a massive mobile fortress-class machine that appears in specific high-level raid zones. Engaging Stella Montis is entirely optional but completing the encounter yields the rarest crafting materials and exclusive gear in the game. This is endgame content that demands a coordinated squad, heavy ammunition investment, and thorough knowledge of its multi-phase attack patterns.</p>
+        <div class="guide-section" id="spotter">
+            <h2>!! Spotter & Bombardier</h2>
 
-            <div class="phase-box">
-                <h5>PHASE 1: PERIMETER DEFENSE (100% - 70% HP)</h5>
-                <p>Stella Montis deploys waves of Attack Drones and Patrol Walkers while firing long-range artillery at raider positions. The priority in Phase 1 is clearing the deployed machines while avoiding artillery strikes, which are telegraphed by red circles on the ground roughly three seconds before impact. Do not focus damage on Stella Montis during this phase because its armor plating is fully sealed. Clear the minions, conserve resources, and wait for the transition.</p>
+            <div class="enemy-card">
+                <h4>Spotter</h4>
+                <div class="stats">THREAT: MEDIUM | XP: 100 destroy / 200 loot</div>
+                <p>Spotters are target-acquisition drones that work in tandem with Bombardiers. When a Spotter locks onto a Raider, it relays targeting data to nearby Bombardiers for devastating artillery strikes. Destroy Spotters quickly before they achieve target lock. Find vertical cover (overhangs, roofs) to block Bombardier attacks if a Spotter has already locked you.</p>
+                <div class="drops">DROPS: ARC Alloy, Sensors, Spotter Relay, ARC Powercell</div>
+                <div class="tip">TIP: Destroy before target lock. Find vertical cover to block Bombardier artillery.</div>
             </div>
 
-            <div class="phase-box">
-                <h5>PHASE 2: CORE EXPOSURE (70% - 35% HP)</h5>
-                <p>At 70% HP, Stella Montis stops deploying minions and opens its hull to expose three power cores. Each core glows red and can be targeted individually. Destroying a core reduces Stella Montis's damage output and disables one of its weapon systems. The catch is that the cores are only exposed for 15 seconds at a time before the hull reseals for a cooldown period. During the cooldown, Stella Montis fires homing missiles that track individual raiders. Sprint laterally and use hard cover to break missile lock. You need to destroy all three cores across multiple exposure windows to trigger Phase 3.</p>
+            <div class="enemy-card">
+                <h4>Bombardier</h4>
+                <div class="stats">THREAT: EXTREME | XP: 500 destroy / 300 per part loot</div>
+                <p>Bombardiers are massive multi-legged ARC that deliver devastating area attacks. They are one of the most dangerous enemies in the game. Their weak points are the yellow leg joints and the rear canister. Heavy Ammo and the Hullcracker are most effective. Destroy any accompanying Spotters first to reduce the Bombardier's vision range. Avoid its close-range shockwave attack at all costs. Use Deadline Mines on its rear or Wolfpack Grenades for high damage. Find cover that protects both above and in front while shooting its leg joints.</p>
+                <div class="drops">DROPS: ARC Alloy, Advanced ARC Powercell, Bombardier Cell, Launcher Ammo</div>
+                <div class="tip">TIP: Kill Spotters first. Target yellow leg joints and rear canister. Heavy Ammo + Hullcracker. Deadline Mine its rear. Wolfpack Grenade. Cover above AND in front.</div>
+            </div>
+        </div>
+
+        <div class="guide-section" id="walkers">
+            <h2>!! Walkers — Bastion, Leaper, Rocketeer</h2>
+
+            <div class="enemy-card">
+                <h4>Bastion</h4>
+                <div class="stats">THREAT: EXTREME | XP: 500 destroy / 250 per part loot</div>
+                <p>Bastions are slow but heavily armored multi-legged ARC walkers with powerful guns that can turn quickly. Their weak points are the yellow leg joints and rear canister, similar to the Bombardier. Deadline Mines placed on their rear or on top of their head deal excellent damage. Wolfpack Grenades are also effective. Bastions become helpless when stunned using Hornet Drivers, Showstoppers, or similar gadgets — stun-locking is the most efficient squad tactic. Use the same cover technique as Bombardiers: find cover above and in front.</p>
+                <div class="drops">DROPS: ARC Alloy, Advanced ARC Powercell, Bastion Cell, Medium Ammo</div>
+                <div class="tip">TIP: Slow but turns gun fast. Stun with Hornet Drivers for helpless state. Deadline Mine rear or head. Same cover as Bombardier.</div>
             </div>
 
-            <div class="phase-box">
-                <h5>PHASE 3: MELTDOWN (35% - 0% HP)</h5>
-                <p>With all cores destroyed, Stella Montis enters a permanent meltdown state. Its hull stays open, exposing its central reactor to damage. However, it becomes extremely aggressive, charging directly at raiders and detonating area-of-effect shockwaves at close range. The reactor takes massive damage from all weapons. This is a DPS race: pour everything you have into the reactor while staying mobile enough to avoid the charge attacks and shockwaves. Designated healers should focus on keeping the team alive rather than dealing damage. Phase 3 typically lasts 60 to 90 seconds with a full squad outputting consistent damage.</p>
+            <div class="enemy-card">
+                <h4>Leaper</h4>
+                <div class="stats">THREAT: EXTREME | XP: 500 destroy / 600 core + 500 per part loot</div>
+                <p>Leapers are fast, aggressive walkers that can close distance quickly with leaping attacks. Their weak points are the leg joints and the Eye Ball. Leapers are the highest-value standard ARC in the game — a fully looted Leaper gives 600 XP for the core plus 500 per part. Explosives make quick work of destroying them. Wolfpack Grenades are particularly effective. Like Bastions, Leapers become helpless when stunned with Hornet Drivers or Showstoppers.</p>
+                <div class="drops">DROPS: ARC Alloy, Advanced ARC Powercell, Mechanical Components, Leaper Pulse Unit</div>
+                <div class="tip">TIP: Highest-value standard ARC. Target leg joints and Eye Ball. Wolfpack Grenades. Stun for helpless state.</div>
             </div>
+
+            <div class="enemy-card">
+                <h4>Rocketeer</h4>
+                <div class="stats">THREAT: EXTREME | XP: 500 destroy / 500 per part loot</div>
+                <p>Rocketeers are flying heavy ARC that launch devastating rocket barrages. Their weak points are the thrusters and the area above their scanner. The silver canister on the Rocketeer's back is also a high-damage target. Two Wolfpack Grenades is one of the fastest ways to destroy a Rocketeer. This is an extremely dangerous fight in the open — always have cover available before engaging.</p>
+                <div class="drops">DROPS: ARC Alloy, Advanced ARC Powercell, Rocketeer Driver, Heavy Ammo</div>
+                <div class="tip">TIP: Target thrusters, above scanner, and silver back canister. Two Wolfpack Grenades. Never fight in the open.</div>
+            </div>
+        </div>
+
+        <div class="guide-section" id="bosses">
+            <h2>!! Boss ARC — Queen & Matriarch</h2>
 
             <div class="tip-box">
-                <strong>CRITICAL</strong>
-                Bring at least 300 rounds of primary ammunition and full healing supplies for the Stella Montis encounter. Running dry mid-fight forces you to either disengage and lose progress or die and lose everything. Preparation is everything.
+                <strong>BOSS ENCOUNTERS</strong>
+                Queens spawn during the Harvester map condition. Matriarchs spawn during the Matriarch map condition. Both are the most powerful ARC in the game at 1,000 XP for the core plus 500 per part. A coordinated squad with Heavy Ammo weapons and the Hullcracker launcher is strongly recommended.
+            </div>
+
+            <div class="enemy-card">
+                <h4>Queen</h4>
+                <div class="stats">THREAT: BOSS | XP: 1000 destroy / 1000 core + 500 per part loot</div>
+                <p>The Queen is one of the two apex ARC machines. She is massive, heavily armored, and extremely dangerous. The strategy is to shoot off her armor plates first, then aim for the Red Glowing Core once exposed. Her legs have Yellow Weak Points that should be targeted to stagger her. Deadline Mines are most effective when placed on her head or used when the core is exposed. The Queen drops some of the rarest materials in the game including ARC Circuitry, Complex Gun Parts, Magnetic Accelerators, and the Queen Reactor.</p>
+                <div class="drops">DROPS: ARC Circuitry, Advanced ARC Powercell, Complex Gun Parts, Magnetic Accelerator, Queen Reactor</div>
+                <div class="tip">TIP: Strip armor plates first. Target Red Glowing Core when exposed. Yellow Weak Points on legs. Deadline Mine head or exposed core. Squad recommended.</div>
+            </div>
+
+            <div class="enemy-card">
+                <h4>Matriarch</h4>
+                <div class="stats">THREAT: BOSS | XP: 1000 destroy / 1000 core + 500 per part loot</div>
+                <p>The Matriarch is the other apex ARC boss, functionally similar to the Queen but spawning during its own dedicated map condition. The combat approach is identical: strip armor plates, target the Red Glowing Core, and focus Yellow Weak Points on the legs. Deadline Mines on the head or exposed core deal massive damage. The Matriarch drops the same high-tier materials as the Queen, including the Matriarch Reactor.</p>
+                <div class="drops">DROPS: ARC Circuitry, Advanced ARC Powercell, Complex Gun Parts, Magnetic Accelerator, Matriarch Reactor</div>
+                <div class="tip">TIP: Same strategy as Queen. Strip armor, target Red Core, Yellow Weak Points on legs. Deadline Mine head or core. Full squad with Hullcracker recommended.</div>
             </div>
         </div>
 
-        <div id="pvp" class="guide-section">
-            <h2><span>!!</span> PvP Combat Tactics</h2>
-            <p>Raider-versus-raider combat in ARC Raiders is fundamentally different from fighting ARC machines. Human opponents are unpredictable, aggressive, and capable of the same tactics you use. Winning PvP encounters consistently requires a combination of mechanical skill, positional awareness, and decision-making speed.</p>
+        <div class="guide-section" id="husks">
+            <h2>!! Husks & Probes</h2>
+            <p>Husks are the remnants of old ARC machines from past battles scattered across Topside. They are already destroyed and simply waiting to be looted — free resources with no combat required. ARC Probes land periodically during raids to collect data. They can be breached using the Raider Tool and looted, but breaching a Probe signals nearby ARC for help, so clear the area first.</p>
 
-            <h3>The First-Shot Advantage</h3>
-            <p>The raider who fires first wins the majority of even-skill PvP encounters. This means awareness is more important than raw aim. Constantly scan your surroundings, listen for footsteps and gunfire, and use high ground and cover to spot enemies before they spot you. If you see a raider before they see you, you control the engagement. Take your opening shot from cover at a range where your weapon is effective, and you start the fight with a significant health advantage that is very difficult for your opponent to overcome.</p>
+            <div class="enemy-card">
+                <h4>Wasp Husk</h4>
+                <div class="stats">LOOTABLE | XP: 400</div>
+                <p>Destroyed Wasp remains. Free loot with no combat.</p>
+                <div class="drops">DROPS: ARC Alloy, Wasp Driver, Light Ammo</div>
+            </div>
 
-            <h3>When to Fight vs When to Avoid</h3>
-            <p>Not every raider encounter needs to be a firefight. If you have valuable loot and a clear path to extraction, avoiding combat is often the smarter play. Fights cost ammunition, health, and time, and they generate noise that attracts both ARC machines and other raiders. Engage when you have a clear advantage: better positioning, the element of surprise, or superior numbers. Disengage when the fight is not worth the risk. There is no reward for kills that do not improve your extraction odds.</p>
+            <div class="enemy-card">
+                <h4>Rocketeer Husk</h4>
+                <div class="stats">LOOTABLE | XP: 700</div>
+                <p>Destroyed Rocketeer remains. High-value free loot.</p>
+                <div class="drops">DROPS: ARC Alloy, Rocketeer Driver, Heavy Ammo, Damaged Rocketeer Driver</div>
+            </div>
 
-            <h3>Peeking and Cover Usage</h3>
-            <p>Never stand in the open during a firefight. Use cover aggressively: peek out to fire, then return to cover before the enemy can retaliate accurately. Quick peeks from alternating sides of cover make you difficult to track. Slow, predictable peeking gets you headshot. Mix up your timing and your angles. If an enemy is holding a strong cover position, do not repeat-peek the same angle. Either reposition to a different angle or use throwables to force them out.</p>
+            <div class="enemy-card">
+                <h4>Baron Husk</h4>
+                <div class="stats">LOOTABLE | XP: 500</div>
+                <p>Destroyed Baron remains.</p>
+                <div class="drops">DROPS: ARC Coolant, ARC Flex Rubber, ARC Performance Steel</div>
+            </div>
 
-            <h3>Disengagement</h3>
-            <p>Knowing when and how to disengage saves more raids than winning fights. If a fight is going badly, break line of sight immediately. Sprint behind hard cover, change direction, and put distance between yourself and the engagement. Most raiders will not chase a fleeing opponent for more than a few seconds because the pursuit exposes them to third-party attacks. Smoke grenades, flashbangs, and noise decoys all create disengagement opportunities. Healing during a disengage and re-engaging from a different angle can turn a losing fight into a winning one.</p>
+            <div class="enemy-card">
+                <h4>Deforester Husk</h4>
+                <div class="stats">LOOTABLE | XP: 500</div>
+                <p>Destroyed Deforester remains. Contains advanced crafting materials.</p>
+                <div class="drops">DROPS: ARC Flex Rubber, ARC Coolant, ARC Synthetic Resin, Advanced Mechanical Components</div>
+            </div>
+
+            <div class="enemy-card">
+                <h4>ARC Probe</h4>
+                <div class="stats">BREACHABLE | XP: 700</div>
+                <p>Active Probes land during raids and collect data. Breach them with the Raider Tool to access valuable loot. Warning: breaching signals nearby ARC. Occasionally damaged Probes can be found knocked over and unable to launch — these are safe to loot.</p>
+                <div class="drops">DROPS: ARC Alloy, ARC Circuitry, ARC Motion Core, ARC Powercell</div>
+            </div>
+
+            <div class="enemy-card">
+                <h4>ARC Courier</h4>
+                <div class="stats">INTERCEPTABLE | XP: 700</div>
+                <p>ARC Couriers carry high-value components between ARC units. Intercepting them yields some of the best drops available from non-boss ARC.</p>
+                <div class="drops">DROPS: ARC Circuitry, Hornet Driver, Surveyor Vault, Sentinel Firing Core, ARC Motion Core</div>
+            </div>
         </div>
 
-        <div id="positioning" class="guide-section">
-            <h2><span>!!</span> Positioning & Engagement Rules</h2>
-            <p>Positioning is the single most influential factor in combat outcomes, above weapon choice, above aim skill, above gear quality. A raider with an average weapon in a superior position beats a raider with a perfect loadout caught in the open. Internalize these principles and apply them to every encounter.</p>
-            <p>Always fight from elevation when possible. High ground gives you better sightlines, makes you harder to push, and forces enemies to expose themselves when engaging upward. If you cannot get elevation, fight from hard cover that protects your body while allowing you to shoot.</p>
-            <p>Never fight in a position you cannot retreat from. Before engaging, identify your escape route. If the fight goes wrong, you need to be able to break contact and reach safety without crossing open ground under fire.</p>
-            <p>Control engagement distance. If you have a long-range weapon, keep distance. If you have a shotgun, close distance before firing. Fighting outside your weapon's effective range is the most common mistake in PvP combat. Reposition to your weapon's preferred range before committing to the engagement.</p>
+        <div class="guide-section" id="pvp">
+            <h2>!! PvP Combat Tactics</h2>
+            <p>Raider-versus-raider combat in ARC Raiders is fundamentally different from fighting ARC machines. Human opponents are unpredictable and capable of the same tactics you use. The Raider who fires first wins most even-skill encounters, so awareness matters more than raw aim. Constantly scan your surroundings, listen for footsteps and gunfire, and use high ground and cover to spot enemies before they spot you.</p>
+
+            <p>Not every Raider encounter needs to be a firefight. If you have valuable loot and a clear path to extraction, avoiding combat is often the smarter play. Fights cost ammunition, health, and time, and they generate noise that attracts both ARC machines and other Raiders. Engage when you have a clear advantage and disengage when the risk outweighs the reward.</p>
+
+            <p>Use cover aggressively in fights: peek out to fire, then return before the enemy can retaliate accurately. Mix up your timing and angles — predictable peeking gets you killed. If a fight goes badly, break line of sight, sprint behind hard cover, change direction, and put distance between you and the engagement. Most Raiders will not chase a fleeing opponent for long because the pursuit exposes them to third-party attacks.</p>
 
             <div class="tip-box">
-                <strong>ARCEOLOGIST'S NOTE</strong>
-                Combat awareness comes from experience. Every fight, win or lose, teaches you something about positioning, timing, and weapon handling. Review your deaths honestly. The raider who learns from every loss improves faster than the one who blames their weapons.
+                <strong>POSITIONING PRINCIPLE</strong>
+                Always fight from elevation when possible. Never fight in a position you cannot retreat from. Control engagement distance to match your weapon's effective range. A Raider with an average weapon in a superior position beats a Raider with a perfect loadout caught in the open.
             </div>
         </div>
 
         <div class="related-guides">
             <h3>RELATED GUIDES</h3>
-            <div class="related-grid">
-                <a href="guide-weapons.html" class="related-card">
-                    <h4>Weapons & Loadouts Guide</h4>
-                    <p>Complete tier list, weapon breakdowns, and build recommendations.</p>
-                </a>
-                <a href="guide-maps.html" class="related-card">
-                    <h4>Maps & Extraction Guide</h4>
-                    <p>Every extraction point, map condition, and high-value loot route.</p>
-                </a>
-                <a href="guide-progression.html" class="related-card">
-                    <h4>Progression & Economy Guide</h4>
-                    <p>Coin farming, vendor unlocks, crafting priorities, and season pass strategy.</p>
-                </a>
-            </div>
+            <a href="guide-weapons.html">Weapons & Loadouts Guide — Complete tier list, weapon breakdowns, and build recommendations.</a>
+            <a href="guide-maps.html">Maps & Extraction Guide — All five maps, extraction strategies, and map conditions explained.</a>
+            <a href="guide-progression.html">Progression & Economy Guide — Traders, currencies, Workshop, Expedition, and upgrade priorities.</a>
         </div>
 
         <a href="guides.html" class="back-link">&lt; BACK TO ALL GUIDES</a>
     </div>
 
     <footer>
-        <p>&copy; 2025 Arceology. All rights reserved. ARC Raiders is a trademark of Embark Studios.</p>
-        <p style="margin-top: 0.5rem;"><a href="privacy.html">Privacy Policy</a> | <a href="about.html">About</a> | <a href="faq.html">FAQ</a></p>
+        arceology.terminal // speranza archives // raider threat database v2.0
     </footer>
 </body>
 </html>
