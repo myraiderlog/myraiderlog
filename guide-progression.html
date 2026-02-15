@@ -3,266 +3,298 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-adsense-account" content="ca-pub-7264545503146086">
-    <title>ARC Raiders Progression Guide - Economy, Crafting, Vendors & Season Pass | Arceology</title>
-    <meta name="description" content="Complete ARC Raiders progression guide. Coin farming strategies, vendor unlock priorities, crafting system breakdown, season pass optimization, and economic tips.">
-    <meta name="keywords" content="ARC Raiders progression, coin farming, crafting guide, vendor unlocks, season pass, ARC Raiders economy, salvage, crafting materials, raider progression">
-    <meta name="author" content="Arceology">
+    <title>ARC Raiders Progression Guide - Traders, Economy, Workshop & Expedition | Arceology</title>
+    <meta name="description" content="Complete ARC Raiders progression guide. All 5 Speranza traders, currencies, Workshop crafting, Gunsmith upgrades, Expedition system, Stash management, and skill tree.">
+    <meta name="keywords" content="ARC Raiders progression, Speranza traders, Celeste Seed, Shani, Tian Wen, Apollo, Lance, Workshop, Gunsmith, Expedition, Coin, Seed, Security Cred">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://myraiderlog.com/guide-progression.html">
-    <meta property="og:type" content="article">
+    <meta property="og:title" content="ARC Raiders Progression Guide - Traders, Economy & Expedition | Arceology">
+    <meta property="og:description" content="All Speranza traders, currencies, Workshop crafting, Gunsmith upgrades, and the Expedition system explained.">
     <meta property="og:url" content="https://myraiderlog.com/guide-progression.html">
-    <meta property="og:title" content="ARC Raiders Progression Guide - Economy & Crafting">
-    <meta property="og:description" content="Master the ARC Raiders economy. Coin farming, crafting priorities, and season pass optimization.">
-    <meta property="og:site_name" content="Arceology Raider Log">
-    <meta name="twitter:card" content="summary_large_image">
-    <link rel="manifest" href="manifest.json">
+    <meta property="og:type" content="article">
+    <meta name="google-adsense-account" content="ca-pub-7264545503146086">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7264545503146086" crossorigin="anonymous"></script>
+    <link rel="manifest" href="manifest.json">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Space+Mono&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Space+Mono:wght@400;700&display=swap');
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background: #0d0a08; color: #c4a882; font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; line-height: 1.8; min-height: 100vh; }
-        nav { position: fixed; top: 0; left: 0; width: 100%; padding: 1.2rem 5%; background: linear-gradient(180deg, rgba(13,10,8,0.98) 0%, rgba(13,10,8,0.9) 100%); backdrop-filter: blur(15px); z-index: 10000; border-bottom: 1px solid rgba(180,94,72,0.3); display: flex; justify-content: space-between; align-items: center; }
-        .nav-brand { font-family: 'Cinzel', serif; font-size: 1.3rem; color: #e8d5c0; text-decoration: none; letter-spacing: 3px; }
-        .nav-brand span { display: block; font-family: 'Space Mono', monospace; font-size: 0.55rem; color: #b45e48; letter-spacing: 2px; }
-        .nav-links a { color: #8a7560; text-decoration: none; font-family: 'Space Mono', monospace; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; margin-left: 2rem; transition: color 0.3s; }
-        .nav-links a:hover, .nav-links a.active { color: #b45e48; }
-        .hero { padding: 10rem 5% 4rem; text-align: center; background: radial-gradient(ellipse at center top, rgba(180,94,72,0.08) 0%, transparent 60%); }
-        .hero h1 { font-family: 'Cinzel', serif; font-size: clamp(2rem, 5vw, 3.5rem); color: #e8d5c0; letter-spacing: 6px; text-transform: uppercase; background: linear-gradient(180deg, #e8d5c0 0%, #b45e48 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .hero .subtitle { font-family: 'Space Mono', monospace; font-size: 0.75rem; color: #6a5a4a; letter-spacing: 4px; margin-top: 1rem; }
-        .breadcrumb { font-family: 'Space Mono', monospace; font-size: 0.7rem; color: #6a5a4a; margin-top: 1.5rem; }
-        .breadcrumb a { color: #b45e48; text-decoration: none; }
-        .content { max-width: 1000px; margin: 0 auto; padding: 2rem 5% 4rem; }
-        .toc { background: rgba(180,94,72,0.06); border: 1px solid rgba(180,94,72,0.2); padding: 2rem; margin-bottom: 3rem; }
-        .toc h2 { font-family: 'Cinzel', serif; font-size: 1rem; color: #b45e48; letter-spacing: 3px; margin-bottom: 1rem; }
-        .toc ul { list-style: none; } .toc li { padding: 0.3rem 0; }
-        .toc a { color: #c4a882; text-decoration: none; font-family: 'Space Mono', monospace; font-size: 0.8rem; } .toc a:hover { color: #b45e48; } .toc a::before { content: '> '; color: #b45e48; }
-        .guide-section { margin-bottom: 4rem; }
-        .guide-section h2 { font-family: 'Cinzel', serif; font-size: 1.6rem; color: #e8d5c0; letter-spacing: 4px; text-transform: uppercase; border-bottom: 1px solid rgba(180,94,72,0.3); padding-bottom: 0.8rem; margin-bottom: 1.5rem; }
-        .guide-section h2 span { color: #b45e48; }
-        .guide-section h3 { font-family: 'Cinzel', serif; font-size: 1.2rem; color: #d4b896; margin: 2rem 0 1rem; letter-spacing: 2px; }
-        .guide-section p { margin-bottom: 1.2rem; color: #a89478; }
-        .tip-box { background: rgba(180,94,72,0.08); border-left: 3px solid #b45e48; padding: 1.2rem 1.5rem; margin: 1.5rem 0; font-style: italic; }
-        .tip-box strong { color: #b45e48; font-style: normal; font-family: 'Space Mono', monospace; font-size: 0.75rem; letter-spacing: 2px; display: block; margin-bottom: 0.5rem; }
-        .econ-card { background: rgba(180,94,72,0.04); border: 1px solid rgba(180,94,72,0.15); padding: 1.5rem 2rem; margin: 1.5rem 0; }
-        .econ-card h4 { font-family: 'Cinzel', serif; color: #e8d5c0; font-size: 1.1rem; margin-bottom: 0.8rem; }
-        .econ-card p { color: #a89478; margin: 0; }
-        .econ-card .value { font-family: 'Space Mono', monospace; font-size: 0.8rem; color: #b45e48; display: block; margin-top: 0.5rem; }
-        .priority-list { counter-reset: priority; }
-        .priority-item { background: rgba(180,94,72,0.04); border: 1px solid rgba(180,94,72,0.12); padding: 1.2rem 1.5rem 1.2rem 3.5rem; margin: 0.8rem 0; position: relative; counter-increment: priority; }
-        .priority-item::before { content: counter(priority); position: absolute; left: 1.2rem; top: 1.2rem; font-family: 'Cinzel', serif; font-size: 1.2rem; color: #b45e48; font-weight: 700; }
-        .priority-item h4 { font-family: 'Cinzel', serif; color: #e8d5c0; font-size: 1rem; margin-bottom: 0.5rem; }
-        .priority-item p { color: #a89478; margin: 0; font-size: 1rem; }
-        .back-link { display: inline-block; margin-top: 3rem; font-family: 'Space Mono', monospace; font-size: 0.8rem; color: #b45e48; text-decoration: none; letter-spacing: 2px; border: 1px solid rgba(180,94,72,0.3); padding: 0.8rem 2rem; transition: all 0.3s; }
-        .back-link:hover { background: rgba(180,94,72,0.1); }
-        .related-guides { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid rgba(180,94,72,0.2); }
-        .related-guides h3 { font-family: 'Cinzel', serif; color: #b45e48; letter-spacing: 3px; margin-bottom: 1.5rem; font-size: 1rem; }
-        .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; }
-        .related-card { background: rgba(180,94,72,0.04); border: 1px solid rgba(180,94,72,0.15); padding: 1.2rem; text-decoration: none; transition: all 0.3s; }
-        .related-card:hover { border-color: #b45e48; background: rgba(180,94,72,0.08); }
-        .related-card h4 { font-family: 'Cinzel', serif; color: #e8d5c0; font-size: 0.95rem; margin-bottom: 0.5rem; }
-        .related-card p { color: #8a7560; font-size: 0.9rem; margin: 0; }
-        footer { text-align: center; padding: 3rem 5%; border-top: 1px solid rgba(180,94,72,0.15); font-family: 'Space Mono', monospace; font-size: 0.65rem; color: #4a3f35; }
-        footer a { color: #b45e48; text-decoration: none; }
-        @media (max-width: 768px) { .nav-links a { margin-left: 1rem; font-size: 0.6rem; } .content { padding: 1rem 4% 3rem; } }
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{background:#0d0a08;color:#c4a882;font-family:'Cormorant Garamond',serif;font-size:1.1rem;line-height:1.8}
+        a{color:#b45e48;text-decoration:none}a:hover{color:#e8d5c0}
+        nav{position:fixed;top:0;left:0;width:100%;padding:1.2rem 5%;background:linear-gradient(180deg,rgba(13,10,8,.98)0%,rgba(13,10,8,.85)100%);z-index:1000;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(180,94,72,.15)}
+        .nav-logo{font-family:'Cinzel',serif;font-size:1.1rem;color:#c4a882;letter-spacing:.15em;text-transform:uppercase}
+        .nav-links a{font-family:'Space Mono',monospace;font-size:.7rem;color:#8a7e6b;margin-left:2rem;letter-spacing:.1em;text-transform:uppercase}
+        .nav-links a:hover{color:#e8d5c0}
+        .hero{padding:10rem 5% 4rem;text-align:center;background:radial-gradient(ellipse at center top,rgba(180,94,72,.08)0%,transparent 60%)}
+        .hero h1{font-family:'Cinzel',serif;font-size:2.8rem;color:#e8d5c0;letter-spacing:.08em;margin-bottom:.5rem}
+        .hero .subtitle{font-family:'Space Mono',monospace;font-size:.8rem;color:#b45e48;letter-spacing:.15em;text-transform:uppercase}
+        .content{max-width:1000px;margin:0 auto;padding:2rem 5% 4rem}
+        .toc{background:rgba(180,94,72,.06);border:1px solid rgba(180,94,72,.15);padding:2rem;margin-bottom:3rem;font-family:'Space Mono',monospace;font-size:.85rem}
+        .toc a{display:block;padding:.4rem 0;color:#8a7e6b}.toc a:hover{color:#e8d5c0}
+        .guide-section{margin-bottom:4rem}
+        .guide-section h2{font-family:'Cinzel',serif;font-size:1.6rem;color:#e8d5c0;letter-spacing:.06em;margin-bottom:1.5rem;padding-bottom:.5rem;border-bottom:1px solid rgba(180,94,72,.2)}
+        .guide-section h3{font-family:'Cinzel',serif;font-size:1.25rem;color:#c4a882;margin:2rem 0 .8rem}
+        .tip-box{background:rgba(180,94,72,.08);border-left:3px solid #b45e48;padding:1.2rem 1.5rem;margin:1.5rem 0;font-style:italic}
+        .tip-box strong{color:#b45e48;font-style:normal;display:block;margin-bottom:.3rem;font-family:'Space Mono',monospace;font-size:.8rem;letter-spacing:.1em}
+        .info-card{background:rgba(180,94,72,.04);border:1px solid rgba(180,94,72,.15);padding:1.5rem 2rem;margin:1rem 0}
+        .info-card h4{font-family:'Cinzel',serif;font-size:1.15rem;color:#e8d5c0;margin-bottom:.5rem}
+        .info-card .stats{font-family:'Space Mono',monospace;font-size:.7rem;color:#8a7560;margin-bottom:.5rem}
+        .info-card p{color:#a89878;line-height:1.7;margin-bottom:.5rem}
+        .info-card .detail{font-family:'Space Mono',monospace;font-size:.75rem;color:#6a8a6a;margin-top:.5rem}
+        .back-link{display:inline-block;margin-top:3rem;font-family:'Space Mono',monospace;font-size:.8rem;color:#b45e48}
+        .related-guides{margin-top:4rem;padding-top:2rem;border-top:1px solid rgba(180,94,72,.2)}
+        .related-guides h3{font-family:'Cinzel',serif;color:#e8d5c0;margin-bottom:1rem}
+        .related-guides a{display:block;padding:.6rem 0;font-family:'Space Mono',monospace;font-size:.8rem;color:#8a7e6b}
+        .related-guides a:hover{color:#b45e48}
+        footer{text-align:center;padding:3rem 5%;border-top:1px solid rgba(180,94,72,.15);font-family:'Space Mono',monospace;font-size:.7rem;color:#5a4e3b}
+        table{width:100%;border-collapse:collapse;margin:1rem 0;font-size:.95rem}
+        th{font-family:'Space Mono',monospace;font-size:.75rem;color:#b45e48;text-align:left;padding:.6rem;border-bottom:1px solid rgba(180,94,72,.3);letter-spacing:.05em}
+        td{padding:.6rem;border-bottom:1px solid rgba(180,94,72,.08);color:#a89878}
+        @media(max-width:768px){.nav-links a{margin-left:1rem;font-size:.6rem}.content{padding:1rem 4% 3rem}.hero h1{font-size:2rem}table{font-size:.8rem}}
     </style>
 </head>
 <body>
     <nav>
-        <a href="index.html" class="nav-brand">ARCEOLOGY<span>terminal.speranza</span></a>
+        <div><a href="index.html" class="nav-logo">Arceology</a><br><span style="font-family:'Space Mono',monospace;font-size:.6rem;color:#5a4e3b">terminal.speranza</span></div>
         <div class="nav-links">
-            <a href="blog.html">logs</a>
-            <a href="videos.html">gameplay</a>
-            <a href="bulletin.html">intel</a>
-            <a href="guides.html" class="active">guides</a>
-            <a href="faq.html">faq</a>
-            <a href="store.html">gear</a>
-            <a href="about.html">about</a>
+            <a href="blog.html">Logs</a>
+            <a href="videos.html">Gameplay</a>
+            <a href="intel.html">Intel</a>
+            <a href="guides.html">Guides</a>
+            <a href="faq.html">FAQ</a>
+            <a href="store.html">Gear</a>
+            <a href="about.html">About</a>
         </div>
     </nav>
 
-    <section class="hero">
+    <div class="hero">
         <h1>Progression & Economy</h1>
-        <div class="subtitle">RESOURCE MANAGEMENT // RAIDER ECONOMICS</div>
-        <div class="breadcrumb"><a href="guides.html">Guides</a> / Progression & Economy</div>
-    </section>
+        <div class="subtitle">speranza systems // trader network // expedition prep</div>
+    </div>
 
     <div class="content">
         <div class="toc">
-            <h2>CONTENTS</h2>
-            <ul>
-                <li><a href="#economy">Economy Overview</a></li>
-                <li><a href="#coin-farming">Coin Farming Strategies</a></li>
-                <li><a href="#salvage">Salvage & Materials</a></li>
-                <li><a href="#crafting">Crafting System</a></li>
-                <li><a href="#vendors">Vendor Unlock Priorities</a></li>
-                <li><a href="#season-pass">Season Pass Optimization</a></li>
-                <li><a href="#progression-path">Optimal Progression Path</a></li>
-                <li><a href="#mistakes">Common Economic Mistakes</a></li>
-            </ul>
+            <strong style="color:#e8d5c0;margin-bottom:.8rem;display:block">CONTENTS</strong>
+            <a href="#speranza">Speranza Overview</a>
+            <a href="#traders">All 5 Traders & Currencies</a>
+            <a href="#workshop">Workshop & Crafting</a>
+            <a href="#gunsmith">Gunsmith & Weapon Upgrades</a>
+            <a href="#stash">Stash Management</a>
+            <a href="#expedition">Expedition System</a>
+            <a href="#skills">Skill Tree & Leveling</a>
+            <a href="#economy">Economy Tips & Priorities</a>
         </div>
 
-        <div id="economy" class="guide-section">
-            <h2><span>++</span> Economy Overview</h2>
-            <p>The economy in ARC Raiders revolves around three primary resources: Coins, Salvage, and Crafting Materials. Coins are the universal currency used to buy gear, weapons, and supplies from vendors. Salvage is raw material recovered from ARC machines and environmental containers that can be sold for Coins or converted into Crafting Materials. Crafting Materials are refined components used to build specific weapons, mods, and equipment at the crafting bench.</p>
-            <p>Understanding the relationship between these three resources is the foundation of efficient progression. New players often sell all their Salvage for immediate Coins, which provides short-term buying power but starves them of Crafting Materials needed for endgame gear. The optimal approach balances selling enough Salvage to fund your immediate needs while converting the rest into Crafting Materials for long-term progression.</p>
-            <p>Every item you extract from a raid has a Coin value determined by its rarity and type. Weapons are generally worth more than consumables, and rare-quality items significantly outvalue common ones. Your extraction decisions should factor in the value-to-weight ratio of your loot. Filling your limited inventory space with high-value items rather than bulky low-value ones is the difference between profitable and break-even raids.</p>
+        <div class="guide-section" id="speranza">
+            <h2>++ Speranza Overview</h2>
+            <p>Speranza is the oldest neighborhood of Toledo and your home base between raids. Everything you need to prepare for Topside runs is here: five Traders who sell weapons, gear, mods, gadgets, and medical supplies; the Workshop for crafting; the Gunsmith for weapon upgrades; your Stash for storing loot; the Raider Den for customization; and the Main Hub where you select your map and recruit squadmates.</p>
+
+            <p>The Main Hub displays your active Feats and Quests with their completion requirements. Always check your quests before deploying so you can plan your Topside run to complete as many objectives as possible in a single raid.</p>
+
+            <p>Your Raider Den is a personal room above the streets of Speranza that evolves as your Raider level grows. Items from your Stash display here, and you can customize your Raider with outfits and hairstyles bought with Raider Tokens or unlocked through the Raider Decks.</p>
         </div>
 
-        <div id="coin-farming" class="guide-section">
-            <h2><span>++</span> Coin Farming Strategies</h2>
-            <p>Consistent Coin income is essential for maintaining your loadout, buying supplies, and unlocking vendor tiers. The best Coin farming approaches prioritize extraction reliability over maximum loot value per raid. A moderate haul that you extract successfully is worth infinitely more than a premium haul you lose.</p>
+        <div class="guide-section" id="traders">
+            <h2>++ All 5 Traders & Currencies</h2>
+            <p>Speranza has five Traders, each selling different categories of items and accepting different currencies. Understanding which Trader sells what — and which currency you need — is essential for efficient progression.</p>
 
-            <div class="econ-card">
-                <h4>The Scavenger Run</h4>
-                <p>Drop at the edge of the map and systematically loot every container along the outer ring, moving toward a low-traffic extraction point. Avoid all combat. Skip ARC machines, avoid other raiders, and extract with whatever you find. Each run takes 6 to 8 minutes and yields a modest but consistent return. The extraction success rate for Scavenger Runs is extremely high, making this the most reliable Coin farming method for players of any skill level.</p>
-                <span class="value">Expected return: 150-300 Coins per run | Success rate: ~90%</span>
+            <div class="info-card">
+                <h4>Celeste Seed</h4>
+                <div class="stats">CURRENCY: Seed (Assorted Seeds) | SELLS: Basic Materials, Topside Materials</div>
+                <p>Celeste trades Seeds in exchange for essential materials that every Raider needs. Seeds are found Topside and are the unique currency for Celeste's shop. Her inventory focuses on basic and Topside crafting materials, making her the go-to Trader when you need raw resources for Workshop crafting without spending Coin.</p>
             </div>
 
-            <div class="econ-card">
-                <h4>The Targeted Loot Run</h4>
-                <p>Drop near a specific mid-tier POI known for valuable loot spawns, clear the ARC machines guarding it, loot thoroughly, and extract from the nearest available point. This is more dangerous than scavenging but yields significantly better returns. Knowledge of specific POI loot tables is important here: some locations consistently spawn rare weapon mods or high-value salvage that other locations do not.</p>
-                <span class="value">Expected return: 400-800 Coins per run | Success rate: ~60%</span>
+            <div class="info-card">
+                <h4>Shani</h4>
+                <div class="stats">CURRENCY: Security Cred | SELLS: Augments, Weapon Mods, Medical Items, Raider Hatch Key</div>
+                <p>Shani runs Speranza's security while selling useful gear on the side. She accepts Security Cred as currency and stocks Augments, Weapon Mods, Medical Items, and the critical Raider Hatch Key. Raider Hatch Keys let you extract quickly and discreetly through hidden hatches Topside — essential for emergency extractions. Shani also sells Binoculars for scouting.</p>
             </div>
 
-            <div class="econ-card">
-                <h4>The ARC Hunter Run</h4>
-                <p>Specifically target ARC machines for their salvage drops. Patrol Walkers and Heavy Walkers drop valuable salvage that sells well or converts into premium Crafting Materials. Sentinels drop the most valuable salvage in the game but require significant ammunition investment. ARC Hunter Runs are profitable when you are efficient with ammunition and avoid unnecessary PvP fights that drain your resources. Bring extra ammo and focus on machines that offer the best salvage-to-ammo ratio.</p>
-                <span class="value">Expected return: 500-1200 Coins per run | Success rate: ~50%</span>
+            <div class="info-card">
+                <h4>Tian Wen — Gun Shop</h4>
+                <div class="stats">CURRENCY: Coin | SELLS: Weapons, Ammo, Weapon Mods</div>
+                <p>Tian Wen runs the Gun Shop and is your primary source for purchasing weapons, ammunition, and weapon mods. He accepts Coin, the most common currency. This is where you buy your loadout weapons before deploying. His Weapon Mod inventory is particularly valuable — being able to buy mods directly instead of hoping to find them Topside gives you consistent loadout control.</p>
+            </div>
+
+            <div class="info-card">
+                <h4>Apollo — Grenades & Gadgets</h4>
+                <div class="stats">CURRENCY: Coin | SELLS: Gadgets, Grenades</div>
+                <p>Apollo sells Quick Use combat items: Wolfpack Grenades, Deadline Mines, Hornet Drivers, Showstoppers, and other tactical gadgets. These items are critical for boss-tier ARC encounters. Wolfpack Grenades and Deadline Mines are the primary tools for fighting Queens, Bombardiers, Bastions, and other heavy ARC. Stock up before any serious ARC hunting run.</p>
+            </div>
+
+            <div class="info-card">
+                <h4>Lance — Clinic</h4>
+                <div class="stats">CURRENCY: Coin + Free Loadout Augment | SELLS: Augments, Shields, Medical Items</div>
+                <p>Lance runs the Clinic and patches Raiders up for a price. He sells Augments, Shields (Light, Medium, Heavy), and Medical Items. Lance also provides a free Loadout Augment. Shields are essential survival gear — always bring at least a Light Shield on every raid. Med Kits from Lance keep you alive through sustained ARC encounters and PvP fights.</p>
             </div>
 
             <div class="tip-box">
-                <strong>ECONOMIC PRINCIPLE</strong>
-                Coin farming is a volume game. Running five quick Scavenger Runs that each extract successfully produces more total Coins than one ambitious inner-zone run that has a 50% chance of failure. Consistency beats ambition in the long run.
+                <strong>THREE CURRENCIES</strong>
+                Coin is the primary currency accepted by Tian Wen, Apollo, and Lance. Seed (Assorted Seeds) is Celeste's exclusive currency, found Topside. Security Cred is Shani's exclusive currency. Make sure you are collecting all three types during your raids.
             </div>
         </div>
 
-        <div id="salvage" class="guide-section">
-            <h2><span>++</span> Salvage & Materials</h2>
-            <p>Salvage comes in four tiers: Common, Uncommon, Rare, and Premium. Each tier has a base Coin value when sold to vendors and a Crafting Material conversion rate at the crafting bench. Common salvage is abundant but low-value. Premium salvage is scarce and extremely valuable, dropping only from Sentinels, boss encounters, and high-tier loot crates in the inner zone.</p>
+        <div class="guide-section" id="workshop">
+            <h2>++ Workshop & Crafting</h2>
+            <p>The Workshop in Speranza lets you craft gear, weapons, consumables, and other items. You start with a simple workbench that produces basic necessities. As you progress, you can build specialized crafting stations to unlock advanced recipes.</p>
 
-            <h3>Selling vs Converting</h3>
-            <p>The decision to sell Salvage for Coins or convert it to Crafting Materials depends on your current progression stage. Early-game players should sell most of their Salvage because they need Coins to buy basic equipment and unlock vendor tiers. Mid-game players should start converting Uncommon and Rare Salvage into Crafting Materials while still selling Common Salvage for operating costs. Late-game players should convert everything they can because endgame crafting recipes require large quantities of refined materials that cannot be purchased with Coins.</p>
+            <p>The Workshop has three levels, each requiring specific materials to upgrade and unlocking progressively better crafting recipes:</p>
 
-            <h3>Salvage Value Priority</h3>
-            <p>When your inventory is full and you need to decide what to keep, prioritize by value-to-weight ratio. Premium Salvage is always worth keeping regardless of weight. Rare Salvage should be kept over most weapons and consumables. Uncommon Salvage is worth keeping if you have space. Common Salvage should be the first thing dropped when you need to make room for anything better.</p>
-        </div>
-
-        <div id="crafting" class="guide-section">
-            <h2><span>++</span> Crafting System</h2>
-            <p>The crafting bench converts Salvage into Crafting Materials and uses those materials to build weapons, weapon mods, equipment, and consumables. Crafted items are often superior to their looted counterparts because you control exactly what you create and can tailor your crafting to your preferred loadout and playstyle.</p>
-
-            <h3>Crafting Priorities</h3>
-            <p>Not all crafting recipes offer equal value for your investment. Focus your early crafting on weapon mods because they have the highest impact-per-material-cost. A Compensator mod that costs moderate materials transforms a mediocre assault rifle into a controllable powerhouse. Weapon crafting should come after you have essential mods because looted weapons are serviceable while looted mods are unreliable to find.</p>
-
-            <h3>Material Efficiency</h3>
-            <p>Every crafting recipe lists the exact materials required. Before committing to a craft, check whether the materials would produce more value if used on a different recipe. Crafting a rare weapon mod might require the same materials as three uncommon mods. If you need those three uncommon mods more than the one rare mod, the math favors crafting three over one. Always think in terms of total utility rather than individual item rarity.</p>
-        </div>
-
-        <div id="vendors" class="guide-section">
-            <h2><span>++</span> Vendor Unlock Priorities</h2>
-            <p>Vendors unlock in tiers based on your total spending with them. Each tier reveals new inventory items and often includes significant upgrades. The order in which you unlock vendor tiers significantly impacts your progression speed.</p>
-
-            <div class="priority-list">
-                <div class="priority-item">
-                    <h4>Weapons Vendor - Tier 2</h4>
-                    <p>Unlocks the Vostok AR-9 for purchase, the best all-around weapon in the game. This single unlock dramatically improves your raid performance and should be your first priority. Spend at the Weapons Vendor until you reach Tier 2, buy a Vostok, and your raid success rate will improve immediately.</p>
-                </div>
-                <div class="priority-item">
-                    <h4>Supplies Vendor - Tier 2</h4>
-                    <p>Unlocks Med Kits and Stim Shots for purchase. Reliable access to healing is essential for consistent extraction. Without purchasable healing, you depend on finding it in-raid, which is unreliable. Tier 2 Supplies ensures you start every raid prepared.</p>
-                </div>
-                <div class="priority-item">
-                    <h4>Weapons Vendor - Tier 3</h4>
-                    <p>Unlocks the Kestrel MK4 DMR. Adding a strong marksman rifle to your arsenal gives you the long-range capability needed for mid-game content. The Kestrel pairs perfectly with the Vostok for a loadout that covers every engagement distance.</p>
-                </div>
-                <div class="priority-item">
-                    <h4>Mods Vendor - Tier 2</h4>
-                    <p>Unlocks purchasable weapon mods including Compensators and Red Dot sights. Being able to buy mods instead of hoping to find them in-raid gives you control over your weapon performance. A modded weapon is significantly more effective than a bare one.</p>
-                </div>
-                <div class="priority-item">
-                    <h4>Crafting Vendor - Tier 2</h4>
-                    <p>Unlocks advanced crafting recipes for rare weapon mods and equipment. This is your bridge to endgame gear. Once you have reliable access to weapons and supplies through earlier unlocks, investing in crafting capability lets you build items that cannot be purchased anywhere.</p>
-                </div>
+            <div class="info-card">
+                <h4>Workshop Level 1</h4>
+                <div class="stats">REQUIRES: 25x Plastic Parts, 30x Fabric</div>
+                <p>Unlocks crafting for Light Shield, Medium Shield, and three Mk. 1 Augment types: Combat Mk. 1, Looting Mk. 1, and Tactical Mk. 1. These are your foundational gear items that get you raid-ready with basic protection and augmentation.</p>
             </div>
-        </div>
 
-        <div id="season-pass" class="guide-section">
-            <h2><span>++</span> Season Pass Optimization</h2>
-            <p>The Escalation Season Pass provides rewards for completing challenges and accumulating experience. Optimizing your season pass progression means completing challenges efficiently rather than grinding experience through raw playtime.</p>
+            <div class="info-card">
+                <h4>Workshop Level 2</h4>
+                <div class="stats">REQUIRES: 3x Power Cable, 5x Electrical Components, 5x Hornet Driver</div>
+                <p>Unlocks Heavy Shield crafting and all three Mk. 2 Augment types: Combat Mk. 2, Looting Mk. 2, and Tactical Mk. 2. Note that Hornet Drivers drop from Hornet ARC machines, so you will need to farm Hornets Topside to upgrade your Workshop.</p>
+            </div>
 
-            <h3>Daily Challenges</h3>
-            <p>Daily challenges refresh every 24 hours and provide the most experience per time invested. Always check your daily challenges before queuing a raid and plan your run to complete as many as possible in a single session. Common dailies include extracting specific item types, killing certain ARC machines, or looting from specific map areas. Stacking multiple dailies into one raid is the most time-efficient approach to season pass progression.</p>
-
-            <h3>Weekly Challenges</h3>
-            <p>Weekly challenges are larger objectives that provide substantial experience bonuses. They often require cumulative progress across multiple raids, such as extracting a total value of Coins or destroying a certain number of specific ARC machine types. Start your weekly challenges early in the week so you have multiple sessions to complete them without feeling rushed.</p>
-
-            <h3>Season Pass Economy</h3>
-            <p>The season pass rewards include exclusive cosmetics, Coin bundles, Crafting Material packs, and unique weapon skins. The Coin and Material rewards are worth pursuing because they supplement your economy without requiring you to take risks in-raid. However, do not prioritize season pass progression over actual gameplay improvement. The skills you develop through playing the game are more valuable long-term than any season pass reward.</p>
-        </div>
-
-        <div id="progression-path" class="guide-section">
-            <h2><span>++</span> Optimal Progression Path</h2>
-            <p>The most efficient path from new raider to endgame readiness follows a predictable sequence that minimizes wasted resources and maximizes each phase of your development.</p>
-
-            <h3>Phase 1: Foundation (First 10 Hours)</h3>
-            <p>Focus entirely on learning the map and extraction mechanics. Run Scavenger Runs along the outer ring. Sell all Salvage for Coins. Buy basic weapons and healing supplies. Do not invest in crafting yet. Your goal is to build a Coin reserve of at least 2000 while learning the map well enough to navigate without constantly checking your compass. Extract as many raids as possible, even if the loot is modest.</p>
-
-            <h3>Phase 2: Gearing Up (Hours 10-30)</h3>
-            <p>Unlock Weapons Vendor Tier 2 and buy a Vostok AR-9. Unlock Supplies Vendor Tier 2 for reliable healing. Start running Targeted Loot Runs at mid-tier POIs now that you know the map. Begin converting some Salvage into Crafting Materials. Your first crafted item should be a Compensator for your Vostok. Build confidence in PvE combat against Walker-class ARC machines.</p>
-
-            <h3>Phase 3: Specialization (Hours 30-60)</h3>
-            <p>Unlock Weapons Vendor Tier 3 for the Kestrel MK4. Develop your preferred loadout and playstyle. Start attempting ARC Hunter Runs for premium Salvage. Invest in Mods Vendor and Crafting Vendor unlocks. Begin crafting specialized equipment for your build. Experiment with inner-zone runs when you feel ready. Your extraction rate should be above 50% consistently at this point.</p>
-
-            <h3>Phase 4: Endgame (60+ Hours)</h3>
-            <p>Push endgame content including Sentinel hunting and Stella Montis encounters. Craft the best-in-class weapon mods and equipment. Optimize your loadout for specific raid objectives. Help newer players in squad runs. Your economic engine should be self-sustaining at this point, with each successful raid funding the next several attempts even if some fail.</p>
-        </div>
-
-        <div id="mistakes" class="guide-section">
-            <h2><span>++</span> Common Economic Mistakes</h2>
-
-            <h3>Spending Coins on Consumables Too Early</h3>
-            <p>New players often spend their limited Coins on consumables like grenades and armor plates before they have reliable weapons. Consumables are single-use. A weapon lasts until you lose it. Invest in weapons and weapon mods first because they improve every raid, not just one.</p>
-
-            <h3>Converting All Salvage Immediately</h3>
-            <p>Converting all your Salvage to Crafting Materials when you do not have enough vendor unlocks to use them effectively wastes potential Coins. Convert only what you can use in the near term and sell the rest. You can always earn more Salvage in future raids.</p>
-
-            <h3>Bringing Your Best Gear to Every Raid</h3>
-            <p>Using your most expensive loadout on every raid, including casual farming runs, burns through resources unnecessarily. Save your premium gear for high-stakes inner-zone runs and boss attempts. Use mid-tier equipment for routine farming. The return-on-investment for bringing a top-tier loadout to a Scavenger Run is negative.</p>
-
-            <h3>Ignoring Vendor Tier Progression</h3>
-            <p>Some players spread their spending evenly across all vendors, slowly progressing each one. This is less efficient than focusing on one vendor at a time to reach the next tier quickly. The items unlocked at each new tier provide more value than incremental spending across multiple vendors. Focus your Coins on one vendor until you unlock the tier you need, then move to the next priority.</p>
+            <div class="info-card">
+                <h4>Workshop Level 3</h4>
+                <div class="stats">REQUIRES: 3x Industrial Battery, 5x Advanced Electrical Components, 6x Bastion Cell</div>
+                <p>Unlocks specialized Mk. 3 Augments with playstyle variants: Combat Mk. 3 (Aggressive or Flanking), Looting Mk. 3 (Cautious or Survivor), and Tactical Mk. 3 (Defensive or Healing). Bastion Cells drop from Bastion ARC walkers, which are Extreme-threat enemies requiring squad tactics to defeat.</p>
+            </div>
 
             <div class="tip-box">
-                <strong>ARCEOLOGIST'S NOTE</strong>
-                The economy exists to serve your gameplay, not the other way around. Do not let resource anxiety prevent you from taking calculated risks. The raiders who progress fastest are the ones who invest their resources into improving their raid performance, even when that means spending aggressively in the short term.
+                <strong>CRAFTING PRIORITY</strong>
+                Upgrade your Workshop to Level 2 as soon as possible. The Heavy Shield and Mk. 2 Augments are significant upgrades over Level 1 gear. Farm Hornets for their Drivers — they are relatively easy to kill compared to the Bastions needed for Level 3.
+            </div>
+        </div>
+
+        <div class="guide-section" id="gunsmith">
+            <h2>++ Gunsmith & Weapon Upgrades</h2>
+            <p>The Gunsmith allows you to upgrade weapons through four levels (I through IV). Each upgrade permanently improves the weapon's handling stats, making it more accurate, stable, and responsive. Upgrading is one of the most impactful investments you can make.</p>
+
+            <p>Weapon Mods are separate from upgrades. Mods are attachments that fit into designated slots on each weapon and can be freely removed and swapped. Common mod types include Muzzle attachments for recoil and sound reduction, Underbarrel grips for stability, Magazine extensions for capacity, and Stock attachments for ADS stability.</p>
+
+            <div class="tip-box">
+                <strong>LEGENDARY WEAPONS</strong>
+                Legendary weapons (Jupiter, Aphelion, Equalizer) cannot be upgraded at the Gunsmith and do not accept mods. Their stats are fixed. Standard weapons upgraded to Level IV with a full mod loadout can outperform Legendaries in specific situations due to this flexibility.
+            </div>
+
+            <p>The Anvil hand cannon has a unique Tech Mod slot that accepts special modifications not available to other weapons, enabling unique build synergies. Visit the Practice Range to test different mod combinations before committing to a loadout for a real raid.</p>
+        </div>
+
+        <div class="guide-section" id="stash">
+            <h2>++ Stash Management</h2>
+            <p>Your Stash stores all items you craft and bring home from Topside. It starts at 64 slots and can be upgraded to a maximum of 280 slots. Stash upgrades cost increasing amounts of Coin:</p>
+
+            <table>
+                <tr><th>Level</th><th>Size</th><th>Upgrade Cost</th><th>Total Cost</th></tr>
+                <tr><td>1</td><td>64 slots</td><td>Base</td><td>-</td></tr>
+                <tr><td>2</td><td>88 slots</td><td>5,000 Coin</td><td>5,000</td></tr>
+                <tr><td>3</td><td>112 slots</td><td>10,000 Coin</td><td>15,000</td></tr>
+                <tr><td>4</td><td>136 slots</td><td>15,000 Coin</td><td>30,000</td></tr>
+                <tr><td>5</td><td>160 slots</td><td>25,000 Coin</td><td>55,000</td></tr>
+                <tr><td>6</td><td>184 slots</td><td>40,000 Coin</td><td>95,000</td></tr>
+                <tr><td>7</td><td>208 slots</td><td>60,000 Coin</td><td>155,000</td></tr>
+                <tr><td>8</td><td>232 slots</td><td>90,000 Coin</td><td>245,000</td></tr>
+                <tr><td>9</td><td>256 slots</td><td>130,000 Coin</td><td>375,000</td></tr>
+                <tr><td>10</td><td>280 slots</td><td>200,000 Coin</td><td>575,000</td></tr>
+            </table>
+
+            <p>Raiders who complete Expeditions earn an extra 12 Stash slots per completion. Stash space is a bottleneck for progression — upgrade it steadily as you accumulate Coin, but balance the investment against weapon and gear purchases.</p>
+
+            <div class="tip-box">
+                <strong>STASH VALUE MATTERS</strong>
+                Your total Stash value in Coin determines your Expedition rewards. Hoarding valuable items in your Stash before departing on an Expedition can earn you up to 5 Skill Points for your next Raider. Plan your Stash contents strategically when preparing to depart.
+            </div>
+        </div>
+
+        <div class="guide-section" id="expedition">
+            <h2>++ Expedition System</h2>
+            <p>Expedition is ARC Raiders' seasonal character reset system. When you depart on an Expedition, your Raider's level, stash contents, inventory, loadouts, and skill tree all reset. In exchange, you earn permanent rewards that carry over to your next Raider. Expedition is optional but highly recommended for serious progression.</p>
+
+            <h3>Expedition Stages</h3>
+            <p>Building your Expedition caravan requires committing specific materials across six stages. Once materials are committed, they cannot be retrieved:</p>
+
+            <div class="info-card">
+                <h4>Stage 1: Foundation</h4>
+                <div class="stats">Building the base structure and frame of the caravan</div>
+                <p>Requires: 150x Metal Parts, 200x Plastic Parts, 80x ARC Alloy, 15x Steel Spring</p>
+            </div>
+
+            <div class="info-card">
+                <h4>Stage 2: Core Systems</h4>
+                <div class="stats">Connecting wiring, ventilation, and essential power systems</div>
+                <p>Requires: 35x Durable Cloth, 25x Wires, 20x Electrical Components, 4x Cooling Coil</p>
+            </div>
+
+            <div class="info-card">
+                <h4>Stage 3: Framework</h4>
+                <div class="stats">Building walls and roof, installing core systems, defining interior layout</div>
+                <p>Requires: 4x Light Bulb, 30x Battery, 10x Shredder Gyro, 1x Exodus Modules</p>
+                <div class="detail">NOTE: Shredder Gyros only drop from Shredders on Stella Montis (the hardest map).</div>
+            </div>
+
+            <div class="info-card">
+                <h4>Stage 4: Outfitting</h4>
+                <div class="stats">Adding storage, workbenches, utilities, and personal touches</div>
+                <p>Requires: 5x Frequency Modulation Box, 5x Advanced Electrical Components, 3x Ion Sputter, 3x Leaper Pulse Unit</p>
+                <div class="detail">NOTE: Leaper Pulse Units only drop from Leaper ARC (Extreme-threat walkers).</div>
+            </div>
+
+            <div class="info-card">
+                <h4>Stage 5: Load Stage</h4>
+                <div class="stats">Loading the caravan with vital supplies by Coin value</div>
+                <p>Requires committing items by category: 250,000 Coin worth of Combat Items (Ammo, Grenades, Traps, Weapons, Weapon Mods), 100,000 Coin worth of Survival Items (Shields, Gadgets, Utilities, Augments), 180,000 Coin worth of Provisions (Nature, Miscellaneous, Trinkets, Old World, Keys), and 300,000 Coin worth of Materials.</p>
+            </div>
+
+            <div class="info-card">
+                <h4>Stage 6: Departure</h4>
+                <div class="stats">Your caravan is ready to depart</div>
+                <p>Once the departure window opens, your Raider leaves the Rust Belt forever. All items remaining in your Stash are contributed to the Expedition. Your next Raider earns up to 5 Skill Points based on the total value of those remaining Stash items.</p>
+            </div>
+
+            <div class="tip-box">
+                <strong>EXPEDITION REWARDS</strong>
+                Completing an Expedition grants permanent rewards: up to 5 Skill Points for your next Raider (based on Stash value at departure), 12-24 extra Stash slots, cosmetics, and stacking buffs for consecutive departures. Each Expedition completion makes your next Raider start stronger.
+            </div>
+        </div>
+
+        <div class="guide-section" id="skills">
+            <h2>++ Skill Tree & Leveling</h2>
+            <p>You earn 1 Skill Point per Raider level. The Skill Tree lets you specialize your Raider's capabilities. Check your Skill Tree regularly and spend points as soon as they are available — unspent points are wasted potential.</p>
+
+            <p>Your Character screen in the Raider Den also shows your Trial progress and Project status. The Codex logs everything you discover Topside, and your completed quest history and stats are viewable here as well.</p>
+
+            <p>Raider Decks are seasonal progression tracks where you spend Cred to unlock cosmetic rewards. Each Deck has multiple pages of rewards that must be unlocked in order to progress to the next page. A new Raider Deck is released with each major Escalation season update.</p>
+        </div>
+
+        <div class="guide-section" id="economy">
+            <h2>++ Economy Tips & Priorities</h2>
+
+            <p>The ARC Raiders economy rewards consistent extraction over risky high-value runs. A moderate haul that you extract successfully is infinitely more valuable than a premium haul you lose to ARC or other Raiders.</p>
+
+            <h3>Early Game Priorities (First 20 Raids)</h3>
+            <p>Focus on learning maps and extracting reliably. Buy basic weapons and shields from Tian Wen and Lance. Do not invest in Workshop upgrades yet. Your goal is to build a Coin reserve while learning extraction routes and ARC patrol patterns. Run the starter map Dam Battlegrounds until you are comfortable, then progress to Buried City.</p>
+
+            <h3>Mid Game Priorities (Raids 20-60)</h3>
+            <p>Upgrade Workshop to Level 2 for Heavy Shields and Mk. 2 Augments. Start upgrading your favorite weapon at the Gunsmith (Level I and II upgrades are affordable). Expand your Stash to Level 3-4 to avoid inventory pressure. Begin farming specific ARC for their drops: Hornets for Hornet Drivers, Sentinels for Firing Cores, Surveyors for Vaults.</p>
+
+            <h3>Late Game Priorities (60+ Raids)</h3>
+            <p>Push Workshop to Level 3 by farming Bastions for Bastion Cells. Upgrade primary weapons to Level III-IV. Expand Stash toward Level 7-8. Begin stockpiling Expedition materials. Run Stella Montis for Shredder Gyros and high-value drops. Prepare for Queen and Matriarch boss encounters with a full squad and stocked supplies from Apollo.</p>
+
+            <div class="tip-box">
+                <strong>ECONOMY PRINCIPLE</strong>
+                Always extract. A successful extraction with modest loot funds your next run and builds progression. A failed extraction with premium loot costs you everything and teaches you nothing except frustration. Prioritize reliability over ambition until your extraction rate is consistently above 50%.
             </div>
         </div>
 
         <div class="related-guides">
             <h3>RELATED GUIDES</h3>
-            <div class="related-grid">
-                <a href="guide-weapons.html" class="related-card">
-                    <h4>Weapons & Loadouts Guide</h4>
-                    <p>Complete tier list, weapon breakdowns, and build recommendations.</p>
-                </a>
-                <a href="guide-maps.html" class="related-card">
-                    <h4>Maps & Extraction Guide</h4>
-                    <p>Every extraction point, map condition, and high-value loot route.</p>
-                </a>
-                <a href="guide-enemies.html" class="related-card">
-                    <h4>Enemies & Combat Guide</h4>
-                    <p>ARC machine bestiary, boss strategies, and PvP combat tactics.</p>
-                </a>
-            </div>
+            <a href="guide-weapons.html">Weapons & Loadouts Guide — Complete tier list, weapon breakdowns, and build recommendations.</a>
+            <a href="guide-maps.html">Maps & Extraction Guide — All five maps, extraction strategies, and map conditions explained.</a>
+            <a href="guide-enemies.html">Enemies & Combat Guide — ARC machine bestiary, weak points, boss strategies, and PvP tactics.</a>
         </div>
 
         <a href="guides.html" class="back-link">&lt; BACK TO ALL GUIDES</a>
     </div>
 
     <footer>
-        <p>&copy; 2025 Arceology. All rights reserved. ARC Raiders is a trademark of Embark Studios.</p>
-        <p style="margin-top: 0.5rem;"><a href="privacy.html">Privacy Policy</a> | <a href="about.html">About</a> | <a href="faq.html">FAQ</a></p>
+        arceology.terminal // speranza archives // raider progression database v2.0
     </footer>
 </body>
 </html>
