@@ -4,157 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-adsense-account" content="ca-pub-7264545503146086">
-    <title>ARC Raiders Weapons Guide - Best Weapons Tier List, Builds & Loadouts | Arceology</title>
-    <meta name="description" content="Complete ARC Raiders weapons guide. Tier list rankings, damage stats, best loadouts for solo and squad play, weapon mods, and build strategies for every playstyle.">
-    <meta name="keywords" content="ARC Raiders weapons, weapon tier list, best guns ARC Raiders, loadout guide, solo build, squad build, weapon stats, ARC Raiders builds, extraction loadout">
+    <title>ARC Raiders Weapons Guide - Tier List, Stats & Loadouts | Arceology</title>
+    <meta name="description" content="Complete ARC Raiders weapons guide with real stats. Every weapon class covered: Assault Rifles, Battle Rifles, SMGs, Shotguns, Snipers, LMGs, Pistols, Hand Cannons and Special weapons.">
+    <meta name="keywords" content="ARC Raiders weapons, Bettina, Renegade, Tempest, Anvil, Ferro, Bobcat, weapon tier list, ARC Raiders loadout, best weapons ARC Raiders">
     <meta name="author" content="Arceology">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://myraiderlog.com/guide-weapons.html">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://myraiderlog.com/guide-weapons.html">
-    <meta property="og:title" content="ARC Raiders Weapons Guide - Complete Tier List & Loadouts">
-    <meta property="og:description" content="Every weapon ranked and analyzed. Best builds for solo, duo, and trio extraction runs in ARC Raiders.">
+    <meta property="og:title" content="ARC Raiders Weapons Guide - Every Gun Ranked">
+    <meta property="og:description" content="Full weapon breakdown for ARC Raiders. Real stats, tier rankings, and loadout advice.">
     <meta property="og:site_name" content="Arceology Raider Log">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="manifest" href="manifest.json">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7264545503146086" crossorigin="anonymous"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Space+Mono:wght@400;700&display=swap');
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        body {
-            background: #0d0a08;
-            color: #c4a882;
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.15rem;
-            line-height: 1.8;
-            min-height: 100vh;
-        }
-
-        nav {
-            position: fixed; top: 0; left: 0; width: 100%;
-            padding: 1.2rem 5%;
-            background: linear-gradient(180deg, rgba(13,10,8,0.98) 0%, rgba(13,10,8,0.9) 100%);
-            backdrop-filter: blur(15px);
-            z-index: 10000;
-            border-bottom: 1px solid rgba(180,94,72,0.3);
-            display: flex; justify-content: space-between; align-items: center;
-        }
-        .nav-brand { font-family: 'Cinzel', serif; font-size: 1.3rem; color: #e8d5c0; text-decoration: none; letter-spacing: 3px; }
-        .nav-brand span { display: block; font-family: 'Space Mono', monospace; font-size: 0.55rem; color: #b45e48; letter-spacing: 2px; }
-        .nav-links a { color: #8a7560; text-decoration: none; font-family: 'Space Mono', monospace; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; margin-left: 2rem; transition: color 0.3s; }
-        .nav-links a:hover, .nav-links a.active { color: #b45e48; }
-
-        .hero {
-            padding: 10rem 5% 4rem;
-            text-align: center;
-            background: radial-gradient(ellipse at center top, rgba(180,94,72,0.08) 0%, transparent 60%);
-        }
-        .hero h1 {
-            font-family: 'Cinzel', serif; font-size: clamp(2rem, 5vw, 3.5rem);
-            color: #e8d5c0; letter-spacing: 6px; text-transform: uppercase;
-            background: linear-gradient(180deg, #e8d5c0 0%, #b45e48 100%);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-        }
-        .hero .subtitle { font-family: 'Space Mono', monospace; font-size: 0.75rem; color: #6a5a4a; letter-spacing: 4px; margin-top: 1rem; }
-        .breadcrumb { font-family: 'Space Mono', monospace; font-size: 0.7rem; color: #6a5a4a; margin-top: 1.5rem; }
-        .breadcrumb a { color: #b45e48; text-decoration: none; }
-
-        .content { max-width: 1000px; margin: 0 auto; padding: 2rem 5% 4rem; }
-
-        .toc {
-            background: rgba(180,94,72,0.06); border: 1px solid rgba(180,94,72,0.2);
-            padding: 2rem; margin-bottom: 3rem; border-radius: 2px;
-        }
-        .toc h2 { font-family: 'Cinzel', serif; font-size: 1rem; color: #b45e48; letter-spacing: 3px; margin-bottom: 1rem; }
-        .toc ul { list-style: none; }
-        .toc li { padding: 0.3rem 0; }
-        .toc a { color: #c4a882; text-decoration: none; font-family: 'Space Mono', monospace; font-size: 0.8rem; transition: color 0.3s; }
-        .toc a:hover { color: #b45e48; }
-        .toc a::before { content: '> '; color: #b45e48; }
-
-        .guide-section { margin-bottom: 4rem; }
-        .guide-section h2 {
-            font-family: 'Cinzel', serif; font-size: 1.6rem; color: #e8d5c0;
-            letter-spacing: 4px; text-transform: uppercase;
-            border-bottom: 1px solid rgba(180,94,72,0.3); padding-bottom: 0.8rem; margin-bottom: 1.5rem;
-        }
-        .guide-section h2 span { color: #b45e48; }
-        .guide-section h3 {
-            font-family: 'Cinzel', serif; font-size: 1.2rem; color: #d4b896;
-            margin: 2rem 0 1rem; letter-spacing: 2px;
-        }
-        .guide-section p { margin-bottom: 1.2rem; color: #a89478; }
-
-        .tier-table {
-            width: 100%; border-collapse: collapse; margin: 1.5rem 0 2rem;
-            font-family: 'Space Mono', monospace; font-size: 0.85rem;
-        }
-        .tier-table th {
-            background: rgba(180,94,72,0.15); color: #b45e48;
-            padding: 0.8rem 1rem; text-align: left; letter-spacing: 2px;
-            border-bottom: 2px solid rgba(180,94,72,0.3); font-size: 0.7rem; text-transform: uppercase;
-        }
-        .tier-table td {
-            padding: 0.7rem 1rem; border-bottom: 1px solid rgba(180,94,72,0.1); color: #c4a882;
-        }
-        .tier-table tr:hover { background: rgba(180,94,72,0.05); }
-        .tier-s { color: #ff6b35; font-weight: 700; }
-        .tier-a { color: #e8d5c0; font-weight: 700; }
-        .tier-b { color: #a89478; font-weight: 600; }
-        .tier-c { color: #6a5a4a; }
-
-        .tip-box {
-            background: rgba(180,94,72,0.08); border-left: 3px solid #b45e48;
-            padding: 1.2rem 1.5rem; margin: 1.5rem 0; font-style: italic;
-        }
-        .tip-box strong { color: #b45e48; font-style: normal; font-family: 'Space Mono', monospace; font-size: 0.75rem; letter-spacing: 2px; display: block; margin-bottom: 0.5rem; }
-
-        .loadout-card {
-            background: rgba(180,94,72,0.04); border: 1px solid rgba(180,94,72,0.15);
-            padding: 1.5rem 2rem; margin: 1.5rem 0;
-        }
-        .loadout-card h4 { font-family: 'Cinzel', serif; color: #e8d5c0; font-size: 1.1rem; margin-bottom: 0.8rem; }
-        .loadout-card .slot { font-family: 'Space Mono', monospace; font-size: 0.8rem; color: #b45e48; display: block; margin-bottom: 0.3rem; }
-        .loadout-card .item { color: #c4a882; margin-left: 1rem; }
-
-        .back-link {
-            display: inline-block; margin-top: 3rem;
-            font-family: 'Space Mono', monospace; font-size: 0.8rem;
-            color: #b45e48; text-decoration: none; letter-spacing: 2px;
-            border: 1px solid rgba(180,94,72,0.3); padding: 0.8rem 2rem;
-            transition: all 0.3s;
-        }
-        .back-link:hover { background: rgba(180,94,72,0.1); }
-
-        .related-guides {
-            margin-top: 4rem; padding-top: 2rem;
-            border-top: 1px solid rgba(180,94,72,0.2);
-        }
-        .related-guides h3 { font-family: 'Cinzel', serif; color: #b45e48; letter-spacing: 3px; margin-bottom: 1.5rem; font-size: 1rem; }
-        .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; }
-        .related-card {
-            background: rgba(180,94,72,0.04); border: 1px solid rgba(180,94,72,0.15);
-            padding: 1.2rem; text-decoration: none; transition: all 0.3s;
-        }
-        .related-card:hover { border-color: #b45e48; background: rgba(180,94,72,0.08); }
-        .related-card h4 { font-family: 'Cinzel', serif; color: #e8d5c0; font-size: 0.95rem; margin-bottom: 0.5rem; }
-        .related-card p { color: #8a7560; font-size: 0.9rem; margin: 0; }
-
-        footer {
-            text-align: center; padding: 3rem 5%;
-            border-top: 1px solid rgba(180,94,72,0.15);
-            font-family: 'Space Mono', monospace; font-size: 0.65rem; color: #4a3f35;
-        }
-        footer a { color: #b45e48; text-decoration: none; }
-
-        @media (max-width: 768px) {
-            .nav-links a { margin-left: 1rem; font-size: 0.6rem; }
-            .content { padding: 1rem 4% 3rem; }
-            .tier-table { font-size: 0.7rem; }
-            .tier-table th, .tier-table td { padding: 0.5rem; }
-        }
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{background:#0d0a08;color:#c4a882;font-family:'Cormorant Garamond',serif;font-size:1.15rem;line-height:1.8;min-height:100vh}
+        nav{position:fixed;top:0;left:0;width:100%;padding:1.2rem 5%;background:linear-gradient(180deg,rgba(13,10,8,.98)0%,rgba(13,10,8,.9)100%);backdrop-filter:blur(15px);z-index:10000;border-bottom:1px solid rgba(180,94,72,.3);display:flex;justify-content:space-between;align-items:center}
+        .nav-brand{font-family:'Cinzel',serif;font-size:1.3rem;color:#e8d5c0;text-decoration:none;letter-spacing:3px}.nav-brand span{display:block;font-family:'Space Mono',monospace;font-size:.55rem;color:#b45e48;letter-spacing:2px}
+        .nav-links a{color:#8a7560;text-decoration:none;font-family:'Space Mono',monospace;font-size:.7rem;letter-spacing:2px;text-transform:uppercase;margin-left:2rem;transition:color .3s}.nav-links a:hover,.nav-links a.active{color:#b45e48}
+        .hero{padding:10rem 5% 4rem;text-align:center;background:radial-gradient(ellipse at center top,rgba(180,94,72,.08)0%,transparent 60%)}
+        .hero h1{font-family:'Cinzel',serif;font-size:clamp(2rem,5vw,3.5rem);color:#e8d5c0;letter-spacing:6px;text-transform:uppercase;background:linear-gradient(180deg,#e8d5c0 0%,#b45e48 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+        .hero .subtitle{font-family:'Space Mono',monospace;font-size:.75rem;color:#6a5a4a;letter-spacing:4px;margin-top:1rem}
+        .breadcrumb{font-family:'Space Mono',monospace;font-size:.7rem;color:#6a5a4a;margin-top:1.5rem}.breadcrumb a{color:#b45e48;text-decoration:none}
+        .content{max-width:1000px;margin:0 auto;padding:2rem 5% 4rem}
+        .toc{background:rgba(180,94,72,.06);border:1px solid rgba(180,94,72,.2);padding:2rem;margin-bottom:3rem}.toc h2{font-family:'Cinzel',serif;font-size:1rem;color:#b45e48;letter-spacing:3px;margin-bottom:1rem}.toc ul{list-style:none}.toc li{padding:.3rem 0}.toc a{color:#c4a882;text-decoration:none;font-family:'Space Mono',monospace;font-size:.8rem}.toc a:hover{color:#b45e48}.toc a::before{content:'> ';color:#b45e48}
+        .guide-section{margin-bottom:4rem}.guide-section h2{font-family:'Cinzel',serif;font-size:1.6rem;color:#e8d5c0;letter-spacing:4px;text-transform:uppercase;border-bottom:1px solid rgba(180,94,72,.3);padding-bottom:.8rem;margin-bottom:1.5rem}.guide-section h2 span{color:#b45e48}
+        .guide-section h3{font-family:'Cinzel',serif;font-size:1.2rem;color:#d4b896;margin:2rem 0 1rem;letter-spacing:2px}.guide-section p{margin-bottom:1.2rem;color:#a89478}
+        .tier-table{width:100%;border-collapse:collapse;margin:1.5rem 0 2rem;font-family:'Space Mono',monospace;font-size:.8rem}
+        .tier-table th{background:rgba(180,94,72,.15);color:#b45e48;padding:.8rem 1rem;text-align:left;letter-spacing:2px;border-bottom:2px solid rgba(180,94,72,.3);font-size:.65rem;text-transform:uppercase}
+        .tier-table td{padding:.6rem 1rem;border-bottom:1px solid rgba(180,94,72,.1);color:#c4a882}.tier-table tr:hover{background:rgba(180,94,72,.05)}
+        .tier-s{color:#ff6b35;font-weight:700}.tier-a{color:#e8d5c0;font-weight:700}.tier-b{color:#a89478;font-weight:600}.tier-c{color:#6a5a4a}
+        .tip-box{background:rgba(180,94,72,.08);border-left:3px solid #b45e48;padding:1.2rem 1.5rem;margin:1.5rem 0;font-style:italic}.tip-box strong{color:#b45e48;font-style:normal;font-family:'Space Mono',monospace;font-size:.75rem;letter-spacing:2px;display:block;margin-bottom:.5rem}
+        .weapon-card{background:rgba(180,94,72,.04);border:1px solid rgba(180,94,72,.15);padding:1.5rem 2rem;margin:1.5rem 0}.weapon-card h4{font-family:'Cinzel',serif;color:#e8d5c0;font-size:1.1rem;margin-bottom:.3rem}
+        .weapon-card .stats{font-family:'Space Mono',monospace;font-size:.75rem;color:#b45e48;margin-bottom:.8rem}.weapon-card p{color:#a89478;margin:0}
+        .back-link{display:inline-block;margin-top:3rem;font-family:'Space Mono',monospace;font-size:.8rem;color:#b45e48;text-decoration:none;letter-spacing:2px;border:1px solid rgba(180,94,72,.3);padding:.8rem 2rem;transition:all .3s}.back-link:hover{background:rgba(180,94,72,.1)}
+        .related-guides{margin-top:4rem;padding-top:2rem;border-top:1px solid rgba(180,94,72,.2)}.related-guides h3{font-family:'Cinzel',serif;color:#b45e48;letter-spacing:3px;margin-bottom:1.5rem;font-size:1rem}
+        .related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1rem}.related-card{background:rgba(180,94,72,.04);border:1px solid rgba(180,94,72,.15);padding:1.2rem;text-decoration:none;transition:all .3s}.related-card:hover{border-color:#b45e48;background:rgba(180,94,72,.08)}.related-card h4{font-family:'Cinzel',serif;color:#e8d5c0;font-size:.95rem;margin-bottom:.5rem}.related-card p{color:#8a7560;font-size:.9rem;margin:0}
+        footer{text-align:center;padding:3rem 5%;border-top:1px solid rgba(180,94,72,.15);font-family:'Space Mono',monospace;font-size:.65rem;color:#4a3f35}footer a{color:#b45e48;text-decoration:none}
+        @media(max-width:768px){.nav-links a{margin-left:1rem;font-size:.6rem}.content{padding:1rem 4% 3rem}.tier-table{font-size:.65rem}.tier-table th,.tier-table td{padding:.4rem .5rem}}
     </style>
 </head>
 <body>
@@ -170,214 +60,143 @@
             <a href="about.html">about</a>
         </div>
     </nav>
-
     <section class="hero">
         <h1>Weapons & Loadouts</h1>
         <div class="subtitle">FIELD MANUAL // ARMAMENT DATABASE</div>
         <div class="breadcrumb"><a href="guides.html">Guides</a> / Weapons & Loadouts</div>
     </section>
-
     <div class="content">
         <div class="toc">
             <h2>CONTENTS</h2>
             <ul>
-                <li><a href="#tier-list">Weapons Tier List</a></li>
-                <li><a href="#assault-rifles">Assault Rifles Breakdown</a></li>
-                <li><a href="#smgs">SMGs & Close-Range</a></li>
-                <li><a href="#snipers">Snipers & Marksman Rifles</a></li>
+                <li><a href="#tier-list">Weapon Tier List (PvP & PvE)</a></li>
+                <li><a href="#assault-rifles">Assault Rifles</a></li>
+                <li><a href="#battle-rifles">Battle Rifles</a></li>
+                <li><a href="#smgs">Submachine Guns</a></li>
                 <li><a href="#shotguns">Shotguns</a></li>
-                <li><a href="#special">Special & Heavy Weapons</a></li>
-                <li><a href="#solo-builds">Solo Extraction Builds</a></li>
-                <li><a href="#squad-builds">Duo & Trio Squad Builds</a></li>
-                <li><a href="#weapon-mods">Weapon Mods & Attachments</a></li>
-                <li><a href="#tips">Advanced Tips</a></li>
+                <li><a href="#snipers">Sniper Rifles</a></li>
+                <li><a href="#lmgs">Light Machine Guns</a></li>
+                <li><a href="#pistols">Pistols & Hand Cannons</a></li>
+                <li><a href="#special">Special Weapons</a></li>
+                <li><a href="#upgrades">Upgrades & Mods</a></li>
+                <li><a href="#solo-builds">Solo Loadout Builds</a></li>
+                <li><a href="#squad-builds">Squad Loadout Builds</a></li>
             </ul>
         </div>
 
         <div id="tier-list" class="guide-section">
-            <h2><span>//</span> Weapons Tier List</h2>
-            <p>This tier list reflects weapon performance in the current Escalation season meta. Rankings factor in raw DPS, reliability at intended range, ammo economy, mod versatility, and how well each weapon performs across both PvE encounters against ARC machines and PvP raider-vs-raider fights. Weapons are judged at their optimal use case rather than forced into roles they were not designed for.</p>
-
+            <h2><span>//</span> Weapon Tier List</h2>
+            <p>This tier list reflects the current Escalation season meta based on a combination of raw DPS, versatility, ARC armor penetration, and effectiveness in both PvE and PvP encounters. Weapon rarity matters in ARC Raiders since rarity is fixed per weapon type and higher rarity guns cannot be found in duplicate.</p>
             <table class="tier-table">
-                <tr><th>Tier</th><th>Weapon</th><th>Type</th><th>Why It's Here</th></tr>
-                <tr><td class="tier-s">S</td><td>Vostok AR-9</td><td>Assault Rifle</td><td>Best all-rounder. Consistent DPS, low recoil, excellent mod pool. Works in every situation from clearing drones to fighting raiders at mid-range.</td></tr>
-                <tr><td class="tier-s">S</td><td>Kestrel MK4</td><td>DMR</td><td>Devastating at range. Two-taps most raiders and melts ARC heavy units at distance. Essential for open-map extraction runs.</td></tr>
-                <tr><td class="tier-a">A</td><td>Speranza PDW</td><td>SMG</td><td>Lightning fast TTK up close. The go-to weapon for indoor areas and extraction zone fights. Punishing recoil beyond 30m.</td></tr>
-                <tr><td class="tier-a">A</td><td>Rust Belt 870</td><td>Shotgun</td><td>One-shot potential within 10m. High risk, massive reward. Dominates close-quarters extraction points.</td></tr>
-                <tr><td class="tier-a">A</td><td>Nomad LMG</td><td>LMG</td><td>Suppression king. Huge magazine for extended ARC encounters. Slower ADS but unmatched sustained damage.</td></tr>
-                <tr><td class="tier-b">B</td><td>Pioneer Carbine</td><td>Assault Rifle</td><td>Solid starter weapon. Reliable but outclassed by the Vostok in every metric once you find one.</td></tr>
-                <tr><td class="tier-b">B</td><td>Drifter SMG</td><td>SMG</td><td>Good hip-fire accuracy and fast handling. A decent early-raid pickup but the Speranza PDW is strictly better.</td></tr>
-                <tr><td class="tier-b">B</td><td>Warden Bolt-Action</td><td>Sniper</td><td>Highest single-shot damage but slow follow-up. Requires precision. Incredible in the right hands, dead weight otherwise.</td></tr>
-                <tr><td class="tier-c">C</td><td>Scrapper Pistol</td><td>Sidearm</td><td>Emergency backup only. Low damage but always available. Switch speed is its only real advantage.</td></tr>
-                <tr><td class="tier-c">C</td><td>Salvage Launcher</td><td>Special</td><td>Niche ARC crowd-control tool. Fun for horde moments but terrible ammo economy and useless in PvP.</td></tr>
+                <tr><th>Tier</th><th>Weapon</th><th>Class</th><th>Ammo</th><th>Why</th></tr>
+                <tr><td class="tier-s">S</td><td>Bettina</td><td>Assault Rifle</td><td>Heavy</td><td>Highest AR damage at 14 per shot with full-auto. Heavy ammo gives strong ARC armor pen. The best all-rounder.</td></tr>
+                <tr><td class="tier-s">S</td><td>Renegade</td><td>Battle Rifle</td><td>Medium</td><td>Lever-action with 35 damage per shot and a massive 735 relative DPS. Best range in class at 68.8. Devastating in PvP.</td></tr>
+                <tr><td class="tier-s">S</td><td>Anvil</td><td>Hand Cannon</td><td>Heavy</td><td>Single-action powerhouse. 40 damage with heavy ammo pen. Accepts a Tech Mod slot for unique builds.</td></tr>
+                <tr><td class="tier-s">S</td><td>Tempest</td><td>Assault Rifle</td><td>Medium</td><td>Full-auto with 367 relative DPS, highest among ARs. Medium ammo is abundant. Great mod flexibility.</td></tr>
+                <tr><td class="tier-a">A</td><td>Ferro</td><td>Battle Rifle</td><td>Heavy</td><td>Break-action with 40 damage per shot. Heavy ammo shreds ARC armor. Slow fire rate demands accuracy.</td></tr>
+                <tr><td class="tier-a">A</td><td>Hullcracker</td><td>Special</td><td>Launcher</td><td>100 damage per shot with 2,030 DPS. Melts ARC bosses like Queens and Bombardiers. Ammo is rare.</td></tr>
+                <tr><td class="tier-a">A</td><td>Jupiter</td><td>Sniper Rifle</td><td>Energy Clip</td><td>60 damage bolt-action. One-shots most Raiders to the head. No mods but raw power is unmatched at range.</td></tr>
+                <tr><td class="tier-a">A</td><td>Bobcat</td><td>SMG</td><td>Light</td><td>66.7 fire rate with 400 DPS. Fastest TTK up close. Full mod support. The PvP rush weapon.</td></tr>
+                <tr><td class="tier-b">B</td><td>Vulcano</td><td>Shotgun</td><td>Shotgun</td><td>Semi-auto shotgun with insane 1,302 DPS at close range. Outclasses Il Toro in sustained fights.</td></tr>
+                <tr><td class="tier-b">B</td><td>Stitcher</td><td>SMG</td><td>Light</td><td>Solid full-auto SMG with better range than Bobcat. Good starter weapon. 317 DPS.</td></tr>
+                <tr><td class="tier-b">B</td><td>Osprey</td><td>Sniper Rifle</td><td>Medium</td><td>Bolt-action, 45 damage, accepts mods unlike Jupiter. Best moddable sniper. 80.3 range.</td></tr>
+                <tr><td class="tier-b">B</td><td>Torrente</td><td>LMG</td><td>Medium</td><td>58.3 fire rate LMG for sustained ARC suppression. 466 DPS but slow handling.</td></tr>
+                <tr><td class="tier-c">C</td><td>Kettle</td><td>Assault Rifle</td><td>Light</td><td>Semi-auto AR. Low pen with light ammo. Recently nerfed in Update 1.11.0.</td></tr>
+                <tr><td class="tier-c">C</td><td>Rattler</td><td>Assault Rifle</td><td>Medium</td><td>Full-auto but lowest AR damage at 9. Outclassed by Tempest and Bettina.</td></tr>
+                <tr><td class="tier-c">C</td><td>Arpeggio</td><td>Assault Rifle</td><td>Medium</td><td>3-round burst. 173 DPS is the lowest in class. Hard to use effectively.</td></tr>
             </table>
-
-            <div class="tip-box">
-                <strong>RAIDER TIP</strong>
-                Tier lists shift with patches. The core principle stays the same: bring a weapon you can hit shots with. A B-tier gun in practiced hands outperforms an S-tier weapon with missed shots every time.
-            </div>
+            <div class="tip-box"><strong>RAIDER TIP</strong>Weapon rarity is fixed in ARC Raiders. You cannot find the same weapon in two different rarities. Legendary weapons like the Jupiter and Aphelion cannot be upgraded at the Gunsmith.</div>
         </div>
 
         <div id="assault-rifles" class="guide-section">
-            <h2><span>//</span> Assault Rifles Breakdown</h2>
-            <p>Assault rifles are the backbone of any raider's loadout in ARC Raiders. They offer the best blend of damage, range, and versatility, making them viable from your first drop to your last extraction. The two primary assault rifles in the current build fill different niches despite sharing a weapon class.</p>
+            <h2><span>//</span> Assault Rifles</h2>
+            <p>Assault Rifles are the most versatile weapon class in ARC Raiders, effective at medium range with decent damage and manageable recoil. There are five ARs in the game, each using different ammo types and firing modes.</p>
+            <div class="weapon-card"><h4>Bettina</h4><div class="stats">Heavy Ammo | Full-Auto | DMG: 14 | Fire Rate: 32 | DPS: 448 | Range: 51.3 | Mods: Muzzle, Underbarrel, Stock</div><p>The Bettina is the highest-damage assault rifle in the game. Its heavy ammo gives it strong ARC armor penetration, making it equally effective against armored plating and Raiders. The tradeoff is that heavy ammo is less abundant than light or medium rounds. The Bettina accepts Muzzle, Underbarrel, and Stock mods, giving you control over recoil and stability.</p></div>
+            <div class="weapon-card"><h4>Tempest</h4><div class="stats">Medium Ammo | Full-Auto | DMG: 10 | Fire Rate: 36.7 | DPS: 367 | Range: 55.9 | Mods: Muzzle, Underbarrel, Medium Magazine</div><p>The Tempest fires faster than the Bettina with better range but lower per-shot damage. Medium ammo is abundant throughout the Rust Belt, making the Tempest a reliable primary weapon that you can sustain across long raids. The Medium Magazine mod slot lets you extend your capacity for sustained firefights.</p></div>
+            <div class="weapon-card"><h4>Rattler</h4><div class="stats">Medium Ammo | Full-Auto | DMG: 9 | Fire Rate: 33.3 | DPS: 299.7 | Range: 56.2 | Mods: Muzzle, Underbarrel, Stock</div><p>The Rattler is a solid early-game assault rifle. Its stats sit below the Tempest across the board, but it spawns more frequently in early loot areas. Use it until you find a Tempest or Bettina.</p></div>
+            <div class="weapon-card"><h4>Kettle</h4><div class="stats">Light Ammo | Semi-Auto | DMG: 10 | Fire Rate: 26 | DPS: 280 | Range: 42.8 | Mods: Muzzle, Underbarrel, Light Mag, Stock</div><p>The Kettle is a semi-automatic rifle that uses light ammo. It was recently nerfed in Update 1.11.0. Light ammo has the weakest ARC armor penetration, making the Kettle best for early-raid PvP before enemies have armored targets. It has the most mod slots of any AR.</p></div>
+            <div class="weapon-card"><h4>Arpeggio</h4><div class="stats">Medium Ammo | 3-Round Burst | DMG: 9.5 | Fire Rate: 18.3 | DPS: 173.9 | Range: 55.9 | Mods: Muzzle, Underbarrel, Medium Mag, Stock</div><p>The Arpeggio fires in 3-round bursts. Accurate at range but its DPS is the lowest among assault rifles. Best for players who value precision over volume of fire.</p></div>
+        </div>
 
-            <h3>Vostok AR-9</h3>
-            <p>The Vostok is widely considered the strongest general-purpose weapon in the game. It delivers consistent damage per shot with manageable vertical recoil that becomes nearly nonexistent once you attach a compensator. The fire rate sits at a comfortable middle ground, fast enough to win close-range fights against SMGs if your aim is true, but controlled enough for accurate mid-range engagements. Its mod pool is the deepest of any weapon, accepting barrel, optic, grip, and magazine attachments. A fully kitted Vostok with extended magazine and angled grip becomes a different beast entirely, capable of downing ARC Sentinels in a single magazine and winning most raider duels inside 50 meters.</p>
-
-            <h3>Pioneer Carbine</h3>
-            <p>The Pioneer Carbine is the weapon most raiders find first. It spawns frequently in early loot areas and comes with decent base stats across the board. The handling is quick, the reload is fast, and the iron sights are clean. Where it falls short is in raw damage output and mod flexibility. The Pioneer only accepts optic and magazine mods, which limits its ceiling compared to the Vostok. It is an excellent weapon for your first two or three minutes of a raid, but you should always be looking to upgrade once you push deeper into contested zones.</p>
-
-            <div class="tip-box">
-                <strong>FIELD NOTE</strong>
-                The Vostok AR-9 spawns most frequently in military containers and weapon crates found in mid-tier POIs. If you are landing at the edges of the map for a quiet start, expect to run a Pioneer Carbine until you rotate inward.
-            </div>
+        <div id="battle-rifles" class="guide-section">
+            <h2><span>//</span> Battle Rifles</h2>
+            <p>Battle Rifles bridge the gap between assault rifles and sniper rifles. They deliver high damage per shot with slower fire rates, rewarding accuracy and punishing missed shots.</p>
+            <div class="weapon-card"><h4>Renegade</h4><div class="stats">Medium Ammo | Lever-Action | DMG: 35 | Fire Rate: 21 | DPS: 735 | Range: 68.8 | Mods: Muzzle, Medium Mag, Stock</div><p>The Renegade is one of the best weapons in the entire game. Its lever-action mechanism delivers 35 damage per shot with a relative DPS of 735, the highest of any non-special weapon. The range of 68.8 lets you compete with snipers. Medium ammo keeps it sustainable. This is the go-to weapon for experienced Raiders in both PvP and PvE.</p></div>
+            <div class="weapon-card"><h4>Ferro</h4><div class="stats">Heavy Ammo | Break-Action | DMG: 40 | Fire Rate: 6.6 | DPS: 264 | Range: 53.1 | Mods: Muzzle, Underbarrel, Stock</div><p>The Ferro hits harder per shot than any non-special weapon at 40 damage, but its break-action mechanism means extremely slow follow-up shots. Heavy ammo gives it excellent ARC armor penetration. Best used as an opening shot weapon: land the first hit, then swap to a faster weapon to finish the fight.</p></div>
+            <div class="weapon-card"><h4>Aphelion</h4><div class="stats">Energy Clip | 2-Round Burst | DMG: ~25 | Fire Rate: ~9 | DPS: ~216 | Range: ~76 | Legendary (No Upgrades)</div><p>The Aphelion is a Legendary energy weapon that fires 2-round bursts. As a Legendary, it cannot be upgraded at the Gunsmith. Its exact stats are estimated from its stat bars. The Aphelion has the longest range of any battle rifle but its burst-fire pattern and limited mod support make it more niche than the Renegade.</p></div>
         </div>
 
         <div id="smgs" class="guide-section">
-            <h2><span>//</span> SMGs & Close-Range Weapons</h2>
-            <p>SMGs excel in tight spaces, indoor environments, and the chaotic final moments around extraction points. Their high fire rates and fast handling make them devastating within their effective range, but they suffer dramatic damage falloff beyond 30 meters. Running an SMG means committing to an aggressive playstyle where you close distance before engaging.</p>
-
-            <h3>Speranza PDW</h3>
-            <p>The Speranza PDW is the best close-range weapon in the game right now. Its time-to-kill inside 15 meters is faster than any other weapon, including shotguns when you factor in consistency. The recoil pattern pulls hard up and to the right, which experienced players learn to compensate for. With a laser sight attachment, hip-fire becomes shockingly accurate, letting you strafe and shoot without the ADS penalty. The PDW shines in building interiors, underground sections, and extraction zone fights where engagement distances rarely exceed 20 meters. Pair it with a DMR or assault rifle and you have every range covered.</p>
-
-            <h3>Drifter SMG</h3>
-            <p>The Drifter is the common-spawn alternative to the Speranza PDW. It trades raw DPS for better base accuracy and lower recoil. New players often prefer the Drifter because it feels more forgiving, you can land more of your magazine on target even if your tracking is not precise. The damage difference between the two only becomes critical in high-level PvP encounters where milliseconds matter. For clearing ARC drones and basic machines, the Drifter performs well.</p>
-        </div>
-
-        <div id="snipers" class="guide-section">
-            <h2><span>//</span> Snipers & Marksman Rifles</h2>
-            <p>Long-range weapons are critical for open-map segments where ARC patrols and enemy raiders can spot you from hundreds of meters. A good marksman rifle lets you thin out threats before they reach you, and a well-placed sniper shot can end a raider fight before it begins.</p>
-
-            <h3>Kestrel MK4 (DMR)</h3>
-            <p>The Kestrel MK4 is the most impactful weapon in the current meta for experienced players. As a semi-automatic designated marksman rifle, it delivers high damage per shot while allowing rapid follow-up fire. Two headshots or three body shots will down any raider, and it tears through ARC armor plates efficiently. The Kestrel's real strength is its versatility at range: you can engage targets from 40 to 150 meters comfortably, covering the gap between assault rifles and dedicated snipers. Attach a 4x optic and a muzzle brake, and the Kestrel becomes an oppressive force across any sightline.</p>
-
-            <h3>Warden Bolt-Action</h3>
-            <p>The Warden is a true sniper rifle with the highest single-shot damage in the game. A headshot is an instant down on any raider regardless of armor. The tradeoff is severe: the bolt-action cycling time means missing a shot leaves you exposed for a punishing amount of time. The Warden rewards patience and precision. If you position well, hold angles, and take your shots carefully, it can single-handedly control an entire area. If you panic or rush, it becomes a liability. This weapon is not recommended for players still learning the game, but mastering it pays enormous dividends in high-stakes extraction scenarios.</p>
+            <h2><span>//</span> Submachine Guns</h2>
+            <p>SMGs dominate close-range encounters with high fire rates and fast handling. Both use Light Ammo, which has the weakest ARC armor penetration but is the most common ammo type found topside.</p>
+            <div class="weapon-card"><h4>Bobcat</h4><div class="stats">Light Ammo | Full-Auto | DMG: 6 | Fire Rate: 66.7 | DPS: 400 | Range: 44 | Mods: Muzzle, Underbarrel, Light Mag, Stock</div><p>The Bobcat has the highest fire rate in the game at 66.7. It melts Raiders up close with 400 DPS and has the full complement of mod slots. The tradeoff is 6 damage per shot, which means light ammo struggles against ARC armored plating. Best used for PvP and clearing unarmored ARC units like Ticks and Wasps.</p></div>
+            <div class="weapon-card"><h4>Stitcher</h4><div class="stats">Light Ammo | Full-Auto | DMG: 7 | Fire Rate: 45.3 | DPS: 317.1 | Range: 42.1 | Mods: Muzzle, Underbarrel, Light Mag, Stock</div><p>The Stitcher trades the Bobcat's raw fire rate for slightly higher per-shot damage and marginally easier recoil control. It is a more forgiving SMG for players still developing their tracking aim.</p></div>
         </div>
 
         <div id="shotguns" class="guide-section">
             <h2><span>//</span> Shotguns</h2>
-            <h3>Rust Belt 870</h3>
-            <p>The Rust Belt 870 is the only dedicated shotgun currently in the game, and it fills its role with brutal efficiency. Within 10 meters, a center-mass shot will instantly down most raiders. Even a partial hit deals devastating damage. The pump-action cycling is slow enough that missing puts you in serious danger, but landing that first shot almost always decides the fight.</p>
-            <p>The Rust Belt 870 shines at extraction points, doorways, and any chokepoint where enemies are forced to enter your effective range. Skilled shotgun players position themselves behind cover near high-traffic areas and wait for the engagement to come to them rather than chasing it. Pair the 870 with a Kestrel MK4 or Vostok AR-9 so you have ranged capability when the map opens up. Running a shotgun as your only weapon is a gamble that fails on maps with long sightlines.</p>
+            <p>Shotguns use dedicated Shotgun Ammo and deliver devastating damage at point-blank range. Both have dedicated Shotgun Muzzle and Shotgun Magazine mod slots.</p>
+            <div class="weapon-card"><h4>Il Toro</h4><div class="stats">Shotgun Ammo | Pump-Action | DMG: 67.5 | Fire Rate: 14.3 | DPS: 965.3 | Range: 20 | Mods: Shotgun Muzzle, Underbarrel, Shotgun Mag, Stock</div><p>Il Toro is the pump-action shotgun with the highest per-shot damage of any conventional weapon at 67.5. Devastating at point-blank but the pump-action cycling is slow. Missing a shot at close range can cost you the fight.</p></div>
+            <div class="weapon-card"><h4>Vulcano</h4><div class="stats">Shotgun Ammo | Semi-Auto | DMG: 49.5 | Fire Rate: 26.3 | DPS: 1,302.9 | Range: 26 | Mods: Shotgun Muzzle, Underbarrel, Shotgun Mag, Stock</div><p>The Vulcano trades per-shot damage for a much faster semi-automatic fire rate. Its relative DPS of 1,302.9 is the highest of any non-special weapon in the game. It also has better range than Il Toro at 26 vs 20. For most players, the Vulcano is the better shotgun because it is more forgiving if you partially miss.</p></div>
+        </div>
+
+        <div id="snipers" class="guide-section">
+            <h2><span>//</span> Sniper Rifles</h2>
+            <div class="weapon-card"><h4>Osprey</h4><div class="stats">Medium Ammo | Bolt-Action | DMG: 45 | Fire Rate: 17.7 | DPS: 796.5 | Range: 80.3 | Mods: Muzzle, Underbarrel, Medium Mag, Stock</div><p>The Osprey is the moddable sniper rifle. Its 80.3 range is the highest in the game, and it accepts four mod slots for customization. Medium ammo means adequate ARC armor penetration. The go-to choice for long-range overwatch.</p></div>
+            <div class="weapon-card"><h4>Jupiter</h4><div class="stats">Energy Clip | Bolt-Action | DMG: 60 | Fire Rate: 7.7 | DPS: 423.5 | Range: 71.7 | Legendary (No Mods)</div><p>The Jupiter is a Legendary bolt-action sniper with the highest single-shot damage of any ranged weapon at 60. It uses Energy Clips and cannot accept mods or upgrades. Despite lower DPS than the Osprey due to its slow fire rate, the Jupiter's raw damage per shot makes it the premier PvP sniper for one-shot potential.</p></div>
+        </div>
+
+        <div id="lmgs" class="guide-section">
+            <h2><span>//</span> Light Machine Guns</h2>
+            <div class="weapon-card"><h4>Torrente</h4><div class="stats">Medium Ammo | Full-Auto | DMG: 8 | Fire Rate: 58.3 | DPS: 466.4 | Range: 49.9 | Mods: Muzzle, Medium Mag, Stock</div><p>The Torrente is the only LMG in the current build. Its 58.3 fire rate and medium magazine capacity allow sustained suppressive fire that excels against ARC swarms. The DPS of 466.4 is competitive with assault rifles. The tradeoff is slow handling and ADS speed. Best used from a stationary position covering teammates during ARC encounters or holding extraction points.</p></div>
+        </div>
+
+        <div id="pistols" class="guide-section">
+            <h2><span>//</span> Pistols & Hand Cannons</h2>
+            <p>Sidearms serve as backup weapons or specialized tools. Pistols use Light Ammo while the Anvil hand cannon uses Heavy Ammo for serious stopping power.</p>
+            <div class="weapon-card"><h4>Anvil</h4><div class="stats">Heavy Ammo | Single-Action | DMG: 40 | Fire Rate: 16.3 | DPS: 652 | Range: 50.2 | Mods: Muzzle, Tech Mod</div><p>The Anvil is a hand cannon that hits as hard as the Ferro battle rifle at 40 damage per shot. The Tech Mod slot is unique to the Anvil and enables special build synergies. Heavy ammo penetrates ARC armor effectively. This is no sidearm; it is a primary weapon disguised as a pistol.</p></div>
+            <div class="weapon-card"><h4>Venator</h4><div class="stats">Medium Ammo | Semi-Auto | DMG: 18 | Fire Rate: 36.7 | DPS: 660.6 | Range: 48.4 | Mods: Underbarrel, Medium Mag</div><p>The Venator is a semi-auto pistol with surprisingly high DPS at 660.6, driven by its fast fire rate combined with decent 18 damage per shot. Medium ammo gives it moderate ARC penetration. A solid secondary or even primary for skilled trigger fingers.</p></div>
+            <div class="weapon-card"><h4>Burletta</h4><div class="stats">Light Ammo | Semi-Auto | DMG: 10 | Fire Rate: 28 | DPS: 280 | Range: 41.7 | Mods: Muzzle, Light Mag</div><p>A basic semi-auto pistol. Serviceable as an emergency sidearm but outclassed by every dedicated weapon in its range bracket.</p></div>
+            <div class="weapon-card"><h4>Hairpin</h4><div class="stats">Light Ammo | Slide-Action | DMG: 20 | Fire Rate: 9 | DPS: 180 | Range: 38.6 | Mods: Light Mag</div><p>A slide-action pistol with high per-shot damage for a sidearm but extremely slow fire rate. A niche choice.</p></div>
         </div>
 
         <div id="special" class="guide-section">
-            <h2><span>//</span> Special & Heavy Weapons</h2>
-            <h3>Nomad LMG</h3>
-            <p>The Nomad LMG is a situational powerhouse. Its enormous magazine lets you sustain fire for extended engagements against ARC swarms and Sentinel waves without reloading. The DPS is competitive with assault rifles, but the ADS time is noticeably slower and the movement speed penalty while firing is significant. The Nomad works best when you have teammates covering your flanks, letting you focus on outputting damage from a stable position. In solo play, the handling penalties can get you killed against mobile raiders who strafe around your sluggish aim.</p>
+            <h2><span>//</span> Special Weapons</h2>
+            <div class="weapon-card"><h4>Hullcracker</h4><div class="stats">Launcher Ammo | Pump-Action | DMG: 100 | Fire Rate: 20.3 | DPS: 2,030 | Range: 38.9 | Mods: Underbarrel, Stock</div><p>The Hullcracker is a launcher that fires explosive projectiles dealing 100 damage per shot with a relative DPS of 2,030, the highest in the game by a massive margin. It is the premier weapon for destroying large ARC machines like Queens, Bombardiers, and Bastions. Launcher ammo is extremely rare, so every shot needs to count. Save the Hullcracker for boss-tier ARC encounters.</p></div>
+            <div class="weapon-card"><h4>Equalizer</h4><div class="stats">Energy Clip | Full-Auto | DMG: 8 | Fire Rate: 33.3 | DPS: 266.4 | Range: 68.6 | Legendary (No Mods)</div><p>The Equalizer is a Legendary energy weapon with excellent range at 68.6. Its full-auto fire delivers consistent damage at distance. As a Legendary it cannot be modded or upgraded. The DPS is modest, but the range and energy clip make it useful against specific ARC weakpoints.</p></div>
+        </div>
 
-            <h3>Salvage Launcher</h3>
-            <p>The Salvage Launcher fires explosive projectiles that deal area-of-effect damage. It is excellent for clearing clusters of ARC drones and can stagger larger machines, buying your team time to reposition. The problem is ammo scarcity. Salvage Launcher rounds are among the rarest pickups in the game, meaning you might fire four or five shots in an entire raid. The weapon is fun and has its moments against PvE threats, but it is unreliable as a primary tool and nearly useless in PvP where raiders are too mobile to hit with the slow projectile.</p>
+        <div id="upgrades" class="guide-section">
+            <h2><span>//</span> Upgrades & Mods</h2>
+            <p>Most weapons can be upgraded at the Gunsmith up to four times (levels I through IV). Each upgrade permanently improves the weapon's handling stats. Legendary weapons cannot be upgraded. Weapon mods are attachments that fit into designated slots on each weapon. Unlike upgrades, mods can be freely removed and swapped. Common mod types include Muzzle attachments for recoil and sound, Underbarrel grips for stability, Magazine extensions for capacity, and Stock attachments for ADS stability. The Anvil's unique Tech Mod slot accepts special modifications not available to other weapons. Visit Tian Wen's Gun Shop in Speranza to purchase weapons and mods, or find them topside in caches and ARC drops. Visit the Practice Range to test different mod combinations before committing to a loadout.</p>
         </div>
 
         <div id="solo-builds" class="guide-section">
-            <h2><span>//</span> Solo Extraction Builds</h2>
-            <p>Solo extraction demands self-sufficiency. You need to handle every range, every encounter type, and every emergency alone. Build choices should prioritize versatility and survivability over raw damage specialization.</p>
-
-            <div class="loadout-card">
-                <h4>The All-Rounder (Recommended)</h4>
-                <span class="slot">PRIMARY: <span class="item">Vostok AR-9 (Compensator + Extended Mag + Angled Grip)</span></span>
-                <span class="slot">SECONDARY: <span class="item">Kestrel MK4 (4x Optic + Muzzle Brake)</span></span>
-                <span class="slot">GADGET: <span class="item">Scanner Pulse</span></span>
-                <span class="slot">CONSUMABLE: <span class="item">Med Kit x2, Stim Shot x1</span></span>
-                <p style="margin-top: 1rem; color: #a89478;">This build covers every range and every encounter type. The Vostok handles close-to-mid fights while the Kestrel picks off threats at distance. Scanner Pulse reveals nearby raiders and ARC machines, giving you the information advantage that solo players desperately need.</p>
-            </div>
-
-            <div class="loadout-card">
-                <h4>The Ghost (Stealth-Focused)</h4>
-                <span class="slot">PRIMARY: <span class="item">Speranza PDW (Suppressor + Laser Sight)</span></span>
-                <span class="slot">SECONDARY: <span class="item">Kestrel MK4 (Suppressor + 3x Optic)</span></span>
-                <span class="slot">GADGET: <span class="item">Noise Decoy</span></span>
-                <span class="slot">CONSUMABLE: <span class="item">Med Kit x1, Stim Shot x2</span></span>
-                <p style="margin-top: 1rem; color: #a89478;">Both weapons suppressed means you stay off the radar. The Noise Decoy draws ARC patrols away from your path. Stim Shots let you sprint through danger zones. This build avoids fights rather than winning them, ideal for raiders who want to loot efficiently and extract without confrontation.</p>
-            </div>
-
-            <div class="loadout-card">
-                <h4>The Brawler (Aggressive)</h4>
-                <span class="slot">PRIMARY: <span class="item">Rust Belt 870 (Choke Mod)</span></span>
-                <span class="slot">SECONDARY: <span class="item">Vostok AR-9 (Red Dot + Quick Mag)</span></span>
-                <span class="slot">GADGET: <span class="item">Flashbang</span></span>
-                <span class="slot">CONSUMABLE: <span class="item">Armor Plate x2, Med Kit x1</span></span>
-                <p style="margin-top: 1rem; color: #a89478;">High risk, high reward. The shotgun dominates close quarters and the Vostok covers everything else. Armor Plates give you the survivability to push aggressively into buildings and extraction zones. Flashbang before entry, shotgun on the follow-up. This build thrives in the chaos around hot zones.</p>
-            </div>
+            <h2><span>//</span> Solo Loadout Builds</h2>
+            <p>Solo raiders need to cover multiple ranges and handle both ARC machines and hostile Raiders without backup. Your loadout needs to be self-sufficient with strong ARC armor penetration for PvE and fast TTK for PvP encounters.</p>
+            <div class="weapon-card"><h4>The All-Rounder</h4><div class="stats">PRIMARY: Bettina (Heavy Ammo AR) | SECONDARY: Bobcat or Venator</div><p>The Bettina covers mid-range engagements and has heavy ammo penetration for ARC armor. The Bobcat provides close-range PvP lethality with its extreme fire rate. Carry Hornet Drivers or Showstoppers as gadgets to stun large ARC like Surveyors. Pack Med Kits and a Shield from Lance's Clinic.</p></div>
+            <div class="weapon-card"><h4>The Long-Range Specialist</h4><div class="stats">PRIMARY: Renegade (Lever-Action BR) | SECONDARY: Vulcano or Bobcat</div><p>The Renegade dominates at range with 35 damage per shot and 735 DPS. Pair it with the Vulcano for close-range emergencies or the Bobcat for PvP rush situations. This build excels on open maps like Spaceport and Blue Gate.</p></div>
         </div>
 
         <div id="squad-builds" class="guide-section">
-            <h2><span>//</span> Duo & Trio Squad Builds</h2>
-            <p>In squad play, specialization becomes viable because your teammates cover your weaknesses. A well-coordinated squad divides roles so that every range and every threat type has a designated answer.</p>
-
-            <div class="loadout-card">
-                <h4>Duo Setup: Overwatch + Pointman</h4>
-                <span class="slot">PLAYER 1 (Overwatch): <span class="item">Kestrel MK4 + Warden Bolt-Action</span></span>
-                <span class="slot">PLAYER 2 (Pointman): <span class="item">Speranza PDW + Vostok AR-9</span></span>
-                <p style="margin-top: 1rem; color: #a89478;">The Overwatch player holds high ground and long angles, calling out threats and softening targets at range. The Pointman pushes objectives, clears buildings, and handles close-range PvP. Communication is critical: the Overwatch must call when they cannot cover an angle so the Pointman can adjust.</p>
-            </div>
-
-            <div class="loadout-card">
-                <h4>Trio Setup: Support + Assault + Recon</h4>
-                <span class="slot">SUPPORT: <span class="item">Nomad LMG + Pioneer Carbine</span></span>
-                <span class="slot">ASSAULT: <span class="item">Vostok AR-9 + Rust Belt 870</span></span>
-                <span class="slot">RECON: <span class="item">Kestrel MK4 + Speranza PDW</span></span>
-                <p style="margin-top: 1rem; color: #a89478;">The Support pins down ARC machines and provides sustained fire during large encounters. The Assault player leads pushes into buildings and extraction zones. The Recon player scouts ahead, picks off distant threats, and flanks during PvP engagements. Each player covers a different engagement range, making the trio effective in every scenario.</p>
-            </div>
-        </div>
-
-        <div id="weapon-mods" class="guide-section">
-            <h2><span>//</span> Weapon Mods & Attachments</h2>
-            <p>Weapon mods are found as loot throughout each raid and can dramatically change how a weapon performs. Every mod comes with tradeoffs, so choosing attachments should reflect your playstyle and your build's intended role rather than blindly stacking stats.</p>
-
-            <h3>Optics</h3>
-            <p>Red Dot sights are the fastest for target acquisition and work best on SMGs and close-range assault rifles. Holographic sights offer a slightly wider field of view. The 3x and 4x optics are essential on DMRs and snipers for effective long-range use. Avoid putting high-magnification optics on close-range weapons as the ADS zoom will hurt you in tight spaces.</p>
-
-            <h3>Barrels & Muzzles</h3>
-            <p>Compensators reduce vertical recoil and are the best general-purpose barrel mod for automatic weapons. Suppressors eliminate muzzle flash and reduce your sound signature, keeping you off both the radar and the minimap. The tradeoff is reduced damage range. Muzzle Brakes reduce overall recoil spread and are ideal on semi-automatic weapons like the Kestrel MK4 where each shot needs to land precisely.</p>
-
-            <h3>Grips & Stocks</h3>
-            <p>Angled Grips improve ADS speed, letting you snap onto targets faster. Vertical Grips reduce recoil during sustained fire, better for weapons you fire in long bursts. Stocks generally improve stability and reduce sway when aiming down sights. Choose based on whether your weapon is used for quick snappy engagements or controlled sustained fire.</p>
-
-            <h3>Magazines</h3>
-            <p>Extended Magazines increase capacity at the cost of slightly slower reload. Quick Magazines reduce reload time but keep standard capacity. For solo players, Extended Magazines are usually better since you cannot rely on teammates to cover your reloads. In squads, Quick Magazines let your designated fighter stay in the engagement longer with faster reload cycling.</p>
-        </div>
-
-        <div id="tips" class="guide-section">
-            <h2><span>//</span> Advanced Tips</h2>
-            <p>Weapon swapping is faster than reloading in every scenario. If your magazine empties mid-fight, switch to your secondary rather than reloading. Practice the swap until it becomes muscle memory.</p>
-            <p>Sound matters more than most players realize. Unsuppressed weapons draw ARC patrols and alert nearby raiders to your position. If you fire an unsuppressed weapon, assume someone heard it and reposition immediately after the engagement ends.</p>
-            <p>Ammo management defines your raid. Every bullet you fire is a bullet you cannot use later. Prioritize ammo-efficient weapons for ARC clearing and save your high-damage weapons for PvP encounters and boss-level ARC machines.</p>
-            <p>Test weapons in low-stakes raids before relying on them in high-value runs. Drop into quieter zones, pick up unfamiliar weapons, and spend time learning their recoil patterns. Understanding how every weapon handles makes you a better raider regardless of what loadout you end up running.</p>
-
-            <div class="tip-box">
-                <strong>ARCEOLOGIST'S NOTE</strong>
-                This guide reflects the current Escalation season balance. Weapon stats and tier placements shift with each major patch. Check the Intel Board for the latest patch notes and balance changes.
-            </div>
+            <h2><span>//</span> Squad Loadout Builds</h2>
+            <p>In squads of two or three, Raiders can specialize. Coordinate ammo types so the squad does not compete for the same ammo pool. One Raider should run heavy ammo weapons for ARC armor, one should run medium for sustained fire, and one can specialize in close-range or sniper support.</p>
+            <div class="weapon-card"><h4>ARC Hunter Squad</h4><div class="stats">PLAYER 1: Hullcracker + Bettina | PLAYER 2: Renegade + Bobcat | PLAYER 3: Osprey + Vulcano</div><p>Player 1 carries the Hullcracker for boss ARC (Queens, Bombardiers, Bastions) and the Bettina for general combat. Player 2 runs the Renegade for mid-range dominance and the Bobcat for PvP defense. Player 3 provides overwatch with the Osprey and close-quarters backup with the Vulcano. Bring Wolfpack Grenades and Deadline Mines from Apollo's shop for ARC boss weak points.</p></div>
         </div>
 
         <div class="related-guides">
             <h3>RELATED GUIDES</h3>
             <div class="related-grid">
-                <a href="guide-maps.html" class="related-card">
-                    <h4>Maps & Extraction Guide</h4>
-                    <p>Every extraction point, map condition, and high-value loot route mapped out.</p>
-                </a>
-                <a href="guide-enemies.html" class="related-card">
-                    <h4>Enemies & Combat Guide</h4>
-                    <p>ARC machine bestiary, boss strategies, and PvP combat tactics.</p>
-                </a>
-                <a href="guide-progression.html" class="related-card">
-                    <h4>Progression & Economy Guide</h4>
-                    <p>Coin farming, vendor unlocks, crafting priorities, and season pass strategy.</p>
-                </a>
+                <a href="guide-maps.html" class="related-card"><h4>Maps & Extraction Guide</h4><p>All five maps, extraction strategies, and map conditions explained.</p></a>
+                <a href="guide-enemies.html" class="related-card"><h4>ARC Enemies Guide</h4><p>Every ARC variant from Ticks to Queens with weak points and tactics.</p></a>
+                <a href="guide-progression.html" class="related-card"><h4>Progression & Economy Guide</h4><p>Traders, Speranza projects, currency, and upgrade priorities.</p></a>
             </div>
         </div>
-
         <a href="guides.html" class="back-link">&lt; BACK TO ALL GUIDES</a>
     </div>
-
     <footer>
         <p>&copy; 2025 Arceology. All rights reserved. ARC Raiders is a trademark of Embark Studios.</p>
-        <p style="margin-top: 0.5rem;"><a href="privacy.html">Privacy Policy</a> | <a href="about.html">About</a> | <a href="faq.html">FAQ</a></p>
+        <p style="margin-top:.5rem"><a href="privacy.html">Privacy Policy</a> | <a href="about.html">About</a> | <a href="faq.html">FAQ</a></p>
     </footer>
 </body>
 </html>
