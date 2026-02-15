@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARC Raiders Intel Feed - Latest News & Updates | Arceology</title>
+    <meta name="description" content="Live ARC Raiders intel feed. Auto-updating news, patch notes, events, and Escalation season updates for ARC Raiders.">
+    <meta name="keywords" content="ARC Raiders news, ARC Raiders updates, ARC Raiders intel, Escalation season, patch notes, events">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://myraiderlog.com/intel.html">
+    <meta property="og:title" content="ARC Raiders Intel Feed | Arceology">
+    <meta property="og:description" content="Live auto-updating ARC Raiders news and intel.">
+    <meta property="og:url" content="https://myraiderlog.com/intel.html">
+    <meta property="og:type" content="website">
+    <meta name="google-adsense-account" content="ca-pub-7264545503146086">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7264545503146086" crossorigin="anonymous"></script>
+    <link rel="manifest" href="manifest.json">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Space+Mono&display=swap" rel="stylesheet">
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{background:#0d0a08;color:#c4a882;font-family:'Cormorant Garamond',serif;font-size:1.1rem;line-height:1.8}
+        a{color:#b45e48;text-decoration:none}a:hover{color:#e8d5c0}
+        nav{position:fixed;top:0;left:0;width:100%;padding:1.2rem 5%;background:linear-gradient(180deg,rgba(13,10,8,.98)0%,rgba(13,10,8,.85)100%);z-index:1000;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(180,94,72,.15)}
+        .nav-logo{font-family:'Cinzel',serif;font-size:1.1rem;color:#c4a882;letter-spacing:.15em;text-transform:uppercase}
+        .nav-links a{font-family:'Space Mono',monospace;font-size:.7rem;color:#8a7e6b;margin-left:2rem;letter-spacing:.1em;text-transform:uppercase}
+        .nav-links a:hover{color:#e8d5c0}
+        .hero{padding:10rem 5% 4rem;text-align:center;background:radial-gradient(ellipse at center top,rgba(180,94,72,.08)0%,transparent 60%)}
+        .hero h1{font-family:'Cinzel',serif;font-size:2.8rem;color:#e8d5c0;letter-spacing:.08em;margin-bottom:.5rem}
+        .hero .subtitle{font-family:'Space Mono',monospace;font-size:.8rem;color:#b45e48;letter-spacing:.15em;text-transform:uppercase}
+        .hero .update-status{font-family:'Space Mono',monospace;font-size:.7rem;color:#5a4e3b;margin-top:1rem}
+        .content{max-width:900px;margin:0 auto;padding:2rem 5% 4rem}
+        .intel-card{background:rgba(180,94,72,.04);border:1px solid rgba(180,94,72,.15);padding:2rem;margin-bottom:2rem;transition:border-color .3s}
+        .intel-card:hover{border-color:rgba(180,94,72,.35)}
+        .intel-card .status{font-family:'Space Mono',monospace;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.5rem}
+        .intel-card .status.confirmed{color:#6a8a6a}
+        .intel-card .status.rumored{color:#cc9944}
+        .intel-card .status.active{color:#b45e48}
+        .intel-card h2{font-family:'Cinzel',serif;font-size:1.5rem;color:#e8d5c0;margin-bottom:.5rem}
+        .intel-card .dates{font-family:'Space Mono',monospace;font-size:.7rem;color:#8a7560;margin-bottom:.8rem}
+        .intel-card .teaser{font-style:italic;color:#a89878;font-size:1.1rem;margin-bottom:1rem}
+        .intel-card .summary{color:#a89878;line-height:1.7;margin-bottom:1rem}
+        .intel-card .section-label{font-family:'Space Mono',monospace;font-size:.75rem;color:#b45e48;letter-spacing:.1em;text-transform:uppercase;margin:1rem 0 .5rem}
+        .intel-card ul{list-style:none;padding:0}
+        .intel-card ul li{padding:.3rem 0;color:#8a7e6b;font-size:.95rem}
+        .intel-card ul li::before{content:'> ';color:#b45e48;font-family:'Space Mono',monospace}
+        .loading{text-align:center;padding:4rem;font-family:'Space Mono',monospace;color:#5a4e3b;font-size:.9rem}
+        .error{text-align:center;padding:4rem;font-family:'Space Mono',monospace;color:#b45e48;font-size:.9rem}
+        footer{text-align:center;padding:3rem 5%;border-top:1px solid rgba(180,94,72,.15);font-family:'Space Mono',monospace;font-size:.7rem;color:#5a4e3b;margin-top:3rem}
+        footer a{color:#5a4e3b;margin:0 .5rem}
+        @media(max-width:768px){.nav-links a{margin-left:1rem;font-size:.6rem}.content{padding:1rem 4% 3rem}.hero h1{font-size:2rem}}
+    </style>
+</head>
+<body>
+    <nav>
+        <div><a href="index.html" class="nav-logo">Arceology</a><br><span style="font-family:'Space Mono',monospace;font-size:.6rem;color:#5a4e3b">terminal.speranza</span></div>
+        <div class="nav-links">
+            <a href="blog.html">Logs</a>
+            <a href="videos.html">Gameplay</a>
+            <a href="intel.html">Intel</a>
+            <a href="guides.html">Guides</a>
+            <a href="faq.html">FAQ</a>
+            <a href="store.html">Gear</a>
+            <a href="about.html">About</a>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <h1>Intel Feed</h1>
+        <div class="subtitle">operations board // live intelligence updates</div>
+        <div class="update-status" id="updateStatus">loading intel data...</div>
+    </div>
+
+    <div class="content">
+        <div id="intelContainer" class="loading">
+            [ESTABLISHING UPLINK TO SPERANZA NETWORK...]
+        </div>
+    </div>
+
+    <footer>
+        <a href="about.html">about</a>
+        <a href="privacy.html">privacy</a>
+        <a href="guides.html">guides</a>
+        <a href="faq.html">faq</a>
+        <br><br>
+        arceology.terminal // speranza archives // intel feed v2.0 // auto-updates every 6 hours
+    </footer>
+
+    <script>
+    (function() {
+        var container = document.getElementById('intelContainer');
+        var statusEl = document.getElementById('updateStatus');
+
+        fetch('intel-data.json?v=' + Date.now())
+            .then(function(response) {
+                if (!response.ok) throw new Error('Network response was not ok');
+                return response.json();
+            })
+            .then(function(data) {
+                if (!data || !data.length) {
+                    container.innerHTML = '<div class="error">[NO INTEL DATA AVAILABLE]</div>';
+                    return;
+                }
+
+                statusEl.textContent = 'intel feed active // ' + data.length + ' briefings loaded // auto-updates every 6 hours';
+
+                var html = '';
+                data.forEach(function(item) {
+                    var statusClass = (item.status || 'confirmed').toLowerCase();
+                    html += '<div class="intel-card">';
+                    html += '<div class="status ' + statusClass + '">' + (item.status || 'CONFIRMED').toUpperCase() + '</div>';
+                    html += '<h2>' + escapeHtml(item.title) + '</h2>';
+
+                    if (item.startDate || item.endDate) {
+                        var dates = '';
+                        if (item.startDate) dates += item.startDate;
+                        if (item.startDate && item.endDate) dates += ' — ';
+                        if (item.endDate) dates += item.endDate;
+                        html += '<div class="dates">' + dates + '</div>';
+                    }
+
+                    if (item.teaser) {
+                        html += '<div class="teaser">' + escapeHtml(item.teaser) + '</div>';
+                    }
+
+                    if (item.summary) {
+                        html += '<div class="summary">' + escapeHtml(item.summary) + '</div>';
+                    }
+
+                    if (item.howItWorks && item.howItWorks.length) {
+                        html += '<div class="section-label">How It Works</div><ul>';
+                        item.howItWorks.forEach(function(point) {
+                            html += '<li>' + escapeHtml(point) + '</li>';
+                        });
+                        html += '</ul>';
+                    }
+
+                    if (item.rewards && item.rewards.length) {
+                        html += '<div class="section-label">Rewards</div><ul>';
+                        item.rewards.forEach(function(point) {
+                            html += '<li>' + escapeHtml(point) + '</li>';
+                        });
+                        html += '</ul>';
+                    }
+
+                    if (item.raiderImpact && item.raiderImpact.length) {
+                        html += '<div class="section-label">Raider Impact</div><ul>';
+                        item.raiderImpact.forEach(function(point) {
+                            html += '<li>' + escapeHtml(point) + '</li>';
+                        });
+                        html += '</ul>';
+                    }
+
+                    html += '</div>';
+                });
+
+                container.innerHTML = html;
+            })
+            .catch(function(err) {
+                container.innerHTML = '<div class="error">[UPLINK FAILED — INTEL DATA UNAVAILABLE]<br><br>Error: ' + escapeHtml(err.message) + '</div>';
+                statusEl.textContent = 'uplink failed';
+            });
+
+        function escapeHtml(str) {
+            if (!str) return '';
+            return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+        }
+    })();
+    </script>
+</body>
+</html>
