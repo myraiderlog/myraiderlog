@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-adsense-account" content="ca-pub-7264545503146086">
+    <title>Field Medic Evaluations – Lance's Confidential Reports | Arceology</title>
+
+    <meta name="description" content="Confidential psychological evaluations of ARC Raiders field operatives by Lance, Speranza's trusted medic. Read classified raider mental health reports.">
+    <meta name="keywords" content="ARC Raiders, Lance medic, field medic evaluation, psychological report, raider logs, Speranza, Arceology">
+    <meta name="author" content="Arceology">
+    <meta name="robots" content="index, follow">
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7264545503146086" crossorigin="anonymous"></script>
+
+    <link rel="canonical" href="https://myraiderlog.com/medic-evaluation.html">
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://myraiderlog.com/medic-evaluation.html">
+    <meta property="og:title" content="Field Medic Evaluations – Lance's Confidential Reports">
+    <meta property="og:description" content="Confidential psychological evaluations of ARC Raiders field operatives by Lance, Speranza's trusted medic.">
+    <meta property="og:site_name" content="Arceology Raider Log">
+    <!-- Twitter Card -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://myraiderlog.com/medic-evaluation.html">
+    <meta property="twitter:title" content="Field Medic Evaluations – Lance's Confidential Reports">
+    <meta property="twitter:description" content="Confidential psychological evaluations by Lance, Speranza's field medic.">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        "name": "Field Medic Evaluations",
+        "description": "Confidential psychological evaluations of ARC Raiders field operatives by Lance",
+        "url": "https://myraiderlog.com/medic-evaluation.html",
+        "author": {
+            "@type": "Person",
+            "name": "Arceology",
+            "url": "https://myraiderlog.com/"
+        }
+    }
+    </script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --rust: #b65e48;
+            --ash: #4a4238;
+            --sand: #d4c5a9;
+            --night: #0d0a08;
+            --ember: #d9864f;
+            --steel: #6b6355;
+            --medic-green: #00ff41;
+            --medic-dark: #003d0f;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Cormorant Garamond', serif;
+            background: var(--night);
+            color: var(--sand);
+            overflow-x: hidden;
+            line-height: 1.8;
+        }
+
+        /* FILM GRAIN */
+        body::before {
+            content: '';
+            position: fixed;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23n)" opacity="0.12"/></svg>');
+            pointer-events: none;
+            animation: grain 8s steps(10) infinite;
+            z-index: 9999;
+            mix-blend-mode: overlay;
+        }
+
+        @keyframes grain {
+            0%, 100% { transform: translate(0, 0); }
+            10% { transform: translate(-5%, -10%); }
+            20% { transform: translate(-15%, 5%); }
+            30% { transform: translate(7%, -25%); }
+            40% { transform: translate(-5%, 25%); }
+            50% { transform: translate(-15%, 10%); }
+            60% { transform: translate(15%, 0%); }
+            70% { transform: translate(0%, 15%); }
+            80% { transform: translate(3%, 10%); }
+            90% { transform: translate(-10%, 5%); }
+        }
+
+        /* VIGNETTE */
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: radial-gradient(ellipse at center, transparent 0%, transparent 35%, rgba(13, 10, 8, 0.5) 70%, rgba(13, 10, 8, 0.9) 100%);
+            pointer-events: none;
+            z-index: 9998;
+            animation: vignettePulse 8s ease-in-out infinite;
+        }
+
+        @keyframes vignettePulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.85; } }
+
+        .particles { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 9997; overflow: hidden; }
+        .particle {
+            position: absolute; width: 2px; height: 2px;
+            background: var(--medic-green); border-radius: 50%; opacity: 0;
+            animation: float 15s infinite ease-in-out;
+            box-shadow: 0 0 4px var(--medic-green);
+        }
+        @keyframes float {
+            0% { transform: translateY(100vh) translateX(0) scale(0); opacity: 0; }
+            10% { opacity: 0.4; }
+            90% { opacity: 0.3; }
+            100% { transform: translateY(-10vh) translateX(50px) scale(1); opacity: 0; }
+        }
+
+        nav {
+            position: fixed; top: 0; left: 0; width: 100%;
+            padding: 1.5rem 5%;
+            background: linear-gradient(180deg, rgba(13, 10, 8, 0.98) 0%, rgba(13, 10, 8, 0.9) 100%);
+            backdrop-filter: blur(15px);
+            z-index: 10000;
+            border-bottom: 1px solid rgba(180, 94, 72, 0.3);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+            animation: navSlideDown 1s ease-out;
+        }
+        @keyframes navSlideDown { from { transform: translateY(-100%); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+
+        .nav-content { max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .nav-logo {
+            font-family: 'Cinzel', serif; font-size: 1.2rem; font-weight: 600;
+            color: var(--sand); letter-spacing: 3px; text-transform: lowercase; text-decoration: none;
+            animation: textGlow 3s ease-in-out infinite;
+        }
+        @keyframes textGlow { 0%, 100% { text-shadow: 0 0 10px rgba(217, 134, 79, 0.3); } 50% { text-shadow: 0 0 20px rgba(217, 134, 79, 0.6), 0 0 30px rgba(217, 134, 79, 0.3); } }
+
+        .nav-terminal { font-family: 'Space Mono', monospace; font-size: 0.65rem; color: var(--steel); letter-spacing: 2px; animation: terminalFlicker 5s infinite; }
+        @keyframes terminalFlicker { 0%, 100% { opacity: 1; } 95% { opacity: 1; } 96% { opacity: 0.3; } 97% { opacity: 1; } 98% { opacity: 0.5; } 99% { opacity: 1; } }
+
+        .nav-links { display: flex; gap: 2rem; flex-wrap: wrap; }
+        .nav-links a {
+            font-family: 'Space Mono', monospace; font-size: 0.7rem; color: var(--steel);
+            text-decoration: none; letter-spacing: 2px; text-transform: uppercase;
+            transition: all 0.3s ease; position: relative;
+        }
+        .nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: var(--ember); transition: width 0.3s ease; box-shadow: 0 0 10px var(--ember); }
+        .nav-links a:hover { color: var(--ember); text-shadow: 0 0 10px rgba(217, 134, 79, 0.5); }
+        .nav-links a:hover::after { width: 100%; }
+
+        main { position: relative; z-index: 5; max-width: 1400px; margin: 0 auto; padding: 8rem 5% 4rem; }
+
+        .page-header { text-align: center; margin-bottom: 4rem; padding-top: 4rem; animation: fadeIn 1.5s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+
+        .page-title {
+            font-family: 'Cinzel', serif; font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 700;
+            color: var(--sand); letter-spacing: 8px; margin-bottom: 1rem; text-transform: lowercase;
+            text-shadow: 0 0 30px rgba(0, 255, 65, 0.3);
+        }
+
+        .page-subtitle {
+            font-family: 'Space Mono', monospace; font-size: 0.8rem; color: var(--medic-green);
+            letter-spacing: 3px; text-transform: uppercase; margin-bottom: 2rem;
+            animation: terminalFlicker 5s infinite;
+        }
+
+        .page-description {
+            font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: var(--steel);
+            font-style: italic; max-width: 800px; margin: 0 auto; line-height: 1.8;
+        }
+
+        /* LANCE PROFILE CARD */
+        .lance-profile {
+            display: flex; gap: 2rem; align-items: flex-start;
+            background: linear-gradient(135deg, rgba(0, 61, 15, 0.15), rgba(13, 10, 8, 0.9));
+            border: 1px solid rgba(0, 255, 65, 0.2);
+            border-left: 4px solid var(--medic-green);
+            padding: 2rem; margin-bottom: 4rem;
+            animation: fadeIn 1.5s ease-out 0.3s both;
+        }
+        .lance-profile img {
+            width: 200px; height: auto; border: 1px solid rgba(0, 255, 65, 0.3);
+            box-shadow: 0 0 20px rgba(0, 255, 65, 0.15);
+        }
+        .lance-info { flex: 1; }
+        .lance-info h3 {
+            font-family: 'Cinzel', serif; font-size: 1.4rem; color: var(--medic-green);
+            letter-spacing: 3px; margin-bottom: 0.5rem;
+        }
+        .lance-info .role {
+            font-family: 'Space Mono', monospace; font-size: 0.7rem;
+            color: var(--steel); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 1rem;
+        }
+        .lance-info p { font-size: 1rem; color: var(--sand); opacity: 0.8; line-height: 1.8; }
+
+        /* EVALUATION ENTRIES */
+        .evaluation-entry {
+            background: linear-gradient(135deg, rgba(0, 61, 15, 0.1), rgba(13, 10, 8, 0.8));
+            border: 1px solid rgba(0, 255, 65, 0.15);
+            border-left: 4px solid var(--medic-green);
+            margin-bottom: 4rem;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            transition: all 0.5s ease;
+            animation: fadeIn 1s ease-out;
+        }
+        .evaluation-entry:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.7), 0 0 30px rgba(0, 255, 65, 0.1);
+            border-left-width: 5px;
+        }
+
+        .eval-header {
+            padding: 2rem 3rem;
+            border-bottom: 1px solid rgba(0, 255, 65, 0.15);
+            display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem;
+        }
+        .eval-date {
+            font-family: 'Space Mono', monospace; font-size: 0.7rem;
+            color: var(--medic-green); letter-spacing: 3px; text-transform: uppercase;
+            animation: terminalFlicker 5s infinite;
+        }
+        .eval-subject {
+            font-family: 'Cinzel', serif; font-size: 2rem; color: var(--sand);
+            letter-spacing: 2px; margin: 0.5rem 0;
+            text-shadow: 0 0 15px rgba(0, 255, 65, 0.15);
+        }
+        .eval-examiner {
+            font-family: 'Space Mono', monospace; font-size: 0.7rem;
+            color: var(--steel); letter-spacing: 2px; text-transform: uppercase;
+        }
+        .classification-badge {
+            font-family: 'Space Mono', monospace; font-size: 0.65rem;
+            color: var(--medic-green); letter-spacing: 1px;
+            border: 1px solid var(--medic-green); padding: 0.4rem 0.8rem;
+            text-transform: uppercase; background: rgba(0, 255, 65, 0.05);
+            animation: badgePulse 3s ease-in-out infinite;
+        }
+        @keyframes badgePulse {
+            0%, 100% { box-shadow: 0 0 5px rgba(0, 255, 65, 0.2); }
+            50% { box-shadow: 0 0 15px rgba(0, 255, 65, 0.4); }
+        }
+
+        .eval-body { padding: 2.5rem 3rem; }
+        .eval-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; margin-bottom: 2rem; }
+
+        .eval-section h4 {
+            font-family: 'Space Mono', monospace; font-size: 0.75rem;
+            color: var(--medic-green); letter-spacing: 2px; text-transform: uppercase;
+            margin-bottom: 1rem; padding-bottom: 0.5rem;
+            border-bottom: 1px solid rgba(0, 255, 65, 0.1);
+        }
+        .eval-section p { font-size: 1rem; color: var(--sand); opacity: 0.85; margin-bottom: 1rem; line-height: 1.8; }
+
+        .eval-list { list-style: none; }
+        .eval-list li {
+            font-family: 'Space Mono', monospace; font-size: 0.75rem;
+            color: var(--sand); padding: 0.5rem 0; padding-left: 1.2rem; position: relative;
+            border-bottom: 1px solid rgba(0, 255, 65, 0.05);
+        }
+        .eval-list li::before { content: '\25B8'; position: absolute; left: 0; color: var(--medic-green); }
+        .rating-good { color: var(--medic-green); }
+        .rating-warn { color: #ffaa00; }
+        .rating-crit { color: #ff4444; }
+
+        .status-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 8px; animation: statusPulse 2s ease-in-out infinite; }
+        .status-dot.approved { background: var(--medic-green); box-shadow: 0 0 8px var(--medic-green); }
+        .status-dot.caution { background: #ffaa00; box-shadow: 0 0 8px #ffaa00; }
+        .status-dot.critical { background: #ff4444; box-shadow: 0 0 8px #ff4444; }
+        @keyframes statusPulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+
+        /* PSYCHOLOGICAL FRAME */
+        .psych-frame {
+            background: rgba(0, 255, 65, 0.03);
+            border: 1px solid rgba(0, 255, 65, 0.2);
+            padding: 1.5rem 2rem; margin-top: 2rem;
+        }
+        .psych-frame h4 {
+            font-family: 'Space Mono', monospace; font-size: 0.75rem;
+            color: var(--medic-green); letter-spacing: 2px; margin-bottom: 1rem;
+        }
+        .psych-frame p {
+            font-family: 'Cormorant Garamond', serif; font-size: 1.1rem;
+            color: var(--sand); opacity: 0.7; font-style: italic; line-height: 1.9;
+        }
+
+        .archive-note {
+            background: rgba(0, 255, 65, 0.03);
+            border-left: 3px solid var(--medic-green);
+            padding: 1.5rem 2rem; margin-top: 3rem;
+            font-family: 'Space Mono', monospace; font-size: 0.7rem;
+            color: var(--steel); letter-spacing: 1px; text-align: center;
+            animation: terminalFlicker 5s infinite;
+        }
+
+        footer {
+            padding: 6rem 5% 4rem; text-align: center;
+            border-top: 1px solid rgba(180, 94, 72, 0.2);
+            background: linear-gradient(180deg, transparent 0%, rgba(13, 10, 8, 0.8) 100%);
+        }
+        .footer-quote {
+            font-family: 'Cormorant Garamond', serif; font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+            font-style: italic; color: var(--sand); max-width: 800px; margin: 0 auto 3rem; line-height: 2;
+        }
+        .footer-links a {
+            font-family: 'Space Mono', monospace; font-size: 0.75rem; color: var(--steel);
+            text-decoration: none; letter-spacing: 2px; margin: 0 1rem; transition: all 0.3s ease;
+        }
+        .footer-links a:hover { color: var(--ember); }
+        .footer-text {
+            font-family: 'Space Mono', monospace; font-size: 0.7rem; color: var(--steel);
+            letter-spacing: 2px; opacity: 0.6; margin-top: 2rem; animation: terminalFlicker 5s infinite;
+        }
+
+        @media (max-width: 768px) {
+            nav { padding: 1rem 3%; }
+            .nav-content { flex-wrap: wrap; gap: 0.5rem; }
+            .nav-links { gap: 1.2rem; }
+            .nav-links a { font-size: 0.65rem; padding: 0.3rem 0; }
+            main { padding: 6rem 3% 2rem; }
+            .eval-grid { grid-template-columns: 1fr; }
+            .eval-header { padding: 1.5rem 2rem; }
+            .eval-body { padding: 2rem; }
+            .lance-profile { flex-direction: column; align-items: center; text-align: center; }
+            .lance-profile img { width: 160px; }
+        }
+
+        @media (max-width: 480px) {
+            nav { padding: 0.8rem 3%; }
+            .nav-logo { font-size: 1rem; letter-spacing: 2px; }
+            .nav-terminal { font-size: 0.55rem; letter-spacing: 1px; }
+            .nav-links { gap: 0.7rem; }
+            .nav-links a { font-size: 0.55rem; letter-spacing: 1px; padding: 0.4rem 0; min-height: 44px; display: inline-flex; align-items: center; }
+            main { padding: 5rem 2% 2rem; }
+            .page-title { font-size: 1.8rem; letter-spacing: 4px; }
+            .eval-header { padding: 1.2rem; }
+            .eval-body { padding: 1.5rem 1.2rem; }
+            .eval-subject { font-size: 1.4rem; }
+            .lance-profile { padding: 1.2rem; }
+            .lance-profile img { width: 120px; }
+            .psych-frame { padding: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- LOADING SCREEN -->
+    <div class="loading" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--night); display: flex; align-items: center; justify-content: center; z-index: 10001; animation: fadeOut 1s ease-out 1s forwards;">
+        <div style="font-family: 'Space Mono', monospace; font-size: 1.2rem; color: var(--medic-green); letter-spacing: 4px; animation: terminalFlicker 0.5s infinite;">ACCESSING CLASSIFIED FILES...</div>
+    </div>
+    <style>@keyframes fadeOut { to { opacity: 0; pointer-events: none; } }</style>
+
+    <!-- PARTICLES -->
+    <div class="particles" id="particles"></div>
+
+    <nav>
+        <div class="nav-content">
+            <div>
+                <a href="index.html" class="nav-logo">arceology</a>
+                <div class="nav-terminal">terminal.speranza</div>
+            </div>
+            <div class="nav-links">
+                <a href="blog.html">logs</a>
+                <a href="medic-evaluation.html">medic eval</a>
+                <a href="videos.html">gameplay</a>
+                <a href="bulletin.html">intel</a>
+                <a href="guides.html">guides</a>
+                <a href="faq.html">faq</a>
+                <a href="store.html">gear</a>
+                <a href="about.html">about</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div class="page-header">
+            <p class="page-subtitle">⚕ Confidential Medical Archives // Speranza Underground</p>
+            <h1 class="page-title">field medic evaluations</h1>
+            <p class="page-description">
+                Psychological and tactical evaluations of field operatives compiled by Lance, Speranza's most trusted medic. These reports document the mental and emotional fitness of active raiders for continued deployment.
+            </p>
+        </div>
+
+        <!-- LANCE PROFILE -->
+        <div class="lance-profile">
+            <img src="images/lance-medic.png" alt="Lance - Field Medic, Speranza Underground">
+            <div class="lance-info">
+                <h3>Lance</h3>
+                <div class="role">⚕ Field Medic // Speranza Underground // Psychological Operations</div>
+                <p>The only thing I can't cure is the common cold. But what I can do is look you in the eye and tell you whether you're fit to go back out there. Most of you won't like what I have to say. That's not my problem. My problem is keeping you alive long enough to hate me for it.</p>
+                <p style="margin-top: 1rem; opacity: 0.5; font-size: 0.85rem;">All evaluations are conducted under Speranza Medical Protocol 7. Unauthorized access is a violation of Underground Security Code 12-B.</p>
+            </div>
+        </div>
+
+        <!-- EVALUATION 1: ARCeologist -->
+        <article class="evaluation-entry">
+            <div class="eval-header">
+                <div>
+                    <div class="eval-date">Evaluation 001 // 2180.03.15</div>
+                    <h2 class="eval-subject">ARCeologist</h2>
+                    <div class="eval-examiner">⚕ Examiner: Lance // Classification: Confidential</div>
+                </div>
+                <div class="classification-badge">Confidential</div>
+            </div>
+
+            <div class="eval-body">
+                <div class="eval-grid">
+                    <div class="eval-section">
+                        <h4>Physical Assessment</h4>
+                        <p>Subject demonstrates adequate physical resilience for sustained field deployment. No acute injuries noted. Neural response times within acceptable parameters for tactical operations. Hands steady. Eyes sharp. Body holds up.</p>
+                        <p>It's not the body I'm worried about.</p>
+
+                        <h4>Tactical Fitness</h4>
+                        <ul class="eval-list">
+                            <li>Extraction reliability: <span class="rating-good">EXCELLENT</span></li>
+                            <li>Load management: <span class="rating-good">OPTIMAL</span></li>
+                            <li>Threat assessment: <span class="rating-good">ABOVE AVERAGE</span></li>
+                            <li>Decision-making under stress: <span class="rating-warn">VARIABLE</span></li>
+                            <li>Self-preservation instinct: <span class="rating-warn">COMPROMISED</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="eval-section">
+                        <h4>Psychological Profile</h4>
+                        <p>Subject exhibits strong emotional awareness—perhaps too strong for this line of work. Carries the weight of every run, every choice, every raider they couldn't save. This is not a weakness in the traditional sense. It's a liability dressed up as humanity.</p>
+                        <p>They feel everything. In a place designed to make you feel nothing, that's either a gift or a death sentence. I haven't decided which.</p>
+
+                        <h4>Mental Clearance</h4>
+                        <p><span class="status-dot approved"></span> APPROVED FOR DEPLOYMENT</p>
+                        <p style="font-size: 0.85rem; opacity: 0.6; margin-top: 0.5rem;">Recommendation: Monitor for signs of operational guilt accumulation. Subject demonstrates moral awareness that may impact tactical decisions in high-casualty scenarios. Not a reason to ground them. Yet.</p>
+                    </div>
+                </div>
+
+                <div class="psych-frame">
+                    <h4>\u25B6 Psychological Framing</h4>
+                    <p>This one wears their emotions on their sleeve. Said it themselves. And they're right—I can see it in the way they sit, the way they look at the extraction timer like it's counting down something more personal than seconds.</p>
+                    <p style="margin-top: 1rem;">They ran from Buried City with a full pack and a raider's voice still echoing in their head. Made the smart call. Survived. And they hate themselves for it. That kind of guilt doesn't wash out with bandages or adrenaline shots.</p>
+                    <p style="margin-top: 1rem;">I'm not here to tell them they did the wrong thing. I'm here to make sure they can still do the right thing next time. And the time after that. Until they can't anymore.</p>
+                    <p style="margin-top: 1rem;">Cleared for operations. But I'll be watching.</p>
+                </div>
+            </div>
+        </article>
+
+        <div class="archive-note">
+            \u26A0 All psychological evaluations conducted by Lance, Field Medic of the Speranza Underground. These records are maintained for operational safety and tactical deployment recommendations. Classified under Speranza Security Protocol 7. Unauthorized access strictly prohibited. // END OF FILE
+        </div>
+    </main>
+
+    <footer>
+        <p class="footer-quote">
+            "I should be numb to it by now.<br>
+            But I feel everything.<br>
+            Maybe that's what makes me human."
+        </p>
+        <div class="footer-links">
+            <a href="https://www.youtube.com/@arceologist214" target="_blank">YOUTUBE</a>
+            <a href="about.html">ABOUT</a>
+            <a href="privacy.html">PRIVACY</a>
+        </div>
+        <p class="footer-text">ARCEOLOGY.TERMINAL // SPERANZA ARCHIVES // 2180</p>
+    </footer>
+
+    <script>
+        const particlesContainer = document.getElementById('particles');
+        for (let i = 0; i < 25; i++) {
+            const particle = document.createElement('div');
+            particle.classList.add('particle');
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.animationDelay = Math.random() * 15 + 's';
+            particle.style.animationDuration = (10 + Math.random() * 10) + 's';
+            particlesContainer.appendChild(particle);
+        }
+    </script>
+
+</body>
+</html>
