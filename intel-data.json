@@ -104,6 +104,34 @@
     "lastUpdated": "2026-02-05"
   },
   {
+    "id": "steam-arc-raiders-is-getting-a-hurricane-map-condition-t",
+    "title": "Arc Raiders is getting a hurricane map condition that will hasten your steps and blow grenades back in your face",
+    "status": "confirmed",
+    "startDate": "2026-02-20",
+    "endDate": null,
+    "teaser": "Embark are continuing their meteorological experiments in extraction shooter Arc Raiders with a rousing injection of wind. There’s a hurricane comi...",
+    "summary": "Embark are continuing their meteorological experiments in extraction shooter Arc Raiders with a rousing injection of wind. There’s a hurricane coming to the game on February 24th, a new map condition that limits visibility, degrades shields, impedes movement, and makes you suck even more at shooting things. Still, this stormcloud has a few silver linings. With the gale at your back, you’ll naturally move a lot faster. Also, you may find it easier to avoid detection in the open if you disable your shield. Read more",
+    "howItWorks": [
+      "Details sourced from Rock, Paper, Shotgun news feed",
+      "Check the source link for full information"
+    ],
+    "rewards": [
+      "See official announcement for full details"
+    ],
+    "raiderImpact": [
+      "Solo: Check source for gameplay impact",
+      "Duo: Check source for gameplay impact",
+      "Trio: Check source for gameplay impact"
+    ],
+    "sources": [
+      {
+        "label": "Rock, Paper, Shotgun",
+        "url": "https://steamstore-a.akamaihd.net/news/externalpost/Rock, Paper, Shotgun/1825093633187723"
+      }
+    ],
+    "lastUpdated": "2026-02-20"
+  },
+  {
     "id": "shrouded-sky",
     "title": "Shrouded Sky Update",
     "status": "confirmed",
