@@ -33,6 +33,34 @@
     "lastUpdated": "2026-01-23"
   },
   {
+    "id": "steam-oh-dear-arc-raiders-was-logging-your-private-disco",
+    "title": "Oh dear - ARC Raiders was logging your private Discord chats",
+    "status": "confirmed",
+    "startDate": "2026-03-05",
+    "endDate": null,
+    "teaser": "Here's a reminder that when you connect up various accounts - you may end up just increasing the risk of your private data going somewhere else. Re...",
+    "summary": "Here's a reminder that when you connect up various accounts - you may end up just increasing the risk of your private data going somewhere else. Read the full article here: https://www.gamingonlinux.com/2026/03/oh-dear-arc-raiders-was-logging-your-private-discord-chats/",
+    "howItWorks": [
+      "Details sourced from GamingOnLinux news feed",
+      "Check the source link for full information"
+    ],
+    "rewards": [
+      "See official announcement for full details"
+    ],
+    "raiderImpact": [
+      "Solo: Check source for gameplay impact",
+      "Duo: Check source for gameplay impact",
+      "Trio: Check source for gameplay impact"
+    ],
+    "sources": [
+      {
+        "label": "GamingOnLinux",
+        "url": "https://steamstore-a.akamaihd.net/news/externalpost/GamingOnLinux/1826362059921789"
+      }
+    ],
+    "lastUpdated": "2026-03-05"
+  },
+  {
     "id": "flashpoint",
     "title": "Flashpoint Update",
     "status": "confirmed",
