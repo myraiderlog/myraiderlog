@@ -33,6 +33,34 @@
     "lastUpdated": "2026-01-23"
   },
   {
+    "id": "steam-arc-raiders-replacing-some-ai-voices-ceo-says-a-re",
+    "title": "ARC Raiders replacing some AI voices, CEO says \"a real professional actor is better than AI\"",
+    "status": "confirmed",
+    "startDate": "2026-03-16",
+    "endDate": null,
+    "teaser": "ARC Raiders is still one of the most popular games around right now, and thankfully some of the generative AI voices are getting replaced. Read the...",
+    "summary": "ARC Raiders is still one of the most popular games around right now, and thankfully some of the generative AI voices are getting replaced. Read the full article here: https://www.gamingonlinux.com/2026/03/arc-raiders-replacing-some-ai-voices-ceo-says-a-real-professional-actor-is-better-than-ai/",
+    "howItWorks": [
+      "Details sourced from GamingOnLinux news feed",
+      "Check the source link for full information"
+    ],
+    "rewards": [
+      "See official announcement for full details"
+    ],
+    "raiderImpact": [
+      "Solo: Check source for gameplay impact",
+      "Duo: Check source for gameplay impact",
+      "Trio: Check source for gameplay impact"
+    ],
+    "sources": [
+      {
+        "label": "GamingOnLinux",
+        "url": "https://steamstore-a.akamaihd.net/news/externalpost/GamingOnLinux/1826992588601595"
+      }
+    ],
+    "lastUpdated": "2026-03-16"
+  },
+  {
     "id": "steam-embark-have-been-replacing-arc-raiders-ai-voice-li",
     "title": "Embark have been replacing Arc Raiders' AI voice lines with real people, but that doesn't mean they've sworn off using it behind the scenes",
     "status": "confirmed",
