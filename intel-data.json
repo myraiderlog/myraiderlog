@@ -33,6 +33,34 @@
     "lastUpdated": "2026-01-23"
   },
   {
+    "id": "steam-embark-devs-playtested-arc-raiders-too-viciously-s",
+    "title": "Embark devs playtested Arc Raiders too viciously, so they found a system that let them be Care Bears one day and aggressive the next",
+    "status": "confirmed",
+    "startDate": "2026-03-28",
+    "endDate": null,
+    "teaser": "The problem with playtesting is that it is impossible to predict every last thing any given person may do once a game is out in the wild. It's an i...",
+    "summary": "The problem with playtesting is that it is impossible to predict every last thing any given person may do once a game is out in the wild. It's an imperfect science where you do the best you can in the moment. I imagine a live service game like Arc Raiders to be extra difficult, given how many playstyles need to be accounted for. And based on a recent interview, it sounds like some of the team at Embark took an approach that involved a randomiser determining their own playstyle from day to day to make sure they weren't just playing one way. Read more",
+    "howItWorks": [
+      "Details sourced from Rock, Paper, Shotgun news feed",
+      "Check the source link for full information"
+    ],
+    "rewards": [
+      "See official announcement for full details"
+    ],
+    "raiderImpact": [
+      "Solo: Check source for gameplay impact",
+      "Duo: Check source for gameplay impact",
+      "Trio: Check source for gameplay impact"
+    ],
+    "sources": [
+      {
+        "label": "Rock, Paper, Shotgun",
+        "url": "https://steamstore-a.akamaihd.net/news/externalpost/Rock, Paper, Shotgun/1828441623107159"
+      }
+    ],
+    "lastUpdated": "2026-03-28"
+  },
+  {
     "id": "steam-arc-raiders-studio-co-founder-resigns-following-se",
     "title": "Arc Raiders studio co-founder resigns following sexual misconduct claims, but Embark say a legal review \"did not substantiate\" the allegations",
     "status": "confirmed",
