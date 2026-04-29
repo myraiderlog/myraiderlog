@@ -1,5 +1,33 @@
 [
   {
+    "id": "steam-arc-raiders-pssr-2-playstation-5-pro-riven-tides",
+    "title": "ARC Raiders получила новую карту, врага и поддержку PSSR 2 на PlayStation 5 Pro — вышло обновление Riven Tides",
+    "status": "confirmed",
+    "startDate": "2026-04-28",
+    "endDate": null,
+    "teaser": "Embark Studios представила обновление Riven Tides для ARC Raiders. Патч добавил новую локацию, противника, игровое событие и набор косметических на...",
+    "summary": "Embark Studios представила обновление Riven Tides для ARC Raiders. Патч добавил новую локацию, противника, игровое событие и набор косметических наград.",
+    "howItWorks": [
+      "Details sourced from Gamemag.ru news feed",
+      "Check the source link for full information"
+    ],
+    "rewards": [
+      "See official announcement for full details"
+    ],
+    "raiderImpact": [
+      "Solo: Check source for gameplay impact",
+      "Duo: Check source for gameplay impact",
+      "Trio: Check source for gameplay impact"
+    ],
+    "sources": [
+      {
+        "label": "Gamemag.ru",
+        "url": "https://steamstore-a.akamaihd.net/news/externalpost/Gamemag.ru/1831432155563795"
+      }
+    ],
+    "lastUpdated": "2026-04-28"
+  },
+  {
     "id": "steam-we-ve-heard-a-clear-frustration-arc-raiders-update",
     "title": "\"We've heard a clear frustration\": Arc Raiders update adds a beach holiday map while patching the gun balance to ensure \"all players are challenged by weapon attrition\"",
     "status": "confirmed",
