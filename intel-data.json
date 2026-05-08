@@ -1,5 +1,33 @@
 [
   {
+    "id": "steam-embark-are-testing-kernel-level-anti-cheat-in-arc-",
+    "title": "Embark are testing kernel-level anti-cheat in Arc Raiders to help put a stop to its ongoing cheating problem",
+    "status": "confirmed",
+    "startDate": "2026-05-07",
+    "endDate": null,
+    "teaser": "If a popular multiplayer game exists, it has a cheating problem. This is almost always a guarantee, it's just about the ways in which a studio choo...",
+    "summary": "If a popular multiplayer game exists, it has a cheating problem. This is almost always a guarantee, it's just about the ways in which a studio chooses to handle this problem. So far, Embark Studios don't seem to have done a perfect job in doing so with Arc Raiders, but they've now at least outlined their plans for how they're going to approach cheating. Read more",
+    "howItWorks": [
+      "Details sourced from Rock, Paper, Shotgun news feed",
+      "Check the source link for full information"
+    ],
+    "rewards": [
+      "See official announcement for full details"
+    ],
+    "raiderImpact": [
+      "Solo: Check source for gameplay impact",
+      "Duo: Check source for gameplay impact",
+      "Trio: Check source for gameplay impact"
+    ],
+    "sources": [
+      {
+        "label": "Rock, Paper, Shotgun",
+        "url": "https://steamstore-a.akamaihd.net/news/externalpost/Rock, Paper, Shotgun/1832065502812980"
+      }
+    ],
+    "lastUpdated": "2026-05-07"
+  },
+  {
     "id": "steam-arc-raiders-pssr-2-playstation-5-pro-riven-tides",
     "title": "ARC Raiders получила новую карту, врага и поддержку PSSR 2 на PlayStation 5 Pro — вышло обновление Riven Tides",
     "status": "confirmed",
