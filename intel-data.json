@@ -1,5 +1,33 @@
 [
   {
+    "id": "steam-we-re-changing-how-we-update-arc-raiders-here-s-wh",
+    "title": "We’re changing how we update ARC Raiders - here’s what it means for you",
+    "status": "confirmed",
+    "startDate": "2026-05-13",
+    "endDate": null,
+    "teaser": "Attention Raiders!We have an important update about the future of ARC Raiders.We’ve seen your questions and your speculation about what’s coming ne...",
+    "summary": "Attention Raiders!We have an important update about the future of ARC Raiders.We’ve seen your questions and your speculation about what’s coming next. We’re working on something major, and we’re able to share a few details about it today. Frozen Trail will be our biggest, most exciting update yet. The goal is to provide new ways to progress and reasons to play, while bringing meaningful additions to the game’s loop, gameplay and world. This includes, but is by no means limited to:The largest map yet,Our most ambitious ARC Operation so far - expect unique behaviors and designs!New Systems of...",
+    "howItWorks": [
+      "Details sourced from Community Announcements news feed",
+      "Check the source link for full information"
+    ],
+    "rewards": [
+      "See official announcement for full details"
+    ],
+    "raiderImpact": [
+      "Solo: Check source for gameplay impact",
+      "Duo: Check source for gameplay impact",
+      "Trio: Check source for gameplay impact"
+    ],
+    "sources": [
+      {
+        "label": "Community Announcements",
+        "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1832700592787040"
+      }
+    ],
+    "lastUpdated": "2026-05-13"
+  },
+  {
     "id": "steam-embark-are-testing-kernel-level-anti-cheat-in-arc-",
     "title": "Embark are testing kernel-level anti-cheat in Arc Raiders to help put a stop to its ongoing cheating problem",
     "status": "confirmed",
