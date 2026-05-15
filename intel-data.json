@@ -1,5 +1,33 @@
 [
   {
+    "id": "steam-arc-raiders-will-get-major-updates-every-six-month",
+    "title": "Arc Raiders will get major updates every six months going forwards, with the next one set to roll out the shooter's largest map yet",
+    "status": "confirmed",
+    "startDate": "2026-05-14",
+    "endDate": null,
+    "teaser": "Arc Raiders is switching up its update cadence, with developers Embark having decided that dropping a major set of additions every six months is be...",
+    "summary": "Arc Raiders is switching up its update cadence, with developers Embark having decided that dropping a major set of additions every six months is better for the shooter's long-term health than sticking to a monthly update grind. The first update set to be released under this new modus operandi's also been revealed: it's called Frozen Trail and will include the game's biggest map to date. Read more",
+    "howItWorks": [
+      "Details sourced from Rock, Paper, Shotgun news feed",
+      "Check the source link for full information"
+    ],
+    "rewards": [
+      "See official announcement for full details"
+    ],
+    "raiderImpact": [
+      "Solo: Check source for gameplay impact",
+      "Duo: Check source for gameplay impact",
+      "Trio: Check source for gameplay impact"
+    ],
+    "sources": [
+      {
+        "label": "Rock, Paper, Shotgun",
+        "url": "https://steamstore-a.akamaihd.net/news/externalpost/Rock, Paper, Shotgun/1832700592788670"
+      }
+    ],
+    "lastUpdated": "2026-05-14"
+  },
+  {
     "id": "steam-arc-raiders-moves-to-slower-larger-updates-as-it-c",
     "title": "ARC Raiders moves to slower larger updates as it crosses over 16 million sales",
     "status": "confirmed",
