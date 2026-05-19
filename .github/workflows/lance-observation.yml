@@ -1,0 +1,39 @@
+name: Lance observation archive
+
+on:
+  schedule:
+    - cron: '0 */3 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  write-lance-observation:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out archive
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Generate Lance psychology observation
+        run: node scripts/generate-lance-observation.mjs
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_MODEL: gpt-4.1-mini
+
+      - name: Commit living archive update
+        run: |
+          git config user.name "lance-observation-bot"
+          git config user.email "actions@github.com"
+          git add lance-observations.json
+          if git diff --cached --quiet; then
+            echo "No archive changes to commit."
+          else
+            git commit -m "Add Lance psychology observation"
+            git push
+          fi
