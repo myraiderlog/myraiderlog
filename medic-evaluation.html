@@ -45,14 +45,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --rust: #b65e48;
-            --ash: #4a4238;
-            --sand: #d4c5a9;
-            --night: #0d0a08;
-            --ember: #d9864f;
-            --steel: #6b6355;
-            --medic-green: #00ff41;
-            --medic-dark: #003d0f;
+            --rust: #b85a87;
+            --ash: #1a1d22;
+            --sand: #f1f1f3;
+            --night: #030406;
+            --ember: #d46aa2;
+            --steel: #8d939d;
+            --medic-green: #d46aa2;
+            --medic-dark: #2a101c;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -98,7 +98,7 @@
             position: fixed;
             top: 0; left: 0;
             width: 100%; height: 100%;
-            background: radial-gradient(ellipse at center, transparent 0%, transparent 35%, rgba(13, 10, 8, 0.5) 70%, rgba(13, 10, 8, 0.9) 100%);
+            background: radial-gradient(ellipse at center, transparent 0%, transparent 35%, rgba(3, 4, 6, 0.5) 70%, rgba(3, 4, 6, 0.9) 100%);
             pointer-events: none;
             z-index: 9998;
             animation: vignettePulse 8s ease-in-out infinite;
@@ -123,10 +123,10 @@
         nav {
             position: fixed; top: 0; left: 0; width: 100%;
             padding: 1.5rem 5%;
-            background: linear-gradient(180deg, rgba(13, 10, 8, 0.98) 0%, rgba(13, 10, 8, 0.9) 100%);
+            background: linear-gradient(180deg, rgba(3, 4, 6, 0.98) 0%, rgba(3, 4, 6, 0.9) 100%);
             backdrop-filter: blur(15px);
             z-index: 10000;
-            border-bottom: 1px solid rgba(180, 94, 72, 0.3);
+            border-bottom: 1px solid rgba(184, 90, 135, 0.3);
             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
             animation: navSlideDown 1s ease-out;
         }
@@ -138,7 +138,7 @@
             color: var(--sand); letter-spacing: 3px; text-transform: lowercase; text-decoration: none;
             animation: textGlow 3s ease-in-out infinite;
         }
-        @keyframes textGlow { 0%, 100% { text-shadow: 0 0 10px rgba(217, 134, 79, 0.3); } 50% { text-shadow: 0 0 20px rgba(217, 134, 79, 0.6), 0 0 30px rgba(217, 134, 79, 0.3); } }
+        @keyframes textGlow { 0%, 100% { text-shadow: 0 0 10px rgba(212, 106, 162, 0.3); } 50% { text-shadow: 0 0 20px rgba(212, 106, 162, 0.6), 0 0 30px rgba(212, 106, 162, 0.3); } }
 
         .nav-terminal { font-family: 'Space Mono', monospace; font-size: 0.65rem; color: var(--steel); letter-spacing: 2px; animation: terminalFlicker 5s infinite; }
         @keyframes terminalFlicker { 0%, 100% { opacity: 1; } 95% { opacity: 1; } 96% { opacity: 0.3; } 97% { opacity: 1; } 98% { opacity: 0.5; } 99% { opacity: 1; } }
@@ -150,7 +150,7 @@
             transition: all 0.3s ease; position: relative;
         }
         .nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: var(--ember); transition: width 0.3s ease; box-shadow: 0 0 10px var(--ember); }
-        .nav-links a:hover { color: var(--ember); text-shadow: 0 0 10px rgba(217, 134, 79, 0.5); }
+        .nav-links a:hover { color: var(--ember); text-shadow: 0 0 10px rgba(212, 106, 162, 0.5); }
         .nav-links a:hover::after { width: 100%; }
 
         main { position: relative; z-index: 5; max-width: 1400px; margin: 0 auto; padding: 8rem 5% 4rem; }
@@ -161,7 +161,7 @@
         .page-title {
             font-family: 'Cinzel', serif; font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 700;
             color: var(--sand); letter-spacing: 8px; margin-bottom: 1rem; text-transform: lowercase;
-            text-shadow: 0 0 30px rgba(0, 255, 65, 0.3);
+            text-shadow: 0 0 30px rgba(212, 106, 162, 0.3);
         }
 
         .page-subtitle {
@@ -178,15 +178,15 @@
         /* LANCE PROFILE CARD */
         .lance-profile {
             display: flex; gap: 2rem; align-items: flex-start;
-            background: linear-gradient(135deg, rgba(0, 61, 15, 0.15), rgba(13, 10, 8, 0.9));
-            border: 1px solid rgba(0, 255, 65, 0.2);
+            background: linear-gradient(135deg, rgba(42, 16, 28, 0.15), rgba(3, 4, 6, 0.9));
+            border: 1px solid rgba(212, 106, 162, 0.2);
             border-left: 4px solid var(--medic-green);
             padding: 2rem; margin-bottom: 4rem;
             animation: fadeIn 1.5s ease-out 0.3s both;
         }
         .lance-profile img {
-            width: 200px; height: auto; border: 1px solid rgba(0, 255, 65, 0.3);
-            box-shadow: 0 0 20px rgba(0, 255, 65, 0.15);
+            width: 200px; height: auto; border: 1px solid rgba(212, 106, 162, 0.3);
+            box-shadow: 0 0 20px rgba(212, 106, 162, 0.15);
         }
         .lance-info { flex: 1; }
         .lance-info h3 {
@@ -201,8 +201,8 @@
 
         /* EVALUATION ENTRIES */
         .evaluation-entry {
-            background: linear-gradient(135deg, rgba(0, 61, 15, 0.1), rgba(13, 10, 8, 0.8));
-            border: 1px solid rgba(0, 255, 65, 0.15);
+            background: linear-gradient(135deg, rgba(42, 16, 28, 0.1), rgba(3, 4, 6, 0.8));
+            border: 1px solid rgba(212, 106, 162, 0.15);
             border-left: 4px solid var(--medic-green);
             margin-bottom: 4rem;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
@@ -211,13 +211,13 @@
         }
         .evaluation-entry:hover {
             transform: translateY(-5px);
-            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.7), 0 0 30px rgba(0, 255, 65, 0.1);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.7), 0 0 30px rgba(212, 106, 162, 0.1);
             border-left-width: 5px;
         }
 
         .eval-header {
             padding: 2rem 3rem;
-            border-bottom: 1px solid rgba(0, 255, 65, 0.15);
+            border-bottom: 1px solid rgba(212, 106, 162, 0.15);
             display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem;
         }
         .eval-date {
@@ -228,7 +228,7 @@
         .eval-subject {
             font-family: 'Cinzel', serif; font-size: 2rem; color: var(--sand);
             letter-spacing: 2px; margin: 0.5rem 0;
-            text-shadow: 0 0 15px rgba(0, 255, 65, 0.15);
+            text-shadow: 0 0 15px rgba(212, 106, 162, 0.15);
         }
         .eval-examiner {
             font-family: 'Space Mono', monospace; font-size: 0.7rem;
@@ -238,12 +238,12 @@
             font-family: 'Space Mono', monospace; font-size: 0.65rem;
             color: var(--medic-green); letter-spacing: 1px;
             border: 1px solid var(--medic-green); padding: 0.4rem 0.8rem;
-            text-transform: uppercase; background: rgba(0, 255, 65, 0.05);
+            text-transform: uppercase; background: rgba(212, 106, 162, 0.05);
             animation: badgePulse 3s ease-in-out infinite;
         }
         @keyframes badgePulse {
-            0%, 100% { box-shadow: 0 0 5px rgba(0, 255, 65, 0.2); }
-            50% { box-shadow: 0 0 15px rgba(0, 255, 65, 0.4); }
+            0%, 100% { box-shadow: 0 0 5px rgba(212, 106, 162, 0.2); }
+            50% { box-shadow: 0 0 15px rgba(212, 106, 162, 0.4); }
         }
 
         .eval-body { padding: 2.5rem 3rem; }
@@ -253,7 +253,7 @@
             font-family: 'Space Mono', monospace; font-size: 0.75rem;
             color: var(--medic-green); letter-spacing: 2px; text-transform: uppercase;
             margin-bottom: 1rem; padding-bottom: 0.5rem;
-            border-bottom: 1px solid rgba(0, 255, 65, 0.1);
+            border-bottom: 1px solid rgba(212, 106, 162, 0.1);
         }
         .eval-section p { font-size: 1rem; color: var(--sand); opacity: 0.85; margin-bottom: 1rem; line-height: 1.8; }
 
@@ -261,7 +261,7 @@
         .eval-list li {
             font-family: 'Space Mono', monospace; font-size: 0.75rem;
             color: var(--sand); padding: 0.5rem 0; padding-left: 1.2rem; position: relative;
-            border-bottom: 1px solid rgba(0, 255, 65, 0.05);
+            border-bottom: 1px solid rgba(212, 106, 162, 0.05);
         }
         .eval-list li::before { content: '\25B8'; position: absolute; left: 0; color: var(--medic-green); }
         .rating-good { color: var(--medic-green); }
@@ -276,8 +276,8 @@
 
         /* PSYCHOLOGICAL FRAME */
         .psych-frame {
-            background: rgba(0, 255, 65, 0.03);
-            border: 1px solid rgba(0, 255, 65, 0.2);
+            background: rgba(212, 106, 162, 0.03);
+            border: 1px solid rgba(212, 106, 162, 0.2);
             padding: 1.5rem 2rem; margin-top: 2rem;
         }
         .psych-frame h4 {
@@ -290,7 +290,7 @@
         }
 
         .archive-note {
-            background: rgba(0, 255, 65, 0.03);
+            background: rgba(212, 106, 162, 0.03);
             border-left: 3px solid var(--medic-green);
             padding: 1.5rem 2rem; margin-top: 3rem;
             font-family: 'Space Mono', monospace; font-size: 0.7rem;
@@ -298,10 +298,142 @@
             animation: terminalFlicker 5s infinite;
         }
 
+        .live-psyche-file {
+            background:
+                linear-gradient(135deg, rgba(42, 16, 28, 0.36), rgba(3, 4, 6, 0.92)),
+                repeating-linear-gradient(0deg, rgba(212, 106, 162, 0.03) 0 1px, transparent 1px 5px);
+            border: 1px solid rgba(212, 106, 162, 0.24);
+            border-left: 4px solid var(--medic-green);
+            padding: 2rem;
+            margin-bottom: 4rem;
+            box-shadow: 0 24px 70px rgba(0, 0, 0, 0.55), inset 0 0 40px rgba(212, 106, 162, 0.035);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .live-psyche-file::before {
+            content: 'LANCE IS OBSERVING';
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.62rem;
+            color: rgba(212, 106, 162, 0.5);
+            letter-spacing: 2px;
+            animation: terminalFlicker 4s infinite;
+        }
+
+        .psyche-grid {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .psyche-panel {
+            border: 1px solid rgba(212, 106, 162, 0.18);
+            background: rgba(3, 4, 6, 0.56);
+            padding: 1.5rem;
+        }
+
+        .psyche-label {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.68rem;
+            color: var(--medic-green);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 0.75rem;
+        }
+
+        .psyche-state {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            color: var(--sand);
+            line-height: 1.2;
+            text-shadow: 0 0 22px rgba(212, 106, 162, 0.22);
+        }
+
+        .psyche-note {
+            color: var(--steel);
+            font-size: 1.12rem;
+            line-height: 1.9;
+            font-style: italic;
+            margin-top: 1rem;
+        }
+
+        .psyche-bars {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .psyche-bar span {
+            display: flex;
+            justify-content: space-between;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.66rem;
+            color: var(--steel);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 0.45rem;
+        }
+
+        .bar-track {
+            height: 6px;
+            background: rgba(141, 147, 157, 0.14);
+            overflow: hidden;
+        }
+
+        .bar-fill {
+            height: 100%;
+            width: var(--level);
+            background: linear-gradient(90deg, var(--medic-green), var(--pink-soft));
+            box-shadow: 0 0 16px rgba(212, 106, 162, 0.45);
+            transition: width 900ms ease;
+        }
+
+        .observation-feed {
+            margin-top: 2rem;
+            border-top: 1px solid rgba(212, 106, 162, 0.16);
+            padding-top: 1.5rem;
+        }
+
+        .observation-item {
+            display: grid;
+            grid-template-columns: 120px 1fr;
+            gap: 1rem;
+            padding: 0.85rem 0;
+            border-bottom: 1px solid rgba(212, 106, 162, 0.08);
+        }
+
+        .observation-time {
+            font-family: 'Space Mono', monospace;
+            color: var(--medic-green);
+            font-size: 0.66rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .observation-text {
+            color: var(--sand);
+            opacity: 0.82;
+            line-height: 1.7;
+            font-style: italic;
+        }
+
+        .lance-aside {
+            margin-top: 1.5rem;
+            padding: 1.25rem 1.5rem;
+            border: 1px dashed rgba(212, 106, 162, 0.26);
+            color: var(--sand);
+            font-size: 1.08rem;
+            line-height: 1.9;
+            font-style: italic;
+        }
+
         footer {
             padding: 6rem 5% 4rem; text-align: center;
-            border-top: 1px solid rgba(180, 94, 72, 0.2);
-            background: linear-gradient(180deg, transparent 0%, rgba(13, 10, 8, 0.8) 100%);
+            border-top: 1px solid rgba(184, 90, 135, 0.2);
+            background: linear-gradient(180deg, transparent 0%, rgba(3, 4, 6, 0.8) 100%);
         }
         .footer-quote {
             font-family: 'Cormorant Garamond', serif; font-size: clamp(1.1rem, 2.5vw, 1.5rem);
@@ -328,6 +460,8 @@
             .eval-body { padding: 2rem; }
             .lance-profile { flex-direction: column; align-items: center; text-align: center; }
             .lance-profile img { width: 160px; }
+            .psyche-grid { grid-template-columns: 1fr; }
+            .observation-item { grid-template-columns: 1fr; gap: 0.25rem; }
         }
 
         @media (max-width: 480px) {
@@ -379,7 +513,7 @@
             <p class="page-subtitle">⚕ Confidential Medical Archives // Speranza Underground</p>
             <h1 class="page-title">field medic evaluations</h1>
             <p class="page-description">
-                Psychological and tactical evaluations of field operatives compiled by Lance, Speranza's most trusted medic. These reports document the mental and emotional fitness of active raiders for continued deployment.
+                Lance is not counting wins. He is trying to understand what happens inside the brain of a raider after the surface gets in. These files are his attempt to map guilt, mercy, fear, attachment, and the strange human refusal to become numb.
             </p>
         </div>
 
@@ -389,10 +523,66 @@
             <div class="lance-info">
                 <h3>Lance</h3>
                 <div class="role">⚕ Field Medic // Speranza Underground // Psychological Operations</div>
-                <p>The only thing I can't cure is the common cold. But what I can do is look you in the eye and tell you whether you're fit to go back out there. Most of you won't like what I have to say. That's not my problem. My problem is keeping you alive long enough to hate me for it.</p>
-                <p style="margin-top: 1rem; opacity: 0.5; font-size: 0.85rem;">All evaluations are conducted under Speranza Medical Protocol 7. Unauthorized access is a violation of Underground Security Code 12-B.</p>
+                <p>The surface changes people in patterns. Some come back quieter. Some come back crueler. Some come back alive and apologize for it. Lance watches those patterns. He is trying to understand the raider mind before the raider disappears inside it.</p>
+                <p style="margin-top: 1rem; opacity: 0.5; font-size: 0.85rem;">This file is not a diagnosis. It is an ongoing attempt to understand why Arceology keeps feeling everything and still keeps going back.</p>
             </div>
         </div>
+
+        <section class="live-psyche-file" aria-label="Living psychological observation file">
+            <div class="eval-date">Live File // Lance Observation Layer</div>
+            <h2 class="eval-subject">The Raider Brain</h2>
+            <div class="eval-examiner">Examiner: Lance // Method: pattern observation, not confession</div>
+
+            <div class="psyche-grid">
+                <div class="psyche-panel">
+                    <div class="psyche-label">Current mental reading</div>
+                    <div class="psyche-state" id="psyche-state">Empathy Overactive</div>
+                    <p class="psyche-note" id="psyche-note">
+                        Subject continues to attach emotional meaning to routine survival events. This is tactically inconvenient and clinically interesting.
+                    </p>
+                </div>
+
+                <div class="psyche-panel">
+                    <div class="psyche-label">Observed internal pressure</div>
+                    <div class="psyche-bars">
+                        <div class="psyche-bar">
+                            <span><b>Guilt retention</b><b id="guilt-value">87%</b></span>
+                            <div class="bar-track"><div class="bar-fill" id="guilt-bar" style="--level: 87%"></div></div>
+                        </div>
+                        <div class="psyche-bar">
+                            <span><b>Mercy impulse</b><b id="mercy-value">72%</b></span>
+                            <div class="bar-track"><div class="bar-fill" id="mercy-bar" style="--level: 72%"></div></div>
+                        </div>
+                        <div class="psyche-bar">
+                            <span><b>Numbness resistance</b><b id="human-value">94%</b></span>
+                            <div class="bar-track"><div class="bar-fill" id="human-bar" style="--level: 94%"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lance-aside" id="lance-aside">
+                Lance note: I keep expecting the feeling to burn out. It doesn't. That may be the problem. It may also be the only thing keeping them human.
+            </div>
+
+            <div class="observation-feed">
+                <div class="psyche-label">Recent observations</div>
+                <div id="observation-feed">
+                    <div class="observation-item">
+                        <div class="observation-time">after extraction</div>
+                        <div class="observation-text">Subject checked the pack twice, then stared past it like the thing they brought back was not the thing they went up for.</div>
+                    </div>
+                    <div class="observation-item">
+                        <div class="observation-time">during silence</div>
+                        <div class="observation-text">No visible injury. Breathing steady. Hands steady. Eyes not steady. That is usually where the truth is.</div>
+                    </div>
+                    <div class="observation-item">
+                        <div class="observation-time">pre-deployment</div>
+                        <div class="observation-text">Subject said they were fine before I asked. That answer remains medically useless.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <!-- EVALUATION 1: ARCeologist -->
         <article class="evaluation-entry">
@@ -408,37 +598,35 @@
             <div class="eval-body">
                 <div class="eval-grid">
                     <div class="eval-section">
-                        <h4>Physical Assessment</h4>
-                        <p>Subject demonstrates adequate physical resilience for sustained field deployment. No acute injuries noted. Neural response times within acceptable parameters for tactical operations. Hands steady. Eyes sharp. Body holds up.</p>
-                        <p>It's not the body I'm worried about.</p>
+                        <h4>Body / Brain Separation</h4>
+                        <p>Subject demonstrates adequate physical resilience for sustained field deployment. Hands steady. Eyes sharp. Body returns from the surface with fewer complaints than the mind does.</p>
+                        <p>It's not the wound I can bandage that concerns me. It's the one that starts talking after the room goes quiet.</p>
 
-                        <h4>Tactical Fitness</h4>
+                        <h4>Cognitive Pattern Notes</h4>
                         <ul class="eval-list">
-                            <li>Extraction reliability: <span class="rating-good">EXCELLENT</span></li>
-                            <li>Load management: <span class="rating-good">OPTIMAL</span></li>
-                            <li>Threat assessment: <span class="rating-good">ABOVE AVERAGE</span></li>
-                            <li>Decision-making under stress: <span class="rating-warn">VARIABLE</span></li>
-                            <li>Self-preservation instinct: <span class="rating-warn">COMPROMISED</span></li>
+                            <li>Memory replay tendency: <span class="rating-warn">PERSISTENT</span></li>
+                            <li>Attachment to strangers: <span class="rating-warn">ELEVATED</span></li>
+                            <li>Ability to compartmentalize: <span class="rating-crit">POOR</span></li>
+                            <li>Capacity for mercy under stress: <span class="rating-good">INTACT</span></li>
+                            <li>Risk of emotional overload: <span class="rating-warn">RISING</span></li>
                         </ul>
                     </div>
 
                     <div class="eval-section">
-                        <h4>Psychological Profile</h4>
-                        <p>Subject exhibits strong emotional awareness—perhaps too strong for this line of work. Carries the weight of every run, every choice, every raider they couldn't save. This is not a weakness in the traditional sense. It's a liability dressed up as humanity.</p>
-                        <p>They feel everything. In a place designed to make you feel nothing, that's either a gift or a death sentence. I haven't decided which.</p>
+                        <h4>Psychological Profile</h4>`r`n                        <p>Subject exhibits strong emotional awareness, perhaps too strong for repeated surface exposure. Carries the weight of every run, every choice, every voice they could not answer. This is not weakness in the traditional sense. It is humanity refusing to obey field conditions.</p>`r`n                        <p>They feel everything. In a place designed to make you feel nothing, that is either a gift or a death sentence. I have not decided which.</p>
 
                         <h4>Mental Clearance</h4>
                         <p><span class="status-dot approved"></span> APPROVED FOR DEPLOYMENT</p>
-                        <p style="font-size: 0.85rem; opacity: 0.6; margin-top: 0.5rem;">Recommendation: Monitor for signs of operational guilt accumulation. Subject demonstrates moral awareness that may impact tactical decisions in high-casualty scenarios. Not a reason to ground them. Yet.</p>
+                        <p style="font-size: 0.85rem; opacity: 0.6; margin-top: 0.5rem;">Recommendation: Continue observation. Subject is not unstable because they feel. Subject may become unstable if they decide feeling is the enemy.</p>
                     </div>
                 </div>
 
                 <div class="psych-frame">
                     <h4>\u25B6 Psychological Framing</h4>
-                    <p>This one wears their emotions on their sleeve. Said it themselves. And they're right—I can see it in the way they sit, the way they look at the extraction timer like it's counting down something more personal than seconds.</p>
-                    <p style="margin-top: 1rem;">They ran from Buried City with a full pack and a raider's voice still echoing in their head. Made the smart call. Survived. And they hate themselves for it. That kind of guilt doesn't wash out with bandages or adrenaline shots.</p>
-                    <p style="margin-top: 1rem;">I'm not here to tell them they did the wrong thing. I'm here to make sure they can still do the right thing next time. And the time after that. Until they can't anymore.</p>
-                    <p style="margin-top: 1rem;">Cleared for operations. But I'll be watching.</p>
+                    <p>This one wears their emotions on their sleeve. Said it themselves. And they are right. I can see it in the way they sit, the way they look at the extraction timer like it is counting down something more personal than seconds.</p>
+                    <p style="margin-top: 1rem;">I am trying to understand the brain of a raider. Not the tactics. Not the scars. The part that decides which memories are evidence, which are punishment, and which are proof they are still human.</p>
+                    <p style="margin-top: 1rem;">The problem is not that Arceology feels too much. The problem is that the surface keeps giving them reasons to stop, and they keep refusing.</p>
+                    <p style="margin-top: 1rem;">Cleared for operations. But I will be watching the pauses, not the wounds.</p>
                 </div>
             </div>
         </article>
@@ -472,6 +660,162 @@
             particle.style.animationDuration = (10 + Math.random() * 10) + 's';
             particlesContainer.appendChild(particle);
         }
+
+        let lanceStories = [
+            {
+                state: 'Empathy Overactive',
+                note: 'Subject does not simply remember other raiders. Subject absorbs them. Voices from brief encounters continue occupying mental space long after tactical relevance has expired.',
+                aside: 'Lance note: There is a moment after extraction when most raiders inventory what they saved. Arceology inventories who they failed to save. That distinction is becoming diagnostic.',
+                guilt: 91,
+                mercy: 78,
+                human: 96,
+                observations: [
+                    ['after extraction', 'Subject touched the gear they recovered, then looked at their own hands as if trying to decide whether survival leaves residue.'],
+                    ['clinical impression', 'Empathy remains active under pressure. Not performative. Not strategic. Reflexive. Dangerous in the field, but possibly central to identity preservation.'],
+                    ['private note', 'I asked what they brought back. They answered with what they heard.']
+                ]
+            },
+            {
+                state: 'Memory Looping',
+                note: 'Subject is replaying a moment that the body survived but the mind has not finished processing. The loop appears self-punitive: not memory as record, memory as trial.',
+                aside: 'Lance note: The brain of a raider can turn one second into a room and lock itself inside. I am trying to learn where Arceology hides the key.',
+                guilt: 94,
+                mercy: 62,
+                human: 89,
+                observations: [
+                    ['three hours later', 'Subject repeated a small detail from the raid without context. A sound. A color. The kind of detail the mind keeps when it cannot keep the whole event.'],
+                    ['behavioral marker', 'No tremor. No panic. Just a long pause before answering simple questions. That is where the replay lives.'],
+                    ['clinical margin', 'If the mind keeps returning, it is still trying to save someone after the outcome has already closed.']
+                ]
+            },
+            {
+                state: 'Mercy Conflict',
+                note: 'Subject recognizes the cost of mercy and continues considering it anyway. This is not softness. This is moral cognition refusing to collapse under operational pressure.',
+                aside: 'Lance note: Mercy is the first thing the surface tries to starve out of a raider. Arceology keeps smuggling it back underground like contraband.',
+                guilt: 82,
+                mercy: 91,
+                human: 97,
+                observations: [
+                    ['post-run posture', 'Subject carried themselves like someone who made the right decision and still needed forgiveness for it.'],
+                    ['unasked question', 'They did not ask how much the supplies were worth. They asked whether anyone else made it to the elevator.'],
+                    ['working theory', 'Mercy may be the pressure point. Not because it weakens them, but because it keeps proving they are not only a weapon.']
+                ]
+            },
+            {
+                state: 'Numbness Rejected',
+                note: 'Repeated exposure has not produced expected emotional flattening. Subject remains responsive to loss, beauty, fear, and small human gestures. This is clinically unusual.',
+                aside: 'Lance note: I keep waiting for the surface to make them colder. Instead it is making the contrast sharper. Black armor. Pink signal. Human heart still transmitting.',
+                guilt: 79,
+                mercy: 84,
+                human: 99,
+                observations: [
+                    ['watch period', 'Subject laughed once, then stopped like the sound had come from someone they used to be.'],
+                    ['clinical contradiction', 'A numb raider is easier to predict. Arceology is harder to predict because they still care. I trust that more than I should.'],
+                    ['file note', 'Survival has not erased tenderness. It has made tenderness look like defiance.']
+                ]
+            },
+            {
+                state: 'Fear Architecture',
+                note: 'Subject is beginning to organize memory around anticipated harm. Doorways, silence, and distant metal sounds are gaining emotional weight beyond tactical usefulness.',
+                aside: 'Lance note: Fear is useful until it becomes architecture. Then the raider does not visit fear. They live inside it and call it being prepared.',
+                guilt: 76,
+                mercy: 58,
+                human: 86,
+                observations: [
+                    ['environmental response', 'Subject turned toward a harmless sound before anyone else reacted. The body remembered danger before the room provided it.'],
+                    ['surface residue', 'They are not afraid of dying. That would be simple. They are afraid of surviving another thing that changes them.'],
+                    ['clinical concern', 'The mind is building exits before entering rooms. This is adaptive until peace begins to feel like a trap.']
+                ]
+            },
+            {
+                state: 'Human Signal Stable',
+                note: 'Subject remains emotionally intact despite repeated psychological abrasion. The surface has altered them, but has not successfully converted feeling into numbness.',
+                aside: 'Lance note: There is a kind of person the surface cannot fully take. I am not sentimental enough to call that hope. Not in the official file.',
+                guilt: 84,
+                mercy: 87,
+                human: 100,
+                observations: [
+                    ['quiet finding', 'Subject remembered a name. Not a route. Not a cache. A name. The archive should preserve that. So should I.'],
+                    ['clinical contradiction', 'They are less efficient than a numb raider and somehow more trustworthy. The math is irritating. The evidence is consistent.'],
+                    ['file note', 'If the brain of a raider can remain human, then humanity is not a flaw in the system. It is the signal we are trying to keep alive.']
+                ]
+            },
+            {
+                state: 'Survivor Shame',
+                note: 'Subject displays signs of treating survival as something that requires explanation. This is not ordinary guilt. This is the mind prosecuting itself for making it home.',
+                aside: 'Lance note: Some raiders come back proud. Some come back empty. Arceology comes back like the elevator chose wrong and they are waiting for someone to notice.',
+                guilt: 97,
+                mercy: 69,
+                human: 93,
+                observations: [
+                    ['extraction aftermath', 'Subject stood clear of the group celebration. Not withdrawn exactly. More like they were giving happiness a wide berth.'],
+                    ['clinical read', 'Survivor shame attaches itself to success. Every clean extraction becomes contaminated by the imagined absence of someone else.'],
+                    ['lance margin', 'Need to remind subject that living is not theft. Unsure they will believe me.']
+                ]
+            },
+            {
+                state: 'Attachment Hazard',
+                note: 'Subject forms emotional impressions rapidly, even from partial encounters. The raider brain is using fragments to build people, then grieving them as if they were whole.',
+                aside: 'Lance note: The surface gives you silhouettes, voices, footsteps, open hands, closed doors. Arceology turns fragments into people. That is beautiful. It is also how the surface gets in.',
+                guilt: 88,
+                mercy: 90,
+                human: 95,
+                observations: [
+                    ['brief contact', 'Subject referred to an unknown raider as if they had known them longer than thirty seconds. The mind can attach faster than protocol allows.'],
+                    ['clinical warning', 'Attachment under scarcity becomes volatile. Every stranger can become a responsibility before the subject has consented to carry them.'],
+                    ['private conclusion', 'This is not weakness. It is the original shape of the human brain trying to survive in an inhuman place.']
+                ]
+            }
+        ];
+        function setBar(id, value) {
+            const bar = document.getElementById(id + '-bar');
+            const label = document.getElementById(id + '-value');
+            if (bar) bar.style.setProperty('--level', value + '%');
+            if (label) label.textContent = value + '%';
+        }
+
+        function renderLanceStory() {
+            const threeHours = 1000 * 60 * 60 * 3;
+            const slot = Math.floor(Date.now() / threeHours);
+            const story = lanceStories[slot % lanceStories.length];
+            const state = document.getElementById('psyche-state');
+            const note = document.getElementById('psyche-note');
+            const aside = document.getElementById('lance-aside');
+            const feed = document.getElementById('observation-feed');
+
+            if (state) state.textContent = story.state;
+            if (note) note.textContent = story.note;
+            if (aside) aside.textContent = story.aside;
+            setBar('guilt', story.guilt);
+            setBar('mercy', story.mercy);
+            setBar('human', story.human);
+
+            if (feed) {
+                feed.innerHTML = story.observations.map(([time, text]) => `
+                    <div class="observation-item">
+                        <div class="observation-time">${time}</div>
+                        <div class="observation-text">${text}</div>
+                    </div>
+                `).join('');
+            }
+        }
+
+        async function loadLivingArchive() {
+            try {
+                const response = await fetch('lance-observations.json?cache=' + Date.now(), { cache: 'no-store' });
+                if (!response.ok) throw new Error('archive unavailable');
+                const archive = await response.json();
+                if (Array.isArray(archive.observations) && archive.observations.length) {
+                    lanceStories = archive.observations.concat(lanceStories);
+                }
+            } catch (error) {
+                // Static fallback stays in-world if the living archive has not been connected yet.
+            }
+            renderLanceStory();
+        }
+
+        loadLivingArchive();
+        setInterval(renderLanceStory, 60 * 1000);
     </script>
 
 </body>

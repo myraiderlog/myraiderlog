@@ -1,0 +1,29 @@
+{
+  "updatedAt": "2026-05-19T20:00:00.000Z",
+  "observations": [
+    {
+      "id": "seed-human-signal",
+      "createdAt": "2026-05-19T20:00:00.000Z",
+      "state": "Human Signal Stable",
+      "note": "Subject remains emotionally intact despite repeated psychological abrasion. The surface has altered them, but has not successfully converted feeling into numbness.",
+      "aside": "Lance note: There is a kind of person the surface cannot fully take. I am not sentimental enough to call that hope. Not in the official file.",
+      "guilt": 84,
+      "mercy": 87,
+      "human": 100,
+      "observations": [
+        [
+          "quiet finding",
+          "Subject remembered a name. Not a route. Not a cache. A name. The archive should preserve that. So should I."
+        ],
+        [
+          "clinical contradiction",
+          "They are less efficient than a numb raider and somehow more trustworthy. The math is irritating. The evidence is consistent."
+        ],
+        [
+          "file note",
+          "If the brain of a raider can remain human, then humanity is not a flaw in the system. It is the signal we are trying to keep alive."
+        ]
+      ]
+    }
+  ]
+}
