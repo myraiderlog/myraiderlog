@@ -1,5 +1,33 @@
 [
   {
+    "id": "steam-arc-raiders-turns-to-denuvo-anti-cheat-in-hopes-of",
+    "title": "Arc Raiders turns to Denuvo Anti-Cheat in hopes of curbing foul play, Embark say they're \"working to ensure minimal impact on performance\"",
+    "status": "confirmed",
+    "startDate": "2026-05-19",
+    "endDate": null,
+    "teaser": "Arc Raiders devs Embark have announced that they're going to be rolling out Denuvo anti-cheat software as part of efforts to limit the amount of do...",
+    "summary": "Arc Raiders devs Embark have announced that they're going to be rolling out Denuvo anti-cheat software as part of efforts to limit the amount of dodgy behaviour going on the shooter. The studio said they'll be working to minimise any impact this has on performance, as they also deliver a new trader and weapon as part of a small update teased when they revealed the game's switch to bi-annual major expansions. Read more",
+    "howItWorks": [
+      "Details sourced from Rock, Paper, Shotgun news feed",
+      "Check the source link for full information"
+    ],
+    "rewards": [
+      "See official announcement for full details"
+    ],
+    "raiderImpact": [
+      "Solo: Check source for gameplay impact",
+      "Duo: Check source for gameplay impact",
+      "Trio: Check source for gameplay impact"
+    ],
+    "sources": [
+      {
+        "label": "Rock, Paper, Shotgun",
+        "url": "https://steamstore-a.akamaihd.net/news/externalpost/Rock, Paper, Shotgun/1832700592801178"
+      }
+    ],
+    "lastUpdated": "2026-05-19"
+  },
+  {
     "id": "steam-arc-raiders-gets-denuvo-anti-cheat-a-new-trader-a-",
     "title": "ARC Raiders gets Denuvo Anti-Cheat, a new trader, a new weapon and more",
     "status": "confirmed",
