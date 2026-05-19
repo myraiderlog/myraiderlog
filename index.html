@@ -6,7 +6,7 @@
     <meta name="google-adsense-account" content="ca-pub-7264545503146086">
     <title>Arceology – ARC Raiders Raider Logs, Gameplay & Inspired Gear</title>
     <!-- SEO Meta Tags -->
-    <meta name="description" content="ARC Raiders raider logs, story-driven gameplay, and ARC Raiders–inspired gear from content creator Arceology. Helmet cam footage, survivor journals, and post-apocalyptic field notes from Speranza.">
+    <meta name="description" content="ARC Raiders raider logs, story-driven gameplay, recovered helmet cam footage, survivor journals, and post-apocalyptic field notes from Speranza.">
     <meta name="keywords" content="ARC Raiders, Arceology, raider log, ARC Raiders gameplay, ARC Raiders videos, Speranza, raider stories, ARC Raiders merch, gaming content, extraction shooter, ARC Raiders guide, ARC Raiders tips">
     <meta name="author" content="Arceology">
     <meta name="robots" content="index, follow">
@@ -591,6 +591,206 @@
 
         .preview-card:hover .preview-cta { text-shadow: 0 0 10px rgba(217, 134, 79, 0.5); }
 
+        /* IMMERSIVE ARCHIVE */
+        .world-console {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 2rem;
+            margin: 0 auto 2rem;
+        }
+
+        .terminal-panel,
+        .map-panel,
+        .memory-panel,
+        .transmission-panel {
+            background: linear-gradient(135deg, rgba(26, 20, 16, 0.72), rgba(13, 10, 8, 0.92));
+            border: 1px solid rgba(180, 94, 72, 0.35);
+            border-left: 4px solid var(--rust);
+            box-shadow: 0 20px 70px rgba(0, 0, 0, 0.55), inset 0 0 40px rgba(217, 134, 79, 0.03);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .terminal-panel::before,
+        .map-panel::before,
+        .memory-panel::before,
+        .transmission-panel::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: repeating-linear-gradient(0deg, rgba(217, 134, 79, 0.025) 0 1px, transparent 1px 4px);
+            pointer-events: none;
+        }
+
+        .terminal-panel { padding: 2rem; min-height: 420px; }
+        .panel-kicker {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.65rem;
+            color: var(--ember);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .session-id {
+            font-family: 'Space Mono', monospace;
+            color: var(--steel);
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            margin-bottom: 1.5rem;
+        }
+
+        .terminal-output {
+            font-family: 'Space Mono', monospace;
+            color: var(--sand);
+            font-size: 0.78rem;
+            line-height: 1.9;
+            min-height: 210px;
+        }
+
+        .terminal-output .muted { color: var(--steel); }
+        .terminal-output .hot { color: var(--ember); }
+
+        .command-row {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            border-top: 1px solid rgba(180, 94, 72, 0.22);
+            padding-top: 1rem;
+            margin-top: 1rem;
+            font-family: 'Space Mono', monospace;
+        }
+
+        .prompt-mark { color: var(--ember); }
+        .command-input {
+            flex: 1;
+            min-width: 0;
+            border: 0;
+            outline: 0;
+            background: transparent;
+            color: var(--sand);
+            font-family: 'Space Mono', monospace;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
+
+        .command-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.7rem;
+            margin-top: 1rem;
+        }
+
+        .command-chip,
+        .map-node,
+        .memory-tag {
+            border: 1px solid rgba(180, 94, 72, 0.35);
+            background: rgba(13, 10, 8, 0.75);
+            color: var(--steel);
+            font-family: 'Space Mono', monospace;
+            font-size: 0.65rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 0.65rem 0.8rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .command-chip:hover,
+        .map-node:hover,
+        .memory-tag:hover,
+        .memory-tag.active {
+            color: var(--ember);
+            border-color: var(--ember);
+            box-shadow: 0 0 25px rgba(217, 134, 79, 0.18);
+        }
+
+        .map-panel { padding: 2rem; min-height: 420px; }
+        .speranza-map {
+            position: relative;
+            height: 300px;
+            margin-top: 1.5rem;
+            background:
+                linear-gradient(rgba(217, 134, 79, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(217, 134, 79, 0.05) 1px, transparent 1px),
+                radial-gradient(circle at center, rgba(217, 134, 79, 0.08), transparent 58%);
+            background-size: 34px 34px, 34px 34px, auto;
+            border: 1px solid rgba(180, 94, 72, 0.2);
+        }
+
+        .map-node {
+            position: absolute;
+            padding: 0.45rem 0.6rem;
+            background: rgba(13, 10, 8, 0.9);
+        }
+
+        .map-node::before {
+            content: '';
+            display: inline-block;
+            width: 7px;
+            height: 7px;
+            margin-right: 0.45rem;
+            border-radius: 50%;
+            background: var(--ember);
+            box-shadow: 0 0 12px var(--ember);
+        }
+
+        .node-buried { left: 10%; top: 22%; }
+        .node-dam { right: 9%; top: 34%; }
+        .node-outskirts { left: 18%; bottom: 18%; }
+        .node-industrial { right: 16%; bottom: 20%; }
+        .node-underground { left: 43%; top: 48%; }
+
+        .map-readout {
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--steel);
+            font-size: 1.1rem;
+            font-style: italic;
+            line-height: 1.8;
+            margin-top: 1.25rem;
+        }
+
+        .memory-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 0.8rem;
+            margin-top: 1.5rem;
+        }
+
+        .memory-panel,
+        .transmission-panel {
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        .memory-readout,
+        .transmission-text {
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--sand);
+            font-size: 1.25rem;
+            font-style: italic;
+            line-height: 2;
+            margin-top: 1.4rem;
+        }
+
+        .transmission-panel {
+            cursor: crosshair;
+        }
+
+        .redacted {
+            background: rgba(217, 134, 79, 0.18);
+            color: transparent;
+            text-shadow: 0 0 8px rgba(217, 134, 79, 0.7);
+            padding: 0 0.25rem;
+            transition: all 0.35s ease;
+        }
+
+        .transmission-panel.revealed .redacted {
+            color: var(--ember);
+            background: transparent;
+            text-shadow: 0 0 10px rgba(217, 134, 79, 0.35);
+        }
+
         /* FOOTER */
         footer {
             padding: 6rem 5% 4rem;
@@ -641,6 +841,7 @@
             .nav-content { flex-wrap: wrap; gap: 0.5rem; }
             .nav-links { gap: 1.2rem; }
             .nav-links a { font-size: 0.65rem; padding: 0.3rem 0; }
+            .world-console { grid-template-columns: 1fr; }
             .preview-grid { grid-template-columns: 1fr; gap: 2rem; }
             .hero { padding: 0 3%; }
             main { padding: 0 3%; }
@@ -649,9 +850,6 @@
             .audio-label { bottom: 1rem; right: 4.5rem; }
             .boot-line { font-size: 0.6rem; white-space: normal; }
             .boot-title { font-size: 1.8rem; letter-spacing: 4px; }
-            .support-container { padding: 2rem; }
-            .support-message { font-size: 1.1rem; }
-            .support-btn { padding: 0.8rem 1.5rem; font-size: 0.75rem; }
             .preview-card { padding: 2rem; }
             .preview-title { font-size: 1.5rem; }
             .footer-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.8rem; }
@@ -673,14 +871,13 @@
             .section-title { font-size: 1.8rem; letter-spacing: 3px; }
             .section-subtitle { font-size: 0.6rem; letter-spacing: 2px; margin-bottom: 2.5rem; }
             .preview-card { padding: 1.5rem; }
+            .terminal-panel, .map-panel, .memory-panel, .transmission-panel { padding: 1.2rem; }
+            .speranza-map { height: 260px; }
+            .map-node { font-size: 0.55rem; letter-spacing: 1px; }
+            .command-row { align-items: flex-start; }
             .preview-title { font-size: 1.3rem; }
             .preview-description { font-size: 1rem; }
             .preview-cta { font-size: 0.65rem; }
-            .support-container { padding: 1.5rem; margin: 0 -3%; }
-            .support-header { font-size: 0.6rem; letter-spacing: 2px; }
-            .support-message { font-size: 1rem; line-height: 1.8; }
-            .support-btn { padding: 0.8rem 1.2rem; font-size: 0.7rem; letter-spacing: 2px; min-height: 48px; }
-            .support-status { font-size: 0.5rem; letter-spacing: 1px; word-break: break-all; }
             .boot-terminal { width: 95%; }
             .boot-line { font-size: 0.5rem; letter-spacing: 0.5px; white-space: normal; line-height: 1.6; }
             .boot-title { font-size: 1.3rem; letter-spacing: 3px; }
@@ -762,6 +959,70 @@
     </section>
 
     <main>
+        <section class="section" id="archive-terminal">
+            <h2 class="section-title">terminal archive</h2>
+            <p class="section-subtitle">Session Open // Visitor Cleared</p>
+
+            <div class="world-console">
+                <div class="terminal-panel">
+                    <div class="panel-kicker">// terminal.speranza</div>
+                    <div class="session-id">visitor: <span id="visitor-id">RAIDER-000</span> // clearance: temporary</div>
+                    <div class="terminal-output" id="terminal-output">
+                        <div><span class="hot">></span> Archive awake. Signal stabilized.</div>
+                        <div><span class="hot">></span> Raider memory index mounted.</div>
+                        <div class="muted">Available: open logs // scan footage // read medic file // decrypt memory</div>
+                    </div>
+                    <div class="command-row">
+                        <span class="prompt-mark">&gt;</span>
+                        <input class="command-input" id="command-input" autocomplete="off" spellcheck="false" value="decrypt memory">
+                    </div>
+                    <div class="command-chips">
+                        <button class="command-chip" data-command="open logs">open logs</button>
+                        <button class="command-chip" data-command="scan footage">scan footage</button>
+                        <button class="command-chip" data-command="read medic file">read medic file</button>
+                        <button class="command-chip" data-command="decrypt memory">decrypt memory</button>
+                    </div>
+                </div>
+
+                <div class="map-panel">
+                    <div class="panel-kicker">// speranza.fieldmap</div>
+                    <div class="session-id">topside signal: unstable // archive links: active</div>
+                    <div class="speranza-map" aria-label="Speranza field map">
+                        <button class="map-node node-buried" data-location="Buried City">Buried City</button>
+                        <button class="map-node node-dam" data-location="Dam Battlegrounds">Dam</button>
+                        <button class="map-node node-outskirts" data-location="Outskirts">Outskirts</button>
+                        <button class="map-node node-industrial" data-location="Industrial Zone">Industrial</button>
+                        <button class="map-node node-underground" data-location="Speranza Underground">Speranza</button>
+                    </div>
+                    <div class="map-readout" id="map-readout">
+                        Select a signal point. The archive will surface the memory attached to that ground.
+                    </div>
+                </div>
+            </div>
+
+            <div class="memory-panel">
+                <div class="panel-kicker">// emotional.index</div>
+                <div class="memory-grid">
+                    <button class="memory-tag active" data-memory="guilt">guilt</button>
+                    <button class="memory-tag" data-memory="survival">survival</button>
+                    <button class="memory-tag" data-memory="mercy">mercy</button>
+                    <button class="memory-tag" data-memory="fear">fear</button>
+                    <button class="memory-tag" data-memory="human">human</button>
+                </div>
+                <div class="memory-readout" id="memory-readout">
+                    Guilt is the sound that follows extraction. It does not care that survival was the correct choice.
+                </div>
+            </div>
+
+            <div class="transmission-panel" id="transmission-panel">
+                <div class="panel-kicker">// hidden.transmission</div>
+                <div class="transmission-text">
+                    Lance flagged the file as <span class="redacted">emotionally compromised</span>.
+                    Arceology marked it as <span class="redacted">still worth saving</span>.
+                </div>
+            </div>
+        </section>
+
         <!-- CONTENT SECTIONS -->
         <section class="section">
             <h2 class="section-title">what I do</h2>
@@ -807,7 +1068,7 @@
                     <span class="preview-cta">Watch gameplay &#8594;</span>
                 </a>
             </div>
-        </
+        </section>
 
         <!-- ABOUT THE RAIDER SECTION -->
         <section class="section" style="padding-bottom: 4rem;">
@@ -818,7 +1079,7 @@
                     Arceology is an ARC Raiders content creator documenting the emotional reality of survival in Speranza. Every raid, every extraction, every loss gets recorded—not as strategy guides or tier lists, but as honest, story-driven field logs that capture what it feels like to be human in a world that rewards numbness.
                 </p>
                 <p style="font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: var(--steel); line-height: 2; margin-bottom: 2rem;">
-                    This site is a living archive of those experiences. The field logs are personal journals written in-character from the perspective of a raider who refuses to stop feeling, even when survival demands it. The gameplay footage is raw helmet cam recordings that pair with each written entry. The gear is ARC Raiders–inspired apparel designed to carry the aesthetic of Speranza into the real world.
+                    This site is a living archive of those experiences. The field logs are personal journals written in-character from the perspective of a raider who refuses to stop feeling, even when survival demands it. The gameplay footage is raw helmet cam recordings that pair with each written entry. The terminal exists as a signal record: part confession, part field evidence, part proof that someone was still human down there.
                 </p>
                 <p style="font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: var(--steel); line-height: 2; margin-bottom: 2rem;">
                     Every piece of content here is independently created by Arceology. This is not an official ARC Raiders property—it is a fan-driven creative project born from a deep connection to the game, its world, and the stories it makes possible.
@@ -924,6 +1185,97 @@
                     }, 50);
                 }
             }, 3000);
+        }
+
+        // ========== IMMERSIVE ARCHIVE ==========
+        const visitorId = document.getElementById('visitor-id');
+        const terminalOutput = document.getElementById('terminal-output');
+        const commandInput = document.getElementById('command-input');
+        const mapReadout = document.getElementById('map-readout');
+        const memoryReadout = document.getElementById('memory-readout');
+        const transmissionPanel = document.getElementById('transmission-panel');
+
+        const callsign = 'RAIDER-' + String(Math.floor(100 + Math.random() * 899));
+        if (visitorId) visitorId.textContent = callsign;
+
+        const commandResponses = {
+            'open logs': [
+                '<span class="hot">> OPENING FIELD LOGS...</span>',
+                'Recovered journals indexed by place, pressure, and regret.',
+                '<span class="muted">route: blog.html // status: readable</span>'
+            ],
+            'scan footage': [
+                '<span class="hot">> HELMET CAM SIGNAL FOUND</span>',
+                'Visual archive contains raw topside fragments. No polish. No mercy edits.',
+                '<span class="muted">route: videos.html // signal: unstable</span>'
+            ],
+            'read medic file': [
+                '<span class="hot">> MEDICAL LOCK BYPASSED</span>',
+                'Lance cleared the body. The mind remains under observation.',
+                '<span class="muted">route: medic-evaluation.html // classification: confidential</span>'
+            ],
+            'decrypt memory': [
+                '<span class="hot">> MEMORY DECRYPT STARTED</span>',
+                'There are entries that behave less like records and more like wounds.',
+                '<span class="muted">emotional.index mounted // select a tag below</span>'
+            ]
+        };
+
+        function runCommand(command) {
+            if (!terminalOutput) return;
+            const key = command.trim().toLowerCase();
+            const response = commandResponses[key] || [
+                '<span class="hot">> UNKNOWN COMMAND</span>',
+                'The terminal answers only to what the raider was willing to name.',
+                '<span class="muted">try: open logs // scan footage // read medic file // decrypt memory</span>'
+            ];
+            terminalOutput.innerHTML = response.map(line => `<div>${line}</div>`).join('');
+            if (commandInput) commandInput.value = key;
+        }
+
+        document.querySelectorAll('.command-chip').forEach(button => {
+            button.addEventListener('click', () => runCommand(button.dataset.command || ''));
+        });
+
+        if (commandInput) {
+            commandInput.addEventListener('keydown', event => {
+                if (event.key === 'Enter') runCommand(commandInput.value);
+            });
+        }
+
+        const locationSignals = {
+            'Buried City': 'Buried City returns a voice under rubble and a pack full of proof that survival can still feel like failure.',
+            'Dam Battlegrounds': 'Dam Battlegrounds carries rust, old water, and caches left by people who hoped someone would make use of what they could not.',
+            'Outskirts': 'The Outskirts are mostly wind. Names scratched into concrete. Proof that somebody was here before the archive found them.',
+            'Industrial Zone': 'Industrial Zone is a corridor of doors. One opens to supplies. One opens to a memory that should not be touched.',
+            'Speranza Underground': 'Speranza keeps the lights low and the breathing steady. Down here, the terminal remembers what topside tries to erase.'
+        };
+
+        document.querySelectorAll('.map-node').forEach(node => {
+            node.addEventListener('click', () => {
+                const location = node.dataset.location || '';
+                if (mapReadout) mapReadout.textContent = locationSignals[location] || 'Signal lost.';
+            });
+        });
+
+        const memorySignals = {
+            guilt: 'Guilt is the sound that follows extraction. It does not care that survival was the correct choice.',
+            survival: 'Survival is clean on paper: in, loot, extract. The body obeys. The conscience files an objection.',
+            mercy: 'Mercy is expensive topside. Sometimes it costs ammo. Sometimes time. Sometimes the part of you that still recognizes a voice.',
+            fear: 'Fear is useful until it becomes architecture. Then every door looks like a warning.',
+            human: 'Human is not a status effect. It is the refusal to become numb just because numbness would be easier.'
+        };
+
+        document.querySelectorAll('.memory-tag').forEach(tag => {
+            tag.addEventListener('click', () => {
+                document.querySelectorAll('.memory-tag').forEach(item => item.classList.remove('active'));
+                tag.classList.add('active');
+                if (memoryReadout) memoryReadout.textContent = memorySignals[tag.dataset.memory] || '';
+            });
+        });
+
+        if (transmissionPanel) {
+            transmissionPanel.addEventListener('click', () => transmissionPanel.classList.toggle('revealed'));
         }
     </script>
 </body>
