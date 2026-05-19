@@ -1,6 +1,30 @@
 {
-  "updatedAt": "2026-05-19T20:00:00.000Z",
+  "updatedAt": "2026-05-19T22:21:19.783Z",
   "observations": [
+    {
+      "id": "lance-2026-05-19T22-21-19-783Z-0c861c9e",
+      "createdAt": "2026-05-19T22:21:19.783Z",
+      "state": "Fear Architecture",
+      "note": "Subject presents another variation of mercy becoming a reflex before strategy can interrupt. The pattern is not tactical failure. It is the cost of remaining psychologically available in a world that rewards emotional shutdown.",
+      "aside": "Lance note: The body came back. The question is how much of the person had to stay behind to make room for it.",
+      "guilt": 73,
+      "mercy": 73,
+      "human": 98,
+      "observations": [
+        [
+          "after extraction",
+          "Subject looked at the recovered supplies with the expression of someone waiting for them to accuse back."
+        ],
+        [
+          "watch period",
+          "Subject smiled at a harmless remark, then withdrew from the smile as if it belonged to someone safer."
+        ],
+        [
+          "file note",
+          "If this is instability, it is the kind that keeps a person from becoming useful in all the worst ways."
+        ]
+      ]
+    },
     {
       "id": "seed-human-signal",
       "createdAt": "2026-05-19T20:00:00.000Z",
