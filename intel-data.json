@@ -1,5 +1,33 @@
 [
   {
+    "id": "steam-arc-raiders-gets-denuvo-anti-cheat-a-new-trader-a-",
+    "title": "ARC Raiders gets Denuvo Anti-Cheat, a new trader, a new weapon and more",
+    "status": "confirmed",
+    "startDate": "2026-05-19",
+    "endDate": null,
+    "teaser": "ARC Raiders developers Embark Studios have given the game a fresh content drop, along with news about anti-cheat changes coming to the game. Read t...",
+    "summary": "ARC Raiders developers Embark Studios have given the game a fresh content drop, along with news about anti-cheat changes coming to the game. Read the full article here: https://www.gamingonlinux.com/2026/05/arc-raiders-gets-denuvo-anti-cheat-a-new-trader-a-new-weapon-and-more/",
+    "howItWorks": [
+      "Details sourced from GamingOnLinux news feed",
+      "Check the source link for full information"
+    ],
+    "rewards": [
+      "See official announcement for full details"
+    ],
+    "raiderImpact": [
+      "Solo: Check source for gameplay impact",
+      "Duo: Check source for gameplay impact",
+      "Trio: Check source for gameplay impact"
+    ],
+    "sources": [
+      {
+        "label": "GamingOnLinux",
+        "url": "https://steamstore-a.akamaihd.net/news/externalpost/GamingOnLinux/1832700592800668"
+      }
+    ],
+    "lastUpdated": "2026-05-19"
+  },
+  {
     "id": "steam-arc-raiders-will-get-major-updates-every-six-month",
     "title": "Arc Raiders will get major updates every six months going forwards, with the next one set to roll out the shooter's largest map yet",
     "status": "confirmed",
