@@ -1,6 +1,30 @@
 {
-  "updatedAt": "2026-05-20T03:46:58.271Z",
+  "updatedAt": "2026-05-20T04:19:15.406Z",
   "observations": [
+    {
+      "id": "lance-2026-05-20T04-19-15-406Z-bff22528",
+      "createdAt": "2026-05-20T04:19:15.406Z",
+      "state": "Numbness Rejected",
+      "note": "Subject presents another variation of fear building exits inside places that are already safe. The pattern is not tactical failure. It is the cost of remaining psychologically available in a world that rewards emotional shutdown.",
+      "aside": "Lance note: I keep trying to separate wound from witness. The surface has made that difficult.",
+      "guilt": 87,
+      "mercy": 60,
+      "human": 91,
+      "observations": [
+        [
+          "quiet finding",
+          "No tremor noted. No visible injury. Emotional response remains the loudest symptom in the room."
+        ],
+        [
+          "behavioral marker",
+          "Subject remembered a voice with more precision than the route out. Tactical memory is not always the memory that wins."
+        ],
+        [
+          "after extraction",
+          "Subject looked at the recovered supplies with the expression of someone waiting for them to accuse back."
+        ]
+      ]
+    },
     {
       "id": "lance-2026-05-20T03-46-58-271Z-7fd37b8f",
       "createdAt": "2026-05-20T03:46:58.271Z",
