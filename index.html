@@ -991,6 +991,7 @@
             <div class="nav-links">
                 <a href="blog.html">logs</a>
                 <a href="medic-evaluation.html">medic eval</a>
+                <a href="triage.html">triage</a>
                 <a href="videos.html">gameplay</a>
 <a href="faq.html">faq</a>
 <a href="about.html">about</a>
@@ -1026,7 +1027,7 @@
                     <div class="terminal-output" id="terminal-output">
                         <div><span class="hot">></span> Signal received. You are no longer outside the archive.</div>
                         <div><span class="hot">></span> Each command reveals why the content exists in-world.</div>
-                        <div class="muted">Available: open logs // scan footage // read medic file // decrypt memory // trace signal</div>
+                        <div class="muted">Available: open logs // scan footage // read medic file // open triage // decrypt memory // trace signal</div>
                     </div>
                     <div class="command-row">
                         <span class="prompt-mark">&gt;</span>
@@ -1036,6 +1037,7 @@
                         <button class="command-chip" data-command="open logs">open logs</button>
                         <button class="command-chip" data-command="scan footage">scan footage</button>
                         <button class="command-chip" data-command="read medic file">read medic file</button>
+                        <button class="command-chip" data-command="open triage">open triage</button>
                         <button class="command-chip" data-command="decrypt memory">decrypt memory</button>
                         <button class="command-chip" data-command="trace signal">trace signal</button>
                     </div>
@@ -1099,6 +1101,11 @@
                     <p>The memory tags are not decoration. They are lenses. Guilt, mercy, fear, survival, and human change how the archive explains the same raids.</p>
                     <span class="signal-note">Effect: clicks create meaning</span>
                 </article>
+                <article class="depth-card">
+                    <h3>// lance.triage</h3>
+                    <p>The triage room gives each visitor a fictional subject number and lets Lance build a local raider profile through questions, jokes, and unsettling clinical notes.</p>
+                    <span class="signal-note">Effect: the viewer becomes a case file</span>
+                </article>
             </div>
         </section>
 
@@ -1146,6 +1153,23 @@
                         and what the recording cannot explain.
                     </p>
                     <span class="preview-cta">Watch gameplay &#8594;</span>
+                </a>
+
+                <!-- TRIAGE -->
+                <a href="triage.html" class="preview-card">
+                    <svg class="preview-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style="width: 4rem; height: 4rem; display: block; margin-bottom: 1.5rem;">
+                        <rect x="14" y="18" width="72" height="60" fill="none" stroke="#d46aa2" stroke-width="2"/>
+                        <rect x="18" y="22" width="64" height="52" fill="rgba(3,4,6,0.75)"/>
+                        <path d="M50 31 V65 M33 48 H67" stroke="#b85a87" stroke-width="4" stroke-linecap="square"/>
+                        <circle cx="50" cy="48" r="30" fill="none" stroke="#8d939d" stroke-width="1" stroke-dasharray="4 6"/>
+                        <text x="50" y="91" font-family="monospace" font-size="5" fill="#d46aa2" text-anchor="middle" letter-spacing="1">TRIAGE.CHANNEL</text>
+                    </svg>
+                    <h3 class="preview-title">Lance Triage</h3>
+                    <p class="preview-description">
+                        Enter a fictional medic channel, receive a subject number, and let Lance build a raider profile
+                        from your surface memories, choices, and evasions.
+                    </p>
+                    <span class="preview-cta">Enter triage &#8594;</span>
                 </a>
             </div>
         </section>
@@ -1294,6 +1318,11 @@
                 'Lance tried to diagnose the raider like a patient. The file keeps becoming a confession.',
                 '<span class="muted">world function: clinical contradiction // route: medic-evaluation.html</span>'
             ],
+            'open triage': [
+                '<span class="hot">> LANCE TRIAGE CHANNEL OPEN</span>',
+                'A temporary subject file is waiting. Lance says the clinic is mostly safe, which is not the same thing as reassuring.',
+                '<span class="muted">world function: viewer evaluation // route: triage.html</span>'
+            ],
             'decrypt memory': [
                 '<span class="hot">> MEMORY DECRYPT STARTED</span>',
                 'The same raid changes meaning when filtered through guilt, mercy, fear, survival, or humanity.',
@@ -1312,7 +1341,7 @@
             const response = commandResponses[key] || [
                 '<span class="hot">> UNKNOWN COMMAND</span>',
                 'The terminal answers only to what the raider was willing to name.',
-                '<span class="muted">try: open logs // scan footage // read medic file // decrypt memory // trace signal</span>'
+                '<span class="muted">try: open logs // scan footage // read medic file // open triage // decrypt memory // trace signal</span>'
             ];
             terminalOutput.innerHTML = response.map(line => `<div>${line}</div>`).join('');
             if (commandInput) commandInput.value = key;
