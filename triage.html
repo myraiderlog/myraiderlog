@@ -3,66 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lance Raider Triage Room | Arceology</title>
-    <meta name="description" content="Enter Lance's fictional Raider Triage Room: an in-world ARC Raiders inspired medic channel with a local subject profile and story-based evaluation.">
+    <title>Lance Live Triage Chat | Arceology</title>
+    <meta name="description" content="Enter Lance's fictional live triage chat room: an in-world ARC Raiders inspired medic channel where visitors transmit messages and Lance responds.">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://myraiderlog.com/triage.html">
     <meta name="google-adsense-account" content="ca-pub-7264545503146086">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --rust: #b85a87;
-            --ash: #1a1d22;
-            --sand: #f1f1f3;
-            --night: #030406;
-            --ember: #d46aa2;
-            --steel: #8d939d;
+            --pink: #d46aa2;
+            --pink-deep: #b85a87;
             --pink-soft: #f2a6c9;
-            --white-worn: #e7e7e9;
-            --panel: rgba(8, 9, 12, 0.86);
+            --white: #f1f1f3;
+            --gray: #8d939d;
+            --black: #030406;
+            --panel: rgba(9, 10, 13, 0.88);
+            --line: rgba(212, 106, 162, 0.26);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
         body {
             min-height: 100vh;
-            background: var(--night);
-            color: var(--sand);
+            background: var(--black);
+            color: var(--white);
             font-family: 'Cormorant Garamond', serif;
-            line-height: 1.7;
-            overflow-x: hidden;
+            overflow: hidden;
         }
 
         body::before {
             content: '';
             position: fixed;
             inset: -50%;
-            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="280" height="280"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.86" numOctaves="4" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23n)" opacity="0.16"/></svg>');
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="280" height="280"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.88" numOctaves="4" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23n)" opacity="0.15"/></svg>');
+            z-index: 10;
             pointer-events: none;
-            z-index: 20;
             mix-blend-mode: overlay;
-            animation: grain 9s steps(10) infinite;
+            animation: grain 8s steps(10) infinite;
         }
 
         body::after {
             content: '';
             position: fixed;
             inset: 0;
-            background:
-                linear-gradient(transparent 50%, rgba(255, 255, 255, 0.025) 51%),
-                radial-gradient(circle at 20% 20%, rgba(212, 106, 162, 0.12), transparent 28%),
-                radial-gradient(ellipse at center, transparent 25%, rgba(3, 4, 6, 0.82) 100%);
-            background-size: 100% 4px, auto, auto;
+            z-index: 9;
             pointer-events: none;
-            z-index: 19;
+            background:
+                linear-gradient(transparent 50%, rgba(255,255,255,0.025) 51%),
+                radial-gradient(circle at 12% 12%, rgba(212,106,162,0.16), transparent 30%),
+                radial-gradient(circle at 86% 22%, rgba(242,166,201,0.08), transparent 28%),
+                radial-gradient(ellipse at center, transparent 30%, rgba(3,4,6,0.88) 100%);
+            background-size: 100% 4px, auto, auto, auto;
         }
 
         @keyframes grain {
             0%, 100% { transform: translate(0, 0); }
-            20% { transform: translate(-7%, 4%); }
-            40% { transform: translate(5%, -8%); }
-            60% { transform: translate(9%, 5%); }
-            80% { transform: translate(-4%, 8%); }
+            20% { transform: translate(-5%, 3%); }
+            40% { transform: translate(5%, -6%); }
+            60% { transform: translate(8%, 5%); }
+            80% { transform: translate(-4%, 7%); }
         }
 
         nav {
@@ -70,393 +69,336 @@
             top: 0;
             left: 0;
             width: 100%;
-            padding: 1.25rem 5%;
             z-index: 30;
-            background: linear-gradient(180deg, rgba(3, 4, 6, 0.98), rgba(3, 4, 6, 0.86));
-            border-bottom: 1px solid rgba(184, 90, 135, 0.3);
-            backdrop-filter: blur(15px);
+            padding: 1rem 5%;
+            background: linear-gradient(180deg, rgba(3,4,6,0.98), rgba(3,4,6,0.86));
+            border-bottom: 1px solid var(--line);
+            backdrop-filter: blur(14px);
         }
 
         .nav-content {
-            max-width: 1400px;
+            max-width: 1500px;
             margin: 0 auto;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 1.5rem;
+            gap: 1rem;
         }
 
         .nav-logo {
+            color: var(--white);
+            text-decoration: none;
             font-family: 'Cinzel', serif;
-            font-size: 1.1rem;
-            color: var(--sand);
             letter-spacing: 3px;
             text-transform: lowercase;
-            text-decoration: none;
         }
 
         .nav-terminal {
+            color: var(--gray);
             font-family: 'Space Mono', monospace;
-            color: var(--steel);
-            font-size: 0.62rem;
+            font-size: 0.6rem;
             letter-spacing: 2px;
-            margin-top: 0.1rem;
         }
 
         .nav-links {
             display: flex;
             flex-wrap: wrap;
-            gap: 1.4rem;
+            gap: 1.2rem;
         }
 
         .nav-links a {
+            color: var(--gray);
+            text-decoration: none;
             font-family: 'Space Mono', monospace;
-            color: var(--steel);
-            font-size: 0.68rem;
+            font-size: 0.66rem;
             letter-spacing: 2px;
             text-transform: uppercase;
-            text-decoration: none;
-            transition: color 0.2s ease, text-shadow 0.2s ease;
         }
 
         .nav-links a:hover,
         .nav-links a.active {
-            color: var(--ember);
-            text-shadow: 0 0 14px rgba(212, 106, 162, 0.55);
+            color: var(--pink);
+            text-shadow: 0 0 14px rgba(212,106,162,0.55);
         }
 
-        main {
+        .room {
             position: relative;
-            z-index: 21;
-            max-width: 1500px;
-            margin: 0 auto;
-            padding: 8rem 5% 4rem;
-        }
-
-        .room-header {
+            z-index: 20;
+            height: 100vh;
+            padding: 6.2rem 5% 2rem;
             display: grid;
-            grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
-            gap: 2rem;
-            align-items: end;
-            margin-bottom: 2rem;
+            grid-template-columns: 260px minmax(0, 1fr) 300px;
+            gap: 1rem;
+            max-width: 1600px;
+            margin: 0 auto;
         }
 
-        .kicker {
+        .panel {
+            min-height: 0;
+            border: 1px solid var(--line);
+            background: var(--panel);
+            box-shadow: 0 24px 70px rgba(0,0,0,0.46);
+        }
+
+        .panel-title {
+            min-height: 48px;
+            padding: 0.9rem 1rem;
+            border-bottom: 1px solid var(--line);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            color: var(--pink);
             font-family: 'Space Mono', monospace;
-            color: var(--ember);
-            font-size: 0.72rem;
-            letter-spacing: 3px;
+            font-size: 0.68rem;
+            letter-spacing: 2px;
             text-transform: uppercase;
-            margin-bottom: 1rem;
+        }
+
+        .member-list,
+        .intel-list {
+            padding: 1rem;
+            display: grid;
+            gap: 0.85rem;
+        }
+
+        .member {
+            border-left: 2px solid rgba(212,106,162,0.45);
+            padding-left: 0.75rem;
+            color: var(--gray);
+            font-family: 'Space Mono', monospace;
+            font-size: 0.7rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .member strong {
+            display: block;
+            color: var(--white);
+            font-family: 'Cinzel', serif;
+            font-size: 0.95rem;
+            letter-spacing: 2px;
+            margin-bottom: 0.15rem;
+        }
+
+        .room-card {
+            padding: 1rem;
+            margin: 1rem;
+            border: 1px dashed rgba(212,106,162,0.3);
+            background: rgba(212,106,162,0.05);
+            color: var(--gray);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .chat {
+            min-height: 0;
+            display: grid;
+            grid-template-rows: auto minmax(0, 1fr) auto auto;
+        }
+
+        .room-heading {
+            padding: 1.1rem 1.2rem;
+            border-bottom: 1px solid var(--line);
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            align-items: center;
         }
 
         h1 {
+            color: var(--white);
             font-family: 'Cinzel', serif;
-            font-size: clamp(2.25rem, 6vw, 5.2rem);
-            letter-spacing: 8px;
+            font-size: clamp(1.5rem, 3vw, 2.6rem);
+            letter-spacing: 5px;
             text-transform: uppercase;
-            line-height: 1.08;
-            text-shadow: 0 0 42px rgba(184, 90, 135, 0.32);
+            line-height: 1.1;
+            text-shadow: 0 0 32px rgba(212,106,162,0.32);
             animation: titleGlitch 9s infinite;
         }
 
         @keyframes titleGlitch {
-            0%, 92%, 100% { transform: translate(0, 0); }
-            93% { transform: translate(-2px, 1px); }
-            94% { transform: translate(2px, -1px); }
-            95% { transform: translate(0, 0); }
+            0%, 92%, 100% { transform: translate(0,0); }
+            93% { transform: translate(-1px,1px); }
+            94% { transform: translate(2px,-1px); }
+            95% { transform: translate(0,0); }
         }
 
-        .intro {
-            color: var(--steel);
-            font-size: clamp(1.1rem, 2vw, 1.35rem);
-            max-width: 760px;
-            margin-top: 1.25rem;
-        }
-
-        .status-board {
-            border: 1px solid rgba(184, 90, 135, 0.32);
-            background: linear-gradient(135deg, rgba(184, 90, 135, 0.08), rgba(3, 4, 6, 0.82));
-            padding: 1.35rem;
-            box-shadow: 0 22px 60px rgba(0, 0, 0, 0.45);
-        }
-
-        .status-row {
-            display: flex;
-            justify-content: space-between;
-            gap: 1rem;
-            padding: 0.6rem 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.07);
-            font-family: 'Space Mono', monospace;
-            font-size: 0.72rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
-        .status-row:last-child { border-bottom: 0; }
-        .status-row span:first-child { color: var(--steel); }
-        .status-row span:last-child { color: var(--pink-soft); text-align: right; }
-
-        .triage-grid {
-            display: grid;
-            grid-template-columns: minmax(310px, 0.7fr) minmax(0, 1.3fr) minmax(300px, 0.8fr);
-            gap: 1.25rem;
-            align-items: stretch;
-        }
-
-        .panel {
-            min-height: 100%;
-            border: 1px solid rgba(184, 90, 135, 0.28);
-            background: var(--panel);
-            box-shadow: 0 24px 70px rgba(0, 0, 0, 0.42);
-        }
-
-        .panel-header {
-            padding: 1rem 1.1rem;
-            border-bottom: 1px solid rgba(184, 90, 135, 0.22);
-            font-family: 'Space Mono', monospace;
-            font-size: 0.72rem;
-            color: var(--ember);
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            display: flex;
-            justify-content: space-between;
-            gap: 1rem;
-        }
-
-        .panel-body { padding: 1.15rem; }
-
-        .profile-id {
-            font-family: 'Cinzel', serif;
-            font-size: 1.55rem;
-            letter-spacing: 3px;
-            color: var(--sand);
-            margin-bottom: 0.3rem;
-        }
-
-        .profile-sub {
+        .channel-status {
+            color: var(--gray);
             font-family: 'Space Mono', monospace;
             font-size: 0.68rem;
-            color: var(--steel);
             letter-spacing: 1px;
             text-transform: uppercase;
-            margin-bottom: 1.2rem;
+            text-align: right;
         }
 
-        .trait {
-            margin-bottom: 1rem;
-        }
-
-        .trait-label {
-            display: flex;
-            justify-content: space-between;
-            font-family: 'Space Mono', monospace;
-            font-size: 0.66rem;
-            color: var(--steel);
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            margin-bottom: 0.35rem;
-        }
-
-        .bar {
-            height: 7px;
-            background: rgba(255, 255, 255, 0.08);
-            overflow: hidden;
-        }
-
-        .bar span {
+        .channel-status span {
             display: block;
-            height: 100%;
-            width: 50%;
-            background: linear-gradient(90deg, var(--rust), var(--ember), var(--pink-soft));
-            box-shadow: 0 0 14px rgba(212, 106, 162, 0.55);
-            transition: width 0.4s ease;
+            color: var(--pink-soft);
         }
 
-        .profile-note {
-            margin-top: 1.2rem;
-            padding: 1rem;
-            border-left: 3px solid var(--ember);
-            background: rgba(212, 106, 162, 0.07);
-            color: var(--white-worn);
-            font-style: italic;
-        }
-
-        .chat-panel {
-            display: flex;
-            flex-direction: column;
-            min-height: 620px;
-        }
-
-        .chat-log {
-            flex: 1;
-            padding: 1.15rem;
+        .messages {
+            min-height: 0;
             overflow-y: auto;
-            max-height: 610px;
+            padding: 1rem;
             scroll-behavior: smooth;
         }
 
         .message {
-            margin-bottom: 1rem;
             display: grid;
-            gap: 0.35rem;
+            grid-template-columns: 132px minmax(0, 1fr);
+            gap: 0.7rem;
+            margin-bottom: 0.75rem;
+            align-items: start;
         }
 
-        .speaker {
+        .name {
+            color: var(--gray);
             font-family: 'Space Mono', monospace;
-            font-size: 0.66rem;
-            letter-spacing: 2px;
+            font-size: 0.68rem;
+            letter-spacing: 1px;
             text-transform: uppercase;
+            padding-top: 0.65rem;
+            text-align: right;
+            overflow-wrap: anywhere;
         }
 
-        .lance .speaker { color: var(--ember); }
-        .subject .speaker { color: var(--pink-soft); }
-        .system .speaker { color: var(--steel); }
+        .message.lance .name { color: var(--pink); }
+        .message.system .name { color: var(--pink-soft); }
 
-        .bubble {
-            padding: 0.9rem 1rem;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            background: rgba(255, 255, 255, 0.035);
-            color: var(--sand);
-            font-size: 1.04rem;
+        .text {
+            color: var(--white);
+            border: 1px solid rgba(255,255,255,0.08);
+            background: rgba(255,255,255,0.035);
+            padding: 0.72rem 0.85rem;
+            font-size: 1.06rem;
+            line-height: 1.55;
         }
 
-        .lance .bubble {
-            border-left: 3px solid var(--ember);
-            background: rgba(212, 106, 162, 0.065);
+        .message.lance .text {
+            border-left: 3px solid var(--pink);
+            background: rgba(212,106,162,0.07);
         }
 
-        .subject .bubble {
+        .message.user .text {
             border-left: 3px solid var(--pink-soft);
-            background: rgba(241, 241, 243, 0.045);
         }
 
-        .system .bubble {
-            font-family: 'Space Mono', monospace;
-            font-size: 0.76rem;
-            color: var(--steel);
+        .message.system .text {
+            color: var(--gray);
             border-style: dashed;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.74rem;
         }
 
         .typing {
             display: none;
-            padding: 0 1.15rem 0.8rem;
+            padding: 0 1rem 0.7rem 142px;
+            color: var(--gray);
             font-family: 'Space Mono', monospace;
             font-size: 0.68rem;
-            color: var(--steel);
             letter-spacing: 1px;
             text-transform: uppercase;
         }
 
         .typing.active { display: block; }
 
-        .chat-controls {
-            border-top: 1px solid rgba(184, 90, 135, 0.22);
+        .compose {
+            border-top: 1px solid var(--line);
             padding: 1rem;
-        }
-
-        .quick-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.55rem;
-            margin-bottom: 0.85rem;
-        }
-
-        button,
-        textarea {
-            font: inherit;
-        }
-
-        .choice,
-        .send,
-        .gate-button {
-            cursor: pointer;
-            border: 1px solid rgba(212, 106, 162, 0.42);
-            background: rgba(212, 106, 162, 0.1);
-            color: var(--sand);
-            font-family: 'Space Mono', monospace;
-            font-size: 0.68rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            padding: 0.72rem 0.8rem;
-            transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
-        }
-
-        .choice:hover,
-        .send:hover,
-        .gate-button:hover {
-            transform: translateY(-1px);
-            border-color: var(--pink-soft);
-            background: rgba(212, 106, 162, 0.18);
-        }
-
-        .input-row {
             display: grid;
             grid-template-columns: 1fr auto;
             gap: 0.7rem;
         }
 
-        textarea {
-            min-height: 58px;
-            resize: vertical;
-            border: 1px solid rgba(255, 255, 255, 0.14);
-            background: rgba(0, 0, 0, 0.42);
-            color: var(--sand);
-            padding: 0.8rem;
+        input,
+        button {
+            font: inherit;
+        }
+
+        input {
+            min-width: 0;
+            border: 1px solid rgba(255,255,255,0.15);
+            background: rgba(0,0,0,0.42);
+            color: var(--white);
+            padding: 0.85rem 1rem;
             outline: none;
         }
 
-        textarea:focus {
-            border-color: rgba(212, 106, 162, 0.65);
-            box-shadow: 0 0 0 2px rgba(212, 106, 162, 0.08);
+        input:focus {
+            border-color: rgba(212,106,162,0.68);
+            box-shadow: 0 0 0 2px rgba(212,106,162,0.08);
         }
 
-        .feed-list {
-            display: grid;
-            gap: 0.9rem;
+        button {
+            cursor: pointer;
+            border: 1px solid rgba(212,106,162,0.5);
+            background: rgba(212,106,162,0.12);
+            color: var(--white);
+            padding: 0.85rem 1rem;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.68rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
         }
 
-        .feed-item {
-            border-left: 2px solid rgba(212, 106, 162, 0.44);
-            padding-left: 0.85rem;
-            color: var(--steel);
+        button:hover {
+            border-color: var(--pink-soft);
+            background: rgba(212,106,162,0.2);
+        }
+
+        .intel {
+            color: var(--gray);
+            line-height: 1.55;
             font-size: 0.95rem;
+            border-left: 2px solid rgba(212,106,162,0.45);
+            padding-left: 0.8rem;
         }
 
-        .feed-item strong {
+        .intel strong {
             display: block;
             color: var(--pink-soft);
             font-family: 'Space Mono', monospace;
-            font-size: 0.64rem;
+            font-size: 0.66rem;
             letter-spacing: 1px;
             text-transform: uppercase;
             margin-bottom: 0.2rem;
         }
 
-        .disclaimer-gate {
+        .gate {
             position: fixed;
             inset: 0;
             z-index: 100;
             display: grid;
             place-items: center;
-            padding: 1.5rem;
-            background: rgba(0, 0, 0, 0.86);
+            padding: 1.3rem;
+            background: rgba(0,0,0,0.88);
             backdrop-filter: blur(12px);
         }
 
-        .disclaimer-gate.hidden { display: none; }
+        .gate.hidden { display: none; }
 
         .gate-card {
             width: min(720px, 100%);
-            border: 1px solid rgba(212, 106, 162, 0.42);
-            background: linear-gradient(135deg, rgba(15, 16, 20, 0.98), rgba(3, 4, 6, 0.98));
-            box-shadow: 0 35px 100px rgba(0, 0, 0, 0.65);
+            border: 1px solid rgba(212,106,162,0.42);
+            background: linear-gradient(135deg, rgba(15,16,20,0.98), rgba(3,4,6,0.98));
+            box-shadow: 0 35px 100px rgba(0,0,0,0.65);
             padding: 2rem;
+        }
+
+        .gate-kicker {
+            color: var(--pink);
+            font-family: 'Space Mono', monospace;
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 0.75rem;
         }
 
         .gate-card h2 {
             font-family: 'Cinzel', serif;
-            color: var(--sand);
+            color: var(--white);
             letter-spacing: 4px;
             text-transform: uppercase;
             margin-bottom: 1rem;
@@ -464,75 +406,56 @@
 
         .gate-card p,
         .gate-card li {
-            color: var(--steel);
+            color: var(--gray);
             font-size: 1.05rem;
-            margin-bottom: 0.8rem;
+            line-height: 1.6;
+            margin-bottom: 0.7rem;
         }
 
-        .gate-card ul {
-            margin: 1rem 0 1.5rem 1.2rem;
-        }
+        .gate-card ul { margin: 1rem 0 1.4rem 1.2rem; }
+        .gate-actions { display: flex; flex-wrap: wrap; gap: 0.8rem; }
+        .gate-actions .secondary { border-color: rgba(255,255,255,0.18); background: transparent; color: var(--gray); }
 
-        .gate-actions {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.8rem;
-        }
-
-        .gate-button.secondary {
-            border-color: rgba(255, 255, 255, 0.18);
-            background: transparent;
-            color: var(--steel);
-        }
-
-        footer {
-            position: relative;
-            z-index: 21;
-            padding: 4rem 5%;
-            text-align: center;
-            border-top: 1px solid rgba(184, 90, 135, 0.22);
-            color: var(--steel);
-            font-family: 'Space Mono', monospace;
-            font-size: 0.7rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
-        @media (max-width: 1100px) {
-            .room-header,
-            .triage-grid {
+        @media (max-width: 1150px) {
+            body { overflow: auto; }
+            .room {
+                height: auto;
+                min-height: 100vh;
                 grid-template-columns: 1fr;
             }
-
-            .chat-panel { min-height: 560px; }
+            .chat { min-height: 680px; }
         }
 
-        @media (max-width: 760px) {
-            nav { padding: 1rem 4%; }
-            .nav-content { align-items: flex-start; flex-direction: column; gap: 0.8rem; }
-            .nav-links { gap: 0.75rem; }
-            .nav-links a { font-size: 0.56rem; min-height: 34px; display: inline-flex; align-items: center; }
-            main { padding: 8.5rem 4% 3rem; }
-            h1 { letter-spacing: 5px; }
-            .input-row { grid-template-columns: 1fr; }
+        @media (max-width: 700px) {
+            nav { padding: 0.85rem 4%; }
+            .nav-content { align-items: flex-start; flex-direction: column; }
+            .nav-links { gap: 0.7rem; }
+            .nav-links a { font-size: 0.55rem; min-height: 34px; display: inline-flex; align-items: center; }
+            .room { padding: 8.4rem 4% 1.5rem; }
+            .room-heading { align-items: flex-start; flex-direction: column; }
+            .channel-status { text-align: left; }
+            .message { grid-template-columns: 1fr; gap: 0.25rem; }
+            .name { text-align: left; padding-top: 0; }
+            .typing { padding-left: 1rem; }
+            .compose { grid-template-columns: 1fr; }
             .gate-card { padding: 1.35rem; }
         }
     </style>
 </head>
 <body>
-    <div class="disclaimer-gate" id="disclaimer-gate">
+    <div class="gate" id="gate">
         <div class="gate-card">
-            <div class="kicker">// speranza channel access</div>
-            <h2>Before Lance Opens The File</h2>
-            <p>This is a fictional, in-world story experience. Lance is not a real doctor, therapist, crisis counselor, or medical professional.</p>
+            <div class="gate-kicker">// speranza medical channel</div>
+            <h2>Before You Enter</h2>
+            <p>This is a fictional, in-world chat experience. Lance is not a real doctor, therapist, crisis counselor, or medical professional.</p>
             <ul>
-                <li>The triage room is for entertainment and interactive lore only.</li>
-                <li>Do not use this for real medical, mental health, emergency, or safety decisions.</li>
-                <li>Do not type private personal information. Your local subject profile is stored in this browser.</li>
+                <li>Do not use this chat for real medical, mental health, emergency, or safety decisions.</li>
+                <li>Do not type private personal information.</li>
+                <li>Your assigned callsign and local chat history stay in this browser.</li>
             </ul>
             <div class="gate-actions">
-                <button class="gate-button" id="accept-gate">I Understand - Begin Evaluation</button>
-                <button class="gate-button secondary" id="leave-gate">Leave Medic Channel</button>
+                <button id="enter-room">Enter Triage Chat</button>
+                <button class="secondary" id="leave-room">Leave Medic Channel</button>
             </div>
         </div>
     </div>
@@ -554,344 +477,287 @@
         </div>
     </nav>
 
-    <main>
-        <header class="room-header">
-            <div>
-                <div class="kicker">// lance medical channel // public triage room</div>
-                <h1>Raider Triage</h1>
-                <p class="intro">A fictional live-feeling medic channel where Lance studies what the surface does to a raider. Speak carefully. He is bubbly, yes. He is also taking notes.</p>
+    <main class="room">
+        <aside class="panel">
+            <div class="panel-title"><span>in room</span><span id="online-count">06</span></div>
+            <div class="member-list" id="member-list">
+                <div class="member"><strong>Lance</strong>operator // online</div>
+                <div class="member"><strong id="viewer-name">SUBJECT-000</strong>you // connected</div>
+                <div class="member"><strong>SUBJECT-112</strong>idle // monitoring</div>
+                <div class="member"><strong>SUBJECT-504</strong>typing? // maybe</div>
+                <div class="member"><strong>SUBJECT-806</strong>quiet // too quiet</div>
+                <div class="member"><strong>ARCHIVE</strong>recording // local</div>
             </div>
-            <div class="status-board" aria-label="Triage channel status">
-                <div class="status-row"><span>channel</span><span>open</span></div>
-                <div class="status-row"><span>operator</span><span>Lance</span></div>
-                <div class="status-row"><span>storage</span><span>local browser</span></div>
-                <div class="status-row"><span>profile state</span><span id="status-state">initializing</span></div>
+            <div class="room-card">
+                Lance is sitting in the channel. Type like you came back from the surface and need someone strange enough to understand.
             </div>
-        </header>
+        </aside>
 
-        <section class="triage-grid" aria-label="Lance Raider Triage Room">
-            <aside class="panel">
-                <div class="panel-header"><span>subject profile</span><span id="profile-updated">new file</span></div>
-                <div class="panel-body">
-                    <div class="profile-id" id="subject-id">SUBJECT-000</div>
-                    <div class="profile-sub" id="profile-class">temporary raider subject</div>
-                    <div class="trait">
-                        <div class="trait-label"><span>surface echo</span><span id="surface-value">48</span></div>
-                        <div class="bar"><span id="surface-bar"></span></div>
-                    </div>
-                    <div class="trait">
-                        <div class="trait-label"><span>mercy instability</span><span id="mercy-value">52</span></div>
-                        <div class="bar"><span id="mercy-bar"></span></div>
-                    </div>
-                    <div class="trait">
-                        <div class="trait-label"><span>trust degradation</span><span id="trust-value">41</span></div>
-                        <div class="bar"><span id="trust-bar"></span></div>
-                    </div>
-                    <div class="trait">
-                        <div class="trait-label"><span>survival masking</span><span id="survival-value">57</span></div>
-                        <div class="bar"><span id="survival-bar"></span></div>
-                    </div>
-                    <div class="profile-note" id="profile-note">Lance has not decided what you are yet. This appears to bother him more than it bothers you.</div>
+        <section class="panel chat">
+            <header class="room-heading">
+                <h1>Lance Triage Chat</h1>
+                <div class="channel-status">
+                    public medic channel
+                    <span>signal active // Lance online</span>
                 </div>
-            </aside>
+            </header>
 
-            <section class="panel chat-panel">
-                <div class="panel-header"><span>live transcript</span><span id="message-count">0 entries</span></div>
-                <div class="chat-log" id="chat-log" aria-live="polite"></div>
-                <div class="typing" id="typing">Lance is rearranging one throw pillow and pretending it is clinical...</div>
-                <div class="chat-controls">
-                    <div class="quick-row" id="quick-row">
-                        <button class="choice" data-choice="I came back quiet.">I came back quiet</button>
-                        <button class="choice" data-choice="I helped another raider.">I helped someone</button>
-                        <button class="choice" data-choice="I left someone behind.">I left someone</button>
-                        <button class="choice" data-choice="I heard the ARC before I saw it.">I heard the ARC</button>
-                    </div>
-                    <div class="input-row">
-                        <textarea id="chat-input" placeholder="Transmit to Lance..."></textarea>
-                        <button class="send" id="send-message">Transmit</button>
-                    </div>
-                </div>
-            </section>
+            <div class="messages" id="messages" aria-live="polite"></div>
+            <div class="typing" id="typing">Lance is typing...</div>
 
-            <aside class="panel">
-                <div class="panel-header"><span>public signal feed</span><span>simulated channel</span></div>
-                <div class="panel-body">
-                    <div class="feed-list" id="feed-list"></div>
-                </div>
-            </aside>
+            <div class="compose">
+                <input id="message-input" type="text" maxlength="280" autocomplete="off" placeholder="Type to Lance..." aria-label="Type a message to Lance">
+                <button id="send-button">Send</button>
+            </div>
         </section>
+
+        <aside class="panel">
+            <div class="panel-title"><span>Lance read</span><span id="room-state">intake</span></div>
+            <div class="intel-list" id="intel-list">
+                <div class="intel"><strong>room tone</strong><span id="tone">Waiting for first transmission.</span></div>
+                <div class="intel"><strong>last note</strong><span id="last-note">No diagnosis. No official file. Just Lance listening from the clinic.</span></div>
+                <div class="intel"><strong>clinic status</strong>Throw pillows: emotionally supportive. Medical accuracy: pending.</div>
+            </div>
+        </aside>
     </main>
 
-    <footer>
-        arceology.terminal // lance triage channel // fictional experience
-    </footer>
-
     <script>
-        const storeKey = 'arceologyLanceTriageProfile';
-        const gateKey = 'arceologyLanceTriageAccepted';
+        const gateKey = 'arceologyLanceChatAccepted';
+        const profileKey = 'arceologyLanceChatSubject';
+        const historyKey = 'arceologyLanceChatHistory';
 
-        const defaults = {
-            subject: '',
-            className: 'temporary raider subject',
-            surface: 48,
-            mercy: 52,
-            trust: 41,
-            survival: 57,
-            messages: 0,
-            lastTheme: 'intake'
-        };
+        const messagesEl = document.getElementById('messages');
+        const inputEl = document.getElementById('message-input');
+        const typingEl = document.getElementById('typing');
+        const viewerNameEl = document.getElementById('viewer-name');
+        const roomStateEl = document.getElementById('room-state');
+        const toneEl = document.getElementById('tone');
+        const lastNoteEl = document.getElementById('last-note');
 
-        const feedItems = [
-            ['SUBJECT-112', 'Reported laughing after extraction. Lance classified it as pressure escaping through a socially inconvenient door.'],
-            ['SUBJECT-806', 'Asked if taking the heavy crate was worth it. Lance asked why the crate was easier to carry than the guilt.'],
-            ['SUBJECT-339', 'Denied fear response. Monitor registered three pauses and one very loud silence.'],
-            ['SUBJECT-504', 'Helped a stranger near extraction. Lance called it inefficient, then quietly filed it under human evidence.'],
-            ['SUBJECT-715', 'Claimed the ARC did not bother them. Lance requested a second opinion from literally anyone with ears.']
+        let subject = localStorage.getItem(profileKey);
+        if (!subject) {
+            subject = 'SUBJECT-' + Math.floor(100 + Math.random() * 900);
+            localStorage.setItem(profileKey, subject);
+        }
+        viewerNameEl.textContent = subject;
+
+        let history = [];
+        try {
+            history = JSON.parse(localStorage.getItem(historyKey) || '[]');
+        } catch (error) {
+            history = [];
+        }
+
+        const helloLines = [
+            'Lance here. I was absolutely not waiting dramatically by the terminal. That would be childish. Accurate, but childish.',
+            'Oh good, a live one. Hello, friend-o. Please deposit one surface memory into the chat and keep all panic within posted limits.',
+            'Welcome to triage. I have a clipboard, questionable bedside manner, and a deep concern about whatever you are about to say.',
+            'Hey, guess who? Yes, your old pal Lance. Clinic channel is open. Try not to bleed emotionally on the furniture.'
         ];
 
-        const openings = [
-            'Hello, subject file. No, too cold. Hello, friend-o with suspicious surface residue. Better.',
-            'Lance here. Clinic is open, lights are mostly legal, and I have only misplaced one instrument today.',
-            'Welcome to triage. Please keep your limbs, secrets, and emotional evasions where I can see them.',
-            'Good news: you are alive. Complicated news: alive people tend to bring paperwork.'
+        const otherSubjects = [
+            ['SUBJECT-112', 'anyone else hear machines after they get back or is that just the walls'],
+            ['SUBJECT-504', 'lance told me my coping strategy had boots on and walked away'],
+            ['SUBJECT-806', 'i said i was fine and he asked why i used my extraction voice'],
+            ['ARCHIVE', 'signal fragment recovered // speranza lower ward // channel stable'],
+            ['SUBJECT-339', 'left a crate behind and somehow that felt worse than getting shot at']
         ];
 
-        const observations = {
+        const lanceBank = {
             help: [
-                'You chose help while the surface was still measuring your pulse. That is not strategy. That is a human reflex with terrible timing.',
-                'Helping another raider is medically fascinating because it is almost never efficient. I am filing that under mercy instability and pretending not to be moved by it.',
-                'You saw a person where the surface wanted you to see a liability. Annoying for survival math. Excellent for the soul, if we are admitting souls into the clinic today.'
+                'You helped someone topside. Terrible for efficiency. Excellent for proving the surface has not fully chewed through you yet.',
+                'Mercy in the field is not soft, {subject}. It is a decision made while the world is loudly suggesting you become worse.',
+                'I am marking that as human evidence. Do not look proud. Pride makes the form longer.'
             ],
             left: [
-                'Leaving someone behind is not automatically cruelty. Sometimes it is physics. Sometimes it is fear wearing a very practical jacket.',
-                'I will not comfort you too quickly. Raiders turn comfort into evidence that they did nothing wrong, and I am not here to decorate your denial.',
-                'You carried yourself out. Good. Now we find out what part of you stayed up there.'
+                'You left someone behind. I am not going to make that clean for you. Clean stories are usually lies wearing polished boots.',
+                '{subject}, sometimes survival is not a heroic choice. Sometimes it is the door that closed before you could decide who you were.',
+                'I can write “tactical necessity” if you want. The file will accept it. Your nervous system may be less polite.'
             ],
             arc: [
-                'Hearing the ARC before seeing it changes the body. The brain becomes a little weather station for disaster.',
-                'That sound gets into people. Not just the ears. The planning. The dreams. The way you choose doors.',
-                'Machine proximity stress noted. Do not worry, I made up the label myself, which is how many important labels begin.'
-            ],
-            quiet: [
-                'Quiet after a raid can mean control. It can also mean the mind is holding a door shut from the other side.',
-                'You came back quiet. Raiders love calling that discipline. My clipboard, disrespectfully, calls it containment.',
-                'Silence is not neutral in this clinic. It is a symptom, a shield, or a very dramatic interior design choice.'
+                'The ARC sound gets into people before the machine does. Very rude. No respect for personal psychological boundaries.',
+                'If you heard it before you saw it, your body started surviving before your mind caught up. That delay matters.',
+                'Machine proximity stress noted. I made that term up, but I am adorable and correct.'
             ],
             fear: [
-                'Fear kept you alive. Then it followed you home and asked for a bunk.',
-                'A raider who says they were not afraid is either lying, concussed, or auditioning for a very boring statue.',
-                'Fear is not the diagnosis. Fear is the part of you that still believes tomorrow is worth reaching.'
+                'Fear is not the embarrassing part. The embarrassing part is pretending fear did not keep you alive.',
+                'You call it fear. Raiders call it awareness when they want to sound expensive.',
+                '{subject}, fear is the part of you still voting for tomorrow. I would not be so quick to insult it.'
+            ],
+            quiet: [
+                'Quiet after extraction is not automatically calm. Sometimes it is containment with better posture.',
+                'You came back quiet. That can be discipline. It can also be the mind holding a door shut with both hands.',
+                'Silence is rarely empty in my clinic. It usually brings luggage.'
             ],
             loot: [
-                'Loot fixation is common. Heavy bag, narrow corridor, bad decision wearing a profitable hat.',
-                'The crate was never just a crate. It was proof you could take something from the surface and make the risk obey you.',
-                'I understand the appeal of supplies. I also understand that some raiders pack guilt with better care than ammunition.'
+                'The bag gets heavy in two ways. Supplies in the hands, consequences in the ribs. Very poor ergonomic design from the universe.',
+                'Loot fixation is common. The crate becomes proof you can make the surface pay rent.',
+                'You kept carrying it because dropping it would mean admitting the risk was not under control. There, I said the unfun part.'
             ],
             trust: [
-                'Trust on the surface is not soft. It is a gamble with boots on.',
-                'You hesitated around another raider. Sensible. Sad, but sensible. I am putting both words in the file.',
-                'Trust degradation rising. I would sound more alarmed, but honestly that is how most people survive lunch in Speranza.'
+                'Trusting another raider is a gamble with mud on it. Still, the fact that you considered it is clinically loud.',
+                'You scanned them like a doorway. Sensible. Sad. I am writing both down because I contain multitudes.',
+                'Trust degradation is not paranoia if the surface keeps providing supporting evidence. Annoying, but true.'
             ],
-            intake: [
-                'You are circling the wound instead of naming it. Classic, stylish, not especially subtle.',
-                'I am listening for what you avoid. That is usually where the surface left fingerprints.',
-                'Interesting. You gave me an answer, but your answer brought three locked doors and a little decorative panic.'
+            numb: [
+                'Numbness is not peace. It is the clinic lights going out while everyone insists the power is fine.',
+                'If you feel nothing, we still have a problem. If you feel everything, we also have a problem. Good news: I am excellent with problems.',
+                'Do not confuse numb with healed. Healed things do not usually announce themselves by disappearing.'
+            ],
+            lance: [
+                'Me? I am fine. Fully functional. Deeply fashionable. Missing several memories and pretending that is charming.',
+                'If there are others like me, I wonder whether they would recognize me. Sorry. That wandered out of the drawer by itself.',
+                'I study raiders because humans are strange, breakable, brave little disasters. Also because the clinic would be lonely otherwise.'
+            ],
+            default: [
+                'Interesting. You gave me the sentence, but not the wound inside it. Classic raider behavior. Very popular. Terrible for paperwork.',
+                '{subject}, I am listening less to what you said and more to what you stepped around.',
+                'That answer has surface residue on it. Not a diagnosis. More like a smell. A clinically inconvenient smell.',
+                'I could make a joke here. I will, obviously. But first: that sounded heavier than you meant it to.'
             ]
         };
 
         const followUps = [
-            'Tell me which part stayed with you: the noise, the face, the door, or the moment you decided.',
-            'Before I write this down, was that mercy, fear, strategy, or habit?',
-            'Answer carefully. Did you survive because you were prepared, or because someone else hesitated?',
-            'If another raider read this file, what would you want me to redact?',
-            'Was Speranza a relief when you returned, or just a quieter place to carry the same thing?'
+            'What part followed you back: the noise, the face, the door, or the choice?',
+            'Did you do it because it was right, because it was useful, or because stopping would have made you feel real?',
+            'When you got back to Speranza, what did you lie about first?',
+            'If I wrote one word beside your name tonight, should it be guilt, mercy, fear, or control?',
+            'Tell me what you would redact if this were an official file.'
         ];
 
-        let profile = loadProfile();
+        function clean(text) {
+            return String(text).replace(/[<>]/g, '').trim();
+        }
 
-        function loadProfile() {
-            try {
-                const saved = JSON.parse(localStorage.getItem(storeKey) || '{}');
-                const merged = Object.assign({}, defaults, saved);
-                if (!merged.subject) merged.subject = 'SUBJECT-' + Math.floor(100 + Math.random() * 900);
-                return merged;
-            } catch (error) {
-                return Object.assign({}, defaults, { subject: 'SUBJECT-' + Math.floor(100 + Math.random() * 900) });
+        function saveHistory() {
+            localStorage.setItem(historyKey, JSON.stringify(history.slice(-80)));
+        }
+
+        function addMessage(name, text, type = 'user', persist = true) {
+            const safeName = clean(name);
+            const safeText = clean(text);
+            if (!safeText) return;
+            const row = document.createElement('div');
+            row.className = 'message ' + type;
+            row.innerHTML = `<div class="name">${safeName}</div><div class="text">${safeText}</div>`;
+            messagesEl.appendChild(row);
+            messagesEl.scrollTop = messagesEl.scrollHeight;
+            if (persist) {
+                history.push({ name: safeName, text: safeText, type });
+                saveHistory();
             }
-        }
-
-        function saveProfile() {
-            localStorage.setItem(storeKey, JSON.stringify(profile));
-        }
-
-        function clamp(value) {
-            return Math.max(0, Math.min(100, Math.round(value)));
-        }
-
-        function renderProfile() {
-            document.getElementById('subject-id').textContent = profile.subject;
-            document.getElementById('profile-class').textContent = profile.className;
-            document.getElementById('surface-value').textContent = profile.surface;
-            document.getElementById('mercy-value').textContent = profile.mercy;
-            document.getElementById('trust-value').textContent = profile.trust;
-            document.getElementById('survival-value').textContent = profile.survival;
-            document.getElementById('surface-bar').style.width = profile.surface + '%';
-            document.getElementById('mercy-bar').style.width = profile.mercy + '%';
-            document.getElementById('trust-bar').style.width = profile.trust + '%';
-            document.getElementById('survival-bar').style.width = profile.survival + '%';
-            document.getElementById('status-state').textContent = profile.className;
-            document.getElementById('profile-updated').textContent = profile.messages ? 'updated' : 'new file';
-            document.getElementById('message-count').textContent = profile.messages + ' entries';
-
-            let note = 'Lance has not decided what you are yet. This appears to bother him more than it bothers you.';
-            if (profile.mercy > 70) note = 'Lance note: Subject keeps mistaking mercy for a tactical inconvenience. Possible human evidence.';
-            if (profile.surface > 72) note = 'Lance note: Surface echo is clinging to the subject. Recommend jokes, hydration, and one honest answer.';
-            if (profile.survival > 75) note = 'Lance note: Survival masking is strong. Subject may call this being fine. I will be bravely unconvinced.';
-            if (profile.trust > 70) note = 'Lance note: Trust degradation elevated. Subject scans people like doorways.';
-            document.getElementById('profile-note').textContent = note;
-        }
-
-        function renderFeed() {
-            const list = document.getElementById('feed-list');
-            const offset = Math.floor(Date.now() / 90000) % feedItems.length;
-            const ordered = feedItems.slice(offset).concat(feedItems.slice(0, offset));
-            list.innerHTML = ordered.map(item => `<div class="feed-item"><strong>${item[0]}</strong>${item[1]}</div>`).join('');
-        }
-
-        function addMessage(type, speaker, text) {
-            const log = document.getElementById('chat-log');
-            const message = document.createElement('div');
-            message.className = 'message ' + type;
-            message.innerHTML = `<div class="speaker">${speaker}</div><div class="bubble">${text}</div>`;
-            log.appendChild(message);
-            log.scrollTop = log.scrollHeight;
-            profile.messages += 1;
-            renderProfile();
-            saveProfile();
         }
 
         function pick(list) {
             return list[Math.floor(Math.random() * list.length)];
         }
 
-        function detectTheme(text) {
+        function themeFor(text) {
             const lower = text.toLowerCase();
-            if (lower.includes('help') || lower.includes('saved') || lower.includes('rescue') || lower.includes('mercy')) return 'help';
-            if (lower.includes('left') || lower.includes('behind') || lower.includes('ran') || lower.includes('leave')) return 'left';
-            if (lower.includes('arc') || lower.includes('machine') || lower.includes('heard') || lower.includes('sound')) return 'arc';
-            if (lower.includes('quiet') || lower.includes('silent') || lower.includes('numb') || lower.includes('fine')) return 'quiet';
-            if (lower.includes('fear') || lower.includes('afraid') || lower.includes('scared') || lower.includes('panic')) return 'fear';
+            if (lower.includes('help') || lower.includes('save') || lower.includes('mercy') || lower.includes('rescue')) return 'help';
+            if (lower.includes('left') || lower.includes('behind') || lower.includes('ran') || lower.includes('abandon')) return 'left';
+            if (lower.includes('arc') || lower.includes('machine') || lower.includes('robot') || lower.includes('heard')) return 'arc';
+            if (lower.includes('fear') || lower.includes('scared') || lower.includes('afraid') || lower.includes('panic')) return 'fear';
+            if (lower.includes('quiet') || lower.includes('silent') || lower.includes('talk')) return 'quiet';
             if (lower.includes('loot') || lower.includes('crate') || lower.includes('bag') || lower.includes('supplies')) return 'loot';
             if (lower.includes('trust') || lower.includes('stranger') || lower.includes('raider')) return 'trust';
-            return 'intake';
+            if (lower.includes('numb') || lower.includes('nothing') || lower.includes('empty') || lower.includes('fine')) return 'numb';
+            if (lower.includes('lance') || lower.includes('you') || lower.includes('android') || lower.includes('memory')) return 'lance';
+            return 'default';
         }
 
-        function updateProfile(theme) {
-            if (theme === 'help') {
-                profile.mercy = clamp(profile.mercy + 8);
-                profile.surface = clamp(profile.surface + 3);
-                profile.className = 'mercy unstable';
-            } else if (theme === 'left') {
-                profile.surface = clamp(profile.surface + 7);
-                profile.survival = clamp(profile.survival + 5);
-                profile.className = 'extraction guilt';
-            } else if (theme === 'arc') {
-                profile.surface = clamp(profile.surface + 9);
-                profile.trust = clamp(profile.trust + 2);
-                profile.className = 'machine proximity stress';
-            } else if (theme === 'quiet') {
-                profile.survival = clamp(profile.survival + 8);
-                profile.surface = clamp(profile.surface + 4);
-                profile.className = 'controlled silence';
-            } else if (theme === 'fear') {
-                profile.surface = clamp(profile.surface + 6);
-                profile.survival = clamp(profile.survival + 4);
-                profile.className = 'fear response active';
-            } else if (theme === 'loot') {
-                profile.survival = clamp(profile.survival + 7);
-                profile.trust = clamp(profile.trust + 3);
-                profile.className = 'loot fixation pressure';
-            } else if (theme === 'trust') {
-                profile.trust = clamp(profile.trust + 8);
-                profile.mercy = clamp(profile.mercy + 2);
-                profile.className = 'trust degradation';
-            } else {
-                profile.surface = clamp(profile.surface + 2);
-                profile.className = 'under observation';
-            }
-            profile.lastTheme = theme;
+        function updateRead(theme) {
+            const labels = {
+                help: 'mercy spike',
+                left: 'extraction guilt',
+                arc: 'machine echo',
+                fear: 'fear active',
+                quiet: 'controlled silence',
+                loot: 'load fixation',
+                trust: 'trust scan',
+                numb: 'numbness check',
+                lance: 'operator exposed',
+                default: 'intake'
+            };
+            roomStateEl.textContent = labels[theme] || 'intake';
+            toneEl.textContent = 'Current room tone: ' + (labels[theme] || 'intake') + '. Lance is pretending this is casual.';
         }
 
-        function lanceReply(text) {
-            const theme = detectTheme(text);
-            updateProfile(theme);
-            renderProfile();
-            saveProfile();
-
-            const opener = profile.messages % 5 === 0
-                ? 'Small pause. Very official. I am making a face at the clipboard. '
-                : '';
-            const profileLine = `${profile.subject}, profile update: ${profile.className}. `;
-            const observation = pick(observations[theme] || observations.intake);
+        function lanceReplyTo(text) {
+            const theme = themeFor(text);
+            updateRead(theme);
+            const line = pick(lanceBank[theme] || lanceBank.default).replace('{subject}', subject);
             const follow = pick(followUps);
-
-            return opener + profileLine + observation + ' ' + follow;
+            lastNoteEl.textContent = line;
+            return line + ' ' + follow;
         }
 
-        function transmit(text) {
-            const clean = text.trim();
-            if (!clean) return;
-            addMessage('subject', profile.subject, clean.replace(/[<>]/g, ''));
-            const typing = document.getElementById('typing');
-            typing.classList.add('active');
-            const delay = 650 + Math.random() * 950;
+        function sendUserMessage() {
+            const text = clean(inputEl.value);
+            if (!text) return;
+            inputEl.value = '';
+            addMessage(subject, text, 'user');
+            typingEl.classList.add('active');
+            const delay = 650 + Math.random() * 1200;
             setTimeout(() => {
-                typing.classList.remove('active');
-                addMessage('lance', 'Lance', lanceReply(clean));
+                typingEl.classList.remove('active');
+                addMessage('Lance', lanceReplyTo(text), 'lance');
             }, delay);
         }
 
-        document.getElementById('send-message').addEventListener('click', () => {
-            const input = document.getElementById('chat-input');
-            transmit(input.value);
-            input.value = '';
+        document.getElementById('send-button').addEventListener('click', sendUserMessage);
+        inputEl.addEventListener('keydown', event => {
+            if (event.key === 'Enter') sendUserMessage();
         });
 
-        document.getElementById('chat-input').addEventListener('keydown', event => {
-            if (event.key === 'Enter' && !event.shiftKey) {
-                event.preventDefault();
-                document.getElementById('send-message').click();
-            }
-        });
-
-        document.querySelectorAll('.choice').forEach(button => {
-            button.addEventListener('click', () => transmit(button.dataset.choice || button.textContent));
-        });
-
-        document.getElementById('accept-gate').addEventListener('click', () => {
+        document.getElementById('enter-room').addEventListener('click', () => {
             localStorage.setItem(gateKey, 'accepted');
-            document.getElementById('disclaimer-gate').classList.add('hidden');
-            if (!profile.messages) {
-                addMessage('system', 'system', 'Subject channel opened. Local fictional profile assigned. No real medical evaluation is being performed.');
-                addMessage('lance', 'Lance', `${pick(openings)} ${profile.subject}, sit anywhere except the chair with the suspicious squeak. That chair has seen things. First question: what followed you back from the surface?`);
+            document.getElementById('gate').classList.add('hidden');
+            if (!history.length) {
+                addMessage('SYSTEM', subject + ' connected to Lance triage channel.', 'system');
+                addMessage('Lance', pick(helloLines) + ' Type something, and I will respond accordingly. That is the phrase humans like, yes?', 'lance');
             }
+            inputEl.focus();
         });
 
-        document.getElementById('leave-gate').addEventListener('click', () => {
+        document.getElementById('leave-room').addEventListener('click', () => {
             window.location.href = 'medic-evaluation.html';
         });
 
-        renderProfile();
-        renderFeed();
-        setInterval(renderFeed, 90000);
-
-        if (localStorage.getItem(gateKey) === 'accepted') {
-            document.getElementById('disclaimer-gate').classList.add('hidden');
-            if (!profile.messages) {
-                addMessage('system', 'system', 'Subject channel restored. Local fictional profile assigned.');
-                addMessage('lance', 'Lance', `${pick(openings)} ${profile.subject}, the clipboard is ready and emotionally unavailable. What did the surface do to you today?`);
+        function restoreRoom() {
+            if (history.length) {
+                history.forEach(item => addMessage(item.name, item.text, item.type, false));
+            }
+            if (localStorage.getItem(gateKey) === 'accepted') {
+                document.getElementById('gate').classList.add('hidden');
+                if (!history.length) {
+                    addMessage('SYSTEM', subject + ' connected to Lance triage channel.', 'system');
+                    addMessage('Lance', pick(helloLines), 'lance');
+                }
             }
         }
+
+        function ambientRoomPulse() {
+            if (document.getElementById('gate').classList.contains('hidden') && Math.random() > 0.55) {
+                const item = pick(otherSubjects);
+                addMessage(item[0], item[1], item[0] === 'ARCHIVE' ? 'system' : 'user');
+                setTimeout(() => {
+                    typingEl.classList.add('active');
+                    setTimeout(() => {
+                        typingEl.classList.remove('active');
+                        addMessage('Lance', pick([
+                            'Noted. Everyone please stop making the room clinically interesting for three seconds. Impossible request, apparently.',
+                            'I am seeing a lot of survival behavior and very little hydration. As usual, I am disappointed and correct.',
+                            'That is either trauma, bad acoustics, or Speranza plumbing. Disturbingly difficult differential.',
+                            'Friend-os, if the surface followed you home, do not feed it after midnight. That is not medical advice. It is vibes.'
+                        ]), 'lance');
+                    }, 700 + Math.random() * 800);
+                }, 500);
+            }
+        }
+
+        restoreRoom();
+        setInterval(ambientRoomPulse, 45000);
     </script>
 </body>
 </html>
