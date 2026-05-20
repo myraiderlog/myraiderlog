@@ -1,5 +1,33 @@
 [
   {
+    "id": "steam-arc-raiders-denuvo",
+    "title": "ARC Raiders получила античит Denuvo",
+    "status": "confirmed",
+    "startDate": "2026-05-19",
+    "endDate": null,
+    "teaser": "Embark Studios выпустила обновление ARC Raiders под номером 1.29.0. В игру добавили торговца, оружие, облики, предметы и механики. В частности увел...",
+    "summary": "Embark Studios выпустила обновление ARC Raiders под номером 1.29.0. В игру добавили торговца, оружие, облики, предметы и механики. В частности увеличилось число ячеек в потайном кармане, вещи из которого не теряются после гибели.",
+    "howItWorks": [
+      "Details sourced from Gamemag.ru news feed",
+      "Check the source link for full information"
+    ],
+    "rewards": [
+      "See official announcement for full details"
+    ],
+    "raiderImpact": [
+      "Solo: Check source for gameplay impact",
+      "Duo: Check source for gameplay impact",
+      "Trio: Check source for gameplay impact"
+    ],
+    "sources": [
+      {
+        "label": "Gamemag.ru",
+        "url": "https://steamstore-a.akamaihd.net/news/externalpost/Gamemag.ru/1832700592802013"
+      }
+    ],
+    "lastUpdated": "2026-05-19"
+  },
+  {
     "id": "steam-arc-raiders-turns-to-denuvo-anti-cheat-in-hopes-of",
     "title": "Arc Raiders turns to Denuvo Anti-Cheat in hopes of curbing foul play, Embark say they're \"working to ensure minimal impact on performance\"",
     "status": "confirmed",
