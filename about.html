@@ -47,12 +47,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --rust: #b65e48;
-            --ash: #4a4238;
-            --sand: #d4c5a9;
-            --night: #0d0a08;
-            --ember: #d9864f;
-            --steel: #6b6355;
+            --rust: #b85a87;
+            --ash: #1a1d22;
+            --sand: #f1f1f3;
+            --night: #030406;
+            --ember: #d46aa2;
+            --steel: #8d939d;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
@@ -92,7 +92,7 @@
             position: fixed;
             top: 0; left: 0;
             width: 100%; height: 100%;
-            background: radial-gradient(ellipse at center, transparent 0%, transparent 35%, rgba(13, 10, 8, 0.5) 70%, rgba(13, 10, 8, 0.9) 100%);
+            background: radial-gradient(ellipse at center, transparent 0%, transparent 35%, rgba(3, 4, 6, 0.5) 70%, rgba(3, 4, 6, 0.9) 100%);
             pointer-events: none;
             z-index: 9998;
             animation: vignettePulse 8s ease-in-out infinite;
@@ -118,10 +118,10 @@
         nav {
             position: fixed; top: 0; left: 0; width: 100%;
             padding: 1.5rem 5%;
-            background: linear-gradient(180deg, rgba(13, 10, 8, 0.98) 0%, rgba(13, 10, 8, 0.9) 100%);
+            background: linear-gradient(180deg, rgba(3, 4, 6, 0.98) 0%, rgba(3, 4, 6, 0.9) 100%);
             backdrop-filter: blur(15px);
             z-index: 10000;
-            border-bottom: 1px solid rgba(180, 94, 72, 0.3);
+            border-bottom: 1px solid rgba(184, 90, 135, 0.3);
             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
             animation: navSlideDown 1s ease-out;
         }
@@ -132,7 +132,7 @@
             color: var(--sand); letter-spacing: 3px; text-transform: lowercase;
             text-decoration: none; animation: textGlow 3s ease-in-out infinite;
         }
-        @keyframes textGlow { 0%, 100% { text-shadow: 0 0 10px rgba(217, 134, 79, 0.3); } 50% { text-shadow: 0 0 20px rgba(217, 134, 79, 0.6), 0 0 30px rgba(217, 134, 79, 0.3); } }
+        @keyframes textGlow { 0%, 100% { text-shadow: 0 0 10px rgba(212, 106, 162, 0.3); } 50% { text-shadow: 0 0 20px rgba(212, 106, 162, 0.6), 0 0 30px rgba(212, 106, 162, 0.3); } }
         .nav-terminal {
             font-family: 'Space Mono', monospace; font-size: 0.65rem;
             color: var(--steel); letter-spacing: 2px;
@@ -150,7 +150,7 @@
             width: 0; height: 2px; background: var(--ember);
             transition: width 0.3s ease; box-shadow: 0 0 10px var(--ember);
         }
-        .nav-links a:hover { color: var(--ember); text-shadow: 0 0 10px rgba(217, 134, 79, 0.5); }
+        .nav-links a:hover { color: var(--ember); text-shadow: 0 0 10px rgba(212, 106, 162, 0.5); }
         .nav-links a:hover::after { width: 100%; }
         main {
             position: relative; z-index: 5;
@@ -167,7 +167,7 @@
             font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 700;
             color: var(--sand); letter-spacing: 8px; margin-bottom: 1rem;
             text-transform: lowercase;
-            text-shadow: 0 0 30px rgba(217, 134, 79, 0.4);
+            text-shadow: 0 0 30px rgba(212, 106, 162, 0.4);
             animation: titleGlitch 8s infinite;
         }
         @keyframes titleGlitch { 0%, 90%, 100% { transform: translate(0, 0); } 91% { transform: translate(-2px, 1px); } 92% { transform: translate(2px, -1px); } 93% { transform: translate(0, 0); } }
@@ -183,7 +183,7 @@
         .about-section h2 {
             font-family: 'Cinzel', serif; font-size: 1.8rem;
             color: var(--sand); letter-spacing: 3px; margin-bottom: 1.5rem;
-            text-shadow: 0 0 15px rgba(217, 134, 79, 0.2);
+            text-shadow: 0 0 15px rgba(212, 106, 162, 0.2);
         }
         .about-section p {
             font-family: 'Cormorant Garamond', serif; font-size: 1.2rem;
@@ -198,8 +198,8 @@
             margin: 3rem 0;
         }
         .terminal-block {
-            background: linear-gradient(135deg, rgba(26, 20, 16, 0.6), rgba(13, 10, 8, 0.8));
-            border: 1px solid rgba(180, 94, 72, 0.3);
+            background: linear-gradient(135deg, rgba(13, 15, 19, 0.6), rgba(3, 4, 6, 0.8));
+            border: 1px solid rgba(184, 90, 135, 0.3);
             border-left: 3px solid var(--rust);
             padding: 2rem 2.5rem;
             margin: 2rem 0;
@@ -226,15 +226,15 @@
         .link-card {
             display: block;
             padding: 1.5rem;
-            background: linear-gradient(135deg, rgba(26, 20, 16, 0.6), rgba(13, 10, 8, 0.8));
-            border: 1px solid rgba(180, 94, 72, 0.3);
+            background: linear-gradient(135deg, rgba(13, 15, 19, 0.6), rgba(3, 4, 6, 0.8));
+            border: 1px solid rgba(184, 90, 135, 0.3);
             text-decoration: none;
             transition: all 0.4s ease;
         }
         .link-card:hover {
             border-color: var(--ember);
             transform: translateY(-4px);
-            box-shadow: 0 10px 30px rgba(180, 94, 72, 0.3);
+            box-shadow: 0 10px 30px rgba(184, 90, 135, 0.3);
         }
         .link-card h3 {
             font-family: 'Cinzel', serif; font-size: 1.2rem;
@@ -247,8 +247,8 @@
         .link-card:hover h3 { color: var(--ember); }
         footer {
             padding: 6rem 5% 4rem; text-align: center;
-            border-top: 1px solid rgba(180, 94, 72, 0.2);
-            background: linear-gradient(180deg, transparent 0%, rgba(13, 10, 8, 0.8) 100%);
+            border-top: 1px solid rgba(184, 90, 135, 0.2);
+            background: linear-gradient(180deg, transparent 0%, rgba(3, 4, 6, 0.8) 100%);
         }
         .footer-quote {
             font-family: 'Cormorant Garamond', serif;

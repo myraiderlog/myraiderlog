@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-adsense-account" content="ca-pub-7264545503146086">
-    <title>Arceology – ARC Raiders Raider Logs, Gameplay & Inspired Gear</title>
+    <title>Arceology - Recovered Transmissions From The Surface</title>
     <!-- SEO Meta Tags -->
-    <meta name="description" content="ARC Raiders raider logs, story-driven gameplay, recovered helmet cam footage, survivor journals, and post-apocalyptic field notes from Speranza.">
-    <meta name="keywords" content="ARC Raiders, Arceology, raider log, ARC Raiders gameplay, ARC Raiders videos, Speranza, raider stories, ARC Raiders merch, gaming content, extraction shooter, ARC Raiders guide, ARC Raiders tips">
+    <meta name="description" content="Recovered ARC Raiders transmissions from the surface: raider logs, helmet-cam evidence, emotional field records, and signal fragments from Speranza.">
+    <meta name="keywords" content="ARC Raiders, Arceology, raider log, ARC Raiders gameplay, ARC Raiders videos, Speranza, raider stories, recovered transmissions, helmet cam, extraction shooter">
     <meta name="author" content="Arceology">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://myraiderlog.com/">
@@ -15,13 +15,13 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://myraiderlog.com/">
     <meta property="og:title" content="Arceology - ARC Raiders Raider Log">
-    <meta property="og:description" content="Watch emotional ARC Raiders gameplay, read fragmented field logs from Speranza, and shop exclusive merch. A raider who wears emotions on their sleeve.">
+    <meta property="og:description" content="Recovered transmissions from the surface: emotional ARC Raiders gameplay, fragmented field logs, and signal evidence from Speranza.">
     <meta property="og:site_name" content="Arceology Raider Log">
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://myraiderlog.com/">
     <meta property="twitter:title" content="Arceology - ARC Raiders Raider Log">
-    <meta property="twitter:description" content="Watch emotional ARC Raiders gameplay, read fragmented field logs from Speranza, and shop exclusive merch.">
+    <meta property="twitter:description" content="Recovered transmissions from the surface: emotional ARC Raiders gameplay, field logs, and signal evidence from Speranza.">
     <!-- Structured Data - Person -->
     <script type="application/ld+json">
     {
@@ -53,12 +53,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --rust: #b65e48;
-            --ash: #4a4238;
-            --sand: #d4c5a9;
-            --night: #0d0a08;
-            --ember: #d9864f;
-            --steel: #6b6355;
+            --rust: #b85a87;
+            --ash: #1a1d22;
+            --sand: #f1f1f3;
+            --night: #030406;
+            --ember: #d46aa2;
+            --steel: #8d939d;
+            --pink-soft: #f2a6c9;
+            --white-worn: #e7e7e9;
+            --charcoal: #0b0d10;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -151,7 +154,7 @@
             transition: opacity 0.3s ease, transform 0.3s ease;
         }
 
-        .boot-line.success { color: #5a8a5a; }
+        .boot-line.success { color: var(--pink-soft); }
         .boot-line.warning { color: #c9a84c; }
         .boot-line.error { color: var(--rust); }
         .boot-line.header {
@@ -199,7 +202,7 @@
             letter-spacing: 8px;
             text-align: center;
             margin-bottom: 2rem;
-            text-shadow: 0 0 30px rgba(217, 134, 79, 0.4);
+            text-shadow: 0 0 30px rgba(212, 106, 162, 0.4);
             opacity: 0;
             animation: bootTitleReveal 1s ease-out 0.5s forwards;
         }
@@ -213,7 +216,7 @@
             position: fixed;
             top: 0; left: 0;
             width: 100%; height: 100%;
-            background: rgba(217, 134, 79, 0.1);
+            background: rgba(212, 106, 162, 0.1);
             z-index: 99998;
             pointer-events: none;
             opacity: 0;
@@ -265,7 +268,7 @@
             position: fixed;
             top: 0; left: 0;
             width: 100%; height: 100%;
-            background: radial-gradient(ellipse at center, transparent 0%, transparent 35%, rgba(13, 10, 8, 0.5) 70%, rgba(13, 10, 8, 0.9) 100%);
+            background: radial-gradient(ellipse at center, transparent 0%, transparent 35%, rgba(3, 4, 6, 0.5) 70%, rgba(3, 4, 6, 0.9) 100%);
             pointer-events: none;
             z-index: 9998;
             animation: vignettePulse 8s ease-in-out infinite;
@@ -309,10 +312,10 @@
             top: 0; left: 0;
             width: 100%;
             padding: 1.5rem 5%;
-            background: linear-gradient(180deg, rgba(13, 10, 8, 0.98) 0%, rgba(13, 10, 8, 0.9) 100%);
+            background: linear-gradient(180deg, rgba(3, 4, 6, 0.98) 0%, rgba(3, 4, 6, 0.9) 100%);
             backdrop-filter: blur(15px);
             z-index: 10000;
-            border-bottom: 1px solid rgba(180, 94, 72, 0.3);
+            border-bottom: 1px solid rgba(184, 90, 135, 0.3);
             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
             animation: navSlideDown 1s ease-out;
         }
@@ -344,8 +347,8 @@
         }
 
         @keyframes textGlow {
-            0%, 100% { text-shadow: 0 0 10px rgba(217, 134, 79, 0.3); }
-            50% { text-shadow: 0 0 20px rgba(217, 134, 79, 0.6), 0 0 30px rgba(217, 134, 79, 0.3); }
+            0%, 100% { text-shadow: 0 0 10px rgba(212, 106, 162, 0.3); }
+            50% { text-shadow: 0 0 20px rgba(212, 106, 162, 0.6), 0 0 30px rgba(212, 106, 162, 0.3); }
         }
 
         .nav-terminal {
@@ -388,7 +391,7 @@
             box-shadow: 0 0 10px var(--ember);
         }
 
-        .nav-links a:hover { color: var(--ember); text-shadow: 0 0 10px rgba(217, 134, 79, 0.5); }
+        .nav-links a:hover { color: var(--ember); text-shadow: 0 0 10px rgba(212, 106, 162, 0.5); }
         .nav-links a:hover::after { width: 100%; }
 
         /* HERO SECTION */
@@ -408,7 +411,7 @@
             content: '';
             position: absolute;
             width: 100%; height: 100%;
-            background: radial-gradient(circle at 50% 50%, rgba(217, 134, 79, 0.1) 0%, transparent 50%);
+            background: radial-gradient(circle at 50% 50%, rgba(212, 106, 162, 0.1) 0%, transparent 50%);
             animation: heroPulse 8s ease-in-out infinite;
         }
 
@@ -438,14 +441,14 @@
             letter-spacing: 12px;
             margin-bottom: 1rem;
             text-transform: uppercase;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8), 0 0 40px rgba(180, 94, 72, 0.4), 0 0 80px rgba(180, 94, 72, 0.2);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8), 0 0 40px rgba(184, 90, 135, 0.4), 0 0 80px rgba(184, 90, 135, 0.2);
             line-height: 1.2;
             animation: titleGlitch 8s infinite, titleFloat 4s ease-in-out infinite;
         }
 
         @keyframes titleGlitch {
-            0%, 90%, 100% { transform: translate(0, 0); text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8), 0 0 40px rgba(180, 94, 72, 0.4); }
-            91% { transform: translate(-2px, 1px); text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8), -2px 0 rgba(217, 134, 79, 0.8), 2px 0 rgba(180, 94, 72, 0.8); }
+            0%, 90%, 100% { transform: translate(0, 0); text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8), 0 0 40px rgba(184, 90, 135, 0.4); }
+            91% { transform: translate(-2px, 1px); text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8), -2px 0 rgba(212, 106, 162, 0.8), 2px 0 rgba(184, 90, 135, 0.8); }
             92% { transform: translate(2px, -1px); }
             93% { transform: translate(0, 0); }
         }
@@ -519,7 +522,7 @@
             letter-spacing: 6px;
             margin-bottom: 1rem;
             text-transform: lowercase;
-            text-shadow: 0 0 20px rgba(217, 134, 79, 0.3);
+            text-shadow: 0 0 20px rgba(212, 106, 162, 0.3);
         }
 
         .section-subtitle {
@@ -542,8 +545,8 @@
         }
 
         .preview-card {
-            background: linear-gradient(135deg, rgba(26, 20, 16, 0.6), rgba(13, 10, 8, 0.8));
-            border: 2px solid rgba(180, 94, 72, 0.4);
+            background: linear-gradient(135deg, rgba(13, 15, 19, 0.6), rgba(3, 4, 6, 0.8));
+            border: 2px solid rgba(184, 90, 135, 0.4);
             border-left: 4px solid var(--rust);
             padding: 3rem;
             transition: all 0.5s ease;
@@ -554,7 +557,7 @@
 
         .preview-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.7), 0 0 40px rgba(180, 94, 72, 0.3);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.7), 0 0 40px rgba(184, 90, 135, 0.3);
             border-left-color: var(--ember);
         }
 
@@ -566,7 +569,7 @@
             color: var(--sand);
             margin-bottom: 1rem;
             letter-spacing: 2px;
-            text-shadow: 0 0 15px rgba(217, 134, 79, 0.2);
+            text-shadow: 0 0 15px rgba(212, 106, 162, 0.2);
         }
 
         .preview-card:hover .preview-title { color: var(--ember); }
@@ -589,7 +592,7 @@
             display: inline-block;
         }
 
-        .preview-card:hover .preview-cta { text-shadow: 0 0 10px rgba(217, 134, 79, 0.5); }
+        .preview-card:hover .preview-cta { text-shadow: 0 0 10px rgba(212, 106, 162, 0.5); }
 
         /* IMMERSIVE ARCHIVE */
         .world-console {
@@ -603,10 +606,10 @@
         .map-panel,
         .memory-panel,
         .transmission-panel {
-            background: linear-gradient(135deg, rgba(26, 20, 16, 0.72), rgba(13, 10, 8, 0.92));
-            border: 1px solid rgba(180, 94, 72, 0.35);
+            background: linear-gradient(135deg, rgba(13, 15, 19, 0.72), rgba(3, 4, 6, 0.92));
+            border: 1px solid rgba(184, 90, 135, 0.35);
             border-left: 4px solid var(--rust);
-            box-shadow: 0 20px 70px rgba(0, 0, 0, 0.55), inset 0 0 40px rgba(217, 134, 79, 0.03);
+            box-shadow: 0 20px 70px rgba(0, 0, 0, 0.55), inset 0 0 40px rgba(212, 106, 162, 0.03);
             position: relative;
             overflow: hidden;
         }
@@ -618,7 +621,7 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: repeating-linear-gradient(0deg, rgba(217, 134, 79, 0.025) 0 1px, transparent 1px 4px);
+            background: repeating-linear-gradient(0deg, rgba(212, 106, 162, 0.025) 0 1px, transparent 1px 4px);
             pointer-events: none;
         }
 
@@ -655,7 +658,7 @@
             display: flex;
             align-items: center;
             gap: 0.75rem;
-            border-top: 1px solid rgba(180, 94, 72, 0.22);
+            border-top: 1px solid rgba(184, 90, 135, 0.22);
             padding-top: 1rem;
             margin-top: 1rem;
             font-family: 'Space Mono', monospace;
@@ -684,8 +687,8 @@
         .command-chip,
         .map-node,
         .memory-tag {
-            border: 1px solid rgba(180, 94, 72, 0.35);
-            background: rgba(13, 10, 8, 0.75);
+            border: 1px solid rgba(184, 90, 135, 0.35);
+            background: rgba(3, 4, 6, 0.75);
             color: var(--steel);
             font-family: 'Space Mono', monospace;
             font-size: 0.65rem;
@@ -702,7 +705,7 @@
         .memory-tag.active {
             color: var(--ember);
             border-color: var(--ember);
-            box-shadow: 0 0 25px rgba(217, 134, 79, 0.18);
+            box-shadow: 0 0 25px rgba(212, 106, 162, 0.18);
         }
 
         .map-panel { padding: 2rem; min-height: 420px; }
@@ -711,17 +714,17 @@
             height: 300px;
             margin-top: 1.5rem;
             background:
-                linear-gradient(rgba(217, 134, 79, 0.05) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(217, 134, 79, 0.05) 1px, transparent 1px),
-                radial-gradient(circle at center, rgba(217, 134, 79, 0.08), transparent 58%);
+                linear-gradient(rgba(212, 106, 162, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(212, 106, 162, 0.05) 1px, transparent 1px),
+                radial-gradient(circle at center, rgba(212, 106, 162, 0.08), transparent 58%);
             background-size: 34px 34px, 34px 34px, auto;
-            border: 1px solid rgba(180, 94, 72, 0.2);
+            border: 1px solid rgba(184, 90, 135, 0.2);
         }
 
         .map-node {
             position: absolute;
             padding: 0.45rem 0.6rem;
-            background: rgba(13, 10, 8, 0.9);
+            background: rgba(3, 4, 6, 0.9);
         }
 
         .map-node::before {
@@ -778,9 +781,9 @@
         }
 
         .redacted {
-            background: rgba(217, 134, 79, 0.18);
+            background: rgba(212, 106, 162, 0.18);
             color: transparent;
-            text-shadow: 0 0 8px rgba(217, 134, 79, 0.7);
+            text-shadow: 0 0 8px rgba(212, 106, 162, 0.7);
             padding: 0 0.25rem;
             transition: all 0.35s ease;
         }
@@ -788,15 +791,72 @@
         .transmission-panel.revealed .redacted {
             color: var(--ember);
             background: transparent;
-            text-shadow: 0 0 10px rgba(217, 134, 79, 0.35);
+            text-shadow: 0 0 10px rgba(212, 106, 162, 0.35);
+        }
+
+        .world-depth {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.25rem;
+            margin-top: 2rem;
+        }
+
+        .depth-card {
+            background: linear-gradient(135deg, rgba(13, 15, 19, 0.82), rgba(3, 4, 6, 0.94));
+            border: 1px solid rgba(184, 90, 135, 0.32);
+            border-top: 3px solid var(--ember);
+            padding: 1.5rem;
+            min-height: 260px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 18px 55px rgba(0, 0, 0, 0.42);
+        }
+
+        .depth-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent, rgba(212, 106, 162, 0.055));
+            opacity: 0;
+            transition: opacity 0.35s ease;
+        }
+
+        .depth-card:hover::after { opacity: 1; }
+
+        .depth-card h3 {
+            font-family: 'Space Mono', monospace;
+            color: var(--white-worn);
+            font-size: 0.8rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .depth-card p {
+            color: var(--steel);
+            font-size: 1.05rem;
+            line-height: 1.9;
+            font-style: italic;
+            position: relative;
+            z-index: 1;
+        }
+
+        .depth-card .signal-note {
+            display: block;
+            margin-top: 1.25rem;
+            color: var(--ember);
+            font-family: 'Space Mono', monospace;
+            font-size: 0.65rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
         }
 
         /* FOOTER */
         footer {
             padding: 6rem 5% 4rem;
             text-align: center;
-            border-top: 1px solid rgba(180, 94, 72, 0.2);
-            background: linear-gradient(180deg, transparent 0%, rgba(13, 10, 8, 0.8) 100%);
+            border-top: 1px solid rgba(184, 90, 135, 0.2);
+            background: linear-gradient(180deg, transparent 0%, rgba(3, 4, 6, 0.8) 100%);
             box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.5);
         }
 
@@ -808,7 +868,7 @@
             color: var(--sand);
             max-width: 800px;
             margin: 0 auto 3rem;
-            text-shadow: 0 0 10px rgba(217, 134, 79, 0.2);
+            text-shadow: 0 0 10px rgba(212, 106, 162, 0.2);
         }
 
         .footer-links { margin-bottom: 2rem; }
@@ -823,7 +883,7 @@
             transition: all 0.3s ease;
         }
 
-        .footer-links a:hover { color: var(--ember); text-shadow: 0 0 15px rgba(217, 134, 79, 0.5); }
+        .footer-links a:hover { color: var(--ember); text-shadow: 0 0 15px rgba(212, 106, 162, 0.5); }
 
         .footer-text {
             font-family: 'Space Mono', monospace;
@@ -842,12 +902,12 @@
             .nav-links { gap: 1.2rem; }
             .nav-links a { font-size: 0.65rem; padding: 0.3rem 0; }
             .world-console { grid-template-columns: 1fr; }
+            .world-depth { grid-template-columns: 1fr; }
             .preview-grid { grid-template-columns: 1fr; gap: 2rem; }
             .hero { padding: 0 3%; }
             main { padding: 0 3%; }
             .section { padding: 4rem 0; }
             .section-title { letter-spacing: 4px; }
-            .audio-label { bottom: 1rem; right: 4.5rem; }
             .boot-line { font-size: 0.6rem; white-space: normal; }
             .boot-title { font-size: 1.8rem; letter-spacing: 4px; }
             .preview-card { padding: 2rem; }
@@ -887,10 +947,6 @@
             .footer-text { font-size: 0.6rem; letter-spacing: 1px; }
         }
 
-        .support-status span {
-            color: #5a8a5a;
-        }
-
     </style>
 </head>
 <body>
@@ -903,17 +959,17 @@
             <div class="boot-line">Establishing uplink to Speranza network...</div>
             <div class="boot-line success">> Connection secured [ENCRYPTED]</div>
             <div class="boot-line">Loading raider profile: ARCEOLOGY</div>
-            <div class="boot-line success">> Identity verified — clearance: UNDERGROUND</div>
+            <div class="boot-line success">> Identity verified - clearance: SURFACE RECEIVER</div>
             <div class="boot-line">Syncing field log archives...</div>
-            <div class="boot-line warning">> WARNING: Signal unstable — topside interference detected</div>
+            <div class="boot-line warning">> WARNING: Signal unstable - pink channel bleeding through</div>
             <div class="boot-line">Initializing helmet cam feed...</div>
             <div class="boot-line success">> Visual systems online</div>
             <div class="boot-line">Loading field archive...</div>
-            <div class="boot-line success">> Raider archive loaded [14 entries]</div>
+            <div class="boot-line success">> Recovered transmissions loaded [14 entries]</div>
             <div class="boot-line">Mounting atmospheric processors...</div>
             <div class="boot-line success">> Environment systems active</div>
-            <div class="boot-line error">> REMINDER: Trust no one topside.</div>
-            <div class="boot-line header" style="margin-top: 0.5rem;">> TERMINAL READY. WELCOME BACK, RAIDER.<span class="boot-cursor"></span></div>
+            <div class="boot-line error">> MESSAGE: If you're receiving this, you're not alone.</div>
+            <div class="boot-line header" style="margin-top: 0.5rem;">> TERMINAL READY. WITNESS LINKED.<span class="boot-cursor"></span></div>
             <div class="boot-progress-bar">
                 <div class="boot-progress-fill" id="boot-progress"></div>
             </div>
@@ -946,14 +1002,14 @@
     <section class="hero">
         <div class="hero-content">
             <h1 class="site-title">ARCEOLOGY</h1>
-            <p class="site-subtitle">ARC Raiders content creator // Speranza underground</p>
+            <p class="site-subtitle">Recovered transmissions from the surface // Signal active</p>
             <p class="hero-tagline">
                 "I wear my emotions on my sleeve.<br>
                 I can't help it."
             </p>
             <p class="hero-whisper">
-                ARC Raiders raider logs, gameplay footage, and field notes from the underground.
-                Fragmented, honest, raw stories and helmet cam runs from ARC Raiders content creator Arceology.
+                You are not reading a website. You are receiving a signal from someone who made it back,
+                but did not come back untouched. Every log, video, and file is evidence from the same broken world.
             </p>
         </div>
     </section>
@@ -961,16 +1017,16 @@
     <main>
         <section class="section" id="archive-terminal">
             <h2 class="section-title">terminal archive</h2>
-            <p class="section-subtitle">Session Open // Visitor Cleared</p>
+            <p class="section-subtitle">Visitor linked // Archive reacts to what you choose</p>
 
             <div class="world-console">
                 <div class="terminal-panel">
                     <div class="panel-kicker">// terminal.speranza</div>
-                    <div class="session-id">visitor: <span id="visitor-id">RAIDER-000</span> // clearance: temporary</div>
+                    <div class="session-id">visitor: <span id="visitor-id">RAIDER-000</span> // clearance: temporary // contamination: emotional</div>
                     <div class="terminal-output" id="terminal-output">
-                        <div><span class="hot">></span> Archive awake. Signal stabilized.</div>
-                        <div><span class="hot">></span> Raider memory index mounted.</div>
-                        <div class="muted">Available: open logs // scan footage // read medic file // decrypt memory</div>
+                        <div><span class="hot">></span> Signal received. You are no longer outside the archive.</div>
+                        <div><span class="hot">></span> Each command reveals why the content exists in-world.</div>
+                        <div class="muted">Available: open logs // scan footage // read medic file // decrypt memory // trace signal</div>
                     </div>
                     <div class="command-row">
                         <span class="prompt-mark">&gt;</span>
@@ -981,12 +1037,13 @@
                         <button class="command-chip" data-command="scan footage">scan footage</button>
                         <button class="command-chip" data-command="read medic file">read medic file</button>
                         <button class="command-chip" data-command="decrypt memory">decrypt memory</button>
+                        <button class="command-chip" data-command="trace signal">trace signal</button>
                     </div>
                 </div>
 
                 <div class="map-panel">
                     <div class="panel-kicker">// speranza.fieldmap</div>
-                    <div class="session-id">topside signal: unstable // archive links: active</div>
+                    <div class="session-id">topside signal: unstable // every location changes the reading</div>
                     <div class="speranza-map" aria-label="Speranza field map">
                         <button class="map-node node-buried" data-location="Buried City">Buried City</button>
                         <button class="map-node node-dam" data-location="Dam Battlegrounds">Dam</button>
@@ -995,7 +1052,7 @@
                         <button class="map-node node-underground" data-location="Speranza Underground">Speranza</button>
                     </div>
                     <div class="map-readout" id="map-readout">
-                        Select a signal point. The archive will surface the memory attached to that ground.
+                        Select a signal point. The archive will not describe a map. It will describe what that place did to the raider.
                     </div>
                 </div>
             </div>
@@ -1010,41 +1067,63 @@
                     <button class="memory-tag" data-memory="human">human</button>
                 </div>
                 <div class="memory-readout" id="memory-readout">
-                    Guilt is the sound that follows extraction. It does not care that survival was the correct choice.
+                    Guilt changes the archive voice: successful extractions become evidence of what had to be left behind.
                 </div>
             </div>
 
             <div class="transmission-panel" id="transmission-panel">
                 <div class="panel-kicker">// hidden.transmission</div>
                 <div class="transmission-text">
-                    Lance flagged the file as <span class="redacted">emotionally compromised</span>.
-                    Arceology marked it as <span class="redacted">still worth saving</span>.
+                    If you're receiving this, <span class="redacted">you are not alone</span>. The logs are not recaps. The footage is not content.
+                    They are <span class="redacted">proof that feeling survived the surface</span>. Tap the terminal, choose a memory, and the archive decides what kind of witness you are.
                 </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">how the world works</h2>
+            <p class="section-subtitle">Immersion Protocol // Content Has Consequence</p>
+            <div class="world-depth">
+                <article class="depth-card">
+                    <h3>// viewer.role</h3>
+                    <p>The visitor is treated as a temporary receiver, not an audience member. The callsign makes them part of the signal chain: someone found the archive, and the archive noticed.</p>
+                    <span class="signal-note">Effect: the site feels addressed to you</span>
+                </article>
+                <article class="depth-card">
+                    <h3>// content.logic</h3>
+                    <p>Logs are written field evidence. Gameplay is helmet-cam recovery. The medic file is a psychological record. The FAQ becomes survival orientation. Nothing is random page filler.</p>
+                    <span class="signal-note">Effect: every page has a world purpose</span>
+                </article>
+                <article class="depth-card">
+                    <h3>// emotional.engine</h3>
+                    <p>The memory tags are not decoration. They are lenses. Guilt, mercy, fear, survival, and human change how the archive explains the same raids.</p>
+                    <span class="signal-note">Effect: clicks create meaning</span>
+                </article>
             </div>
         </section>
 
         <!-- CONTENT SECTIONS -->
         <section class="section">
-            <h2 class="section-title">what I do</h2>
-            <p class="section-subtitle">Choose Your Path</p>
+            <h2 class="section-title">recovered files</h2>
+            <p class="section-subtitle">Each route is a different kind of evidence</p>
 
             <div class="preview-grid">
                 <!-- LOGS -->
                 <a href="blog.html" class="preview-card">
                     <svg class="preview-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style="width: 4rem; height: 4rem; display: block; margin-bottom: 1.5rem;">
-                        <rect x="10" y="15" width="80" height="70" fill="none" stroke="#d9864f" stroke-width="2"/>
+                        <rect x="10" y="15" width="80" height="70" fill="none" stroke="#d46aa2" stroke-width="2"/>
                         <rect x="12" y="17" width="76" height="66" fill="rgba(26,20,16,0.6)"/>
-                        <line x1="10" y1="30" x2="90" y2="30" stroke="#b65e48" stroke-width="1.5"/>
-                        <line x1="20" y1="42" x2="70" y2="42" stroke="#d4c5a9" stroke-width="1" opacity="0.6"/>
-                        <line x1="20" y1="50" x2="75" y2="50" stroke="#d4c5a9" stroke-width="1" opacity="0.6"/>
-                        <line x1="20" y1="58" x2="65" y2="58" stroke="#d4c5a9" stroke-width="1" opacity="0.6"/>
-                        <line x1="20" y1="66" x2="72" y2="66" stroke="#d4c5a9" stroke-width="1" opacity="0.6"/>
-                        <text x="15" y="26" font-family="monospace" font-size="6" fill="#d9864f" letter-spacing="1">// LOG.ENTRY</text>
+                        <line x1="10" y1="30" x2="90" y2="30" stroke="#b85a87" stroke-width="1.5"/>
+                        <line x1="20" y1="42" x2="70" y2="42" stroke="#f1f1f3" stroke-width="1" opacity="0.6"/>
+                        <line x1="20" y1="50" x2="75" y2="50" stroke="#f1f1f3" stroke-width="1" opacity="0.6"/>
+                        <line x1="20" y1="58" x2="65" y2="58" stroke="#f1f1f3" stroke-width="1" opacity="0.6"/>
+                        <line x1="20" y1="66" x2="72" y2="66" stroke="#f1f1f3" stroke-width="1" opacity="0.6"/>
+                        <text x="15" y="26" font-family="monospace" font-size="6" fill="#d46aa2" letter-spacing="1">// LOG.ENTRY</text>
                     </svg>
                     <h3 class="preview-title">Field Logs</h3>
                     <p class="preview-description">
-                        Story-driven ARC Raiders raider logs from the front lines. Each entry tied to in-game locations,
-                        choices, and the emotional cost of surviving.
+                        These are not posts. They are recovered journal entries tied to locations, choices,
+                        extraction pressure, and the emotional cost of getting home alive.
                     </p>
                     <span class="preview-cta">Read logs &#8594;</span>
                 </a>
@@ -1052,18 +1131,19 @@
                 <!-- GAMEPLAY -->
                 <a href="videos.html" class="preview-card">
                     <svg class="preview-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style="width: 4rem; height: 4rem; display: block; margin-bottom: 1.5rem;">
-                        <circle cx="50" cy="50" r="35" fill="none" stroke="#d9864f" stroke-width="2"/>
+                        <circle cx="50" cy="50" r="35" fill="none" stroke="#d46aa2" stroke-width="2"/>
                         <circle cx="50" cy="50" r="32" fill="rgba(26,20,16,0.6)"/>
-                        <circle cx="50" cy="50" r="15" fill="none" stroke="#b65e48" stroke-width="2"/>
-                        <circle cx="50" cy="50" r="8" fill="#d9864f"/>
-                        <rect x="48" y="12" width="4" height="8" fill="#b65e48"/>
-                        <path d="M 30 25 L 25 20 L 20 25" fill="none" stroke="#b65e48" stroke-width="1.5"/>
-                        <path d="M 70 25 L 75 20 L 80 25" fill="none" stroke="#b65e48" stroke-width="1.5"/>
-                        <text x="50" y="92" font-family="monospace" font-size="5" fill="#6b6355" text-anchor="middle" letter-spacing="1">REC</text>
+                        <circle cx="50" cy="50" r="15" fill="none" stroke="#b85a87" stroke-width="2"/>
+                        <circle cx="50" cy="50" r="8" fill="#d46aa2"/>
+                        <rect x="48" y="12" width="4" height="8" fill="#b85a87"/>
+                        <path d="M 30 25 L 25 20 L 20 25" fill="none" stroke="#b85a87" stroke-width="1.5"/>
+                        <path d="M 70 25 L 75 20 L 80 25" fill="none" stroke="#b85a87" stroke-width="1.5"/>
+                        <text x="50" y="92" font-family="monospace" font-size="5" fill="#8d939d" text-anchor="middle" letter-spacing="1">REC</text>
                     </svg>
-                    <h3 class="preview-title">Gameplay Footage</h3>
+                    <h3 class="preview-title">Helmet Cam Footage</h3>
                     <p class="preview-description">
-                        Raw, unfiltered helmet cam runs from Speranza. ARC Raiders gameplay that pairs with the written logs.
+                        Raw ARC Raiders runs reframed as visual evidence: what the raider saw, what the log remembers,
+                        and what the recording cannot explain.
                     </p>
                     <span class="preview-cta">Watch gameplay &#8594;</span>
                 </a>
@@ -1076,13 +1156,13 @@
             <p class="section-subtitle">Signal File // ARCEOLOGY</p>
             <div style="max-width: 800px; margin: 0 auto; text-align: center;">
                 <p style="font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-style: italic; color: var(--sand); line-height: 2; margin-bottom: 2rem;">
-                    Arceology is an ARC Raiders content creator documenting the emotional reality of survival in Speranza. Every raid, every extraction, every loss gets recorded—not as strategy guides or tier lists, but as honest, story-driven field logs that capture what it feels like to be human in a world that rewards numbness.
+                    Arceology is the signal identity behind the recovered transmissions: a raider who records not just what happened, but what it cost. Every raid becomes a file. Every file becomes a question: how much feeling can survive the surface?
                 </p>
                 <p style="font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: var(--steel); line-height: 2; margin-bottom: 2rem;">
-                    This site is a living archive of those experiences. The field logs are personal journals written in-character from the perspective of a raider who refuses to stop feeling, even when survival demands it. The gameplay footage is raw helmet cam recordings that pair with each written entry. The terminal exists as a signal record: part confession, part field evidence, part proof that someone was still human down there.
+                    This site is built like a found system. The homepage is the terminal. The logs are field evidence. The videos are helmet-cam recovery. The medic evaluation is the clinical file trying and failing to make the raider sound simple.
                 </p>
                 <p style="font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: var(--steel); line-height: 2; margin-bottom: 2rem;">
-                    Every piece of content here is independently created by Arceology. This is not an official ARC Raiders property—it is a fan-driven creative project born from a deep connection to the game, its world, and the stories it makes possible.
+                    The pink marks are the human layer: graffiti, signal bleed, warning paint, a heart scratched onto black armor. The white and gray are the archive trying to stay official. The black is the world around it.
                 </p>
                 <a href="about.html" style="font-family: 'Space Mono', monospace; font-size: 0.75rem; color: var(--ember); letter-spacing: 3px; text-transform: uppercase; text-decoration: none; border-bottom: 1px solid var(--rust); padding-bottom: 4px; transition: all 0.3s ease;">Read full signal file →</a>
             </div>
@@ -1201,23 +1281,28 @@
         const commandResponses = {
             'open logs': [
                 '<span class="hot">> OPENING FIELD LOGS...</span>',
-                'Recovered journals indexed by place, pressure, and regret.',
-                '<span class="muted">route: blog.html // status: readable</span>'
+                'These are the raider thoughts that did not fit inside a highlight reel.',
+                '<span class="muted">world function: written evidence // route: blog.html</span>'
             ],
             'scan footage': [
                 '<span class="hot">> HELMET CAM SIGNAL FOUND</span>',
-                'Visual archive contains raw topside fragments. No polish. No mercy edits.',
-                '<span class="muted">route: videos.html // signal: unstable</span>'
+                'The video is what the body saw. The log is what the mind could not stop replaying.',
+                '<span class="muted">world function: visual evidence // route: videos.html</span>'
             ],
             'read medic file': [
                 '<span class="hot">> MEDICAL LOCK BYPASSED</span>',
-                'Lance cleared the body. The mind remains under observation.',
-                '<span class="muted">route: medic-evaluation.html // classification: confidential</span>'
+                'Lance tried to diagnose the raider like a patient. The file keeps becoming a confession.',
+                '<span class="muted">world function: clinical contradiction // route: medic-evaluation.html</span>'
             ],
             'decrypt memory': [
                 '<span class="hot">> MEMORY DECRYPT STARTED</span>',
-                'There are entries that behave less like records and more like wounds.',
-                '<span class="muted">emotional.index mounted // select a tag below</span>'
+                'The same raid changes meaning when filtered through guilt, mercy, fear, survival, or humanity.',
+                '<span class="muted">world function: emotional lens // select a tag below</span>'
+            ],
+            'trace signal': [
+                '<span class="hot">> TRACE ACTIVE</span>',
+                'Origin point is not a server. It is a person on the other side of a broken transmission saying: if you are receiving this, you are not alone.',
+                '<span class="muted">world function: viewer becomes witness // signal active</span>'
             ]
         };
 
@@ -1227,7 +1312,7 @@
             const response = commandResponses[key] || [
                 '<span class="hot">> UNKNOWN COMMAND</span>',
                 'The terminal answers only to what the raider was willing to name.',
-                '<span class="muted">try: open logs // scan footage // read medic file // decrypt memory</span>'
+                '<span class="muted">try: open logs // scan footage // read medic file // decrypt memory // trace signal</span>'
             ];
             terminalOutput.innerHTML = response.map(line => `<div>${line}</div>`).join('');
             if (commandInput) commandInput.value = key;
@@ -1244,11 +1329,11 @@
         }
 
         const locationSignals = {
-            'Buried City': 'Buried City returns a voice under rubble and a pack full of proof that survival can still feel like failure.',
-            'Dam Battlegrounds': 'Dam Battlegrounds carries rust, old water, and caches left by people who hoped someone would make use of what they could not.',
-            'Outskirts': 'The Outskirts are mostly wind. Names scratched into concrete. Proof that somebody was here before the archive found them.',
-            'Industrial Zone': 'Industrial Zone is a corridor of doors. One opens to supplies. One opens to a memory that should not be touched.',
-            'Speranza Underground': 'Speranza keeps the lights low and the breathing steady. Down here, the terminal remembers what topside tries to erase.'
+            'Buried City': 'Buried City is where the archive learns grief: collapsed streets, trapped echoes, and proof that survival can still feel like abandonment.',
+            'Dam Battlegrounds': 'Dam Battlegrounds is the resource file: water, rust, exposed sightlines, and the ugly math of what gets spent so someone else can live.',
+            'Outskirts': 'The Outskirts are the threshold. The world goes quiet here, which makes every pink mark feel like a hand on your shoulder.',
+            'Industrial Zone': 'Industrial Zone is the machine layer. It teaches the archive that not every locked door protects treasure. Some protect memory.',
+            'Speranza Underground': 'Speranza Underground is the human layer. Down here the archive stops counting loot and starts counting names.'
         };
 
         document.querySelectorAll('.map-node').forEach(node => {
@@ -1259,11 +1344,11 @@
         });
 
         const memorySignals = {
-            guilt: 'Guilt is the sound that follows extraction. It does not care that survival was the correct choice.',
-            survival: 'Survival is clean on paper: in, loot, extract. The body obeys. The conscience files an objection.',
-            mercy: 'Mercy is expensive topside. Sometimes it costs ammo. Sometimes time. Sometimes the part of you that still recognizes a voice.',
-            fear: 'Fear is useful until it becomes architecture. Then every door looks like a warning.',
-            human: 'Human is not a status effect. It is the refusal to become numb just because numbness would be easier.'
+            guilt: 'Guilt mode makes every clean extraction suspicious. The archive starts asking who paid the cost of you making it back.',
+            survival: 'Survival mode turns the site tactical and cold: routes, proof, exits, body first. Then the human layer bleeds through anyway.',
+            mercy: 'Mercy mode highlights the moments where a choice was not optimal but was still yours. That is where the pink signal gets strongest.',
+            fear: 'Fear mode makes the map feel hostile. Doors become warnings. Footage becomes evidence. Silence becomes a sound.',
+            human: 'Human mode is the core thesis: the world can be ruined, the armor can be black, the signal can break, and feeling can still survive.'
         };
 
         document.querySelectorAll('.memory-tag').forEach(tag => {
